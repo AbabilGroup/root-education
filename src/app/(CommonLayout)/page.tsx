@@ -1,9 +1,11 @@
-import Hero from "@/components/pages/homepages/Hero";
+import AboutUs from "@/components/pages/homepage/AboutUs";
+import Hero from "@/components/pages/homepage/Hero";
 
 const HomePage = () => {
   return (
     <main>
       <Hero />
+      <AboutUs />
     </main>
   );
 };
