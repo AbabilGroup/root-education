@@ -1,7 +1,6 @@
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 import { ReactNode } from "react";
-import clsx from "clsx";
 
 type TButtonProps = {
   children: ReactNode;
@@ -21,7 +20,7 @@ const Button = ({
   return (
     <Link href={to}>
       <button
-        className={`rounded-sm bg-[${bg}] px-5 py-3 text-sm font-medium text-[${text}] duration-300 hover:bg-secondary hover:text-white`}
+        className={`rounded-sm bg-${bg} px-5 py-3 text-sm font-medium text-${text} duration-300 hover:bg-secondary hover:text-white`}
         onClick={onClick}
       >
         {children}
