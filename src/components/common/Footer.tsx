@@ -2,6 +2,12 @@ import Image from "next/image";
 import Button from "../ui/Button";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTelegramPlane,
+  FaTwitter,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -16,7 +22,7 @@ const Footer = () => {
           </Button>
         </div>
       </div>
-      <div className="bg-secondary py-[40px]">
+      <div className="bg-secondary pt-[40px]">
         <div className="container flex gap-x-[50px]">
           <div className="basis-[25%] space-y-5">
             <div className="relative h-[43px] w-[110px]">
@@ -147,7 +153,7 @@ const Footer = () => {
           </div>
           <div className="basis-[25%] space-y-7 text-white">
             <span className="border-b-[1px] pb-1 text-xl">Quick Links</span>
-            <ul className="flex flex-col justify-between gap-6 text-sm">
+            <ul className="flex flex-col justify-between gap-6">
               <li className="flex items-center">
                 <IoMdArrowDropright className="text-2xl" />
                 <Link className="duration-200 hover:text-primary" href="/">
@@ -212,7 +218,7 @@ const Footer = () => {
           </div>
           <div className="basis-[25%] space-y-7 text-white">
             <span className="border-b-[1px] pb-1 text-xl">Quick Links</span>
-            <ul className="flex flex-col justify-between gap-6 text-sm">
+            <ul className="flex flex-col justify-between gap-6">
               <li className="flex items-center">
                 <IoMdArrowDropright className="text-2xl" />
                 <Link className="duration-200 hover:text-primary" href="/">
@@ -277,7 +283,7 @@ const Footer = () => {
           </div>
           <div className="basis-[25%] space-y-7 text-white">
             <span className="border-b-[1px] pb-1 text-xl">Quick Links</span>
-            <ul className="flex flex-col justify-between gap-6 text-sm">
+            <ul className="flex flex-col justify-between gap-6">
               <li className="flex items-center">
                 <IoMdArrowDropright className="text-2xl" />
                 <Link className="duration-200 hover:text-primary" href="/">
@@ -339,6 +345,67 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+        <div className="container">
+          <hr className="mt-[40px]" />
+          <div className="flex flex-col items-center justify-between gap-6 py-[30px] text-center text-sm text-white md:text-left xl:flex-row">
+            <div className="basis-full lg:basis-1/3">
+              © Copyright 2024 “Root Education” All Rights Reserved.
+            </div>
+            <div className="basis-full lg:basis-1/3">
+              <ul className="flex items-center justify-center gap-8">
+                <li>
+                  <Link
+                    href="/privacy-policy"
+                    className="duration-200 hover:underline"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms-of-conditions"
+                    className="duration-200 hover:underline"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link className="duration-200 hover:underline" href="#">
+                    Cookie Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="basis-full lg:basis-1/3">
+              <div className="flex flex-col items-center justify-end gap-3 font-medium xl:flex-row xl:gap-10">
+                Follow Us
+                <span className="flex items-center gap-3">
+                  <Link
+                    href="https://www.facebook.com/hireandfire.eu"
+                    target=" blank"
+                  >
+                    <FaFacebook className="rounded-full bg-white p-1 text-2xl text-primary duration-200 hover:bg-primary hover:text-white" />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/hireandfire.eu/"
+                    target=" blank"
+                  >
+                    <FaInstagram className="rounded-full bg-white p-1 text-2xl text-primary duration-200 hover:bg-primary hover:text-white" />
+                  </Link>
+                  <Link
+                    href="https://twitter.com/hireandfireeu"
+                    target=" blank"
+                  >
+                    <FaTwitter className="rounded-full bg-white p-1 text-2xl text-primary duration-200 hover:bg-primary hover:text-white" />
+                  </Link>
+                  <Link href="https://telegram.org/" target=" blank">
+                    <FaTelegramPlane className="rounded-full bg-white p-1 text-2xl text-primary duration-200 hover:bg-primary hover:text-white" />
+                  </Link>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
