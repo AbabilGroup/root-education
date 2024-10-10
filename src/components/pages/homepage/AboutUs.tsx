@@ -2,6 +2,7 @@ import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBou
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import Button from "@/components/ui/Button";
+import SectionName from "@/components/ui/SectionName";
 import Image from "next/image";
 
 const AboutUs = () => {
@@ -40,12 +41,7 @@ const AboutUs = () => {
       <div className="container flex flex-col items-center justify-between gap-x-20 gap-y-10 pt-[80px] lg:gap-y-0 xl:flex-row">
         {/* column */}
         <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
-          <div className="mb-4">
-            <span className="rounded-full border border-primary px-5 py-4 text-xl font-medium text-primary">
-              About Us
-            </span>
-          </div>
-          <div className="h-[1px] w-full"></div>
+          <SectionName name="About Us" />
           <h2 className="text-4xl font-bold">
             Learn & Grow Your Skills <br /> from Global study abroad
           </h2>
