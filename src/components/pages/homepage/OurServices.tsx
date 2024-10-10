@@ -4,14 +4,14 @@ import ServiceCard from "./ServiceCard";
 const OurServices = () => {
   return (
     <section className="py-[50px]">
-      <div className="container space-y-5">
+      <div className="container">
         <SectionName name="Our Services" position="center" />
 
-        <h2 className="mx-auto max-w-[670px] text-center text-4xl font-bold text-secondary">
+        <h2 className="mx-auto mb-10 mt-5 max-w-[670px] text-center text-3xl font-bold text-secondary lg:text-4xl">
           Study abroad consultation and application support
         </h2>
 
-        <div className="grid grid-cols-3 gap-x-7 gap-y-10">
+        <div className="grid grid-cols-1 gap-x-7 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
           <ServiceCard
             icon={
               <svg

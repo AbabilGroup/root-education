@@ -6,7 +6,7 @@ type TButtonProps = {
   children: ReactNode;
   onClick?: () => void;
   to?: Url;
-  bg?: string;
+  bg?: "primary" | "white";
   text?: string;
 };
 

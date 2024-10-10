@@ -10,12 +10,9 @@ type TServiceCardProps = {
 const ServiceCard = ({ icon, title, description }: TServiceCardProps) => {
   return (
     <div className="group flex flex-col items-center gap-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-lg duration-300 hover:bg-primary">
-      <div>
-        {icon}
-       
-      </div>
+      <div>{icon}</div>
 
-      <h5 className="text-2xl font-medium duration-300 group-hover:text-white">
+      <h5 className="text-center text-2xl font-medium duration-300 group-hover:text-white">
         {title}
       </h5>
 
