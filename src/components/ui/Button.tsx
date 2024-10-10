@@ -22,9 +22,9 @@ const Button = ({
     <Link href={to}>
       <button
         className={clsx(
-          "rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white",
           `bg-${bg}`,
           `text-${text}`,
+          "rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white",
         )}
         onClick={onClick}
       >
