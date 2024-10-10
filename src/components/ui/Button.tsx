@@ -21,11 +21,7 @@ const Button = ({
   return (
     <Link href={to}>
       <button
-        className={clsx(
-          `bg-${bg}`,
-          `text-${text}`,
-          "rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white",
-        )}
+        className={`rounded-sm bg-[${bg}] px-5 py-3 text-sm font-medium text-[${text}] duration-300 hover:bg-secondary hover:text-white`}
         onClick={onClick}
       >
         {children}
