@@ -6,13 +6,21 @@ type TButtonProps = {
   children: ReactNode;
   onClick?: () => void;
   to?: Url;
+  bg?: string;
+  text?: string;
 };
 
-const Button = ({ children, onClick, to = "#" }: TButtonProps) => {
+const Button = ({
+  children,
+  onClick,
+  to = "#",
+  bg = "primary",
+  text = "white",
+}: TButtonProps) => {
   return (
     <Link href={to}>
       <button
-        className="rounded-sm bg-primary px-5 py-3 text-sm font-medium text-white duration-300 hover:bg-secondary"
+        className={`rounded-sm bg-${bg} px-5 py-3 text-sm font-medium text-${text} duration-300 hover:bg-secondary hover:text-white`}
         onClick={onClick}
       >
         {children}

@@ -21,6 +21,7 @@ const config: Config = {
 
       backgroundImage: {
         "home-hero-bg": "url('/images/pages/home/hero_section/hero_bg.png')",
+        "footer-bg": "url('/images/footer/footer_bg.png')",
       },
 
       keyframes: {

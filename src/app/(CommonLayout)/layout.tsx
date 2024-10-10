@@ -22,7 +22,7 @@ export default function CommonLayout({
 }>) {
   return (
     <html lang="en" className={montserrat.className}>
-      <body>
+      <body className="flex min-h-screen flex-col">
         <TopBar />
         <Header />
         {children}

@@ -5,13 +5,13 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="z-10 bg-home-hero-bg bg-cover bg-center bg-no-repeat pt-[100px] text-white xl:pt-0">
+    <section className="bg-home-hero-bg bg-cover bg-center bg-no-repeat pt-[100px] text-white xl:pt-0">
       <div className="container flex flex-col items-center justify-between gap-x-24 gap-y-[50px] xl:flex-row xl:gap-y-0">
         <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
           <h1 className="text-center text-5xl font-bold xl:text-left xl:text-6xl">
             Start Your Global Learning Experience
           </h1>
-          <p className="text-center font-medium text-sm xl:text-left">
+          <p className="text-center text-sm font-medium xl:text-left">
             Embark on an unforgettable educational journey that spans
             continents. Discover new cultures, gain unique perspectives, and
             enhance your academic and personal growth. Join us and turn your
@@ -24,7 +24,7 @@ const Hero = () => {
         </FadeInLeftWithSlowBounce>
         <FadeInRightWithSlowBounce className="relative min-h-[400px] w-full basis-full xl:min-h-[550px] xl:basis-1/2">
           <Image
-            className="object-contain object-bottom xl:object-right-bottom z-0"
+            className="object-contain object-bottom xl:object-right-bottom"
             src="/images/pages/home/hero_section/hero_img.png"
             alt="Root Education"
             fill

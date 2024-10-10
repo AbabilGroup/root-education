@@ -1,3 +1,4 @@
+import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBounce";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import Button from "@/components/ui/Button";
@@ -5,30 +6,38 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <section className="pb-[50px]">
-      <div className="container z-[5000] -mt-[80px]">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 divide-y-[1px] divide-primary rounded-lg border-l-8 border-r-8 border-l-primary border-r-primary bg-white px-20 py-8 shadow sm:divide-x-0 sm:divide-y-0 md:grid-cols-2 xl:grid-cols-4 xl:divide-x-[1px] xl:divide-y-0 xl:px-0">
+    <section className="relative pb-[50px]">
+      <div className="container">
+        <div className="mx-auto -mt-[80px] grid max-w-5xl grid-cols-1 divide-y-[1px] divide-primary rounded-lg border-l-8 border-r-8 border-l-primary border-r-primary bg-white px-20 py-8 shadow sm:divide-x-0 sm:divide-y-0 md:grid-cols-2 xl:grid-cols-4 xl:divide-x-[1px] xl:divide-y-0 xl:px-0">
           <div className="space-y-2 px-10 py-3 text-center">
-            <h4 className="text-3xl font-bold text-primary">1000+</h4>
-            <p className="text-sm font-medium">Student Enrolled</p>
+            <FadeInDownWithSlowBounce>
+              <h4 className="text-3xl font-bold text-primary">1000+</h4>
+              <p className="text-sm font-medium">Student Enrolled</p>
+            </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">
-            <h4 className="text-3xl font-bold text-primary">6+</h4>
-            <p className="text-sm font-medium">WorldWide Brances</p>
+            <FadeInDownWithSlowBounce>
+              <h4 className="text-3xl font-bold text-primary">6+</h4>
+              <p className="text-sm font-medium">WorldWide Brances</p>
+            </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">
-            <h4 className="text-3xl font-bold text-primary">36+</h4>
-            <p className="text-sm font-medium">Partnered University</p>
+            <FadeInDownWithSlowBounce>
+              <h4 className="text-3xl font-bold text-primary">36+</h4>
+              <p className="text-sm font-medium">Partnered University</p>
+            </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">
-            <h4 className="text-3xl font-bold text-primary">13 Years</h4>
-            <p className="text-sm font-medium">of Experience</p>
+            <FadeInDownWithSlowBounce>
+              <h4 className="text-3xl font-bold text-primary">13 Years</h4>
+              <p className="text-sm font-medium">of Experience</p>
+            </FadeInDownWithSlowBounce>
           </div>
         </div>
       </div>
 
       {/* row  */}
-      <div className="container flex flex-col items-center justify-between gap-x-20 gap-y-10 pt-[100px] lg:gap-y-0 xl:flex-row">
+      <div className="container flex flex-col items-center justify-between gap-x-20 gap-y-10 pt-[80px] lg:gap-y-0 xl:flex-row">
         {/* column */}
         <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
           <div className="mb-4">
