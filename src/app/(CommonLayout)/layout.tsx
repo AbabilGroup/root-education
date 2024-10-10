@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import TopBar from "@/components/common/TopBar";
 
 export const metadata: Metadata = {
   title: "Root Education",
@@ -22,6 +23,7 @@ export default function CommonLayout({
   return (
     <html lang="en" className={montserrat.className}>
       <body>
+        <TopBar />
         <Header />
         {children}
         <Footer />

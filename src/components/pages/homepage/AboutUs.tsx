@@ -1,10 +1,12 @@
+import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
+import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <section className="-mt-[80px] pb-[50px]">
-      <div className="container">
+    <section className="pb-[50px]">
+      <div className="container z-[5000] -mt-[80px]">
         <div className="mx-auto grid max-w-5xl grid-cols-1 divide-y-[1px] divide-primary rounded-lg border-l-8 border-r-8 border-l-primary border-r-primary bg-white px-20 py-8 shadow sm:divide-x-0 sm:divide-y-0 md:grid-cols-2 xl:grid-cols-4 xl:divide-x-[1px] xl:divide-y-0 xl:px-0">
           <div className="space-y-2 px-10 py-3 text-center">
             <h4 className="text-3xl font-bold text-primary">1000+</h4>
@@ -26,9 +28,9 @@ const AboutUs = () => {
       </div>
 
       {/* row  */}
-      <div className="container flex flex-col gap-x-20 gap-y-10 pt-[100px] lg:gap-y-0 xl:flex-row">
+      <div className="container flex flex-col items-center justify-between gap-x-20 gap-y-10 pt-[100px] lg:gap-y-0 xl:flex-row">
         {/* column */}
-        <div className="basis-full space-y-5 xl:basis-1/2">
+        <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
           <div className="mb-4">
             <span className="rounded-full border border-primary px-5 py-4 text-xl font-medium text-primary">
               About Us
@@ -138,7 +140,7 @@ const AboutUs = () => {
           </div>
           <div className="flex justify-start gap-4">
             <div>
-              <Button>About More</Button>
+              <Button to="/about-us">About More</Button>
             </div>
             <div>
               <svg
@@ -168,12 +170,12 @@ const AboutUs = () => {
               </svg>
             </div>
           </div>
-        </div>
+        </FadeInLeftWithSlowBounce>
         {/* column */}
-        <div className="flex min-h-[400px] w-full basis-full items-center gap-x-5 xl:basis-1/2">
-          <div className="relative min-h-[400px] w-full basis-1/2">
+        <FadeInRightWithSlowBounce className="flex min-h-[400px] w-full basis-full items-center gap-x-5 xl:basis-1/2">
+          <div className="relative min-h-[350px] basis-1/2">
             <Image
-              className="object-contain"
+              className="rounded-md object-cover"
               src="/images/pages/home/about_section/about_img_1.png"
               alt="About Root Education"
               fill
@@ -202,17 +204,16 @@ const AboutUs = () => {
 
               <span className="-ml-2">Watch Video</span>
             </button>
-            {/* <div className="relative min-h-[200px] w-full basis-full sm:min-h-[250px] md:min-h-[300px] lg:min-h-[400px] xl:min-h-[250px] 2xl:min-h-[350px] border"> */}
-            <div className="relative min-h-full w-full">
+            <div className="relative min-h-[350px]">
               <Image
-                className="h-full w-full object-contain object-bottom"
+                className="rounded-md object-cover"
                 src="/images/pages/home/about_section/about_img_2.png"
                 alt="About Root Education"
                 fill
               />
             </div>
           </div>
-        </div>
+        </FadeInRightWithSlowBounce>
       </div>
     </section>
   );
