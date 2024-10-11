@@ -12,12 +12,12 @@ import {
 const Footer = () => {
   return (
     <footer className="mt-auto">
-      <div className="bg-footer-bg rounded-t-[40px] bg-cover bg-center bg-no-repeat">
+      <div className="rounded-t-[40px] bg-footer-bg bg-cover bg-center bg-no-repeat">
         <div className="container flex flex-col items-center justify-between gap-y-5 py-7 lg:flex-row">
           <h3 className="text-center text-3xl font-semibold text-white lg:text-left">
             Ready to Take the Next Step?
           </h3>
-          <Button bg="white" text="primary">
+          <Button bg="bg-white" text="text-primary">
             Personalized Consultation
           </Button>
         </div>
