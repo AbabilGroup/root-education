@@ -8,6 +8,7 @@ type TButtonProps = {
   to?: Url;
   bg?: string;
   text?: string;
+  icon?: ReactNode;
 };
 
 const Button = ({
@@ -16,14 +17,15 @@ const Button = ({
   to = "#",
   bg = "bg-primary",
   text = "text-white",
+  icon,
 }: TButtonProps) => {
   return (
     <Link href={to}>
       <button
-        className={`rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white ${bg} ${text}`}
+        className={`flex items-center justify-center gap-x-2 rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white ${bg} ${text}`}
         onClick={onClick}
       >
-        {children}
+        {icon} {children}
       </button>
     </Link>
   );

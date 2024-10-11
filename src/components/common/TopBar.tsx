@@ -1,6 +1,6 @@
 const TopBar = () => {
   return (
-    <header className="bg-secondary py-2 text-xs text-white">
+    <header className="bg-secondary py-2 text-xs font-medium text-white">
       <div className="container">
         <div className="mx-auto flex max-w-7xl items-center justify-center divide-x-[1px] divide-white">
           <div className="flex items-center justify-start gap-3 px-5">

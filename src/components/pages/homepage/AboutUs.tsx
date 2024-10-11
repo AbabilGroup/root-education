@@ -9,7 +9,7 @@ const AboutUs = () => {
   return (
     <section className="relative pb-[50px]">
       <div className="container">
-        <div className="mx-auto -mt-[80px] grid max-w-5xl grid-cols-1 divide-y-[1px] divide-primary rounded-lg border-l-8 border-r-8 border-l-primary border-r-primary bg-white px-20 py-8 shadow sm:divide-x-0 sm:divide-y-0 md:grid-cols-2 xl:grid-cols-4 xl:divide-x-[1px] xl:divide-y-0 xl:px-0">
+        <div className="mx-auto -mt-[73px] grid max-w-5xl grid-cols-1 divide-y-[1px] divide-primary rounded-lg border-l-8 border-r-8 border-l-primary border-r-primary bg-white px-20 py-8 shadow sm:divide-x-0 sm:divide-y-0 md:grid-cols-2 xl:grid-cols-4 xl:divide-x-[1px] xl:divide-y-0 xl:px-0">
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
               <h4 className="text-3xl font-bold text-primary">1000+</h4>
