@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../ui/Button";
+import SiteButton from "../ui/SiteButton";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
 import {
@@ -17,9 +17,9 @@ const Footer = () => {
           <h3 className="text-center text-3xl font-semibold text-white lg:text-left">
             Ready to Take the Next Step?
           </h3>
-          <Button bg="bg-white" text="text-primary">
+          <SiteButton bg="bg-white" text="text-primary">
             Personalized Consultation
-          </Button>
+          </SiteButton>
         </div>
       </div>
       <div className="bg-secondary pt-[40px]">

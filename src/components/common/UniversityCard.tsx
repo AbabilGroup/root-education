@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../ui/Button";
+import SiteButton from "../ui/SiteButton";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 
 const UniversityCard = () => {
@@ -137,7 +137,7 @@ const UniversityCard = () => {
       </div>
 
       <div>
-        <Button
+        <SiteButton
           icon={
             <svg
               width="16"
@@ -157,7 +157,7 @@ const UniversityCard = () => {
           }
         >
           Admission Now
-        </Button>
+        </SiteButton>
       </div>
     </FadeInLeftWithSlowBounce>
   );

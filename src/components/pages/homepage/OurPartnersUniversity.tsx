@@ -1,6 +1,6 @@
 import Section from "@/components/common/Section";
 import UniversityCard from "@/components/common/UniversityCard";
-import Button from "@/components/ui/Button";
+import SiteButton from "@/components/ui/SiteButton";
 
 const OurPartnersUniversity = () => {
   return (
@@ -18,7 +18,7 @@ const OurPartnersUniversity = () => {
         <UniversityCard />
       </div>
       <div className="mt-10 flex items-center justify-center">
-        <Button>View All Universities</Button>
+        <SiteButton>View All Universities</SiteButton>
       </div>
     </Section>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../ui/Button";
+import SiteButton from "../ui/SiteButton";
 import { NavMenu } from "./NavMenu";
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
 
         <NavMenu />
 
-        <Button>Consultation</Button>
+        <SiteButton>Consultation</SiteButton>
       </nav>
     </header>
   );
