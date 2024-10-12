@@ -19,8 +19,8 @@ const TestimonialCard = () => {
         <Image src="/icons/star.svg" alt="Star" height={20} width={20} />
       </div>
       <p className="text-center text-sm font-medium">
-        Root Education streamlined my study abroad journey with expert advice
-        and support, making the process smooth and stress-free."
+        &quot;Root Education streamlined my study abroad journey with expert
+        advice and support, making the process smooth and stress-free.&quot;
       </p>
       <div className="flex items-center justify-center">
         <Image
