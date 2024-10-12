@@ -10,6 +10,107 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const footerLinks = {
+    company: [
+      {
+        label: "Home",
+        href: "/",
+      },
+      {
+        label: "About Us",
+        href: "/about-us",
+      },
+      {
+        label: "Our Partners University",
+        href: "/our-partners-university",
+      },
+      {
+        label: "Our Study Countries",
+        href: "/our-study-countries",
+      },
+      {
+        label: "How We Works",
+        href: "/how-we-work",
+      },
+      {
+        label: "Blogs & Newses",
+        href: "/blogs-and-newses",
+      },
+      {
+        label: "FAQ",
+        href: "/faq",
+      },
+      {
+        label: "Contact Us",
+        href: "/contact-us",
+      },
+    ],
+    our_services: [
+      {
+        label: "Study Abroad Consultation",
+        href: "/study-abroad-Consultation",
+      },
+      {
+        label: "University Selection",
+        href: "/university-selection",
+      },
+      {
+        label: "Application Assistance",
+        href: "/application-assistance",
+      },
+      {
+        label: "Visa Guidance",
+        href: "/visa-guidance",
+      },
+      {
+        label: "Scholarship & Financial Aid",
+        href: "/scholarship-and-financial-aid",
+      },
+      {
+        label: "Pre-departure Briefing",
+        href: "/pre-departure-briefing",
+      },
+    ],
+    study_countries: [
+      {
+        label: "Study in Romania",
+        href: "/study-in-romania",
+      },
+      {
+        label: "Study in Malta",
+        href: "/study-in-malta",
+      },
+      {
+        label: "Study in Hungary",
+        href: "/study-in-hungary",
+      },
+      {
+        label: "Study in Lithuania",
+        href: "/study-in-lithuania",
+      },
+      {
+        label: "Study in Latvia",
+        href: "/study-in-latvia",
+      },
+      {
+        label: "Study in Bulgaria",
+        href: "/study-in-bulgaria",
+      },
+      {
+        label: "Study in Georgia",
+        href: "/study-in-georgia",
+      },
+      {
+        label: "Study in Russia",
+        href: "/study-in-russia",
+      },
+      {
+        label: "View All Countries",
+        href: "/",
+      },
+    ],
+  };
+
   return (
     <footer className="mt-auto">
       <div className="rounded-t-[40px] bg-footer-bg bg-cover bg-center bg-no-repeat">
@@ -152,198 +253,51 @@ const Footer = () => {
             </div>
           </div>
           <div className="basis-[25%] space-y-7 text-white">
-            <span className="border-b-[1px] pb-1 text-xl">Quick Links</span>
+            <span className="border-b-[1px] pb-1 text-xl">Company</span>
             <ul className="flex flex-col justify-between gap-6">
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link className="duration-200 hover:text-primary" href="/">
-                  Home
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/about-us"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/services"
-                >
-                  Services
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/industry"
-                >
-                  Industries We Serve
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/resources/blog"
-                >
-                  Blogs and Newses
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/resources/faq"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/meet-us"
-                >
-                  Contact Us
-                </Link>
-              </li>
+              {footerLinks.company.map((link) => (
+                <li className="flex items-center" key={link.label}>
+                  <IoMdArrowDropright className="text-2xl" />
+                  <Link
+                    className="duration-200 hover:text-primary"
+                    href={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="basis-[25%] space-y-7 text-white">
-            <span className="border-b-[1px] pb-1 text-xl">Quick Links</span>
+            <span className="border-b-[1px] pb-1 text-xl">Our Services</span>
             <ul className="flex flex-col justify-between gap-6">
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link className="duration-200 hover:text-primary" href="/">
-                  Home
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/about-us"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/services"
-                >
-                  Services
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/industry"
-                >
-                  Industries We Serve
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/resources/blog"
-                >
-                  Blogs and Newses
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/resources/faq"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/meet-us"
-                >
-                  Contact Us
-                </Link>
-              </li>
+              {footerLinks.our_services.map((link) => (
+                <li className="flex items-center" key={link.label}>
+                  <IoMdArrowDropright className="text-2xl" />
+                  <Link
+                    className="duration-200 hover:text-primary"
+                    href={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="basis-[25%] space-y-7 text-white">
-            <span className="border-b-[1px] pb-1 text-xl">Quick Links</span>
+            <span className="border-b-[1px] pb-1 text-xl">Study Countries</span>
             <ul className="flex flex-col justify-between gap-6">
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link className="duration-200 hover:text-primary" href="/">
-                  Home
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/about-us"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/services"
-                >
-                  Services
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/industry"
-                >
-                  Industries We Serve
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/resources/blog"
-                >
-                  Blogs and Newses
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/resources/faq"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li className="flex items-center">
-                <IoMdArrowDropright className="text-2xl" />
-                <Link
-                  className="duration-200 hover:text-primary"
-                  href="/meet-us"
-                >
-                  Contact Us
-                </Link>
-              </li>
+              {footerLinks.study_countries.map((link) => (
+                <li className="flex items-center" key={link.label}>
+                  <IoMdArrowDropright className="text-2xl" />
+                  <Link
+                    className="duration-200 hover:text-primary"
+                    href={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
