@@ -187,27 +187,12 @@ const AboutUs = () => {
             />
           </div>
           <div className="flex min-h-[500px] w-full basis-1/2 flex-col justify-center space-y-5 xl:space-y-5">
-            <button className="flex w-full basis-full items-center justify-center gap-x-5 rounded-lg border border-primary px-3 py-6 font-medium text-secondary xl:text-lg">
-              <svg
-                className="rounded-full border shadow-2xl"
-                width="40"
-                height="40"
-                viewBox="0 0 60 60"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="30"
-                  cy="30"
-                  r="27.5"
-                  fill="#F37329"
-                  stroke="#FDFDFD"
-                  strokeWidth="5"
-                />
-                <path d="M42 30L24 40.3923L24 19.6077L42 30Z" fill="#FDFDFD" />
-              </svg>
+            <button className="flex w-full basis-full items-center justify-center gap-x-2 rounded-lg border border-primary px-3 py-6 text-sm font-medium text-secondary">
+              <div className="relative size-[30px] rounded-full">
+                <Image src="/icons/play_icon.svg" alt="Play" fill />
+              </div>
 
-              <span className="-ml-2">Watch Video</span>
+              <span>Watch Video</span>
             </button>
             <div className="relative min-h-[350px]">
               <Image

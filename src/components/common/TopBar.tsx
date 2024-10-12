@@ -38,7 +38,7 @@ const TopBar = () => {
                 </defs>
               </svg>
             </div>
-            <div>+40 123 456 789</div>
+            <div className="hidden lg:block">+40 123 456 789</div>
           </div>
           <div className="flex items-center justify-start gap-3 px-5">
             <div>
@@ -63,7 +63,7 @@ const TopBar = () => {
                 />
               </svg>
             </div>
-            <div>Info@rooteducation.group</div>
+            <div className="hidden lg:block">Info@rooteducation.group</div>
           </div>
           <div className="flex items-center justify-start gap-3 px-5">
             <div>
@@ -104,7 +104,9 @@ const TopBar = () => {
                 </defs>
               </svg>
             </div>
-            <div>UK 12-116 Whitechapel Road 2nd Floor, UK London E1 1JE</div>
+            <div className="hidden lg:block">
+              UK 12-116 Whitechapel Road 2nd Floor, UK London E1 1JE
+            </div>
           </div>
         </div>
       </div>

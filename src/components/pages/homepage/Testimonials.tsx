@@ -58,6 +58,9 @@ const Testimonials = () => {
         {/* <CarouselPrevious />
         <CarouselNext /> */}
       </Carousel>
+
+      {/* spacer  */}
+      <div className="h-[50px]"></div>
     </Section>
   );
 };

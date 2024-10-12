@@ -21,7 +21,7 @@ const UniversityCard = () => {
       </p>
 
       {/* infos  */}
-      <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+      <div className="grid grid-cols-1 gap-x-3 gap-y-2 md:grid-cols-2">
         {/* info item  */}
         <div className="flex items-center justify-start gap-2">
           <div>
