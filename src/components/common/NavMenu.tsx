@@ -54,7 +54,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavMenu() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden xl:block">
       <NavigationMenuList>
         <NavigationMenuItem className="hover:text-primary">
           <Link href="/about-us" legacyBehavior passHref>

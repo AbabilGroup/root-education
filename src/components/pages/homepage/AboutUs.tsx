@@ -187,11 +187,11 @@ const AboutUs = () => {
             />
           </div>
           <div className="flex min-h-[500px] w-full basis-1/2 flex-col justify-center space-y-5 xl:space-y-5">
-            <button className="flex w-full basis-full items-center justify-center gap-x-5 rounded-lg border border-primary py-6 font-medium text-secondary xl:text-xl">
+            <button className="flex w-full basis-full items-center justify-center gap-x-5 rounded-lg border border-primary px-3 py-6 font-medium text-secondary xl:text-lg">
               <svg
                 className="rounded-full border shadow-2xl"
-                width="50"
-                height="50"
+                width="40"
+                height="40"
                 viewBox="0 0 60 60"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
