@@ -8,7 +8,7 @@ const OurPartnersUniversity = () => {
       sectionName="Our Partners University"
       title="World-Class Educational Collaborations"
     >
-      <div className="grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
         {/* card  */}
         <UniversityCard />
         <UniversityCard />

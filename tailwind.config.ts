@@ -24,6 +24,8 @@ const config: Config = {
         "testimonial-card-bg": "url('/images/Rectangle 38 (1).png')",
         "about-us-banner-bg":
           "url('/images/pages/about_us/about_us_banner_bg.png')",
+        "why-choose-us-bg":
+          "url('/images/pages/about_us/why_choose_us_bg.png')",
       },
 
       keyframes: {

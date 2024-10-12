@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import StudyCountryCard from "./StudyCountryCard";
+import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 
 const OurStudyCountry = () => {
   return (
@@ -16,7 +17,7 @@ const OurStudyCountry = () => {
       sectionName="Our Study Country"
       title="Explore top global study destinations"
     >
-      <div className="px-8">
+      <FadeInUpWithSlowBounce className="container px-8">
         <Carousel
           opts={{
             align: "start",
@@ -60,7 +61,7 @@ const OurStudyCountry = () => {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-      </div>
+      </FadeInUpWithSlowBounce>
     </Section>
   );
 };

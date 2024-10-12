@@ -21,9 +21,8 @@ const Section = ({ children, sectionName, title }: TSectionProps) => {
             {title}
           </h2>
         </FadeInDownWithSlowBounce>
-
-        <div>{children}</div>
       </div>
+      <div>{children}</div>
     </section>
   );
 };

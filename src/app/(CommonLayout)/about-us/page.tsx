@@ -1,7 +1,9 @@
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import AboutUs from "@/components/pages/about_us/AboutUs";
+import OurPartnersUniversities from "@/components/pages/about_us/OurPartnersUniversities";
 import OurTeamMembers from "@/components/pages/about_us/OurTeamMembers";
+import WhyChooseUs from "@/components/pages/about_us/WhyChooseUs";
 
 const AboutUsPage = () => {
   return (
@@ -18,6 +20,9 @@ const AboutUsPage = () => {
 
       <AboutUs />
       <OurTeamMembers />
+
+      <WhyChooseUs />
+      <OurPartnersUniversities />
     </main>
   );
 };

@@ -7,7 +7,7 @@ const OurServices = () => {
       sectionName="Our Services"
       title="Study abroad consultation and application support"
     >
-      <div className="grid grid-cols-1 gap-x-7 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+      <div className="container grid grid-cols-1 gap-x-7 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
         <ServiceCard
           icon={
             <svg

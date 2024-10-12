@@ -3,11 +3,11 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { capitalizeAndRemoveHyphens } from "@/lib/utils";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Breadcrumbs = () => {
@@ -20,27 +20,19 @@ const Breadcrumbs = () => {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            <Link href="/">Home</Link>
           </BreadcrumbItem>
 
           {parts.map((part) => (
             <>
               <BreadcrumbSeparator />
               <BreadcrumbItem key={part}>
-                <BreadcrumbLink href={`/${part}`}>
+                <Link href={`/${part}`}>
                   {capitalizeAndRemoveHyphens(part)}
-                </BreadcrumbLink>
+                </Link>
               </BreadcrumbItem>
             </>
           ))}
-
-          {/* <BreadcrumbItem>
-            <BreadcrumbLink href="/components">Components</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-          </BreadcrumbItem> */}
         </BreadcrumbList>
       </Breadcrumb>
     </div>
