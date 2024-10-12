@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -23,6 +22,8 @@ const config: Config = {
         "home-hero-bg": "url('/images/pages/home/hero_section/hero_bg.png')",
         "footer-bg": "url('/images/footer/footer_bg.png')",
         "testimonial-card-bg": "url('/images/Rectangle 38 (1).png')",
+        "about-us-banner-bg":
+          "url('/images/pages/about_us/about_us_banner_bg.png')",
       },
 
       keyframes: {
