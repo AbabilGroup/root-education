@@ -25,7 +25,7 @@ const Hero = () => {
         <FadeInRightWithSlowBounce className="relative min-h-[400px] w-full basis-full xl:min-h-[550px] xl:basis-1/2">
           <Image
             className="object-contain object-bottom xl:object-right-bottom"
-            src="/images/pages/home/hero_section/hero_img.png"
+            src="/images/pages/home/hero_section/hero_img.svg"
             alt="Root Education"
             fill
           />
