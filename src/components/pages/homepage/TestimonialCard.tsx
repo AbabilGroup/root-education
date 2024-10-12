@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const TestimonialCard = () => {
   return (
-    <div className="my-6 space-y-3 rounded-b-[100px] rounded-t-lg border p-5 shadow-lg">
+    <div className="mx-2 my-6 space-y-3 rounded-b-[100px] rounded-t-lg border p-5 shadow-lg">
       <div>
         <Image
           src="/icons/comment.svg"
