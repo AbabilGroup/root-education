@@ -6,7 +6,7 @@ import {
   CarouselItem,
   // CarouselNext,
   // CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/components/ui/Carousel";
 import TestimonialCard from "./TestimonialCard";
 
 const Testimonials = () => {
