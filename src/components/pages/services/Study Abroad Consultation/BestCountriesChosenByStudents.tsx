@@ -66,7 +66,10 @@ const BestCountriesChosenByStudents = () => {
         >
           <CarouselContent>
             {EuropeStudyCountries.map((country) => (
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/4">
+              <CarouselItem
+                className="basis-full md:basis-1/2 xl:basis-1/4"
+                key={country.name}
+              >
                 <EuropeStudyCountryCard
                   imageUrl={country.photo}
                   name={country.name}
