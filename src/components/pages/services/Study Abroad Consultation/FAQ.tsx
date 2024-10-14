@@ -1,8 +1,6 @@
 import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBounce";
 import SectionName from "@/components/ui/SectionName";
 import FaqAccordion from "./FaqAccordion";
-import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
-import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 
 const FAQ = () => {
   const faqs = [
