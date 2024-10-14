@@ -66,7 +66,9 @@ const Breadcrumbs = () => {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <Link href="/">Home</Link>
+            <Link className="hover:underline" href="/">
+              Home
+            </Link>
           </BreadcrumbItem>
 
           {parts.map((part, index) => {
@@ -80,7 +82,7 @@ const Breadcrumbs = () => {
               >
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <Link href={cumulativePath}>
+                  <Link className="hover:underline" href={cumulativePath}>
                     {capitalizeAndRemoveHyphens(part)}
                   </Link>
                 </BreadcrumbItem>
