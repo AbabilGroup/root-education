@@ -26,6 +26,7 @@ const config: Config = {
           "url('/images/pages/about_us/about_us_banner_bg.png')",
         "why-choose-us-bg":
           "url('/images/pages/about_us/why_choose_us_bg.png')",
+        "get-in-touch-bg": "url('/images/pages/about_us/get_in_touch_bg.png')",
       },
 
       keyframes: {

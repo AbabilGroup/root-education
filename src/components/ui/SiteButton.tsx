@@ -5,10 +5,11 @@ import { ReactNode } from "react";
 type TSiteButtonProps = {
   children: ReactNode;
   onClick?: () => void;
-  to?: Url;
+  to?: Url | undefined;
   bg?: string;
   text?: string;
   icon?: ReactNode;
+  type?: "reset" | "submit" | undefined;
 };
 
 const SiteButton = ({
@@ -18,12 +19,14 @@ const SiteButton = ({
   bg = "bg-primary",
   text = "text-white",
   icon,
+  type,
 }: TSiteButtonProps) => {
   return (
     <Link href={to}>
       <button
         className={`flex items-center justify-center gap-x-2 rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white ${bg} ${text}`}
         onClick={onClick}
+        type={type}
       >
         {icon} {children}
       </button>
