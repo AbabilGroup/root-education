@@ -4,7 +4,7 @@ const UniversityLogoCard = () => {
   return (
     <div className="relative size-[190px]">
       <Image
-        className="object-cover"
+        className="object-contain object-center"
         src="/images/pages/about_us/university_logo.png"
         alt="university logo"
         fill
