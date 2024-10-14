@@ -1,11 +1,12 @@
 import Link from "next/link";
 import GetInTouchContactForm from "./GetInTouchContactForm";
+import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBounce";
 
 const GetInTouch = () => {
   return (
     <section className="pb-[100px] pt-[50px]">
       <div className="container">
-        <div className="mx-auto flex max-w-5xl items-stretch rounded-xl border shadow-xl">
+        <FadeInDownWithSlowBounce className="mx-auto flex max-w-5xl items-stretch rounded-xl border shadow-xl">
           {/* column  */}
           <div className="basis-full space-y-4 rounded-xl bg-get-in-touch-bg bg-cover bg-center bg-no-repeat px-16 py-14 lg:basis-[40%]">
             <h2 className="text-3xl font-semibold text-white">Get in Touch</h2>
@@ -179,7 +180,7 @@ const GetInTouch = () => {
           <div className="basis-full px-16 py-14 lg:basis-[60%]">
             <GetInTouchContactForm />
           </div>
-        </div>
+        </FadeInDownWithSlowBounce>
       </div>
     </section>
   );
