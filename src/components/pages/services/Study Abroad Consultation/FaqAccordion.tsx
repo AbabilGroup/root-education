@@ -2,7 +2,6 @@
 
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import React, { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const FaqAccordion = ({ title, answer }: { title: string; answer: string }) => {

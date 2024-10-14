@@ -90,14 +90,22 @@ const FAQ = () => {
           {faqs
             .filter((item) => item.position === "left")
             .map((faq) => (
-              <FaqAccordion title={faq.question} answer={faq.answer} />
+              <FaqAccordion
+                title={faq.question}
+                answer={faq.answer}
+                key={faq.question}
+              />
             ))}
         </div>
         <div className="space-y-5">
           {faqs
             .filter((item) => item.position === "right")
             .map((faq) => (
-              <FaqAccordion title={faq.question} answer={faq.answer} />
+              <FaqAccordion
+                title={faq.question}
+                answer={faq.answer}
+                key={faq.question}
+              />
             ))}
         </div>
       </div>
