@@ -28,6 +28,8 @@ const config: Config = {
           "url('/images/pages/about_us/why_choose_us_bg.png')",
         "get-in-touch-bg": "url('/images/pages/about_us/get_in_touch_bg.png')",
         "page-banner-bg": "url('/images/page_banner_bg.png')",
+        "service-benefits-bg":
+          "url('/images/pages/services/university_selection/service_benefits_bg.png')",
       },
 
       keyframes: {
