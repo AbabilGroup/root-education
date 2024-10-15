@@ -4,6 +4,11 @@ import FAQ from "@/components/pages/services/Study Abroad Consultation/FAQ";
 import MainSection from "@/components/pages/services/Study Abroad Consultation/MainSection";
 import OurConsultationProcess from "@/components/pages/services/Study Abroad Consultation/OurConsultationProcess";
 import WhyChooseUs from "@/components/pages/services/Study Abroad Consultation/WhyChooseUs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Root Education | Study Abroad Consultation",
+};
 
 const StudyAbroadConsultationPage = () => {
   return (

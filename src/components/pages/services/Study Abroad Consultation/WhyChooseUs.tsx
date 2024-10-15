@@ -163,10 +163,10 @@ const WhyChooseUs = () => {
               </div>
 
               {/* top shape  */}
-              <div className="absolute bottom-0 right-0 top-0 mx-auto h-[8px] w-[100px] -translate-x-full rounded-b-lg bg-primary duration-200 group-hover:bg-secondary"></div>
+              {/* <div className="absolute top-0 mx-auto h-[8px] w-[100px] translate-x-full rounded-b-lg bg-primary duration-200 group-hover:bg-secondary"></div> */}
 
               {/* bottom shape  */}
-              <div className="absolute bottom-0 right-0 mx-auto h-[8px] w-[100px] -translate-x-full rounded-t-lg bg-primary duration-200 group-hover:bg-secondary"></div>
+              {/* <div className="absolute bottom-0 right-0 mx-auto h-[8px] w-[100px] -translate-x-full rounded-t-lg bg-primary duration-200 group-hover:bg-secondary"></div> */}
 
               {/* right shape  */}
               <div className="absolute bottom-0 right-0 h-[100px] w-[8px] -translate-y-[30%] rounded-l-lg bg-primary duration-200 group-hover:bg-secondary"></div>
@@ -175,7 +175,7 @@ const WhyChooseUs = () => {
 
           {/* card  */}
           <div>
-            <div className="flex items-center justify-start gap-x-2 rounded-xl border px-6 py-6 shadow-lg">
+            <div className="relative flex items-center justify-start gap-x-2 rounded-xl border px-6 py-6 shadow-lg">
               <div>
                 <svg
                   className="-ml-[65px]"
@@ -325,12 +325,15 @@ const WhyChooseUs = () => {
                   to prestigious programs and global educational opportunities.
                 </p>
               </div>
+
+              {/* right shape  */}
+              <div className="absolute bottom-0 right-0 h-[100px] w-[8px] -translate-y-[30%] rounded-l-lg bg-primary duration-200 group-hover:bg-secondary"></div>
             </div>
           </div>
 
           {/* card  */}
           <div>
-            <div className="flex items-center justify-start gap-x-2 rounded-xl border px-6 py-6 shadow-lg">
+            <div className="relative flex items-center justify-start gap-x-2 rounded-xl border px-6 py-6 shadow-lg">
               <div>
                 <svg
                   className="-ml-[65px]"
@@ -481,6 +484,9 @@ const WhyChooseUs = () => {
                   smoothly.
                 </p>
               </div>
+
+              {/* right shape  */}
+              <div className="absolute bottom-0 right-0 h-[100px] w-[8px] -translate-y-[30%] rounded-l-lg bg-primary duration-200 group-hover:bg-secondary"></div>
             </div>
           </div>
         </div>

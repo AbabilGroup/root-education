@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <p className="text-center text-sm font-medium">
         Verify the URL or return to homepage.
       </p>
-      <SiteButton to="/"> Back to Home</SiteButton>
+      <SiteButton to="/">Back to Home</SiteButton>
     </main>
   );
 };
