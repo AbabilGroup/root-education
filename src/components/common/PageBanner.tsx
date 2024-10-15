@@ -3,10 +3,13 @@ import Breadcrumbs from "./Breadcrumbs";
 
 type TPageBannerProps = {
   PageName: string;
-  bannerBg: string;
+  bannerBg?: string;
 };
 
-const PageBanner = ({ PageName, bannerBg }: TPageBannerProps) => {
+const PageBanner = ({
+  PageName,
+  bannerBg = "bg-page-banner-bg",
+}: TPageBannerProps) => {
   return (
     <section
       className={`space-y-6 ${bannerBg} bg-cover bg-center bg-no-repeat py-[70px] text-center text-white`}

@@ -63,6 +63,7 @@ export function NavMenu() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem className="hover:text-primary">
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
@@ -74,7 +75,7 @@ export function NavMenu() {
                     href="/"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      Our Services
                     </div>
                     <p className="text-muted-foreground text-sm leading-tight">
                       Beautifully designed components that you can copy and
@@ -96,6 +97,7 @@ export function NavMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem className="hover:text-primary">
           <NavigationMenuTrigger>Countries</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
@@ -112,6 +114,7 @@ export function NavMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem className="hover:text-primary">
           <NavigationMenuTrigger>Universities</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
@@ -128,6 +131,7 @@ export function NavMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         <NavigationMenuItem className="hover:text-primary">
           <Link href="/how-we-work" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -135,6 +139,7 @@ export function NavMenu() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem className="hover:text-primary">
           <Link href="/contact-us" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>

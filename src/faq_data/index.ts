@@ -1,3 +1,62 @@
+export const faq = [
+  {
+    question: "What services does Root Education provide?",
+    answer:
+      "Ans: Root Education offers personalized counseling, University Selection, Application Assistance, Visa Guidance, Scholarship & Financial Aid, Pre-departure Briefing and ongoing support while abroad. ",
+  },
+  {
+    question:
+      "How can Root Education help me choose the right study abroad program?",
+    answer:
+      "Ans: Our experienced counselors assess your academic background, career goals, and personal preferences to recommend the best study abroad programs tailored to your needs.",
+  },
+  {
+    question: "Are there any scholarships or financial aid options available?",
+    answer:
+      "Ans: Our initial consultation is free of charge. Additional services may have associated fees, which will be clearly outlined during your session.",
+  },
+  {
+    question: "What countries can I study in through Root Education?",
+    answer:
+      "Ans: Root Education partners with universities in numerous countries, including the Romania, Bulgaria, Malta, Hungary, Lithuania, Latvia, Georgia, Russia, Austria, Uzbekistan, Turkey, Netherland, Denmark, Greece, etc.",
+  },
+  {
+    question: "How do I apply for a student visa?",
+    answer:
+      "Ans: The student visa application process varies by country. Our visa experts will guide you through the specific requirements and procedures for your chosen destination.",
+  },
+
+  {
+    question: "Can Root Education assist with visa applications?",
+    answer:
+      "Ans: Yes, we provide comprehensive support for visa applications, including document preparation, application submission, and interview preparation if required.",
+  },
+
+  {
+    question: "What is the cost of studying abroad?",
+    answer:
+      "Ans: The cost of studying abroad varies by country, university, and program. It typically includes tuition fees, living expenses, travel costs, and health insurance. Our counselors can provide detailed cost estimates based on your chosen program.",
+  },
+
+  {
+    question: "Are there any language requirements for studying abroad?",
+    answer:
+      "Ans: Most universities require proof of language proficiency, such as IELTS or TOEFL scores for English-speaking countries. Some countries may also require proficiency in their native language.",
+  },
+
+  {
+    question: "What should I do in case of an emergency abroad?",
+    answer:
+      "Ans: In case of an emergency, contact local emergency services immediately. Root Education also provides 24/7 emergency support to assist you in such situations.",
+  },
+
+  {
+    question: "How can I contact Root Education for further assistance?",
+    answer:
+      "Ans: You can contact us via phone, email, or through our website’s contact form. Our team is always ready to assist you with any queries or concerns.",
+  },
+];
+
 export const study_abroad_consultation = [
   {
     position: "left",
