@@ -12,7 +12,7 @@ const OurConsultationProcess = () => {
     >
       <div className="container flex flex-wrap items-center justify-center gap-x-10 gap-y-10">
         {/* card  */}
-        <FadeInLeftWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-lg">
+        <FadeInLeftWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-md">
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
@@ -37,7 +37,7 @@ const OurConsultationProcess = () => {
           </div>
         </FadeInLeftWithSlowBounce>
         {/* card  */}
-        <FadeInRightWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-lg">
+        <FadeInRightWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-md">
           <div className="rounded-full border p-2">
             <div className="relative flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
@@ -62,7 +62,7 @@ const OurConsultationProcess = () => {
           </div>
         </FadeInRightWithSlowBounce>
         {/* card  */}
-        <FadeInLeftWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-lg">
+        <FadeInLeftWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-md">
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
@@ -87,7 +87,7 @@ const OurConsultationProcess = () => {
           </div>
         </FadeInLeftWithSlowBounce>
         {/* card  */}
-        <FadeInRightWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-lg">
+        <FadeInRightWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-md">
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
@@ -112,7 +112,7 @@ const OurConsultationProcess = () => {
           </div>
         </FadeInRightWithSlowBounce>
         {/* card  */}
-        <FadeInUpWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-lg">
+        <FadeInUpWithSlowBounce className="inline-flex max-w-[500px] items-center justify-between gap-x-6 rounded-full border p-2 shadow-md">
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
