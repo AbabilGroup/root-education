@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
           <FadeInLeftWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/why_choose_us/1.svg"
+                src="/images/pages/services/study_abroad_consultation/why_choose_us/1.svg"
                 alt="Expert Guidance"
                 height={30}
                 width={30}
@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
           <FadeInUpWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/why_choose_us/2.svg"
+                src="/images/pages/services/study_abroad_consultation/why_choose_us/2.svg"
                 alt="Expert Guidance"
                 height={30}
                 width={30}
@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
           <FadeInRightWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/why_choose_us/3.svg"
+                src="/images/pages/services/study_abroad_consultation/why_choose_us/3.svg"
                 alt="Expert Guidance"
                 height={30}
                 width={30}

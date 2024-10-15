@@ -16,7 +16,7 @@ const OurConsultationProcess = () => {
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/process/1.svg"
+                src="/images/pages/services/study_abroad_consultation/process/1.svg"
                 alt="Initial Assessment"
                 height={50}
                 width={50}
@@ -41,7 +41,7 @@ const OurConsultationProcess = () => {
           <div className="rounded-full border p-2">
             <div className="relative flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/process/2.svg"
+                src="/images/pages/services/study_abroad_consultation/process/2.svg"
                 alt="Initial Assessment"
                 height={40}
                 width={40}
@@ -66,7 +66,7 @@ const OurConsultationProcess = () => {
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/process/3.svg"
+                src="/images/pages/services/study_abroad_consultation/process/3.svg"
                 alt="Initial Assessment"
                 height={30}
                 width={30}
@@ -91,7 +91,7 @@ const OurConsultationProcess = () => {
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/process/4.svg"
+                src="/images/pages/services/study_abroad_consultation/process/4.svg"
                 alt="Initial Assessment"
                 height={30}
                 width={30}
@@ -116,7 +116,7 @@ const OurConsultationProcess = () => {
           <div className="rounded-full border p-2">
             <div className="flex size-[70px] items-center justify-center rounded-full bg-primary p-2">
               <Image
-                src="/images/pages/services/Study Abroad Consultation/process/5.svg"
+                src="/images/pages/services/study_abroad_consultation/process/5.svg"
                 alt="Initial Assessment"
                 height={40}
                 width={40}

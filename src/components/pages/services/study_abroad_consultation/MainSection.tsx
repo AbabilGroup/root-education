@@ -26,7 +26,7 @@ const MainSection = () => {
         <FadeInRightWithSlowBounce className="relative min-h-[350px] w-full basis-full xl:basis-1/2">
           <Image
             className="object-contain object-center xl:object-right"
-            src="/images/pages/services/Study Abroad Consultation/study_abroad_consultation.svg"
+            src="/images/pages/services/study_abroad_consultation/study_abroad_consultation.svg"
             alt="Study Abroad Consultation"
             fill
           />
