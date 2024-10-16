@@ -1,17 +1,20 @@
 import Image from "next/image";
+import Link from "next/link";
+import { MdArrowRight } from "react-icons/md";
 
 const BlogCard = () => {
   return (
     <div className="rounded-lg border shadow-lg">
-      <div className="relative min-h-[170px] w-full">
+      <div className="relative min-h-[200px] w-full">
         <Image
           className="h-full w-full"
           src="/images/pages/blogs/blog_thumbnail.svg"
           alt="The Best Study Abroad Experiences with Root Education"
-          fill
+          height={250}
+          width={520}
         />
       </div>
-      <div className="mx-10 flex items-center justify-between rounded-md border bg-white px-3 py-2 text-sm font-medium text-primary shadow-sm">
+      <div className="mx-10 mt-6 flex items-center justify-between rounded-md border bg-white px-3 py-2 text-sm font-medium text-primary shadow-sm">
         <div className="flex items-center justify-start gap-x-2">
           <svg
             width="16"
@@ -47,6 +50,23 @@ const BlogCard = () => {
             />
           </svg>
           <h6>Comments (03)</h6>
+        </div>
+      </div>
+      <div className="space-y-3 p-6">
+        <h5 className="text-xl font-semibold">
+          The Best Study Abroad Experiences with Root Education
+        </h5>
+        <p className="text-sm font-medium">
+          Discover the best study abroad experiences curated by Root Education
+          for an unforgettable global adventure.
+        </p>
+        <div>
+          <Link
+            href=""
+            className="flex items-center justify-start text-sm font-medium text-primary duration-200 hover:text-secondary group-hover:text-white"
+          >
+            See More <MdArrowRight className="text-xl" />
+          </Link>
         </div>
       </div>
     </div>
