@@ -21,17 +21,18 @@ const SiteButton = ({
   icon,
   type,
 }: TSiteButtonProps) => {
-  return (
-    <Link href={to}>
-      <button
-        className={`flex items-center justify-center gap-x-2 rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white ${bg} ${text}`}
-        onClick={onClick}
-        type={type}
-      >
-        {icon} {children}
-      </button>
-    </Link>
+  const buttonContent = (
+    <button
+      className={`flex items-center justify-center gap-x-2 rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white ${bg} ${text}`}
+      onClick={onClick}
+      type={type}
+    >
+      {icon} {children}
+    </button>
   );
+
+  // If type is provided, render just the button without the Link wrapper
+  return type ? buttonContent : <Link href={to}>{buttonContent}</Link>;
 };
 
 export default SiteButton;

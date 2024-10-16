@@ -30,6 +30,8 @@ const config: Config = {
         "page-banner-bg": "url('/images/page_banner_bg.png')",
         "service-benefits-bg":
           "url('/images/pages/services/university_selection/service_benefits_bg.png')",
+        "consultation-bg":
+          "url('/images/pages/consultation/consultation_bg.svg')",
       },
 
       keyframes: {

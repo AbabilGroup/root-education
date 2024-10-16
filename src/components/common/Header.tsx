@@ -20,7 +20,7 @@ const Header = () => {
 
         <NavMenu />
 
-        <SiteButton>Consultation</SiteButton>
+        <SiteButton to="/consultation">Consultation</SiteButton>
       </nav>
     </header>
   );
