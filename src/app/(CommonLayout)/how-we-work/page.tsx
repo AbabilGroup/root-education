@@ -1,8 +1,11 @@
+import PageBanner from "@/components/common/PageBanner";
+
 const HowWeWorkPage = () => {
   return (
-    <div>
+    <main>
+      <PageBanner PageName="How We Work" />
       <h1>This is HowWeWorkPage component</h1>
-    </div>
+    </main>
   );
 };
 
