@@ -17,7 +17,7 @@ const Section = ({ children, sectionName, title }: TSectionProps) => {
         </FadeInDownWithSlowBounce>
 
         <FadeInDownWithSlowBounce>
-          <h2 className="mx-auto mb-10 mt-5 text-center text-3xl font-bold text-secondary lg:text-4xl">
+          <h2 className="mx-auto mb-10 mt-5 text-center text-4xl font-semibold text-secondary lg:text-4xl">
             {title}
           </h2>
         </FadeInDownWithSlowBounce>
