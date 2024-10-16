@@ -23,6 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   name: z
@@ -47,7 +48,9 @@ const formSchema = z.object({
     .nonempty("Application program is required"),
   message: z
     .string({ required_error: "Message is required" })
-    .nonempty("Message is required"),
+    .nonempty("Message is required")
+    .max(300)
+    .min(20),
 });
 
 const ConsultationForm = () => {
@@ -56,6 +59,11 @@ const ConsultationForm = () => {
     defaultValues: {
       name: "",
       email: "",
+      phone_number: "",
+      destination: "",
+      meeting_format: "",
+      apply_for: "",
+      message: "",
     },
   });
 
@@ -219,7 +227,7 @@ const ConsultationForm = () => {
                     <RadioGroup
                       onValueChange={field.onChange}
                       defaultValue={field.value}
-                      className="flex flex-wrap"
+                      className="grid grid-cols-3 gap-y-3"
                     >
                       <FormItem className="flex items-center space-x-1 space-y-0">
                         <FormControl>
@@ -261,6 +269,27 @@ const ConsultationForm = () => {
                       </FormItem>
                     </RadioGroup>
                   </FormControl>
+                  <FormMessage className="text-red-500" />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div>
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message*</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      className="resize-none"
+                      placeholder="Write Your Massage"
+                      {...field}
+                      rows={5}
+                    />
+                  </FormControl>
+
                   <FormMessage className="text-red-500" />
                 </FormItem>
               )}
