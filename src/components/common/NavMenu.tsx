@@ -69,7 +69,7 @@ export function NavMenu() {
           <NavigationMenuContent className="bg-white">
             <div className="w-[300px] space-y-2 p-4 text-sm">
               <Link
-                className="flex items-center justify-start font-medium hover:text-primary"
+                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
                 href="/services/study-abroad-consultation"
               >
                 <IoMdArrowDropright className="text-2xl" /> Study Abroad
@@ -77,14 +77,14 @@ export function NavMenu() {
               </Link>
 
               <Link
-                className="flex items-center justify-start font-medium hover:text-primary"
+                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
                 href="/services/university-selection"
               >
                 <IoMdArrowDropright className="text-2xl" /> University Selection
               </Link>
 
               <Link
-                className="flex items-center justify-start font-medium hover:text-primary"
+                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
                 href="/services/application-assistance"
               >
                 <IoMdArrowDropright className="text-2xl" /> Application
@@ -92,14 +92,14 @@ export function NavMenu() {
               </Link>
 
               <Link
-                className="flex items-center justify-start font-medium hover:text-primary"
+                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
                 href="/services/visa-guidance"
               >
                 <IoMdArrowDropright className="text-2xl" /> Visa Guidance
               </Link>
 
               <Link
-                className="flex items-center justify-start font-medium hover:text-primary"
+                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
                 href="/services/scholarship-and-financial-aid"
               >
                 <IoMdArrowDropright className="text-2xl" /> Scholarship &
@@ -107,7 +107,7 @@ export function NavMenu() {
               </Link>
 
               <Link
-                className="flex items-center justify-start font-medium hover:text-primary"
+                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
                 href="/services/pre-departure-briefing"
               >
                 <IoMdArrowDropright className="text-2xl" /> Pre-departure
