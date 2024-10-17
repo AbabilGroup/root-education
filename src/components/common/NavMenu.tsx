@@ -13,6 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/NavigationMenu";
 import { IoMdArrowDropright } from "react-icons/io";
+import Image from "next/image";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -120,17 +121,204 @@ export function NavMenu() {
         <NavigationMenuItem className="hover:text-primary">
           <NavigationMenuTrigger>Countries</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+            <div className="grid w-[650px] grid-cols-3 gap-y-3 p-4 text-sm">
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
                 >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
+                  href="/services/study-abroad-consultation"
+                >
+                  <Image
+                    src="/icons/flag.svg"
+                    alt="Flag"
+                    height={30}
+                    width={30}
+                  />
+                  <span>Study in Romania</span>
+                </Link>
+              </div>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
