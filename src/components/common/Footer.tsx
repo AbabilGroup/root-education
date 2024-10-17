@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import SiteButton from "../ui/SiteButton";
 import Link from "next/link";
@@ -8,8 +10,11 @@ import {
   FaTelegramPlane,
   FaTwitter,
 } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
   const footerLinks = {
     company: [
       {
@@ -113,7 +118,11 @@ const Footer = () => {
 
   return (
     <footer className="mt-auto">
-      <div className="rounded-t-[40px] bg-footer-bg bg-cover bg-center bg-no-repeat">
+      <div
+        className={`rounded-t-[40px] bg-footer-bg bg-cover bg-center bg-no-repeat ${
+          pathname === "/consultation" && "hidden"
+        }`}
+      >
         <div className="container flex flex-col items-center justify-between gap-y-5 py-7 lg:flex-row">
           <h3 className="text-center text-3xl font-semibold text-white lg:text-left">
             Ready to Take the Next Step?

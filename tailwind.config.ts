@@ -50,6 +50,7 @@ const config: Config = {
           },
         },
       },
+      
       animation: {
         floating: "floating 2s ease-in-out infinite",
       },

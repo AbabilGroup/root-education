@@ -14,42 +14,42 @@ const BestCountriesChosenByStudents = () => {
     {
       name: "Romania",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/romania.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/romania.png",
     },
     {
       name: "Malta",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/malta.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/malta.png",
     },
     {
       name: "Hungary",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/hungary.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/hungary.png",
     },
     {
       name: "Lithuania",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/lithuania.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/lithuania.png",
     },
     {
       name: "Latvia",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/latvia.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/latvia.png",
     },
     {
       name: "Bulgaria",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/bulgaria.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/bulgaria.png",
     },
     {
       name: "Georgia",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/georgia.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/georgia.png",
     },
     {
       name: "Russia",
       photo:
-        "/images/pages/services/Study Abroad Consultation/study_europe/russia.png",
+        "/images/pages/services/study_abroad_consultation/study_europe/russia.png",
     },
   ];
 

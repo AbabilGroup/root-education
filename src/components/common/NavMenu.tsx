@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -13,6 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/NavigationMenu";
+import { IoMdArrowDropright } from "react-icons/io";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -67,34 +67,53 @@ export function NavMenu() {
         <NavigationMenuItem className="hover:text-primary">
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      Our Services
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
+            <div className="w-[300px] space-y-2 p-4 text-sm">
+              <Link
+                className="flex items-center justify-start font-medium hover:text-primary"
+                href="/services/study-abroad-consultation"
+              >
+                <IoMdArrowDropright className="text-2xl" /> Study Abroad
+                Consultation
+              </Link>
+
+              <Link
+                className="flex items-center justify-start font-medium hover:text-primary"
+                href="/services/university-selection"
+              >
+                <IoMdArrowDropright className="text-2xl" /> University Selection
+              </Link>
+
+              <Link
+                className="flex items-center justify-start font-medium hover:text-primary"
+                href="/services/application-assistance"
+              >
+                <IoMdArrowDropright className="text-2xl" /> Application
+                Assistance
+              </Link>
+
+              <Link
+                className="flex items-center justify-start font-medium hover:text-primary"
+                href="/services/visa-guidance"
+              >
+                <IoMdArrowDropright className="text-2xl" /> Visa Guidance
+              </Link>
+
+              <Link
+                className="flex items-center justify-start font-medium hover:text-primary"
+                href="/services/scholarship-and-financial-aid"
+              >
+                <IoMdArrowDropright className="text-2xl" /> Scholarship &
+                Financial Aid
+              </Link>
+
+              <Link
+                className="flex items-center justify-start font-medium hover:text-primary"
+                href="/services/pre-departure-briefing"
+              >
+                <IoMdArrowDropright className="text-2xl" /> Pre-departure
+                Briefing
+              </Link>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
