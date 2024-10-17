@@ -136,7 +136,7 @@ const UniversityCard = () => {
         </div>
       </div>
 
-      <div>
+      <div className="flex items-center justify-start">
         <SiteButton
           icon={
             <svg
