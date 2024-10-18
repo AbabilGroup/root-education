@@ -2,9 +2,10 @@ import Image from "next/image";
 
 const AssistanceProcessCard = () => {
   return (
-    <div className="relative flex max-w-[430px] items-center justify-stretch">
+    <div className="relative flex max-w-[430px] items-center justify-start">
       {/* left  */}
-      <div className="basis-full space-y-3 rounded-lg border border-b-8 border-b-primary px-8 py-4 shadow">
+
+      <div className="space-y-3 rounded-lg border border-b-8 border-b-primary px-8 py-4 shadow">
         <div className="-mt-[3.5rem] flex items-center justify-center">
           <Image
             src="/images/pages/services/application_assistance/process/1.svg"
@@ -24,7 +25,7 @@ const AssistanceProcessCard = () => {
 
       {/* right */}
 
-      <div className="absolute right-0 m-0 h-auto w-32 basis-auto -rotate-90 rounded-b-lg bg-primary py-2 text-center text-sm font-medium text-white">
+      <div className="m-0 h-auto w-32 -rotate-90 rounded-b-lg border bg-primary py-2 text-center text-sm font-medium text-white">
         Step 01
       </div>
     </div>

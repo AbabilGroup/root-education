@@ -87,7 +87,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -101,7 +101,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -115,7 +115,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -129,7 +129,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -143,7 +143,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -157,7 +157,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -171,7 +171,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -185,7 +185,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -199,7 +199,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -213,7 +213,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -227,7 +227,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -241,7 +241,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -255,7 +255,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/countries/study-in-romania"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -285,9 +285,11 @@ export function NavMenu() {
         </NavigationMenuItem>
 
         <NavigationMenuItem className="hover:text-primary">
-          <NavigationMenuTrigger>Universities</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            <Link href="/universities">Universities</Link>
+          </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
-            <div className="grid w-[978px] grid-cols-3 gap-y-3 p-4 text-sm">
+            <div className="grid w-[750px] grid-cols-3 gap-y-3 p-4 text-sm">
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
