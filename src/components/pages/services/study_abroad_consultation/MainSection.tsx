@@ -8,7 +8,7 @@ const MainSection = () => {
     <section className="pb-[50px] pt-[100px]">
       <div className="container flex flex-col items-center justify-between gap-x-20 gap-y-10 lg:flex-row">
         <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
-          <h2 className="text-center text-3xl font-semibold lg:text-left">
+          <h2 className="text-center text-4xl font-semibold lg:text-left">
             Study Abroad Consultation by Root Educations
           </h2>
           <p className="text-center text-sm font-medium lg:text-left">

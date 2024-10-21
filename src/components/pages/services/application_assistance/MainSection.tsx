@@ -14,7 +14,7 @@ const MainSection = () => {
               Application Success Guide
             </span>
           </div>
-          <h2 className="text-center text-3xl font-bold lg:text-left">
+          <h2 className="text-center text-4xl font-semibold lg:text-left">
             Expert Guidance for Your Application Success
           </h2>
           <p className="text-center text-sm font-medium lg:text-left">
