@@ -21,8 +21,8 @@ export default function CommonLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.className}>
-      <body className="flex min-h-screen flex-col">
+    <html lang="en">
+      <body className={`${montserrat.className} flex min-h-screen flex-col`}>
         <TopBar />
         <Header />
         {children}
