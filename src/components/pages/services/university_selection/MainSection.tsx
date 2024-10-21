@@ -2,6 +2,7 @@ import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBou
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import SiteButton from "@/components/ui/SiteButton";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const MainSection = () => {
   return (
@@ -29,12 +30,22 @@ const MainSection = () => {
           </div>
         </FadeInLeftWithSlowBounce>
         <FadeInRightWithSlowBounce className="relative min-h-[400px] w-full basis-full xl:min-h-[600px] xl:basis-1/2">
-          <Image
-            className="cursor-pointer object-contain object-center xl:object-right"
-            src="/images/pages/services/university_selection/main_section/university_selection.svg"
-            alt="University Selection"
-            fill
-          />
+          <Dialog>
+            <DialogTrigger asChild>
+              <Image
+                className="cursor-pointer object-contain object-center xl:object-right"
+                src="/images/pages/services/university_selection/main_section/university_selection.svg"
+                alt="University Selection"
+                fill
+              />
+            </DialogTrigger>
+
+            <DialogContent className="bg-white">
+              <div className="grid gap-4 py-4">
+                <h1>here will be the video</h1>
+              </div>
+            </DialogContent>
+          </Dialog>
         </FadeInRightWithSlowBounce>
       </div>
     </section>
