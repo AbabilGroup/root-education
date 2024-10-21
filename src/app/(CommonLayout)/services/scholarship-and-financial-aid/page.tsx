@@ -4,6 +4,11 @@ import MainSection from "@/components/pages/services/scholarship_and_financial_a
 import ScholarshipProcess from "@/components/pages/services/scholarship_and_financial_aid/ScholarshipProcess";
 import ServiceBenefits from "@/components/pages/services/scholarship_and_financial_aid/ServiceBenefits";
 import WhyChooseUs from "@/components/pages/services/scholarship_and_financial_aid/WhyChooseUs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Root Education | Scholarship and Financial Aid",
+};
 
 const ScholarshipAndFinancialAidPage = () => {
   return (

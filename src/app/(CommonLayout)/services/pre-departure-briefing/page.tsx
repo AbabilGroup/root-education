@@ -4,6 +4,11 @@ import FAQ from "@/components/pages/services/pre_departure_briefing/FAQ";
 import MainSection from "@/components/pages/services/pre_departure_briefing/MainSection";
 import ServicesIncluded from "@/components/pages/services/pre_departure_briefing/ServicesIncluded";
 import WhyChooseUs from "@/components/pages/services/pre_departure_briefing/WhyChooseUs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Root Education | Pre-Departure Briefing",
+};
 
 const PreDepartureBriefingPage = () => {
   return (

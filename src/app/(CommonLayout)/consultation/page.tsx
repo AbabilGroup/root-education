@@ -1,6 +1,11 @@
 import PageBanner from "@/components/common/PageBanner";
 import ConsultationForm from "@/components/pages/consultation/ConsultationForm";
 import SiteButton from "@/components/ui/SiteButton";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Root Education | Consultation",
+};
 
 const ConsultationPage = () => {
   return (

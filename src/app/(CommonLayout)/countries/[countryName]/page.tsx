@@ -14,11 +14,19 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const CountryDetailsPage = ({
-  params,
-}: {
+type TCountryDetailsPageProps = {
   params: { countryName: string };
-}) => {
+};
+
+export async function generateMetadata({ params }: TCountryDetailsPageProps) {
+  const { countryName } = params;
+
+  return {
+    title: `Root Education | ${formatCountryRoute(countryName)}`,
+  };
+}
+
+const CountryDetailsPage = ({ params }: TCountryDetailsPageProps) => {
   return (
     <main>
       <PageBanner PageName={formatCountryRoute(params.countryName)} />

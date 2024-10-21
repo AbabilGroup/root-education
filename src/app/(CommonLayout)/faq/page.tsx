@@ -1,6 +1,11 @@
 import PageBanner from "@/components/common/PageBanner";
 import FaqAccordion from "@/components/pages/faq/FaqAccordion";
 import { faq } from "@/faq_data";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Root Education | Frequently Asked Questions",
+};
 
 const FaqPage = () => {
   return (

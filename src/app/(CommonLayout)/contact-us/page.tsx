@@ -5,7 +5,12 @@ import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce"
 import PageBanner from "@/components/common/PageBanner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Root Education | Contact Us",
+};
 
 const ContactUsPage = () => {
   return (
