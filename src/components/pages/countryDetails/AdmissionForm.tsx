@@ -278,7 +278,6 @@ const AdmissionForm = () => {
                   <RadioGroup
                     onValueChange={field.onChange}
                     defaultValue={field.value}
-                    className="grid grid-cols-3 gap-y-3"
                   >
                     <FormItem className="flex items-center space-x-1 space-y-0">
                       <FormControl>

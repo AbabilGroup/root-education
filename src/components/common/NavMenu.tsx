@@ -33,7 +33,7 @@ export function NavMenu() {
             <div className="w-[300px] space-y-2 p-4 text-sm">
               <Link
                 className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
-                href="/services/study-abroad-consultation"
+                href="/universities/oxford-university"
               >
                 <IoMdArrowDropright className="text-2xl" /> Study Abroad
                 Consultation
@@ -269,7 +269,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/flag.svg"
@@ -293,7 +293,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -307,7 +307,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -321,7 +321,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -335,7 +335,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -349,7 +349,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -363,7 +363,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -377,7 +377,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -391,7 +391,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -405,7 +405,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -419,7 +419,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -433,7 +433,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -447,7 +447,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -461,7 +461,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -475,7 +475,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
@@ -489,7 +489,7 @@ export function NavMenu() {
               <div>
                 <Link
                   className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/services/study-abroad-consultation"
+                  href="/universities/oxford-university"
                 >
                   <Image
                     src="/icons/university_logo.svg"
