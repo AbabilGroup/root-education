@@ -13,6 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
+import TuitionFees from "./TuitionFees";
+import LivingCosts from "./LivingCosts";
 
 const TabsSection = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -22,7 +24,7 @@ const TabsSection = () => {
       <div className="container">
         <div className="rounded-xl border p-8 shadow-lg">
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-4 gap-x-8 mb-10">
+            <TabsList className="mb-10 grid w-full grid-cols-4 gap-x-8">
               <TabsTrigger
                 value="tab1"
                 className={`px-4 py-5 text-lg font-medium ${
@@ -119,29 +121,27 @@ const TabsSection = () => {
                 experience.
               </p>
             </TabsContent>
-            <TabsContent value="password">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Password</CardTitle>
-                  <CardDescription>
-                    Change your password here. After saving, you&apos;ll be
-                    logged out.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="space-y-1">
-                    <Label htmlFor="current">Current password</Label>
-                    <Input id="current" type="password" />
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="new">New password</Label>
-                    <Input id="new" type="password" />
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button>Save password</Button>
-                </CardFooter>
-              </Card>
+            <TabsContent value="tab2">
+              <div className="pt-10">
+                <p className="text-sm font-medium">
+                  The cost of studying and living in Romania is relatively
+                  affordable compared to other European countries, making it an
+                  attractive option for international students. Here’s a
+                  breakdown of the costs:
+                </p>
+                <TuitionFees />
+                <LivingCosts />
+              </div>
+            </TabsContent>
+            <TabsContent value="tab3">
+              <div className="pt-10">
+                <p className="text-sm font-medium">
+                  The cost of studying and living in Romania is relatively
+                  affordable compared to other European countries, making it an
+                  attractive option for international students. Here’s a
+                  breakdown of the costs:
+                </p>
+              </div>
             </TabsContent>
           </Tabs>
         </div>
