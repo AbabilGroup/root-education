@@ -18,7 +18,7 @@ const OurPartnersUniversity = () => {
         <UniversityCard />
       </div>
       <div className="mt-10 flex items-center justify-center">
-        <SiteButton>View All Universities</SiteButton>
+        <SiteButton to="/universities">View All Universities</SiteButton>
       </div>
     </Section>
   );

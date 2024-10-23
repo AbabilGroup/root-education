@@ -2,6 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteButton from "../ui/SiteButton";
 import { NavMenu } from "./NavMenu";
+import { GiHamburgerMenu } from "react-icons/gi";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Header = () => {
   return (
@@ -20,7 +28,36 @@ const Header = () => {
 
         <NavMenu />
 
-        <SiteButton to="/consultation">Consultation</SiteButton>
+        <SiteButton className="hidden xl:inline" to="/consultation">
+          Consultation
+        </SiteButton>
+
+        <Sheet>
+          <SheetTrigger asChild>
+            <GiHamburgerMenu className="cursor-pointer text-2xl xl:hidden" />
+          </SheetTrigger>
+          <SheetContent
+            className="z-[50000] flex flex-col items-start justify-start bg-white"
+            side="left"
+          >
+            <SheetHeader>
+              <Link href="/">
+                <div className="relative h-[43px] w-[110px]">
+                  <Image
+                    className="object-cover"
+                    src="/images/logo.svg"
+                    alt="Root Education"
+                    fill
+                  />
+                </div>
+              </Link>
+            </SheetHeader>
+
+            <SheetFooter className="border mt-auto">
+              <SiteButton to="/consultation">Consultation</SiteButton>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
       </nav>
     </header>
   );

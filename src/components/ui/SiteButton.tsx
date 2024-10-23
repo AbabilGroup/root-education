@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 type TSiteButtonProps = {
+  className?: string;
   children: ReactNode;
   onClick?: () => void;
   to?: Url | undefined;
@@ -13,6 +14,7 @@ type TSiteButtonProps = {
 };
 
 const SiteButton = ({
+  className,
   children,
   onClick,
   to = "#",
@@ -23,7 +25,7 @@ const SiteButton = ({
 }: TSiteButtonProps) => {
   const buttonContent = (
     <button
-      className={`flex items-center justify-center gap-x-2 rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white ${bg} ${text}`}
+      className={`${className} flex items-center justify-center gap-x-2 rounded-sm px-5 py-3 text-sm font-medium duration-300 hover:bg-secondary hover:text-white ${bg} ${text}`}
       onClick={onClick}
       type={type}
     >
