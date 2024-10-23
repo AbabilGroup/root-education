@@ -1,4 +1,5 @@
 import PageBanner from "@/components/common/PageBanner";
+import AccordionSection from "@/components/pages/countries/country_details/AccordionSection";
 import BestCities from "@/components/pages/countries/country_details/BestCities";
 import FAQ from "@/components/pages/countries/country_details/FAQ";
 import InstituteRepresent from "@/components/pages/countries/country_details/InstituteRepresent";
@@ -26,6 +27,8 @@ const CountryDetailsPage = ({ params }: TCountryDetailsPageProps) => {
       <TopSection />
 
       <TabsSection />
+
+      <AccordionSection />
 
       <BestCities />
 

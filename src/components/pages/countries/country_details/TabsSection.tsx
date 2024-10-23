@@ -12,6 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 import TuitionFees from "./TuitionFees";
 import LivingCosts from "./LivingCosts";
+import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 
 const scholarshipInfo = [
   {
@@ -185,7 +186,7 @@ const TabsSection = () => {
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-10">
                   {/* card  */}
-                  <div className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
+                  <FadeInLeftWithSlowBounce className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
                     <div className="flex items-center justify-center">
                       <svg
                         width="60"
@@ -212,9 +213,9 @@ const TabsSection = () => {
                       in Romania, with non-EU students allowed up to 20 hours
                       per week.
                     </p>
-                  </div>
+                  </FadeInLeftWithSlowBounce>
                   {/* card  */}
-                  <div className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
+                  <FadeInLeftWithSlowBounce className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
                     <div className="flex items-center justify-center">
                       <svg
                         width="60"
@@ -241,9 +242,9 @@ const TabsSection = () => {
                       in Romania, with non-EU students allowed up to 20 hours
                       per week.
                     </p>
-                  </div>
+                  </FadeInLeftWithSlowBounce>
                   {/* card  */}
-                  <div className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
+                  <FadeInLeftWithSlowBounce className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
                     <div className="flex items-center justify-center">
                       <svg
                         width="60"
@@ -270,9 +271,9 @@ const TabsSection = () => {
                       in Romania, with non-EU students allowed up to 20 hours
                       per week.
                     </p>
-                  </div>
+                  </FadeInLeftWithSlowBounce>
                   {/* card  */}
-                  <div className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
+                  <FadeInLeftWithSlowBounce className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
                     <div className="flex items-center justify-center">
                       <svg
                         width="60"
@@ -299,9 +300,9 @@ const TabsSection = () => {
                       in Romania, with non-EU students allowed up to 20 hours
                       per week.
                     </p>
-                  </div>
+                  </FadeInLeftWithSlowBounce>
                   {/* card  */}
-                  <div className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
+                  <FadeInLeftWithSlowBounce className="max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md">
                     <div className="flex items-center justify-center">
                       <svg
                         width="60"
@@ -328,7 +329,7 @@ const TabsSection = () => {
                       in Romania, with non-EU students allowed up to 20 hours
                       per week.
                     </p>
-                  </div>
+                  </FadeInLeftWithSlowBounce>
                 </div>
               </div>
             </TabsContent>

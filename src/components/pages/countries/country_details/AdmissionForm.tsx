@@ -200,7 +200,7 @@ const AdmissionForm = () => {
                         <Button
                           variant={"outline"}
                           className={cn(
-                            "w-full bg-[#F7F8F8] pl-3 text-left font-normal",
+                            "w-full bg-[#F7F8F8] py-5 pl-3 text-left font-normal",
                             !field.value && "text-muted-foreground",
                           )}
                         >
@@ -252,12 +252,19 @@ const AdmissionForm = () => {
                 >
                   <FormControl className="py-5">
                     <SelectTrigger className="bg-[#F7F8F8]">
-                      <SelectValue placeholder="Gender" />
+                      <SelectValue
+                        className="text-[#00000067]"
+                        placeholder="Gender"
+                      />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent className="bg-white">
-                    <SelectItem value="Male">Male</SelectItem>
-                    <SelectItem value="Female">Female</SelectItem>
+                    <SelectItem className="cursor-pointer" value="Male">
+                      Male
+                    </SelectItem>
+                    <SelectItem className="cursor-pointer" value="Female">
+                      Female
+                    </SelectItem>
                   </SelectContent>
                 </Select>
 
@@ -334,7 +341,7 @@ const AdmissionForm = () => {
                 <FormLabel>Upload your Documents</FormLabel>
                 <FormControl>
                   <Input
-                    className="bg-[#F7F8F8]"
+                    className="bg-[#F7F8F8] pt-[6px]"
                     type="file"
                     onChange={(e) => field.onChange(e.target.files?.[0])} // handle file selection
                     name={field.name}

@@ -1,4 +1,4 @@
-import AdmissionForm from "../../countryDetails/AdmissionForm";
+import AdmissionForm from "./AdmissionForm";
 
 const TopSection = () => {
   return (

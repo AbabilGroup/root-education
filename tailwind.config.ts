@@ -49,10 +49,19 @@ const config: Config = {
             transform: "translateY(5px)",
           },
         },
+        pulse: {
+          "25%": {
+            transform: "scale(0.9)",
+          },
+          "75%": {
+            transform: "scale(1.1)",
+          },
+        },
       },
-      
+
       animation: {
         floating: "floating 2s ease-in-out infinite",
+        pulse: "pulse 1s ease-in-out infinite",
       },
     },
   },

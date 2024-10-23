@@ -26,7 +26,7 @@ const UniversitiesWeRepresent = () => {
       title="Top-tier international partner universities"
     >
       <div className="container">
-        <div className="mb-10 flex flex-col gap-y-3 md:flex-row items-center justify-between rounded-lg border px-5 py-3 shadow-md">
+        <div className="mb-10 flex flex-col items-center justify-between gap-y-3 rounded-lg border px-5 py-3 shadow-md md:flex-row">
           <h6 className="font-medium text-primary">
             Showing 01 - 18 of 36 Results
           </h6>
@@ -48,33 +48,15 @@ const UniversitiesWeRepresent = () => {
                   </SelectItem>
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
-                    value="apple"
+                    value="Total Students (High to Low)"
                   >
-                    Apple
+                    Total Students (High to Low)
                   </SelectItem>
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
-                    value="banana"
+                    value="Total Students (Low to High)"
                   >
-                    Banana
-                  </SelectItem>
-                  <SelectItem
-                    className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
-                    value="blueberry"
-                  >
-                    Blueberry
-                  </SelectItem>
-                  <SelectItem
-                    className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
-                    value="grapes"
-                  >
-                    Grapes
-                  </SelectItem>
-                  <SelectItem
-                    className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
-                    value="pineapple"
-                  >
-                    Pineapple
+                    Total Students (Low to High)
                   </SelectItem>
                 </SelectGroup>
               </SelectContent>
