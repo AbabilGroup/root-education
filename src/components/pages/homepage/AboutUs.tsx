@@ -189,20 +189,20 @@ const AboutUs = () => {
           </div>
           <div className="flex min-h-[500px] w-full basis-1/2 flex-col justify-center space-y-5 xl:space-y-5">
             <Dialog>
-            <DialogTrigger asChild>
-              <button className="flex w-full basis-full items-center justify-center gap-x-2 rounded-lg border border-primary px-3 py-6 text-sm font-medium text-secondary">
-                <div className="relative size-[30px] rounded-full">
-                  <Image src="/icons/play_icon.svg" alt="Play" fill />
-                </div>
+              <DialogTrigger asChild>
+                <button className="flex w-full basis-full items-center justify-center gap-x-2 rounded-lg border border-primary px-3 py-6 text-sm font-medium text-secondary">
+                  <div className="relative size-[30px] rounded-full">
+                    <Image src="/icons/play_icon.svg" alt="Play" fill />
+                  </div>
 
-                <span>Watch Video</span>
-              </button>
-            </DialogTrigger>
-            <DialogContent className="bg-white">
-              <div className="grid gap-4 py-4">
-                <h1>here will be the video</h1>
-              </div>
-            </DialogContent>
+                  <span>Watch Video</span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="bg-white">
+                <div className="grid gap-4 py-4">
+                  <h1>here will be the video</h1>
+                </div>
+              </DialogContent>
             </Dialog>
             <div className="relative min-h-[350px]">
               <Image
