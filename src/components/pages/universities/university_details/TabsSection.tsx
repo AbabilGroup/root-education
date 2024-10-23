@@ -264,14 +264,18 @@ const TabsSection = () => {
                   <Table className="border text-center">
                     <TableHeader className="bg-primary text-center text-lg text-white">
                       <TableRow className="py-5">
-                        <TableHead className="text-center">
+                        <TableHead className="border py-5 text-center">
                           Scholarship Name
                         </TableHead>
-                        <TableHead className="text-center">Amount</TableHead>
-                        <TableHead className="text-center">
+                        <TableHead className="border py-5 text-center">
+                          Amount
+                        </TableHead>
+                        <TableHead className="border py-5 text-center">
                           Eligibility Criteria
                         </TableHead>
-                        <TableHead className="text-center">Provider</TableHead>
+                        <TableHead className="border py-5 text-center">
+                          Provider
+                        </TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -280,10 +284,18 @@ const TabsSection = () => {
                           className="text-sm font-medium"
                           key={info.invoice}
                         >
-                          <TableCell>{info.invoice}</TableCell>
-                          <TableCell>{info.paymentStatus}</TableCell>
-                          <TableCell>{info.paymentMethod}</TableCell>
-                          <TableCell>{info.totalAmount}</TableCell>
+                          <TableCell className="border">
+                            {info.invoice}
+                          </TableCell>
+                          <TableCell className="border">
+                            {info.paymentStatus}
+                          </TableCell>
+                          <TableCell className="border">
+                            {info.paymentMethod}
+                          </TableCell>
+                          <TableCell className="border">
+                            {info.totalAmount}
+                          </TableCell>
                         </TableRow>
                       ))}
                     </TableBody>

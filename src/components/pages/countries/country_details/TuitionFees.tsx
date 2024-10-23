@@ -1,3 +1,4 @@
+import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import Section from "@/components/common/Section";
 
 const TuitionFees = () => {
@@ -6,9 +7,9 @@ const TuitionFees = () => {
       sectionName="Tuition Fees"
       title="Discover Romania’s Best Tuition Rates"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-5">
+      <div className="grid grid-cols-1 gap-x-5 gap-y-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {/* card  */}
-        <div className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
+        <FadeInLeftWithSlowBounce className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
           <div>
             <svg
               width="60"
@@ -42,11 +43,13 @@ const TuitionFees = () => {
           </div>
           <div>
             <h5 className="text-xl font-semibold">Bachelor’s Degree</h5>
-            <p className="text-sm font-medium">Cost : €2,000 – €5,000 per year</p>
+            <p className="text-sm font-medium">
+              Cost : €2,000 – €5,000 per year
+            </p>
           </div>
-        </div>
+        </FadeInLeftWithSlowBounce>
         {/* card  */}
-        <div className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
+        <FadeInLeftWithSlowBounce className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
           <div>
             <svg
               width="60"
@@ -80,11 +83,13 @@ const TuitionFees = () => {
           </div>
           <div>
             <h5 className="text-xl font-semibold">Bachelor’s Degree</h5>
-            <p className="text-sm font-medium">Cost : €2,000 – €5,000 per year</p>
+            <p className="text-sm font-medium">
+              Cost : €2,000 – €5,000 per year
+            </p>
           </div>
-        </div>
+        </FadeInLeftWithSlowBounce>
         {/* card  */}
-        <div className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
+        <FadeInLeftWithSlowBounce className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
           <div>
             <svg
               width="60"
@@ -118,11 +123,13 @@ const TuitionFees = () => {
           </div>
           <div>
             <h5 className="text-xl font-semibold">Bachelor’s Degree</h5>
-            <p className="text-sm font-medium">Cost : €2,000 – €5,000 per year</p>
+            <p className="text-sm font-medium">
+              Cost : €2,000 – €5,000 per year
+            </p>
           </div>
-        </div>
+        </FadeInLeftWithSlowBounce>
         {/* card  */}
-        <div className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
+        <FadeInLeftWithSlowBounce className="flex items-center justify-start gap-x-3 rounded-lg border border-b-8 border-b-primary p-4">
           <div>
             <svg
               width="60"
@@ -156,9 +163,11 @@ const TuitionFees = () => {
           </div>
           <div>
             <h5 className="text-xl font-semibold">Bachelor’s Degree</h5>
-            <p className="text-sm font-medium">Cost : €2,000 – €5,000 per year</p>
+            <p className="text-sm font-medium">
+              Cost : €2,000 – €5,000 per year
+            </p>
           </div>
-        </div>
+        </FadeInLeftWithSlowBounce>
       </div>
     </Section>
   );
