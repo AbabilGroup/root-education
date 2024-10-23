@@ -132,7 +132,7 @@ const ContactUsPage = () => {
       <FadeInDownWithSlowBounce>
         <section className="px-4 pb-[100px] xl:px-0">
           <div className="container">
-            <div className="flex min-h-[600px] flex-col items-center justify-between bg-[#FBFBFB] shadow-md lg:flex-row">
+            <div className="flex min-h-[600px] flex-col items-stretch justify-between bg-[#FBFBFB] shadow-md lg:flex-row">
               <div className="relative min-h-[500px] w-full basis-full md:h-auto lg:basis-1/2">
                 <iframe
                   className="min-h-full min-w-full"
@@ -144,42 +144,44 @@ const ContactUsPage = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-              <div className="basis-full px-4 py-[50px] lg:basis-1/2 lg:p-[50px]">
-                <h5 className="mb-5 text-center text-2xl font-medium">
-                  Get in Touch
-                </h5>
-                <form className="w-full space-y-5" action="">
-                  <Input
-                    className="w-full rounded-sm bg-white focus:ring-primary"
-                    type="text"
-                    placeholder="Full name"
-                    required
-                  />
-                  <Input
-                    className="w-full rounded-sm bg-white focus:ring-primary"
-                    type="email"
-                    placeholder="Email"
-                    required
-                  />
-                  <Input
-                    className="w-full rounded-sm bg-white focus:ring-primary"
-                    type="tel"
-                    placeholder="Phone number"
-                    required
-                  />
-                  <Textarea
-                    className="w-full rounded-sm bg-white focus:ring-primary"
-                    placeholder="Write your massage"
-                    rows={5}
-                    required
-                  />
-                  <button
-                    className="flex items-center justify-center gap-x-2 rounded-sm bg-primary px-5 py-3 text-sm font-medium text-white duration-300 hover:bg-secondary hover:text-white"
-                    type="submit"
-                  >
-                    Send Message
-                  </button>
-                </form>
+              <div className="bg-contact-us-form-bg basis-full bg-cover bg-center bg-no-repeat px-4 py-[50px] lg:basis-1/2 lg:p-[50px]">
+                <div className="flex h-full flex-col items-center justify-center">
+                  <h5 className="mb-5 text-center text-white text-2xl font-medium">
+                    Get in Touch
+                  </h5>
+                  <form className="w-full space-y-5" action="">
+                    <Input
+                      className=" w-full rounded-md bg-transparent border-2 border-white focus:ring-primary placeholder:text-white py-5"
+                      type="text"
+                      placeholder="Full name"
+                      required
+                    />
+                    <Input
+                      className=" w-full rounded-md bg-transparent border-2 border-white focus:ring-primary placeholder:text-white py-5"
+                      type="email"
+                      placeholder="Email"
+                      required
+                    />
+                    <Input
+                      className=" w-full rounded-md bg-transparent border-2 border-white focus:ring-primary placeholder:text-white py-5"
+                      type="tel"
+                      placeholder="Phone number"
+                      required
+                    />
+                    <Textarea
+                      className=" w-full rounded-md bg-transparent border-2 border-white focus:ring-primary placeholder:text-white "
+                      placeholder="Write your massage"
+                      rows={5}
+                      required
+                    />
+                    <button
+                      className="flex items-center justify-center gap-x-2 rounded-sm bg-secondary px-5 py-3 text-sm font-medium text-white duration-300 hover:bg-secondary hover:text-white"
+                      type="submit"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

@@ -32,6 +32,8 @@ const config: Config = {
           "url('/images/pages/services/university_selection/service_benefits_bg.png')",
         "consultation-bg":
           "url('/images/pages/consultation/consultation_bg.svg')",
+        "contact-us-form-bg":
+          "url('/images/pages/contact_us/contact_us_form_bg.png')",
       },
 
       keyframes: {
