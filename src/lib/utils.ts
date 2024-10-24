@@ -34,12 +34,3 @@ export const formatCountryRoute = (input: string): string => {
     })
     .join(" "); // Join the words back with spaces
 };
-
-// const replacedString = str.replace(/-/g, " ");
-
-// const capitalizedString = replacedString
-//   .split(" ")
-//   .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-//   .join(" ");
-
-// return capitalizedString;
