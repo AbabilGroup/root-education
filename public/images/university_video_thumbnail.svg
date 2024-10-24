@@ -2,15 +2,15 @@
 <rect width="681" height="325" rx="8" fill="url(#pattern0_418_7965)"/>
 <g filter="url(#filter0_d_418_7965)">
 <circle cx="341" cy="162" r="40" fill="#F37329"/>
-<circle cx="341" cy="162" r="36.6667" stroke="#FDFDFD" strokeWidth="6.66667"/>
+<circle cx="341" cy="162" r="36.6667" stroke="#FDFDFD" stroke-width="6.66667"/>
 </g>
 <path d="M357 162L333 175.856L333 148.144L357 162Z" fill="#FDFDFD"/>
 <defs>
 <pattern id="pattern0_418_7965" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_418_7965" transform="matrix(0.000833333 0 0 0.00174615 0 -0.251937)"/>
 </pattern>
-<filter id="filter0_d_418_7965" x="261" y="82" width="160" height="160" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-<feFlood floodOpacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_d_418_7965" x="261" y="82" width="160" height="160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset/>
 <feGaussianBlur stdDeviation="20"/>
