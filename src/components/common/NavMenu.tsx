@@ -31,51 +31,79 @@ export function NavMenu() {
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
             <div className="w-[300px] space-y-2 p-4 text-sm">
-              <Link
-                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
-                href="/universities/oxford-university"
-              >
-                <IoMdArrowDropright className="text-2xl" /> Study Abroad
-                Consultation
-              </Link>
+              <NavigationMenuItem className="list-none">
+                <Link
+                  href="/universities/oxford-university"
+                  legacyBehavior
+                  passHref
+                >
+                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
+                    <IoMdArrowDropright className="text-2xl" />
+                    Study Abroad Consultation
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-              <Link
-                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
-                href="/services/university-selection"
-              >
-                <IoMdArrowDropright className="text-2xl" /> University Selection
-              </Link>
+              <NavigationMenuItem className="list-none">
+                <Link
+                  href="/services/university-selection"
+                  legacyBehavior
+                  passHref
+                >
+                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
+                    <IoMdArrowDropright className="text-2xl" />
+                    University Selection
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-              <Link
-                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
-                href="/services/application-assistance"
-              >
-                <IoMdArrowDropright className="text-2xl" /> Application
-                Assistance
-              </Link>
+              <NavigationMenuItem className="list-none">
+                <Link
+                  href="/services/application-assistance"
+                  legacyBehavior
+                  passHref
+                >
+                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
+                    <IoMdArrowDropright className="text-2xl" />
+                    Application Assistance
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-              <Link
-                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
-                href="/services/visa-guidance"
-              >
-                <IoMdArrowDropright className="text-2xl" /> Visa Guidance
-              </Link>
+              <NavigationMenuItem className="list-none">
+                <Link href="/services/visa-guidance" legacyBehavior passHref>
+                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
+                    <IoMdArrowDropright className="text-2xl" />
+                    Visa Guidance
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-              <Link
-                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
-                href="/services/scholarship-and-financial-aid"
-              >
-                <IoMdArrowDropright className="text-2xl" /> Scholarship &
-                Financial Aid
-              </Link>
+              <NavigationMenuItem className="list-none">
+                <Link
+                  href="/services/scholarship-and-financial-aid"
+                  legacyBehavior
+                  passHref
+                >
+                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
+                    <IoMdArrowDropright className="text-2xl" />
+                    Scholarship & Financial Aid
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
-              <Link
-                className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary"
-                href="/services/pre-departure-briefing"
-              >
-                <IoMdArrowDropright className="text-2xl" /> Pre-departure
-                Briefing
-              </Link>
+              <NavigationMenuItem className="list-none">
+                <Link
+                  href="/services/pre-departure-briefing"
+                  legacyBehavior
+                  passHref
+                >
+                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
+                    <IoMdArrowDropright className="text-2xl" />
+                    Pre-departure Briefing
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
