@@ -39,7 +39,7 @@ const Footer = () => {
       },
       {
         label: "Blogs & Newses",
-        href: "/blogs-and-newses",
+        href: "/blogs",
       },
       {
         label: "FAQ",
