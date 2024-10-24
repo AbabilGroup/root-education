@@ -127,7 +127,7 @@ const Footer = () => {
           <h3 className="text-center text-3xl font-semibold text-white lg:text-left">
             Ready to Take the Next Step?
           </h3>
-          <SiteButton bg="bg-white" text="text-primary">
+          <SiteButton bg="bg-white" text="text-primary" to="/consultation">
             Personalized Consultation
           </SiteButton>
         </div>
