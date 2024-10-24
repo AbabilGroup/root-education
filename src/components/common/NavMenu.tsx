@@ -15,6 +15,39 @@ import {
 import { IoMdArrowDropright } from "react-icons/io";
 import Image from "next/image";
 
+const servicesLinks = [
+  {
+    id: 1,
+    name: "Study Abroad Consultation",
+    path: "/services/study-abroad-consultation",
+  },
+  {
+    id: 2,
+    name: "University Selection",
+    path: "/services/university-selection",
+  },
+  {
+    id: 3,
+    name: "Application Assistance",
+    path: "/services/application-assistance",
+  },
+  {
+    id: 4,
+    name: "Visa Guidance",
+    path: "/services/visa-guidance",
+  },
+  {
+    id: 5,
+    name: "Scholarship & Financial Aid",
+    path: "/services/scholarship-and-financial-aid",
+  },
+  {
+    id: 6,
+    name: "Pre-departure Briefing",
+    path: "/services/pre-departure-briefing",
+  },
+];
+
 export function NavMenu() {
   return (
     <NavigationMenu className="hidden xl:block">
@@ -31,79 +64,16 @@ export function NavMenu() {
           <NavigationMenuTrigger>Services</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
             <div className="w-[300px] space-y-2 p-4 text-sm">
-              <NavigationMenuItem className="list-none">
-                <Link
-                  href="/universities/oxford-university"
-                  legacyBehavior
-                  passHref
-                >
-                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
-                    <IoMdArrowDropright className="text-2xl" />
-                    Study Abroad Consultation
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem className="list-none">
-                <Link
-                  href="/services/university-selection"
-                  legacyBehavior
-                  passHref
-                >
-                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
-                    <IoMdArrowDropright className="text-2xl" />
-                    University Selection
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem className="list-none">
-                <Link
-                  href="/services/application-assistance"
-                  legacyBehavior
-                  passHref
-                >
-                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
-                    <IoMdArrowDropright className="text-2xl" />
-                    Application Assistance
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem className="list-none">
-                <Link href="/services/visa-guidance" legacyBehavior passHref>
-                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
-                    <IoMdArrowDropright className="text-2xl" />
-                    Visa Guidance
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem className="list-none">
-                <Link
-                  href="/services/scholarship-and-financial-aid"
-                  legacyBehavior
-                  passHref
-                >
-                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
-                    <IoMdArrowDropright className="text-2xl" />
-                    Scholarship & Financial Aid
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem className="list-none">
-                <Link
-                  href="/services/pre-departure-briefing"
-                  legacyBehavior
-                  passHref
-                >
-                  <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
-                    <IoMdArrowDropright className="text-2xl" />
-                    Pre-departure Briefing
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+              {servicesLinks.map((service) => (
+                <NavigationMenuItem className="list-none" key={service.id}>
+                  <Link href={service.path} legacyBehavior passHref>
+                    <NavigationMenuLink className="flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary">
+                      <IoMdArrowDropright className="text-2xl" />
+                      {service.name}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              ))}
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
