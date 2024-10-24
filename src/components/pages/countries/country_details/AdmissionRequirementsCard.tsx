@@ -16,7 +16,7 @@ const AdmissionRequirementsCard = () => {
               cy="45"
               r="39.5"
               stroke="#F37329"
-              stroke-dasharray="2 2"
+              strokeDasharray="2 2"
             />
           </g>
           <g filter="url(#filter1_d_633_15263)">
@@ -54,9 +54,9 @@ const AdmissionRequirementsCard = () => {
               width="90"
               height="90"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -89,9 +89,9 @@ const AdmissionRequirementsCard = () => {
               width="70"
               height="70"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -124,9 +124,9 @@ const AdmissionRequirementsCard = () => {
               width="49.0605"
               height="35.9512"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -159,9 +159,9 @@ const AdmissionRequirementsCard = () => {
               width="44.834"
               height="40"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"

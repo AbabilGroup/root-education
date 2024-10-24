@@ -21,7 +21,7 @@ const BlogDetailsPage = ({ params }: TBlogDetailsPageProps) => {
     <main>
       <PageBanner PageName={formatCountryRoute(params.blogSlug)} />
       <section className="pb-[50px] pt-[100px]">
-        <div className="container flex flex-col lg:flex-row">
+        <div className="container flex flex-col lg:flex-row gap-x-8">
           <Content />
           <Sidebar />
         </div>

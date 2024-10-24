@@ -23,7 +23,7 @@ const Step5 = () => {
                   cy="45"
                   r="39.5"
                   stroke="#F37329"
-                  stroke-dasharray="2 2"
+                  strokeDasharray="2 2"
                 />
               </g>
               <g filter="url(#filter1_d_728_11856)">
@@ -41,9 +41,9 @@ const Step5 = () => {
                   width="90"
                   height="90"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     type="matrix"
@@ -76,9 +76,9 @@ const Step5 = () => {
                   width="70"
                   height="70"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     type="matrix"
@@ -128,7 +128,7 @@ const Step5 = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M80 0L80 341" stroke="#F37329" stroke-width="10" />
+          <path d="M80 0L80 341" stroke="#F37329" strokeWidth="10" />
           <g filter="url(#filter0_d_1732_13832)">
             <circle cx="80" cy="170" r="15" fill="#F37329" />
           </g>
@@ -148,9 +148,9 @@ const Step5 = () => {
               width="40"
               height="40"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -206,9 +206,9 @@ const Step5 = () => {
               width="169.086"
               height="69"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"

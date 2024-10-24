@@ -23,13 +23,13 @@ const Step2 = () => {
                   cy="45"
                   r="39.5"
                   stroke="#F37329"
-                  stroke-dasharray="2 2"
+                  strokeDasharray="2 2"
                 />
               </g>
               <g filter="url(#filter1_d_728_11787)">
                 <circle cx="45" cy="45" r="30" fill="#F37329" />
               </g>
-              <g clip-path="url(#clip0_728_11787)">
+              <g clipPath="url(#clip0_728_11787)">
                 <path
                   d="M55.6855 48.6445C51.7282 48.6445 48.5078 51.8649 48.5078 55.8223C48.5078 59.7797 51.7282 63 55.6855 63C59.6429 63 63 59.7797 63 55.8223C63 51.8649 59.6429 48.6445 55.6855 48.6445ZM57.7363 56.8477H55.6855C55.1188 56.8477 54.6602 56.389 54.6602 55.8223V53.7715C54.6602 53.2047 55.1188 52.7461 55.6855 52.7461C56.2523 52.7461 56.7109 53.2047 56.7109 53.7715V54.7969H57.7363C58.3031 54.7969 58.7617 55.2555 58.7617 55.8223C58.7617 56.389 58.3031 56.8477 57.7363 56.8477ZM32.1016 53.7715H30.0508C28.9181 53.7715 28 54.6896 28 55.8223C28 56.9548 28.9181 57.873 30.0508 57.873H32.1016C33.2342 57.873 34.1523 56.9548 34.1523 55.8223C34.1523 54.6896 33.2342 53.7715 32.1016 53.7715ZM32.1016 43.5176H30.0508C28.9181 43.5176 28 44.4357 28 45.5684C28 46.7009 28.9181 47.6191 30.0508 47.6191H32.1016C33.2342 47.6191 34.1523 46.7009 34.1523 45.5684C34.1523 44.4357 33.2342 43.5176 32.1016 43.5176ZM32.1016 33.127H30.0508C28.9181 33.127 28 34.0451 28 35.1777C28 36.3102 28.9181 37.2285 30.0508 37.2285H32.1016C33.2342 37.2285 34.1523 36.3102 34.1523 35.1777C34.1523 34.0451 33.2342 33.127 32.1016 33.127Z"
                   fill="#FDFDFD"
@@ -47,9 +47,9 @@ const Step2 = () => {
                   width="90"
                   height="90"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     type="matrix"
@@ -82,9 +82,9 @@ const Step2 = () => {
                   width="70"
                   height="70"
                   filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     type="matrix"
@@ -142,7 +142,7 @@ const Step2 = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M80 0L80 341" stroke="#F37329" stroke-width="10" />
+          <path d="M80 0L80 341" stroke="#F37329" strokeWidth="10" />
           <g filter="url(#filter0_d_1732_13832)">
             <circle cx="80" cy="170" r="15" fill="#F37329" />
           </g>
@@ -162,9 +162,9 @@ const Step2 = () => {
               width="40"
               height="40"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -220,9 +220,9 @@ const Step2 = () => {
               width="169.086"
               height="69"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"

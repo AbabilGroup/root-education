@@ -31,7 +31,7 @@ const EuropeStudyCountryCard = ({
             <path
               d="M12.666 7.99984L3.33268 7.99984M12.666 7.99984L9.99935 5.33317M12.666 7.99984L9.99935 10.6665"
               stroke="#F37329"
-              stroke-width="2"
+              strokeWidth="2"
               stroke-linecap="round"
               stroke-linejoin="round"
             />

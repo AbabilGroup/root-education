@@ -1,6 +1,6 @@
 const ApplicationProceduresCard = () => {
   return (
-    <div className="flex items-center justify-between rounded-lg border shadow-md pr-7 gap-x-5">
+    <div className="flex items-center justify-between gap-x-5 rounded-lg border pr-7 shadow-md">
       <div>
         <svg
           width="168"
@@ -33,9 +33,9 @@ const ApplicationProceduresCard = () => {
               width="168"
               height="227.159"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -68,9 +68,9 @@ const ApplicationProceduresCard = () => {
               width="154"
               height="205.161"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -138,9 +138,9 @@ const ApplicationProceduresCard = () => {
               width="140"
               height="140"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -173,9 +173,9 @@ const ApplicationProceduresCard = () => {
               width="118"
               height="118"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
