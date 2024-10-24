@@ -83,200 +83,270 @@ export function NavMenu() {
           <NavigationMenuContent className="bg-white">
             <div className="grid w-[650px] grid-cols-3 gap-y-3 p-4 text-sm">
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/countries/study-in-romania"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
-                  <span>Study in Romania</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/countries/study-in-romania"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/flag.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>Study in Romania</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
             </div>
           </NavigationMenuContent>
@@ -289,214 +359,289 @@ export function NavMenu() {
           <NavigationMenuContent className="bg-white">
             <div className="grid w-[750px] grid-cols-3 gap-y-3 p-4 text-sm">
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
               <div>
-                <Link
-                  className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary"
-                  href="/universities/oxford-university"
-                >
-                  <Image
-                    src="/icons/university_logo.svg"
-                    alt="University logo"
-                    height={30}
-                    width={30}
-                  />
-                  <span>European Politechnic University, Bulgaria</span>
-                </Link>
+                <NavigationMenuItem className="list-none">
+                  <Link
+                    href="/universities/oxford-university"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                      <Image
+                        src="/icons/university_logo.svg"
+                        alt="Flag"
+                        height={30}
+                        width={30}
+                      />
+                      <span>European Politechnic University, Bulgaria</span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
             </div>
           </NavigationMenuContent>
