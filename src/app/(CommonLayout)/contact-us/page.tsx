@@ -3,8 +3,7 @@ import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBou
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 import PageBanner from "@/components/common/PageBanner";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import ContactForm from "@/components/pages/contact_us/ContactForm";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -149,38 +148,7 @@ const ContactUsPage = () => {
                   <h5 className="mb-5 text-center text-2xl font-medium text-white">
                     Get in Touch
                   </h5>
-                  <form className="w-full space-y-5" action="">
-                    <Input
-                      className="w-full rounded-md border-2 border-white bg-transparent py-5 placeholder:text-white focus:ring-primary"
-                      type="text"
-                      placeholder="Full name"
-                      required
-                    />
-                    <Input
-                      className="w-full rounded-md border-2 border-white bg-transparent py-5 placeholder:text-white focus:ring-primary"
-                      type="email"
-                      placeholder="Email"
-                      required
-                    />
-                    <Input
-                      className="w-full rounded-md border-2 border-white bg-transparent py-5 placeholder:text-white focus:ring-primary"
-                      type="tel"
-                      placeholder="Phone number"
-                      required
-                    />
-                    <Textarea
-                      className="w-full rounded-md border-2 border-white bg-transparent placeholder:text-white focus:ring-primary"
-                      placeholder="Write your massage"
-                      rows={5}
-                      required
-                    />
-                    <button
-                      className="flex items-center justify-center gap-x-2 rounded-sm bg-secondary px-5 py-3 text-sm font-medium text-white duration-300 hover:bg-secondary hover:text-white"
-                      type="submit"
-                    >
-                      Send Message
-                    </button>
-                  </form>
+                  <ContactForm />
                 </div>
               </div>
             </div>

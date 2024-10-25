@@ -13,7 +13,7 @@ const ConsultationPage = () => {
       <PageBanner PageName="Consultation" bannerBg="bg-none" />
       <div className="container">
         <div className="mb-[100px] rounded-lg bg-white p-10">
-          <h3 className="mb-10 text-center text-3xl font-bold">
+          <h3 className="mb-10 text-center text-3xl font-semibold">
             Reserve Your Appointment
           </h3>
 

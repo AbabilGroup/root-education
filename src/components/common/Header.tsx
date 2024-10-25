@@ -32,6 +32,7 @@ const Header = () => {
           Consultation
         </SiteButton>
 
+        {/* mobile nav  */}
         <Sheet>
           <SheetTrigger asChild>
             <GiHamburgerMenu className="cursor-pointer text-2xl xl:hidden" />
@@ -53,7 +54,7 @@ const Header = () => {
               </Link>
             </SheetHeader>
 
-            <SheetFooter className="border mt-auto">
+            <SheetFooter className="mt-auto border">
               <SiteButton to="/consultation">Consultation</SiteButton>
             </SheetFooter>
           </SheetContent>

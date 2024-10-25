@@ -82,7 +82,12 @@ const ConsultationForm = () => {
               <FormItem>
                 <FormLabel>Name*</FormLabel>
                 <FormControl>
-                  <Input className="py-5" placeholder="Full name" {...field} />
+                  <Input
+                    type="text"
+                    className="py-5"
+                    placeholder="Full name"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage className="text-red-500" />
@@ -101,6 +106,7 @@ const ConsultationForm = () => {
                   <FormLabel>Email*</FormLabel>
                   <FormControl>
                     <Input
+                      type="email"
                       className="py-5"
                       placeholder="Email address"
                       {...field}
@@ -115,12 +121,13 @@ const ConsultationForm = () => {
           <div>
             <FormField
               control={form.control}
-              name="email"
+              name="phone_number"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Phone*</FormLabel>
                   <FormControl>
                     <Input
+                      type="tel"
                       className="py-5"
                       placeholder="Phone number"
                       {...field}
@@ -187,24 +194,12 @@ const ConsultationForm = () => {
                   >
                     <FormControl className="py-5">
                       <SelectTrigger>
-                        <SelectValue placeholder="Categories" />
+                        <SelectValue placeholder="Choose meeting format" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent className="bg-white">
-                      <SelectItem value="Romania">Romania</SelectItem>
-                      <SelectItem value="Malta">Malta</SelectItem>
-                      <SelectItem value="Hungary">Hungary</SelectItem>
-                      <SelectItem value="Lithuania">Lithuania</SelectItem>
-                      <SelectItem value="Latvia">Latvia</SelectItem>
-                      <SelectItem value="Bulgaria">Bulgaria</SelectItem>
-                      <SelectItem value="Georgia">Georgia</SelectItem>
-                      <SelectItem value="Russia">Russia</SelectItem>
-                      <SelectItem value="Austria">Austria</SelectItem>
-                      <SelectItem value="Uzbekistan">Uzbekistan</SelectItem>
-                      <SelectItem value="Turkey">Turkey</SelectItem>
-                      <SelectItem value="Netherland">Netherland</SelectItem>
-                      <SelectItem value="Denmark">Denmark</SelectItem>
-                      <SelectItem value="Greece">Greece</SelectItem>
+                      <SelectItem value="Online">Online</SelectItem>
+                      <SelectItem value="Offline">Offline</SelectItem>
                     </SelectContent>
                   </Select>
 
