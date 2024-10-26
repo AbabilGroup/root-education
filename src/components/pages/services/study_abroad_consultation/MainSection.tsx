@@ -20,7 +20,7 @@ const MainSection = () => {
             success is our priority.
           </p>
           <div className="flex items-center justify-center lg:justify-start">
-            <SiteButton>Book Your Consultation</SiteButton>
+            <SiteButton to="/consultation">Book Your Consultation</SiteButton>
           </div>
         </FadeInLeftWithSlowBounce>
         <FadeInRightWithSlowBounce className="relative min-h-[350px] w-full basis-full xl:basis-1/2">

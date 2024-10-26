@@ -14,7 +14,7 @@ const WhyChooseUs = () => {
       <div className="container">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-20 gap-y-10 px-6 lg:flex-row">
           {/* card  */}
-          <FadeInLeftWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
+          <FadeInLeftWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md min-h-[165px]">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
                 src="/images/pages/services/visa_guidance/why_choose_us/1.svg"
@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
             </div>
           </FadeInLeftWithSlowBounce>
           {/* card  */}
-          <FadeInDownWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
+          <FadeInDownWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md min-h-[165px]">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
                 src="/images/pages/services/visa_guidance/why_choose_us/2.svg"
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
             </div>
           </FadeInDownWithSlowBounce>
           {/* card  */}
-          <FadeInRightWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
+          <FadeInRightWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md min-h-[165px]">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
                 src="/images/pages/services/visa_guidance/why_choose_us/3.svg"
@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
             </div>
           </FadeInRightWithSlowBounce>
           {/* card  */}
-          <FadeInLeftWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
+          <FadeInLeftWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md min-h-[165px]">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
                 src="/images/pages/services/visa_guidance/why_choose_us/4.svg"
@@ -86,7 +86,7 @@ const WhyChooseUs = () => {
             </div>
           </FadeInLeftWithSlowBounce>
           {/* card  */}
-          <FadeInUpWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
+          <FadeInUpWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md min-h-[165px]">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
                 src="/images/pages/services/visa_guidance/why_choose_us/5.svg"
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
             </div>
           </FadeInUpWithSlowBounce>
           {/* card  */}
-          <FadeInRightWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md">
+          <FadeInRightWithSlowBounce className="inline-flex max-w-[350px] items-center gap-x-4 rounded-xl border border-r-8 border-r-primary py-5 pr-4 shadow-md min-h-[165px]">
             <div className="-ml-8 flex size-16 basis-auto items-center justify-center rounded-full border-4 border-dotted border-primary bg-white p-3">
               <Image
                 src="/images/pages/services/visa_guidance/why_choose_us/6.svg"

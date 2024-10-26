@@ -1,8 +1,11 @@
+"use client";
+
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import SiteButton from "@/components/ui/SiteButton";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import ReactPlayer from "react-player";
 
 const MainSection = () => {
   return (
@@ -27,7 +30,7 @@ const MainSection = () => {
             viable reality.
           </p>
           <div className="flex items-center justify-center lg:justify-start">
-            <SiteButton>Book Your Consultation</SiteButton>
+            <SiteButton to="/consultation">Book Your Consultation</SiteButton>
           </div>
         </FadeInLeftWithSlowBounce>
         <FadeInRightWithSlowBounce className="relative min-h-[400px] w-full basis-full xl:min-h-[600px] xl:basis-1/2">
@@ -40,9 +43,18 @@ const MainSection = () => {
                 fill
               />
             </DialogTrigger>
-            <DialogContent className="bg-white">
-              <div className="grid gap-4 py-4">
-                <h1>here will be the video</h1>
+            <DialogContent className="min-h-[70vh] max-w-[1000px] border border-primary bg-white">
+              <div className="p-5">
+                <ReactPlayer
+                  playing
+                  controls
+                  style={{
+                    minWidth: "100%",
+                    minHeight: "100%",
+                    border: "1px solid #ddd",
+                  }}
+                  url="https://youtu.be/qC4sVo6STFM"
+                />
               </div>
             </DialogContent>
           </Dialog>

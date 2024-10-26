@@ -20,7 +20,7 @@ const DepartureCard = ({
         Step 0{stepNo}
       </div>
 
-      <div className="min-h-[240px] basis-full space-y-3 rounded-lg border border-b-8 border-b-primary px-8 py-4 shadow">
+      <div className="min-h-[240px] basis-full space-y-3 rounded-lg border border-b-8 border-b-primary px-8 py-6 shadow">
         <div className="flex items-center justify-center">
           <Image
             src={`/images/pages/services/pre_departure_briefing/process/${iconNo}.svg`}

@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
                 width={30}
               />
             </div>
-            <div className="basis-full">
+            <div className="basis-full space-y-2">
               <h5 className="text-xl font-medium">Expert Guidance</h5>
               <p className="text-sm font-medium">
                 Our experienced consultants offer in-depth knowledge of
@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
                 width={30}
               />
             </div>
-            <div className="basis-full">
+            <div className="basis-full space-y-2">
               <h5 className="text-xl font-medium">Global Partnerships</h5>
               <p className="text-sm font-medium">
                 We partner with top universities worldwide, giving you access to
@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
                 width={30}
               />
             </div>
-            <div className="basis-full">
+            <div className="basis-full space-y-2">
               <h5 className="text-xl font-medium">End-to-End Support</h5>
               <p className="text-sm font-medium">
                 We guide you through every step of studying abroad, from

@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
                   width={50}
                 />
               </div>
-              <div className="basis-full">
+              <div className="basis-full space-y-2">
                 <h6 className="text-xl font-medium">Expert Guidance</h6>
                 <p className="text-sm font-medium">
                   Tailored advice from expert counselors to boost your
@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
                   width={50}
                 />
               </div>
-              <div className="basis-full">
+              <div className="basis-full space-y-2">
                 <h6 className="text-xl font-medium">Comprehensive Support</h6>
                 <p className="text-sm font-medium">
                   Full support for every detail, ensuring a smooth application
@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
                   width={50}
                 />
               </div>
-              <div className="basis-full">
+              <div className="basis-full space-y-2">
                 <h6 className="text-xl font-medium">Personalized Approach</h6>
                 <p className="text-sm font-medium">
                   Individualized strategies tailored to match your unique
@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
                   width={50}
                 />
               </div>
-              <div className="basis-full">
+              <div className="basis-full space-y-2">
                 <h6 className="text-xl font-medium">
                   Strong University Network
                 </h6>
@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
             </div>
           </div>
           <div className="flex items-center justify-center lg:justify-start">
-            <SiteButton>Consultation</SiteButton>
+            <SiteButton to="/consultation">Consultation</SiteButton>
           </div>
         </FadeInRightWithSlowBounce>
       </div>
