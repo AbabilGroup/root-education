@@ -4,7 +4,7 @@ import SectionName from "@/components/ui/SectionName";
 import { university_selection } from "@/faq_data";
 import FaqAccordion from "../../faq/FaqAccordion";
 
-const FAQ = () => {
+const FAQ = ({ countryInfo }) => {
   const faqs = university_selection;
 
   return (
@@ -28,26 +28,22 @@ const FAQ = () => {
       </FadeInDownWithSlowBounce>
       <div className="container grid grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2">
         <div className="space-y-5">
-          {faqs
-            .filter((item) => item.position === "left")
-            .map((faq) => (
-              <FaqAccordion
-                title={faq.question}
-                answer={faq.answer}
-                key={faq.question}
-              />
-            ))}
+          {countryInfo.faq.slice(0, 5).map((faq) => (
+            <FaqAccordion
+              title={faq.question}
+              answer={faq.answer}
+              key={faq.id}
+            />
+          ))}
         </div>
         <div className="space-y-5">
-          {faqs
-            .filter((item) => item.position === "right")
-            .map((faq) => (
-              <FaqAccordion
-                title={faq.question}
-                answer={faq.answer}
-                key={faq.question}
-              />
-            ))}
+          {countryInfo.faq.slice(5, 10).map((faq) => (
+            <FaqAccordion
+              title={faq.question}
+              answer={faq.answer}
+              key={faq.question}
+            />
+          ))}
         </div>
       </div>
     </section>

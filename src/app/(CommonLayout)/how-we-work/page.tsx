@@ -11,7 +11,12 @@ const HowWeWorkPage = () => {
   return (
     <main className="pb-[100px]">
       <PageBanner PageName="How We Work" />
+
+      {/* spacer  */}
+      <div className="h-[50px]"></div>
       <HowWeWork />
+      {/* spacer  */}
+      <div className="h-[50px]"></div>
       <Discover />
     </main>
   );

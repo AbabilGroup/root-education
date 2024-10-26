@@ -1,4 +1,4 @@
-const AdmissionRequirementsCard = () => {
+const AdmissionRequirementsCard = ({ requirment }) => {
   return (
     <div className="space-y-3 rounded-lg border border-x-8 border-primary border-x-primary p-5 shadow-md">
       <div className="flex items-center justify-center">
@@ -190,13 +190,8 @@ const AdmissionRequirementsCard = () => {
           </defs>
         </svg>
       </div>
-      <h5 className="text-center text-xl font-medium">
-        Educational Qualifications
-      </h5>
-      <p className="text-center text-sm font-medium">
-        High school diploma for undergraduates; bachelor’s degree for master’s;
-        relevant master’s for Ph.D. programs, with good academic standing.
-      </p>
+      <h5 className="text-center text-xl font-medium">{requirment?.title}</h5>
+      <p className="text-center text-sm font-medium">{requirment?.content}</p>
     </div>
   );
 };

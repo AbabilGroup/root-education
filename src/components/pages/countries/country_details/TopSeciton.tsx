@@ -1,45 +1,15 @@
 import AdmissionForm from "./AdmissionForm";
 
-const TopSection = () => {
+const TopSection = ({ countryInfo }) => {
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container flex flex-col gap-x-20 gap-y-20 lg:flex-row">
         <div className="basis-full space-y-4 lg:basis-[60%]">
           <h2 className="text-4xl font-semibold">
-            Study in Romania For
-            <br /> Bangladesh Students
+            {countryInfo.box1[0].title}
           </h2>
           <div className="space-y-3">
-            <p className="text-sm font-medium">
-              Romania is an increasingly popular destination for Bangladeshi
-              students seeking a high-quality European education at an
-              affordable cost. Renowned for its strong academic tradition,
-              Romania offers a wide range of programs in English across various
-              fields, including engineering, medicine, business, and the arts.
-              Universities in Romania are recognized for their rigorous
-              curricula, modern facilities, and opportunities for research and
-              innovation.
-            </p>
-            <p className="text-sm font-medium">
-              For Bangladeshi students, Romania provides a welcoming environment
-              with a rich cultural heritage, vibrant student life, and a lower
-              cost of living compared to other European countries. The country’s
-              universities are known for their international student support
-              services, making the transition to a new academic and social
-              environment smoother. Scholarships are also available to help
-              offset tuition fees and living expenses, making studying in
-              Romania even more accessible.
-            </p>
-            <p className="text-sm font-medium">
-              For Bangladeshi students, Romania provides a welcoming environment
-              with a rich cultural heritage, vibrant student life, and a lower
-              cost of living compared to other European countries. The country’s
-              universities are known for their international student support
-              services, making the transition to a new academic and social
-              environment smoother. Scholarships are also available to help
-              offset tuition fees and living expenses, making studying in
-              Romania even more accessible.
-            </p>
+            <p className="text-sm font-medium">{countryInfo.box1[0].content}</p>
           </div>
           <div className="inline-flex items-start justify-start gap-x-6 rounded-lg border p-8 shadow-md">
             <div className="space-y-4">

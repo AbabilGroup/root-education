@@ -1,4 +1,4 @@
-const ApplicationProceduresCard = () => {
+const ApplicationProceduresCard = ({ procedure }) => {
   return (
     <div className="flex items-center justify-between gap-x-5 rounded-lg border pr-7 shadow-md">
       <div>
@@ -99,14 +99,9 @@ const ApplicationProceduresCard = () => {
           </defs>
         </svg>
       </div>
-      <div>
-        <h5 className="text-center text-lg">
-          Choose Your Program and University
-        </h5>
-        <p className="text-center text-sm font-medium">
-          Research universities and programs. Check language options, academic
-          offerings, and application deadlines on university websites.
-        </p>
+      <div className="space-y-3">
+        <h5 className="text-center text-xl">{procedure?.title}</h5>
+        <p className="text-center text-sm font-medium">{procedure?.content}</p>
       </div>
       <div>
         <svg

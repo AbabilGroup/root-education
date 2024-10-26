@@ -10,52 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const scholarshipInfo = [
-  {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
-  },
-];
-
-const AccordionSection = () => {
+const AccordionSection = ({ countryInfo }) => {
   return (
     <section>
       <div className="container">
@@ -64,13 +19,8 @@ const AccordionSection = () => {
             title="Application Procedures"
             content={
               <>
-                <p>
-                  Applying to study in Romania involves several key steps,
-                  including choosing a program, preparing documents, and meeting
-                  specific requirements. Here&apos;s a general overview of the
-                  application process:
-                </p>
-                <ApplicationProcedures />
+                <p>{countryInfo.application_procedures[0].short_breaf}</p>
+                <ApplicationProcedures countryInfo={countryInfo} />
               </>
             }
           />
@@ -78,14 +28,8 @@ const AccordionSection = () => {
             title="Admission Requirements"
             content={
               <>
-                <p>
-                  Admission requirements for international students wishing to
-                  study in Romania can vary depending on the level of study
-                  (undergraduate, master&apos;s, or Ph.D.), the university, and
-                  the chosen program. However, the general admission
-                  requirements typically include the following:
-                </p>
-                <AdmissionRequirements />
+                <p>{countryInfo.admission_requirments[0].short_breaf}</p>
+                <AdmissionRequirements countryInfo={countryInfo} />
               </>
             }
           />
@@ -113,16 +57,16 @@ const AccordionSection = () => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {scholarshipInfo.map((info) => (
+                      {countryInfo.visaprocedures[0].list.map((info) => (
                         <TableRow
                           className="text-sm font-medium"
-                          key={info.invoice}
+                          key={info.title}
                         >
                           <TableCell className="border px-5">
-                            {info.invoice}
+                            {info.title}
                           </TableCell>
                           <TableCell className="border px-5">
-                            {info.paymentStatus}
+                            {info.content}
                           </TableCell>
                         </TableRow>
                       ))}

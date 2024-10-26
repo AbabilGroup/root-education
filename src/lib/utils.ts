@@ -25,7 +25,7 @@ export const capitalizeAndRemoveHyphens = (str: string) => {
 
 export const formatCountryRoute = (input: string): string => {
   return input
-    .split("-") // Split the string at each hyphen
+    ?.split("-") // Split the string at each hyphen
     .map((word) => {
       if (word.toLowerCase() === "in") {
         return "in"; // Keep "in" lowercase

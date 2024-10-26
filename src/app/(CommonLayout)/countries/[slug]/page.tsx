@@ -6,35 +6,43 @@ import InstituteRepresent from "@/components/pages/countries/country_details/Ins
 import TabsSection from "@/components/pages/countries/country_details/TabsSection";
 import TopSection from "@/components/pages/countries/country_details/TopSeciton";
 import { formatCountryRoute } from "@/lib/utils";
+import { getAllCountries } from "@/services/getAllCountries";
+import { getCountryBySlug } from "@/services/getCountryBySlug";
 
 type TCountryDetailsPageProps = {
-  params: { country: string };
+  params: { slug: string };
 };
 
 export async function generateMetadata({ params }: TCountryDetailsPageProps) {
-  const { country } = params;
+  const { slug } = params;
 
   return {
-    title: `Root Education | ${formatCountryRoute(country)}`,
+    title: `Root Education | ${formatCountryRoute(slug)}`,
   };
 }
 
-const CountryDetailsPage = ({ params }: TCountryDetailsPageProps) => {
+const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
+  const { slug } = params;
+
+  const countryInfo = await getCountryBySlug(slug);
+
+  console.log(countryInfo);
+
   return (
     <main>
-      <PageBanner PageName={formatCountryRoute(params.country)} />
+      <PageBanner PageName={formatCountryRoute(slug)} />
 
-      <TopSection />
+      <TopSection countryInfo={countryInfo} />
 
-      <TabsSection />
+      <TabsSection countryInfo={countryInfo} />
 
-      <AccordionSection />
+      <AccordionSection countryInfo={countryInfo} />
 
-      <BestCities />
+      <BestCities countryInfo={countryInfo} />
 
       <InstituteRepresent />
 
-      <FAQ />
+      <FAQ countryInfo={countryInfo} />
     </main>
   );
 };

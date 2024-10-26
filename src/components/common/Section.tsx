@@ -4,13 +4,19 @@ import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBou
 
 type TSectionProps = {
   children: ReactNode;
+  className?: string;
   sectionName: string;
   title: string;
 };
 
-const Section = ({ children, sectionName, title }: TSectionProps) => {
+const Section = ({
+  children,
+  className,
+  sectionName,
+  title,
+}: TSectionProps) => {
   return (
-    <section className="py-[50px]">
+    <section className={`py-[50px] ${className}`}>
       <div className="container">
         <FadeInDownWithSlowBounce>
           <SectionName name={sectionName} position="center" />
