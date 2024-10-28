@@ -1,7 +1,8 @@
 import Section from "@/components/common/Section";
 import ServicesIncludedCard from "../../services/pre_departure_briefing/ServicesIncludedCard";
+import { List } from "@/types";
 
-const LivingCosts = ({ livingCosts }) => {
+const LivingCosts = ({ livingCosts }: { livingCosts: List[] }) => {
   return (
     <Section
       sectionName="Living Costs"
