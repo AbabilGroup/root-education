@@ -1,7 +1,8 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import Section from "@/components/common/Section";
+import { Fee } from "@/types";
 
-const TuitionFees = ({ tuitionFees }) => {
+const TuitionFees = ({ tuitionFees }: { tuitionFees: Fee[] }) => {
   return (
     <Section
       sectionName="Tuition Fees"
