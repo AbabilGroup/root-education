@@ -31,7 +31,7 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
     <main>
       <PageBanner PageName={formatCountryRoute(slug)} />
 
-      <TopSection countryInfo={countryInfo.box1} />
+      <TopSection countryInfo={countryInfo} />
 
       <TabsSection countryInfo={countryInfo} />
 

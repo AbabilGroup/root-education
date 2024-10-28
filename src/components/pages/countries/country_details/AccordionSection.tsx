@@ -1,3 +1,4 @@
+import { Root } from "@/types";
 import AdmissionRequirements from "./AdmissionRequirements";
 import ApplicationProcedures from "./ApplicationProcedures";
 import InfoAccordion from "./InfoAccordion";
@@ -10,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const AccordionSection = ({ countryInfo }) => {
+const AccordionSection = ({ countryInfo }: { countryInfo: Root }) => {
   return (
     <section>
       <div className="container">

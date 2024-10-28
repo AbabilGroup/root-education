@@ -1,12 +1,9 @@
 import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBounce";
 import SectionName from "@/components/ui/SectionName";
-
-import { university_selection } from "@/faq_data";
 import FaqAccordion from "../../faq/FaqAccordion";
+import { Root } from "@/types";
 
-const FAQ = ({ countryInfo }) => {
-  const faqs = university_selection;
-
+const FAQ = ({ countryInfo }: { countryInfo: Root }) => {
   return (
     <section className="pb-[100px] pt-[50px]">
       <FadeInDownWithSlowBounce className="container">

@@ -1,7 +1,7 @@
 import { Root } from "@/types";
 import AdmissionForm from "./AdmissionForm";
 
-const TopSection = ({ countryInfo }: Root) => {
+const TopSection = ({ countryInfo }: { countryInfo: Root }) => {
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container flex flex-col gap-x-20 gap-y-20 lg:flex-row">
