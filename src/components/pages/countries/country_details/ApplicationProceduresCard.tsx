@@ -1,4 +1,10 @@
-const ApplicationProceduresCard = ({ procedure }) => {
+import { Applicationprocedureslist } from "@/types";
+
+const ApplicationProceduresCard = ({
+  procedure,
+}: {
+  procedure: Applicationprocedureslist;
+}) => {
   return (
     <div className="flex items-center justify-between gap-x-5 rounded-lg border pr-7 shadow-md">
       <div>
