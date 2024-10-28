@@ -1,4 +1,6 @@
-const AdmissionRequirementsCard = ({ requirment }) => {
+import { List3 } from "@/types";
+
+const AdmissionRequirementsCard = ({ requirment }: { requirment: List3 }) => {
   return (
     <div className="space-y-3 rounded-lg border border-x-8 border-primary border-x-primary p-5 shadow-md">
       <div className="flex items-center justify-center">
