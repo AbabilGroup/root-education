@@ -10,7 +10,11 @@ const TopSection = ({ countryInfo }: { countryInfo: Root }) => {
             {countryInfo.box1[0].title}
           </h2>
           <div className="space-y-3">
-            <p className="text-sm font-medium">{countryInfo.box1[0].content}</p>
+            {countryInfo.box1[0].content.map((para) => (
+              <p className="text-sm font-medium" key={para.content}>
+                {para.content}
+              </p>
+            ))}
           </div>
           <div className="inline-flex items-start justify-start gap-x-6 rounded-lg border p-8 shadow-md">
             <div className="space-y-4">

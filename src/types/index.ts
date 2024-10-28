@@ -17,6 +17,10 @@ export type Root = {
 export type Box1 = {
   id: number;
   title: string;
+  content: Content[];
+};
+
+export type Content = {
   content: string;
 };
 
