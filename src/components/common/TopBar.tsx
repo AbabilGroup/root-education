@@ -73,7 +73,10 @@ const TopBar = () => {
             </div>
           </Link>
 
-          <Link href="https://maps.app.goo.gl/qA9NxaprzCGPyTQ86" target="_blank">
+          <Link
+            href="https://maps.app.goo.gl/qA9NxaprzCGPyTQ86"
+            target="_blank"
+          >
             <div className="flex items-center justify-start gap-3 px-5">
               <div>
                 <svg

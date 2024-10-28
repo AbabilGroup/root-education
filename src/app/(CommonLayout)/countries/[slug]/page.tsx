@@ -6,7 +6,6 @@ import InstituteRepresent from "@/components/pages/countries/country_details/Ins
 import TabsSection from "@/components/pages/countries/country_details/TabsSection";
 import TopSection from "@/components/pages/countries/country_details/TopSeciton";
 import { formatCountryRoute } from "@/lib/utils";
-import { getAllCountries } from "@/services/getAllCountries";
 import { getCountryBySlug } from "@/services/getCountryBySlug";
 
 type TCountryDetailsPageProps = {
@@ -26,13 +25,13 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
 
   const countryInfo = await getCountryBySlug(slug);
 
-  console.log(countryInfo);
+  console.log("🚀 ~ CountryDetailsPage ~ countryInfo:", countryInfo);
 
   return (
     <main>
       <PageBanner PageName={formatCountryRoute(slug)} />
 
-      <TopSection countryInfo={countryInfo} />
+      <TopSection countryInfo={countryInfo.box1} />
 
       <TabsSection countryInfo={countryInfo} />
 
