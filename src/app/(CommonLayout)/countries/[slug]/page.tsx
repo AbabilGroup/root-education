@@ -4,7 +4,7 @@ import BestCities from "@/components/pages/countries/country_details/BestCities"
 import FAQ from "@/components/pages/countries/country_details/FAQ";
 import InstituteRepresent from "@/components/pages/countries/country_details/InstituteRepresent";
 import TabsSection from "@/components/pages/countries/country_details/TabsSection";
-import TopSection from "@/components/pages/countries/country_details/TopSeciton";
+import TopSection from "@/components/pages/countries/country_details/TopSection";
 import { formatCountryRoute } from "@/lib/utils";
 import { getCountryBySlug } from "@/services/getCountryBySlug";
 
@@ -24,8 +24,6 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
   const { slug } = params;
 
   const countryInfo = await getCountryBySlug(slug);
-
-  console.log("🚀 ~ CountryDetailsPage ~ countryInfo:", countryInfo);
 
   return (
     <main>

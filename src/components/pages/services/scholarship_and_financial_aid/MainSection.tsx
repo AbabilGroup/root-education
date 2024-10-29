@@ -4,8 +4,8 @@ import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBou
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import SiteButton from "@/components/ui/SiteButton";
 import Image from "next/image";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import ReactPlayer from "react-player";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import ModalContent from "@/components/common/ModalContent";
 
 const MainSection = () => {
   return (
@@ -43,20 +43,7 @@ const MainSection = () => {
                 fill
               />
             </DialogTrigger>
-            <DialogContent className="min-h-[70vh] max-w-[1000px] border border-primary bg-white">
-              <div className="p-5">
-                <ReactPlayer
-                  playing
-                  controls
-                  style={{
-                    minWidth: "100%",
-                    minHeight: "100%",
-                    border: "1px solid #ddd",
-                  }}
-                  url="https://youtu.be/qC4sVo6STFM"
-                />
-              </div>
-            </DialogContent>
+            <ModalContent />
           </Dialog>
         </FadeInRightWithSlowBounce>
       </div>
