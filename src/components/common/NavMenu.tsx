@@ -75,7 +75,7 @@ export function NavMenu() {
                 <NavigationMenuItem className="list-none" key={service.id}>
                   <Link href={service.path} legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`flex items-center justify-start font-medium text-secondary duration-100 hover:text-primary ${pathname === `${service.path}` && "text-primary"}`}
+                      className={`flex items-center justify-start font-medium duration-100 hover:text-primary ${pathname === service.path && "text-primary"}`}
                     >
                       <IoMdArrowDropright className="text-2xl" />
                       {service.name}
