@@ -12,6 +12,7 @@ export type Root = {
   faq: Faq[];
   country: string;
   slug: string;
+  flag: string;
 };
 
 export type Box1 = {
@@ -44,11 +45,13 @@ export type Costofliving = {
 export type List = {
   title: string;
   content: string;
+  icon: string;
 };
 
 export type Fee = {
   title: string;
   range: string;
+  icon: string;
 };
 
 export type Jobopportunity = {
@@ -60,6 +63,7 @@ export type Jobopportunity = {
 export type List2 = {
   title: string;
   content: string;
+  icon: string;
 };
 
 export type Scholarship = {
@@ -85,6 +89,7 @@ export type ApplicationProcedure = {
 export type Applicationprocedureslist = {
   title: string;
   content: string;
+  icon: string;
 };
 
 export type AdmissionRequirment = {
@@ -96,6 +101,7 @@ export type AdmissionRequirment = {
 export type List3 = {
   title: string;
   content: string;
+  icon: string;
 };
 
 export type Visaprocedure = {

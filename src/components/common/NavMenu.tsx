@@ -366,7 +366,7 @@ export function NavMenu() {
             <Link href="/universities">Universities</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
-            <div className="grid w-[750px] grid-cols-3 gap-y-3 p-4 text-sm">
+            <div className="grid w-[900px] gap-x-5 grid-cols-3 gap-y-3 p-4 text-sm">
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link

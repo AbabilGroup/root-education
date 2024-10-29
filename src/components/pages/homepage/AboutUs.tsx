@@ -8,6 +8,7 @@ import SectionName from "@/components/ui/SectionName";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import ReactPlayer from "react-player";
+import CountUp from "react-countup";
 
 const AboutUs = () => {
   return (
@@ -16,25 +17,33 @@ const AboutUs = () => {
         <div className="mx-auto -mt-[73px] grid max-w-5xl grid-cols-1 divide-y-[1px] divide-primary rounded-lg border-l-8 border-r-8 border-l-primary border-r-primary bg-white px-20 py-8 shadow sm:divide-x-0 sm:divide-y-0 md:grid-cols-2 xl:grid-cols-4 xl:divide-x-[1px] xl:divide-y-0 xl:px-0">
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
-              <h4 className="text-3xl font-bold text-primary">1000+</h4>
+              <h4 className="text-3xl font-bold text-primary">
+                <CountUp end={1000} />+
+              </h4>
               <p className="text-sm font-medium">Student Enrolled</p>
             </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
-              <h4 className="text-3xl font-bold text-primary">6+</h4>
+              <h4 className="text-3xl font-bold text-primary">
+                <CountUp end={6} />+
+              </h4>
               <p className="text-sm font-medium">WorldWide Brances</p>
             </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
-              <h4 className="text-3xl font-bold text-primary">36+</h4>
+              <h4 className="text-3xl font-bold text-primary">
+                <CountUp end={36} />+
+              </h4>
               <p className="text-sm font-medium">Partnered University</p>
             </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
-              <h4 className="text-3xl font-bold text-primary">13 Years</h4>
+              <h4 className="text-3xl font-bold text-primary">
+                <CountUp end={13} /> Years
+              </h4>
               <p className="text-sm font-medium">of Experience</p>
             </FadeInDownWithSlowBounce>
           </div>

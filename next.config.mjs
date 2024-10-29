@@ -6,8 +6,14 @@ const nextConfig = {
         protocol: "http",
         hostname: "103.17.37.8",
         port: "8004",
-        pathname: "/media/city/**",
+        pathname: "/**",
       },
+      // {
+      //   protocol: "http",
+      //   hostname: "103.17.37.8",
+      //   port: "8004",
+      //   pathname: "/media/job_opportunity/**",
+      // },
     ],
   },
 };
