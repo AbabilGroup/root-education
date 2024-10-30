@@ -3,23 +3,20 @@ import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowB
 import SiteButton from "@/components/ui/SiteButton";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
+import { Root } from "@/types/university";
 
-const TopSection = () => {
+const TopSection = ({ universityInfo }: { universityInfo: Root }) => {
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container">
         <div className="flex flex-col items-center justify-between gap-x-20 gap-y-10 rounded-xl border px-8 py-4 shadow-sm lg:flex-row">
           <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
             <h2 className="text-center text-4xl font-semibold lg:text-left">
-              Spiru haret University, Romania
+              {universityInfo.name}, {universityInfo.country}
             </h2>
             <p className="text-center text-sm font-medium lg:text-left">
-              Spiru Haret University, a prominent private institution in
-              Romania, offers a wide range of undergraduate and graduate
-              programs. Known for its flexible learning options, the university
-              emphasizes academic excellence and innovation, providing students
-              with opportunities to pursue their educational and professional
-              goals in a dynamic and supportive environment.
+              {universityInfo.about_university.content[0].content}
             </p>
             <div className="flex gap-x-4">
               <div className="space-y-2">
@@ -44,7 +41,7 @@ const TopSection = () => {
                       fill="#F37329"
                     />
                   </svg>
-                  <span>Country : Romania</span>
+                  <span>Country : {universityInfo.country}</span>
                 </div>
                 <div className="flex items-center justify-start gap-x-2 text-sm font-medium">
                   <svg
@@ -59,7 +56,9 @@ const TopSection = () => {
                       fill="#F37329"
                     />
                   </svg>
-                  <span>University Type : Public</span>
+                  <span>
+                    University Type : {universityInfo.university_type}
+                  </span>
                 </div>
               </div>
               <div className="space-y-2">
@@ -80,7 +79,10 @@ const TopSection = () => {
                       fill="#F37329"
                     />
                   </svg>
-                  <span>Total Students : 3,11,928</span>
+                  <span>
+                    Total Students :{" "}
+                    {formatIndianNumber(universityInfo.total_students)}
+                  </span>
                 </div>
                 <div className="flex items-center justify-start gap-x-2 text-sm font-medium">
                   <svg
@@ -95,7 +97,9 @@ const TopSection = () => {
                       fill="#F37329"
                     />
                   </svg>
-                  <span>Launched : 1991</span>
+                  <span>
+                    Launched : {getYearFromDate(universityInfo.established)}
+                  </span>
                 </div>
               </div>
             </div>

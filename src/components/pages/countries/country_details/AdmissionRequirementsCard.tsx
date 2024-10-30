@@ -1,5 +1,5 @@
 import { apiBaseUrl, port } from "@/secrets";
-import { List3 } from "@/types";
+import { List3 } from "@/types/country";
 import Image from "next/image";
 
 const AdmissionRequirementsCard = ({ requirement }: { requirement: List3 }) => {

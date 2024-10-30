@@ -1,6 +1,6 @@
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 import Section from "@/components/common/Section";
-import { Root } from "@/types";
+import { Root } from "@/types/country";
 import Image from "next/image";
 
 const BestCities = ({ countryInfo }: { countryInfo: Root }) => {

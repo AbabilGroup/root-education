@@ -366,11 +366,11 @@ export function NavMenu() {
             <Link href="/universities">Universities</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
-            <div className="grid w-[900px] gap-x-5 grid-cols-3 gap-y-3 p-4 text-sm">
+            <div className="grid w-[900px] grid-cols-3 gap-x-5 gap-y-3 p-4 text-sm">
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -381,7 +381,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -389,7 +389,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -400,7 +400,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -408,7 +408,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -419,7 +419,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -427,7 +427,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -438,7 +438,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -446,7 +446,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -457,7 +457,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -465,7 +465,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -476,7 +476,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -484,7 +484,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -495,7 +495,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -503,7 +503,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -514,7 +514,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -522,7 +522,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -533,7 +533,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -541,7 +541,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -552,7 +552,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -560,7 +560,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -571,7 +571,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -579,7 +579,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -590,7 +590,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -598,7 +598,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -609,7 +609,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -617,7 +617,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -628,7 +628,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -636,7 +636,7 @@ export function NavMenu() {
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link
-                    href="/universities/oxford-university"
+                    href="/universities/apiru-haret-university"
                     legacyBehavior
                     passHref
                   >
@@ -647,7 +647,7 @@ export function NavMenu() {
                         height={30}
                         width={30}
                       />
-                      <span>European Politechnic University, Bulgaria</span>
+                      <span>Apiru Haret University</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

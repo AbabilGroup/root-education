@@ -1,4 +1,4 @@
-import { Root } from "@/types";
+import { Root } from "@/types/country";
 import AdmissionRequirementsCard from "./AdmissionRequirementsCard";
 
 const AdmissionRequirements = ({ countryInfo }: { countryInfo: Root }) => {

@@ -23,7 +23,7 @@ export default function AdminLayout({
       <body className={`${montserrat.className}`}>
         <SidebarProvider>
           <AppSidebar />
-          <main>
+          <main className="basis-full">
             <SidebarTrigger />
             {children}
           </main>

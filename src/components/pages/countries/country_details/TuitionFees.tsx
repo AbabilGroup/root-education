@@ -1,7 +1,7 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import Section from "@/components/common/Section";
 import { apiBaseUrl, port } from "@/secrets";
-import { Fee } from "@/types";
+import { Fee } from "@/types/country";
 import Image from "next/image";
 
 const TuitionFees = ({ tuitionFees }: { tuitionFees: Fee[] }) => {

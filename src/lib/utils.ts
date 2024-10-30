@@ -34,3 +34,20 @@ export const formatCountryRoute = (input: string): string => {
     })
     .join(" "); // Join the words back with spaces
 };
+
+export const formatIndianNumber = (number: number) => {
+  const numStr = number.toString();
+
+  // Add commas as per Indian numbering format
+  const lastThree = numStr.slice(-3);
+  const otherNumbers = numStr.slice(0, -3);
+  const formattedNumber =
+    otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + lastThree;
+
+  return formattedNumber.startsWith(",") ? lastThree : formattedNumber;
+};
+
+export const getYearFromDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.getFullYear();
+};

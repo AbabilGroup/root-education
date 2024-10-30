@@ -13,7 +13,7 @@ import { useState } from "react";
 import TuitionFees from "./TuitionFees";
 import LivingCosts from "./LivingCosts";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
-import { Root } from "@/types";
+import { Root } from "@/types/country";
 import Image from "next/image";
 import { apiBaseUrl, port } from "@/secrets";
 

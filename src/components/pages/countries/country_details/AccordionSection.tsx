@@ -1,4 +1,4 @@
-import { Root } from "@/types";
+import { Root } from "@/types/country";
 import AdmissionRequirements from "./AdmissionRequirements";
 import ApplicationProcedures from "./ApplicationProcedures";
 import InfoAccordion from "./InfoAccordion";

@@ -1,4 +1,4 @@
-import { Root } from "@/types";
+import { Root } from "@/types/country";
 import AdmissionForm from "./AdmissionForm";
 
 const TopSection = ({ countryInfo }: { countryInfo: Root }) => {

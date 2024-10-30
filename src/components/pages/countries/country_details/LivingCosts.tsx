@@ -1,6 +1,6 @@
 import Section from "@/components/common/Section";
 import ServicesIncludedCard from "../../services/pre_departure_briefing/ServicesIncludedCard";
-import { List } from "@/types";
+import { List } from "@/types/country";
 import Image from "next/image";
 import { apiBaseUrl, port } from "@/secrets";
 

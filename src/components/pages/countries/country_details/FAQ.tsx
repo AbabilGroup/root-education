@@ -1,7 +1,7 @@
 import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBounce";
 import SectionName from "@/components/ui/SectionName";
 import FaqAccordion from "../../faq/FaqAccordion";
-import { Root } from "@/types";
+import { Root } from "@/types/country";
 
 const FAQ = ({ countryInfo }: { countryInfo: Root }) => {
   return (

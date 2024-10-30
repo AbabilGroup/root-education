@@ -1,4 +1,4 @@
-import { Root } from "@/types";
+import { Root } from "@/types/country";
 import ApplicationProceduresCard from "./ApplicationProceduresCard";
 
 const ApplicationProcedures = ({ countryInfo }: { countryInfo: Root }) => {

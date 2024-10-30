@@ -1,5 +1,5 @@
 import { apiBaseUrl, port } from "@/secrets";
-import { Applicationprocedureslist } from "@/types";
+import { Applicationprocedureslist } from "@/types/country";
 import Image from "next/image";
 
 const ApplicationProceduresCard = ({
