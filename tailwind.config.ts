@@ -16,26 +16,34 @@ const config: Config = {
       colors: {
         primary: "#F37329",
         secondary: "#040707",
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
       },
-
       backgroundImage: {
-        "home-hero-bg": "url('/images/pages/home/hero_section/hero_bg.png')",
-        "footer-bg": "url('/images/footer/footer_bg.png')",
-        "testimonial-card-bg": "url('/images/Rectangle 38 (1).png')",
+        "home-hero-bg": 'url("/images/pages/home/hero_section/hero_bg.png")',
+        "footer-bg": 'url("/images/footer/footer_bg.png")',
+        "testimonial-card-bg": 'url("/images/Rectangle 38 (1).png")',
         "about-us-banner-bg":
-          "url('/images/pages/about_us/about_us_banner_bg.png')",
+          'url("/images/pages/about_us/about_us_banner_bg.png")',
         "why-choose-us-bg":
-          "url('/images/pages/about_us/why_choose_us_bg.png')",
-        "get-in-touch-bg": "url('/images/pages/about_us/get_in_touch_bg.png')",
-        "page-banner-bg": "url('/images/page_banner_bg.png')",
+          'url("/images/pages/about_us/why_choose_us_bg.png")',
+        "get-in-touch-bg": 'url("/images/pages/about_us/get_in_touch_bg.png")',
+        "page-banner-bg": 'url("/images/page_banner_bg.png")',
         "service-benefits-bg":
-          "url('/images/pages/services/university_selection/service_benefits_bg.png')",
+          'url("/images/pages/services/university_selection/service_benefits_bg.png")',
         "consultation-bg":
-          "url('/images/pages/consultation/consultation_bg.svg')",
+          'url("/images/pages/consultation/consultation_bg.svg")',
         "contact-us-form-bg":
-          "url('/images/pages/contact_us/contact_us_form_bg.png')",
+          'url("/images/pages/contact_us/contact_us_form_bg.png")',
       },
-
       keyframes: {
         floating: {
           "0%": {
@@ -60,7 +68,6 @@ const config: Config = {
           },
         },
       },
-
       animation: {
         floating: "floating 2s ease-in-out infinite",
         pulse: "pulse 1s ease-in-out infinite",
