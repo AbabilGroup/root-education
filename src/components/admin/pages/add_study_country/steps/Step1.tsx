@@ -40,7 +40,8 @@ const Step1 = ({
   const { register, handleSubmit } = useForm<FormValues>();
 
   const handleCreateCountry: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    console.log("🚀 ~ data:", data);
+
     const formData = new FormData();
     formData.append("country", data.countryName);
     formData.append("flag", data.countryFlag[0]);
@@ -49,6 +50,7 @@ const Step1 = ({
   };
 
   console.log(data);
+
   return (
     <TabsContent value="step1">
       <form

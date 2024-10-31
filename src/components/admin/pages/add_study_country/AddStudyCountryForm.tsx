@@ -60,7 +60,7 @@ const AddStudyCountryForm = () => {
 
         <Step1 setCountryName={setCountryName} />
 
-        <Step2 />
+        <Step2 countryName={countryName} />
 
         <Step3 countryName={countryName} />
 
