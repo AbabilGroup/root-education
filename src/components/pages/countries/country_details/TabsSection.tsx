@@ -20,8 +20,6 @@ import { apiBaseUrl, port } from "@/secrets";
 const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
   const [activeTab, setActiveTab] = useState("tab1");
 
-  console.log(countryInfo.jobopportunity[0].list);
-
   return (
     <section className="py-[50px]">
       <div className="container">
@@ -69,6 +67,7 @@ const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
                 Scholarships
               </TabsTrigger>
             </TabsList>
+            
             <TabsContent className="mt-14 space-y-4 pt-5" value="tab1">
               <p className="text-sm font-medium">
                 {countryInfo.whystudy[0].short_breaf}

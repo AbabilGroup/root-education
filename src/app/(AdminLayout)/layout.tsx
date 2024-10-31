@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 
 export const metadata: Metadata = {
   title: "Root Education | Admin",
@@ -21,13 +22,15 @@ export default function AdminLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className}`}>
-        <SidebarProvider>
-          <AppSidebar />
-          <main className="basis-full">
-            <SidebarTrigger />
-            {children}
-          </main>
-        </SidebarProvider>
+        <TanstackQueryProvider>
+          <SidebarProvider>
+            <AppSidebar />
+            <main className="basis-full">
+              <SidebarTrigger />
+              {children}
+            </main>
+          </SidebarProvider>
+        </TanstackQueryProvider>
       </body>
     </html>
   );
