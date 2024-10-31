@@ -19,7 +19,11 @@ const Step1 = ({
 }: {
   setCountryName: (name: string) => void;
 }) => {
-  const { mutate, isPending } = useMutation<AxiosResponse, unknown, FormData>({
+  const { mutate, isPending, data } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormData
+  >({
     mutationFn: (formData) => {
       return axios.post(
         `${apiUrl}/step_by_step_country/create_country/`,
@@ -44,6 +48,7 @@ const Step1 = ({
     mutate(formData);
   };
 
+  console.log(data);
   return (
     <TabsContent value="step1">
       <form
