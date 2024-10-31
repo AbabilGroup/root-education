@@ -331,7 +331,11 @@ const AddStudyCountryForm = () => {
               {whyStudyFields.map((field, index) => (
                 <div key={field.id} className="mb-2 space-y-2">
                   <div className="flex items-center space-x-2">
-                    <Input type="text" placeholder={field.titlePlaceholder} />
+                    <Input
+                      type="text"
+                      placeholder={field.titlePlaceholder}
+                      required
+                    />
                     {field.id === whyStudyFields.length && (
                       <button
                         type="button"
@@ -372,7 +376,11 @@ const AddStudyCountryForm = () => {
                 {tuitionFeeFields.map((field, index) => (
                   <div key={field.id} className="mb-2 space-y-2">
                     <div className="flex items-center space-x-2">
-                      <Input type="text" placeholder={field.titlePlaceholder} />
+                      <Input
+                        type="text"
+                        placeholder={field.titlePlaceholder}
+                        required
+                      />
                       {field.id === tuitionFeeFields.length && (
                         <button
                           type="button"
@@ -403,7 +411,11 @@ const AddStudyCountryForm = () => {
                 {livingCostFields.map((field, index) => (
                   <div key={field.id} className="mb-2 space-y-2">
                     <div className="flex items-center space-x-2">
-                      <Input type="text" placeholder={field.titlePlaceholder} />
+                      <Input
+                        type="text"
+                        placeholder={field.titlePlaceholder}
+                        required
+                      />
                       {field.id === livingCostFields.length && (
                         <button
                           type="button"
@@ -442,7 +454,11 @@ const AddStudyCountryForm = () => {
               {jobFields.map((field, index) => (
                 <div key={field.id} className="mb-2 space-y-2">
                   <div className="flex items-center space-x-2">
-                    <Input type="text" placeholder={field.titlePlaceholder} />
+                    <Input
+                      type="text"
+                      placeholder={field.titlePlaceholder}
+                      required
+                    />
                     {field.id === jobFields.length && (
                       <button
                         type="button"
@@ -475,7 +491,7 @@ const AddStudyCountryForm = () => {
             <div>
               <Label>Scholarships</Label>
 
-              <Textarea className="mb-2" placeholder="Short brief" />
+              <Textarea className="mb-2" placeholder="Short brief" required />
 
               {scholarshipFields.map((field, index) => (
                 <div key={field.id} className="my-2 mb-10 space-y-2">
@@ -500,10 +516,26 @@ const AddStudyCountryForm = () => {
                       </button>
                     )}
                   </div>
-                  <Input type="text" placeholder={field.criteriaPlaceholder} />
-                  <Input type="text" placeholder={field.coveragePlaceholder} />
-                  <Input type="text" placeholder={field.deadlinePlaceholder} />
-                  <Input type="text" placeholder={field.processPlaceholder} />
+                  <Input
+                    type="text"
+                    placeholder={field.criteriaPlaceholder}
+                    required
+                  />
+                  <Input
+                    type="text"
+                    placeholder={field.coveragePlaceholder}
+                    required
+                  />
+                  <Input
+                    type="text"
+                    placeholder={field.deadlinePlaceholder}
+                    required
+                  />
+                  <Input
+                    type="text"
+                    placeholder={field.processPlaceholder}
+                    required
+                  />
                 </div>
               ))}
             </div>
@@ -516,12 +548,16 @@ const AddStudyCountryForm = () => {
             <div>
               <Label>Application Procedures</Label>
 
-              <Textarea className="mb-2" placeholder="Short brief" />
+              <Textarea className="mb-2" placeholder="Short brief" required />
 
               {applicationProFields.map((field, index) => (
                 <div key={field.id} className="mb-2 space-y-2">
                   <div className="flex items-center space-x-2">
-                    <Input type="text" placeholder={field.titlePlaceholder} />
+                    <Input
+                      type="text"
+                      placeholder={field.titlePlaceholder}
+                      required
+                    />
                     {field.id === applicationProFields.length && (
                       <button
                         type="button"
@@ -541,7 +577,11 @@ const AddStudyCountryForm = () => {
                       </button>
                     )}
                   </div>
-                  <Textarea rows={5} placeholder={field.contentPlaceholder} />
+                  <Textarea
+                    rows={5}
+                    placeholder={field.contentPlaceholder}
+                    required
+                  />
                 </div>
               ))}
             </div>
@@ -554,12 +594,16 @@ const AddStudyCountryForm = () => {
             <div>
               <Label>Application Requirements</Label>
 
-              <Textarea className="mb-2" placeholder="Short brief" />
+              <Textarea className="mb-2" placeholder="Short brief" required />
 
               {applicationReqFields.map((field, index) => (
                 <div key={field.id} className="mb-2 space-y-2">
                   <div className="flex items-center space-x-2">
-                    <Input type="text" placeholder={field.titlePlaceholder} />
+                    <Input
+                      type="text"
+                      placeholder={field.titlePlaceholder}
+                      required
+                    />
                     {field.id === applicationReqFields.length && (
                       <button
                         type="button"
@@ -579,7 +623,11 @@ const AddStudyCountryForm = () => {
                       </button>
                     )}
                   </div>
-                  <Textarea rows={5} placeholder={field.contentPlaceholder} />
+                  <Textarea
+                    rows={5}
+                    placeholder={field.contentPlaceholder}
+                    required
+                  />
                 </div>
               ))}
             </div>
@@ -592,7 +640,7 @@ const AddStudyCountryForm = () => {
             <div>
               <Label>Visa Procedures & Fees</Label>
 
-              <Textarea className="mb-2" placeholder="Short brief" />
+              <Textarea className="mb-2" placeholder="Short brief" required />
 
               {visaFields.map((field, index) => (
                 <div key={field.id} className="mb-2 space-y-2">
@@ -600,6 +648,7 @@ const AddStudyCountryForm = () => {
                     <Input
                       type="text"
                       placeholder={field.categoryPlaceholder}
+                      required
                     />
                     {field.id === visaFields.length && (
                       <button
@@ -620,7 +669,11 @@ const AddStudyCountryForm = () => {
                       </button>
                     )}
                   </div>
-                  <Textarea rows={5} placeholder={field.detailsPlaceholder} />
+                  <Textarea
+                    rows={5}
+                    placeholder={field.detailsPlaceholder}
+                    required
+                  />
                 </div>
               ))}
             </div>
@@ -638,7 +691,11 @@ const AddStudyCountryForm = () => {
                     key={field.id}
                     className="mb-2 flex items-center space-x-2"
                   >
-                    <Input type="text" placeholder={field.namePlaceholder} />
+                    <Input
+                      type="text"
+                      placeholder={field.namePlaceholder}
+                      required
+                    />
                     {field.id === cityFields.length && (
                       <button
                         type="button"
@@ -674,7 +731,7 @@ const AddStudyCountryForm = () => {
             <div>
               <Label>FAQ</Label>
 
-              <Textarea className="mb-2" placeholder="Short brief" />
+              <Textarea className="mb-2" placeholder="Short brief" required />
 
               {faqFields.map((field, index) => (
                 <div key={field.id} className="mb-2 space-y-2">
@@ -682,6 +739,7 @@ const AddStudyCountryForm = () => {
                     <Input
                       type="text"
                       placeholder={field.questionPlaceholder}
+                      required
                     />
                     {field.id === faqFields.length && (
                       <button
@@ -702,7 +760,11 @@ const AddStudyCountryForm = () => {
                       </button>
                     )}
                   </div>
-                  <Textarea rows={5} placeholder={field.answerPlaceholder} />
+                  <Textarea
+                    rows={5}
+                    placeholder={field.answerPlaceholder}
+                    required
+                  />
                 </div>
               ))}
             </div>
