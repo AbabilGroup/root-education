@@ -9,8 +9,11 @@ import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
 type List = {
-  title: string;
-  content: string;
+  name: string;
+  criteria: string;
+  coverage: string;
+  deadline: string;
+  process: string;
 };
 
 type FormValues = {
@@ -22,7 +25,7 @@ const Step5 = () => {
   const { control, register, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       shortBrief: "",
-      list: [{ title: "", content: "" }], // Default single list
+      list: [{ title: "", content: "" }],
     },
   });
 
