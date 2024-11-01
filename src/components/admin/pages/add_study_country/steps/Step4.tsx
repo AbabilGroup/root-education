@@ -1,133 +1,154 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
-import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
+import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
+import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+
+type TuitionFee = {
+  title: string;
+  range: string;
+};
+
+type LivingCost = {
+  title: string;
+  content: string;
+};
+
+type FormValues = {
+  shortBrief: string;
+  tuitionFees: TuitionFee[];
+  livingCosts: LivingCost[];
+};
 
 const Step4 = () => {
-  const [tuitionFeeFields, setTuitionFeeFields] = useState([
-    { id: 1, titlePlaceholder: "Title 1", rangePlaceholder: "Range 1" },
-  ]);
-  const [livingCostFields, setLivingCostFields] = useState([
-    { id: 1, titlePlaceholder: "Title 1", contentPlaceholder: "Content 1" },
-  ]);
-  const addTuitionFeeField = () => {
-    setTuitionFeeFields((prev) => [
-      ...prev,
-      {
-        id: prev.length + 1,
-        titlePlaceholder: `Title ${prev.length + 1}`,
-        rangePlaceholder: `Range ${prev.length + 1}`,
-      },
-    ]);
-  };
+  const { control, register, handleSubmit } = useForm<FormValues>({
+    defaultValues: {
+      shortBrief: "",
+      tuitionFees: [{ title: "", range: "" }],
+      livingCosts: [{ title: "", content: "" }],
+    },
+  });
 
-  const removeTuitionFeeField = (id: number) => {
-    setTuitionFeeFields((prev) => prev.filter((field) => field.id !== id));
-  };
+  const {
+    fields: feeFields,
+    append: feeAppend,
+    remove: feeRemove,
+  } = useFieldArray({
+    control,
+    name: "tuitionFees",
+  });
 
-  const addLivingCostField = () => {
-    setLivingCostFields((prev) => [
-      ...prev,
-      {
-        id: prev.length + 1,
-        titlePlaceholder: `Title ${prev.length + 1}`,
-        contentPlaceholder: `Content ${prev.length + 1}`,
-      },
-    ]);
-  };
+  const {
+    fields: costFields,
+    append: costAppend,
+    remove: costRemove,
+  } = useFieldArray({
+    control,
+    name: "livingCosts",
+  });
 
-  const removeLivingCostField = (id: number) => {
-    setLivingCostFields((prev) => prev.filter((field) => field.id !== id));
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
   };
 
   return (
     <TabsContent value="step4">
-      <form className="w-1/2 space-y-5" action="">
-        {/* Why study  */}
-        <div>
-          <Label>Cost of Study and Living</Label>
-
-          <Textarea className="mb-2" placeholder="Short brief" required />
-
+      <form
+        className="w-1/2 space-y-5"
+        action=""
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="space-y-4">
           <div>
-            <Label>Tuition Fee</Label>
+            <Label>Cost of Study and Living</Label>
 
-            {tuitionFeeFields.map((field, index) => (
-              <div key={field.id} className="mb-2 space-y-2">
-                <div className="flex items-center space-x-2">
-                  <Input
-                    type="text"
-                    placeholder={field.titlePlaceholder}
-                    required
-                  />
-                  {field.id === tuitionFeeFields.length && (
+            <Textarea
+              {...register("shortBrief")}
+              className="mb-2"
+              placeholder="Short brief"
+              required
+            />
+
+            <div className="space-y-5">
+              <div>
+                <Label>Tuition Fee</Label>
+
+                {feeFields.map((field, index) => (
+                  <div
+                    className="mb-2 flex items-center justify-between gap-x-3"
+                    key={field.id}
+                  >
+                    <div className="basis-full space-y-2">
+                      <Input
+                        {...register(`tuitionFees.${index}.title` as const)}
+                        placeholder="Title"
+                      />
+                      <Textarea
+                        {...register(`tuitionFees.${index}.range` as const)}
+                        placeholder="Range"
+                      />
+                    </div>
                     <button
+                      className="basis-auto rounded-full bg-primary p-1"
                       type="button"
-                      onClick={addTuitionFeeField}
-                      className="rounded-full bg-blue-500 p-2 text-white"
+                      onClick={() => feeRemove(index)}
                     >
-                      <CiCirclePlus />
+                      <FaMinusCircle className="text-xl text-white" />
                     </button>
-                  )}
-                  {index > 0 && (
-                    <button
-                      type="button"
-                      onClick={() => removeTuitionFeeField(field.id)}
-                      className="rounded-full bg-red-500 p-2 text-white"
-                    >
-                      <CiCircleMinus />
-                    </button>
-                  )}
-                </div>
-                <Textarea
-                  rows={5}
-                  placeholder={field.rangePlaceholder}
-                  required
-                />
+                  </div>
+                ))}
               </div>
-            ))}
+              <button
+                className="rounded-full bg-primary p-1"
+                type="button"
+                onClick={() => feeAppend({ title: "", range: "" })}
+              >
+                <FaPlusCircle className="text-xl text-white" />
+              </button>
+            </div>
           </div>
 
-          <div>
-            <Label>Living Costs</Label>
+          <div className="space-y-5">
+            <div>
+              <Label>Living Cost</Label>
 
-            {livingCostFields.map((field, index) => (
-              <div key={field.id} className="mb-2 space-y-2">
-                <div className="flex items-center space-x-2">
-                  <Input
-                    type="text"
-                    placeholder={field.titlePlaceholder}
-                    required
-                  />
-                  {field.id === livingCostFields.length && (
-                    <button
-                      type="button"
-                      onClick={addLivingCostField}
-                      className="rounded-full bg-blue-500 p-2 text-white"
-                    >
-                      <CiCirclePlus />
-                    </button>
-                  )}
-                  {index > 0 && (
-                    <button
-                      type="button"
-                      onClick={() => removeLivingCostField(field.id)}
-                      className="rounded-full bg-red-500 p-2 text-white"
-                    >
-                      <CiCircleMinus />
-                    </button>
-                  )}
+              {costFields.map((field, index) => (
+                <div
+                  className="mb-2 flex items-center justify-between gap-x-3"
+                  key={field.id}
+                >
+                  <div className="basis-full space-y-2">
+                    <Input
+                      {...register(`livingCosts.${index}.title` as const)}
+                      placeholder="Title"
+                    />
+                    <Textarea
+                      {...register(`livingCosts.${index}.content` as const)}
+                      placeholder="Range"
+                    />
+                  </div>
+                  <button
+                    className="basis-auto rounded-full bg-primary p-1"
+                    type="button"
+                    onClick={() => costRemove(index)}
+                  >
+                    <FaMinusCircle className="text-xl text-white" />
+                  </button>
                 </div>
-                <Textarea
-                  rows={5}
-                  placeholder={field.contentPlaceholder}
-                  required
-                />
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <button
+              className="rounded-full bg-primary p-1"
+              type="button"
+              onClick={() => costAppend({ title: "", content: "" })}
+            >
+              <FaPlusCircle className="text-xl text-white" />
+            </button>
           </div>
         </div>
         <Button type="submit">Next</Button>
