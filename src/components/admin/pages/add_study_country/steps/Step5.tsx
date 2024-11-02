@@ -9,11 +9,8 @@ import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
 type List = {
-  name: string;
-  criteria: string;
-  coverage: string;
-  deadline: string;
-  process: string;
+  title: string;
+  content: string;
 };
 
 type FormValues = {

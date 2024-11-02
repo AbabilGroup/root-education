@@ -1,96 +1,121 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
-import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
+import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
+import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+
+type List = {
+  name: string;
+  criteria: string;
+  coverage: string;
+  deadline: string;
+  process: string;
+};
+
+type FormValues = {
+  shortBrief: string;
+  list: List[];
+};
 
 const Step6 = () => {
-  const [scholarshipFields, setScholarshipFields] = useState([
-    {
-      id: 1,
-      namePlaceholder: "Name 1",
-      criteriaPlaceholder: "Criteria 1",
-      coveragePlaceholder: "Coverage 1",
-      deadlinePlaceholder: "Deadline 1",
-      processPlaceholder: "Process 1",
+  const { control, register, handleSubmit } = useForm<FormValues>({
+    defaultValues: {
+      shortBrief: "",
+      list: [
+        {
+          name: "",
+          criteria: "",
+          coverage: "",
+          deadline: "",
+          process: "",
+        },
+      ],
     },
-  ]);
-  const addScholarshipField = () => {
-    setScholarshipFields((prev) => [
-      ...prev,
-      {
-        id: prev.length + 1,
-        namePlaceholder: `Title ${prev.length + 1}`,
-        criteriaPlaceholder: `Content ${prev.length + 1}`,
-        coveragePlaceholder: `Deadline ${prev.length + 1}`,
-        deadlinePlaceholder: `Process ${prev.length + 1}`,
-        processPlaceholder: `Criteria ${prev.length + 1}`,
-      },
-    ]);
-  };
+  });
 
-  const removeScholarshipField = (id: number) => {
-    setScholarshipFields((prev) => prev.filter((field) => field.id !== id));
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "list",
+  });
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
   };
 
   return (
     <TabsContent value="step6">
-      <form className="w-1/2 space-y-5" action="">
-        {/* Why study  */}
+      <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label>Scholarships</Label>
-
-          <Textarea className="mb-2" placeholder="Short brief" required />
-
-          {scholarshipFields.map((field, index) => (
-            <div key={field.id} className="my-2 mb-10 space-y-2">
-              <div className="flex items-center space-x-2">
-                <Input type="text" placeholder={field.namePlaceholder} />
-                {field.id === scholarshipFields.length && (
-                  <button
-                    type="button"
-                    onClick={addScholarshipField}
-                    className="rounded-full bg-blue-500 p-2 text-white"
-                  >
-                    <CiCirclePlus />
-                  </button>
-                )}
-                {index > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => removeScholarshipField(field.id)}
-                    className="rounded-full bg-red-500 p-2 text-white"
-                  >
-                    <CiCircleMinus />
-                  </button>
-                )}
-              </div>
+          <Textarea
+            {...register("shortBrief")}
+            placeholder="Short brief"
+            required
+          />
+        </div>
+        {fields.map((field, index) => (
+          <div
+            className="flex items-center justify-between gap-x-3"
+            key={field.id}
+          >
+            <div className="basis-full space-y-2">
               <Input
-                type="text"
-                placeholder={field.criteriaPlaceholder}
+                {...register(`list.${index}.name` as const)}
+                placeholder="Scholarship Name"
                 required
               />
               <Input
-                type="text"
-                placeholder={field.coveragePlaceholder}
+                {...register(`list.${index}.criteria` as const)}
+                placeholder="Eligibility Criteria"
                 required
               />
               <Input
-                type="text"
-                placeholder={field.deadlinePlaceholder}
+                {...register(`list.${index}.coverage` as const)}
+                placeholder="Coverage"
                 required
               />
               <Input
-                type="text"
-                placeholder={field.processPlaceholder}
+                {...register(`list.${index}.deadline` as const)}
+                placeholder="Application Deadline"
+                required
+              />
+              <Input
+                {...register(`list.${index}.process` as const)}
+                placeholder="Application Process"
                 required
               />
             </div>
-          ))}
+            <button
+              className="basis-auto rounded-full bg-primary p-1"
+              type="button"
+              onClick={() => remove(index)}
+            >
+              <FaMinusCircle className="text-xl text-white" />
+            </button>
+          </div>
+        ))}
+        <button
+          className="rounded-full bg-primary p-1"
+          type="button"
+          onClick={() =>
+            append({
+              name: "",
+              criteria: "",
+              coverage: "",
+              deadline: "",
+              process: "",
+            })
+          }
+        >
+          <FaPlusCircle className="text-xl text-white" />
+        </button>
+        <div>
+          <Button type="submit">Next</Button>
         </div>
-        <Button type="submit">Next</Button>
       </form>
     </TabsContent>
   );
