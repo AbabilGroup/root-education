@@ -15,131 +15,69 @@ import Step10 from "./steps/Step10";
 import Step11 from "./steps/Step11";
 
 const AddStudyCountryForm = () => {
-  const [disabledTab, setDisabledTab] = useState({
-    tab1: false,
-    tab2: true,
-    tab3: true,
-    tab4: true,
-    tab5: true,
-    tab6: true,
-    tab7: true,
-    tab8: true,
-    tab9: true,
-    tab10: true,
-    tab11: true,
-  });
   const [activeTab, setActiveTab] = useState("step1");
-  const [countryName, setCountryName] = useState("");
+  const [countryName, setCountryName] = useState("mama");
 
   return (
     <>
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-1/2">
         <TabsList className="flex items-center justify-start gap-x-2">
-          <TabsTrigger
-            className="border"
-            value="step1"
-            disabled={disabledTab.tab1}
-          >
+          <TabsTrigger className="border" value="step1">
             Step 1
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step2"
-            disabled={disabledTab.tab2}
-          >
+          <TabsTrigger className="border" value="step2">
             Step 2
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step3"
-            disabled={disabledTab.tab3}
-          >
+          <TabsTrigger className="border" value="step3">
             Step 3
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step4"
-            disabled={disabledTab.tab4}
-          >
+          <TabsTrigger className="border" value="step4">
             Step 4
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step5"
-            disabled={disabledTab.tab5}
-          >
+          <TabsTrigger className="border" value="step5">
             Step 5
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step6"
-            disabled={disabledTab.tab6}
-          >
+          <TabsTrigger className="border" value="step6">
             Step 6
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step7"
-            disabled={disabledTab.tab7}
-          >
+          <TabsTrigger className="border" value="step7">
             Step 7
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step8"
-            disabled={disabledTab.tab8}
-          >
+          <TabsTrigger className="border" value="step8">
             Step 8
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step9"
-            disabled={disabledTab.tab9}
-          >
+          <TabsTrigger className="border" value="step9">
             Step 9
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step10"
-            disabled={disabledTab.tab10}
-          >
+          <TabsTrigger className="border" value="step10">
             Step 10
           </TabsTrigger>
-          <TabsTrigger
-            className="border"
-            value="step11"
-            disabled={disabledTab.tab11}
-          >
+          <TabsTrigger className="border" value="step11">
             Step 11
           </TabsTrigger>
         </TabsList>
 
-        <Step1
-          setCountryName={setCountryName}
-          setActiveTab={setActiveTab}
-          disabledTab={disabledTab}
-          setDisabledTab={setDisabledTab}
-        />
+        <Step1 setCountryName={setCountryName} setActiveTab={setActiveTab} />
 
-        <Step2 />
+        <Step2 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step3 countryName={countryName} />
+        <Step3 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step4 />
+        <Step4 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step5 />
+        <Step5 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step6 />
+        <Step6 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step7 />
+        <Step7 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step8 />
+        <Step8 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step9 />
+        <Step9 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step10 />
+        <Step10 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step11 />
+        <Step11 countryName={countryName} setActiveTab={setActiveTab} />
       </Tabs>
     </>
   );

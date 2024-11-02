@@ -5,6 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
@@ -19,17 +23,23 @@ type LivingCost = {
 };
 
 type FormValues = {
-  shortBrief: string;
-  tuitionFees: TuitionFee[];
-  livingCosts: LivingCost[];
+  short_breaf: string;
+  fees: TuitionFee[];
+  list: LivingCost[];
 };
 
-const Step4 = () => {
-  const { control, register, handleSubmit } = useForm<FormValues>({
+const Step4 = ({
+  countryName,
+  setActiveTab,
+}: {
+  countryName: string;
+  setActiveTab: (tab: string) => void;
+}) => {
+  const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
-      shortBrief: "",
-      tuitionFees: [{ title: "", range: "" }],
-      livingCosts: [{ title: "", content: "" }],
+      short_breaf: "",
+      fees: [{ title: "", range: "" }],
+      list: [{ title: "", content: "" }],
     },
   });
 
@@ -39,7 +49,7 @@ const Step4 = () => {
     remove: feeRemove,
   } = useFieldArray({
     control,
-    name: "tuitionFees",
+    name: "fees",
   });
 
   const {
@@ -48,12 +58,31 @@ const Step4 = () => {
     remove: costRemove,
   } = useFieldArray({
     control,
-    name: "livingCosts",
+    name: "list",
+  });
+
+  const { mutate, isPending, isSuccess } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormValues
+  >({
+    mutationFn: (formData) =>
+      axios.post(
+        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_costofliving/`,
+        formData,
+      ),
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+      setActiveTab("step5");
+    }
+  }, [isSuccess, reset]);
 
   return (
     <TabsContent value="step4">
@@ -63,7 +92,7 @@ const Step4 = () => {
             <Label>Cost of Study and Living</Label>
 
             <Textarea
-              {...register("shortBrief")}
+              {...register("short_breaf")}
               className="mb-2"
               placeholder="Short brief"
               required
@@ -80,11 +109,11 @@ const Step4 = () => {
                   >
                     <div className="basis-full space-y-2">
                       <Input
-                        {...register(`tuitionFees.${index}.title` as const)}
+                        {...register(`fees.${index}.title` as const)}
                         placeholder="Title"
                       />
                       <Textarea
-                        {...register(`tuitionFees.${index}.range` as const)}
+                        {...register(`fees.${index}.range` as const)}
                         placeholder="Range"
                       />
                     </div>
@@ -119,11 +148,11 @@ const Step4 = () => {
                 >
                   <div className="basis-full space-y-2">
                     <Input
-                      {...register(`livingCosts.${index}.title` as const)}
+                      {...register(`list.${index}.title` as const)}
                       placeholder="Title"
                     />
                     <Textarea
-                      {...register(`livingCosts.${index}.content` as const)}
+                      {...register(`list.${index}.content` as const)}
                       placeholder="Range"
                     />
                   </div>
@@ -147,7 +176,7 @@ const Step4 = () => {
             </button>
           </div>
         </div>
-        <Button type="submit">Next</Button>
+        <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
       </form>
     </TabsContent>
   );

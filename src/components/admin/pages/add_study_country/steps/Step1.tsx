@@ -10,20 +10,6 @@ import axios, { AxiosResponse } from "axios";
 import { apiUrl } from "@/secrets";
 import { useEffect } from "react";
 
-type TDisabledTab = {
-  tab1: boolean;
-  tab2: boolean;
-  tab3: boolean;
-  tab4: boolean;
-  tab5: boolean;
-  tab6: boolean;
-  tab7: boolean;
-  tab8: boolean;
-  tab9: boolean;
-  tab10: boolean;
-  tab11: boolean;
-};
-
 type FormValues = {
   countryName: string;
   countryFlag: FileList;
@@ -32,25 +18,9 @@ type FormValues = {
 const Step1 = ({
   setCountryName,
   setActiveTab,
-  disabledTab,
-  setDisabledTab,
 }: {
   setCountryName: (name: string) => void;
   setActiveTab: (tab: string) => void;
-  setDisabledTab: (disabled: {
-    tab1: boolean;
-    tab2: boolean;
-    tab3: boolean;
-    tab4: boolean;
-    tab5: boolean;
-    tab6: boolean;
-    tab7: boolean;
-    tab8: boolean;
-    tab9: boolean;
-    tab10: boolean;
-    tab11: boolean;
-  }) => void;
-  disabledTab: TDisabledTab;
 }) => {
   const { register, handleSubmit, reset } = useForm<FormValues>();
   const { mutate, isPending, isSuccess } = useMutation<
@@ -75,7 +45,6 @@ const Step1 = ({
     if (isSuccess) {
       reset();
       setActiveTab("step2");
-      setDisabledTab({ ...disabledTab, tab1: true, tab2: false });
     }
   }, [isSuccess, reset]);
 
