@@ -57,11 +57,7 @@ const Step4 = () => {
 
   return (
     <TabsContent value="step4">
-      <form
-        className="w-1/2 space-y-5"
-        action=""
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form className="space-y-5" action="" onSubmit={handleSubmit(onSubmit)}>
         <div className="space-y-4">
           <div>
             <Label>Cost of Study and Living</Label>

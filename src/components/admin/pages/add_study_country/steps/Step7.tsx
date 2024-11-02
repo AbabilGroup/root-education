@@ -1,75 +1,85 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
-import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
+import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
+import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+
+type List = {
+  title: string;
+  content: string;
+};
+
+type FormValues = {
+  shortBrief: string;
+  list: List[];
+};
 
 const Step7 = () => {
-  const [applicationProFields, setApplicationProFields] = useState([
-    { id: 1, titlePlaceholder: "Title 1", contentPlaceholder: "Content 1" },
-  ]);
-  const addApplicationProField = () => {
-    setApplicationProFields((prev) => [
-      ...prev,
-      {
-        id: prev.length + 1,
-        titlePlaceholder: `Title ${prev.length + 1}`,
-        contentPlaceholder: `Content ${prev.length + 1}`,
-      },
-    ]);
-  };
+  const { control, register, handleSubmit } = useForm<FormValues>({
+    defaultValues: {
+      shortBrief: "",
+      list: [{ title: "", content: "" }],
+    },
+  });
 
-  const removeApplicationProField = (id: number) => {
-    setApplicationProFields((prev) => prev.filter((field) => field.id !== id));
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "list",
+  });
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
   };
 
   return (
     <TabsContent value="step7">
-      <form className="w-1/2 space-y-5" action="">
-        {/* Why study  */}
+      <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <Label>Application Procedures</Label>
-
-          <Textarea className="mb-2" placeholder="Short brief" required />
-
-          {applicationProFields.map((field, index) => (
-            <div key={field.id} className="mb-2 space-y-2">
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="text"
-                  placeholder={field.titlePlaceholder}
-                  required
-                />
-                {field.id === applicationProFields.length && (
-                  <button
-                    type="button"
-                    onClick={addApplicationProField}
-                    className="rounded-full bg-blue-500 p-2 text-white"
-                  >
-                    <CiCirclePlus />
-                  </button>
-                )}
-                {index > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => removeApplicationProField(field.id)}
-                    className="rounded-full bg-red-500 p-2 text-white"
-                  >
-                    <CiCircleMinus />
-                  </button>
-                )}
-              </div>
+          <Textarea
+            {...register("shortBrief")}
+            placeholder="Short brief"
+            required
+          />
+        </div>
+        {fields.map((field, index) => (
+          <div
+            className="flex items-center justify-between gap-x-3"
+            key={field.id}
+          >
+            <div className="basis-full space-y-2">
+              <Input
+                {...register(`list.${index}.title` as const)}
+                placeholder="Title"
+              />
               <Textarea
-                rows={5}
-                placeholder={field.contentPlaceholder}
-                required
+                {...register(`list.${index}.content` as const)}
+                placeholder="Content"
               />
             </div>
-          ))}
+            <button
+              className="basis-auto rounded-full bg-primary p-1"
+              type="button"
+              onClick={() => remove(index)}
+            >
+              <FaMinusCircle className="text-xl text-white" />
+            </button>
+          </div>
+        ))}
+        <button
+          className="rounded-full bg-primary p-1"
+          type="button"
+          onClick={() => append({ title: "", content: "" })}
+        >
+          <FaPlusCircle className="text-xl text-white" />
+        </button>
+        <div>
+          <Button type="submit">Next</Button>
         </div>
-        <Button type="submit">Next</Button>
       </form>
     </TabsContent>
   );
