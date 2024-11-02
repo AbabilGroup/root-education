@@ -18,7 +18,7 @@ type FormValues = {
   list: List[];
 };
 
-const Step3 = () => {
+const Step3 = ({ countryName }: { countryName: string }) => {
   const { control, register, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       shortBrief: "",
@@ -34,12 +34,12 @@ const Step3 = () => {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
   };
-  
+
   return (
     <TabsContent value="step3">
       <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <Label>Why Study in ?</Label>
+          <Label>Why Study in {countryName}?</Label>
           <Textarea
             {...register("shortBrief")}
             placeholder="Short brief"
