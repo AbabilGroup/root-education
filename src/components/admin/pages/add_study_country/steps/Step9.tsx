@@ -53,12 +53,15 @@ const Step9 = () => {
           >
             <div className="basis-full space-y-2">
               <Input
+                type="text"
                 {...register(`list.${index}.category` as const)}
                 placeholder="Category"
+                required
               />
               <Textarea
                 {...register(`list.${index}.details` as const)}
                 placeholder="Details"
+                required
               />
             </div>
             <button
