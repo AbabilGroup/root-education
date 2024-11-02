@@ -8,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
 import axios, { AxiosResponse } from "axios";
 import { apiUrl } from "@/secrets";
+import { useEffect } from "react";
 
 type FormValues = {
   countryName: string;
@@ -19,29 +20,17 @@ const Step1 = ({
 }: {
   setCountryName: (name: string) => void;
 }) => {
-  const { mutate, isPending, data } = useMutation<
+  const { register, handleSubmit, reset } = useForm<FormValues>();
+  const { mutate, isPending, isSuccess } = useMutation<
     AxiosResponse,
     unknown,
     FormData
   >({
-    mutationFn: (formData) => {
-      return axios.post(
-        `${apiUrl}/step_by_step_country/create_country/`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        },
-      );
-    },
+    mutationFn: (formData) =>
+      axios.post(`${apiUrl}/step_by_step_country/create_country/`, formData),
   });
 
-  const { register, handleSubmit } = useForm<FormValues>();
-
   const handleCreateCountry: SubmitHandler<FormValues> = (data) => {
-    console.log("🚀 ~ data:", data);
-
     const formData = new FormData();
     formData.append("country", data.countryName);
     formData.append("flag", data.countryFlag[0]);
@@ -49,7 +38,12 @@ const Step1 = ({
     mutate(formData);
   };
 
-  console.log(data);
+  // Reset form after successful submission
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+    }
+  }, [isSuccess, reset]);
 
   return (
     <TabsContent value="step1">
@@ -83,3 +77,9 @@ const Step1 = ({
 };
 
 export default Step1;
+
+// , {
+//   headers: {
+//     "Content-Type": "multipart/form-data",
+//   },
+// }
