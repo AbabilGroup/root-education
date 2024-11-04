@@ -8,6 +8,7 @@ const GetInTouchContactForm = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const handleContactForm: SubmitHandler<FieldValues> = (data) => {
+    console.log("🚀 ~ GetInTouchContactForm ~ data:", data);
     reset();
   };
 

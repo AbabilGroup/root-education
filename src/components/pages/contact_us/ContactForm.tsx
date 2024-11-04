@@ -8,6 +8,7 @@ const ContactForm = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const handleContactForm: SubmitHandler<FieldValues> = (data) => {
+    console.log("🚀 ~ ContactForm ~ data:", data);
     reset();
   };
 
