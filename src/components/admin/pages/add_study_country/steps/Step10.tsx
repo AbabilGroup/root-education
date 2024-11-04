@@ -4,22 +4,32 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
+// import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
 type CityInfo = {
-  cityName: string;
-  photo: FileList | undefined;
+  name: string;
+  logo: FileList | undefined;
 };
 
 type FormValues = {
   cityInfo: CityInfo[];
 };
 
-const Step10 = () => {
-  const { control, register, handleSubmit } = useForm<FormValues>({
+const Step10 = ({
+  countryName,
+  setActiveTab,
+}: {
+  countryName: string;
+  setActiveTab: (tab: string) => void;
+}) => {
+  const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
-      cityInfo: [{ cityName: "", photo: undefined }],
+      cityInfo: [{ name: "", logo: undefined }],
     },
   });
 
@@ -28,9 +38,45 @@ const Step10 = () => {
     name: "cityInfo",
   });
 
+  const {
+    mutate,
+    isPending,
+    isSuccess,
+    data: submitData,
+  } = useMutation<AxiosResponse, unknown, FormData>({
+    mutationFn: (formData) =>
+      axios.post(
+        `http://192.168.11.110:8000/api/step_by_step_country/${countryName.toLowerCase()}/add_city/`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        },
+      ),
+  });
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    const formData = new FormData();
+
+    // Loop through each city and append name and logo to FormData
+    data.cityInfo.forEach((city, index) => {
+      formData.append(`cityInfo[${index}][name]`, city.name);
+      if (city.logo && city.logo[0]) {
+        formData.append(`cityInfo[${index}][logo]`, city.logo[0]);
+      }
+    });
+
+    mutate(formData);
+    console.log(submitData);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+      setActiveTab("step11");
+    }
+  }, [isSuccess, reset]);
 
   return (
     <TabsContent value="step10">
@@ -45,8 +91,8 @@ const Step10 = () => {
                 <Label>City Name</Label>
                 <Input
                   type="text"
-                  {...register(`cityInfo.${index}.cityName` as const)}
-                  placeholder="Category"
+                  {...register(`cityInfo.${index}.name` as const)}
+                  placeholder="City Name"
                   required
                 />
               </div>
@@ -54,8 +100,8 @@ const Step10 = () => {
                 <Label>City Photo</Label>
                 <Input
                   type="file"
-                  {...register(`cityInfo.${index}.photo` as const)}
-                  placeholder="Details"
+                  {...register(`cityInfo.${index}.logo` as const)}
+                  placeholder="City Photo"
                   required
                 />
               </div>
@@ -72,12 +118,12 @@ const Step10 = () => {
         <button
           className="rounded-full bg-primary p-1"
           type="button"
-          onClick={() => append({ cityName: "", photo: undefined })}
+          onClick={() => append({ name: "", logo: undefined })}
         >
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">Next</Button>
+          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
         </div>
       </form>
     </TabsContent>

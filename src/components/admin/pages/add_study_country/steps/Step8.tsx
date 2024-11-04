@@ -5,6 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
@@ -14,14 +18,20 @@ type List = {
 };
 
 type FormValues = {
-  shortBrief: string;
+  short_breaf: string;
   list: List[];
 };
 
-const Step8 = () => {
-  const { control, register, handleSubmit } = useForm<FormValues>({
+const Step8 = ({
+  countryName,
+  setActiveTab,
+}: {
+  countryName: string;
+  setActiveTab: (tab: string) => void;
+}) => {
+  const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
-      shortBrief: "",
+      short_breaf: "",
       list: [{ title: "", content: "" }],
     },
   });
@@ -31,9 +41,28 @@ const Step8 = () => {
     name: "list",
   });
 
+  const { mutate, isPending, isSuccess } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormValues
+  >({
+    mutationFn: (formData) =>
+      axios.post(
+        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_admission_requirements/`,
+        formData,
+      ),
+  });
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+      setActiveTab("step9");
+    }
+  }, [isSuccess, reset]);
 
   return (
     <TabsContent value="step8">
@@ -41,7 +70,7 @@ const Step8 = () => {
         <div>
           <Label>Application Requirements</Label>
           <Textarea
-            {...register("shortBrief")}
+            {...register("short_breaf")}
             placeholder="Short brief"
             required
           />
@@ -78,7 +107,7 @@ const Step8 = () => {
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">Next</Button>
+          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
         </div>
       </form>
     </TabsContent>

@@ -5,6 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
@@ -17,15 +21,21 @@ type List = {
 };
 
 type FormValues = {
-  shortBrief: string;
-  list: List[];
+  short_breaf: string;
+  scholarshiplist: List[];
 };
 
-const Step6 = () => {
-  const { control, register, handleSubmit } = useForm<FormValues>({
+const Step6 = ({
+  countryName,
+  setActiveTab,
+}: {
+  countryName: string;
+  setActiveTab: (tab: string) => void;
+}) => {
+  const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
-      shortBrief: "",
-      list: [
+      short_breaf: "",
+      scholarshiplist: [
         {
           name: "",
           criteria: "",
@@ -37,14 +47,33 @@ const Step6 = () => {
     },
   });
 
+  const { mutate, isPending, isSuccess } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormValues
+  >({
+    mutationFn: (formData) =>
+      axios.post(
+        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_scholarship/`,
+        formData,
+      ),
+  });
+
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "list",
+    name: "scholarshiplist",
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+      setActiveTab("step7");
+    }
+  }, [isSuccess, reset]);
 
   return (
     <TabsContent value="step6">
@@ -52,7 +81,7 @@ const Step6 = () => {
         <div>
           <Label>Scholarships</Label>
           <Textarea
-            {...register("shortBrief")}
+            {...register("short_breaf")}
             placeholder="Short brief"
             required
           />
@@ -64,27 +93,27 @@ const Step6 = () => {
           >
             <div className="basis-full space-y-2">
               <Input
-                {...register(`list.${index}.name` as const)}
+                {...register(`scholarshiplist.${index}.name` as const)}
                 placeholder="Scholarship Name"
                 required
               />
               <Input
-                {...register(`list.${index}.criteria` as const)}
+                {...register(`scholarshiplist.${index}.criteria` as const)}
                 placeholder="Eligibility Criteria"
                 required
               />
               <Input
-                {...register(`list.${index}.coverage` as const)}
+                {...register(`scholarshiplist.${index}.coverage` as const)}
                 placeholder="Coverage"
                 required
               />
               <Input
-                {...register(`list.${index}.deadline` as const)}
+                {...register(`scholarshiplist.${index}.deadline` as const)}
                 placeholder="Application Deadline"
                 required
               />
               <Input
-                {...register(`list.${index}.process` as const)}
+                {...register(`scholarshiplist.${index}.process` as const)}
                 placeholder="Application Process"
                 required
               />
@@ -114,7 +143,7 @@ const Step6 = () => {
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">Next</Button>
+          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
         </div>
       </form>
     </TabsContent>

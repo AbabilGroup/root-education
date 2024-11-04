@@ -5,24 +5,34 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
 type List = {
-  category: string;
-  details: string;
+  title: string;
+  content: string;
 };
 
 type FormValues = {
-  shortBrief: string;
+  short_breaf: string;
   list: List[];
 };
 
-const Step9 = () => {
-  const { control, register, handleSubmit } = useForm<FormValues>({
+const Step9 = ({
+  countryName,
+  setActiveTab,
+}: {
+  countryName: string;
+  setActiveTab: (tab: string) => void;
+}) => {
+  const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
-      shortBrief: "",
-      list: [{ category: "", details: "" }],
+      short_breaf: "",
+      list: [{ title: "", content: "" }],
     },
   });
 
@@ -31,9 +41,28 @@ const Step9 = () => {
     name: "list",
   });
 
+  const { mutate, isPending, isSuccess } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormValues
+  >({
+    mutationFn: (formData) =>
+      axios.post(
+        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_admission_requirements/`,
+        formData,
+      ),
+  });
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+      setActiveTab("step10");
+    }
+  }, [isSuccess, reset]);
 
   return (
     <TabsContent value="step9">
@@ -41,7 +70,7 @@ const Step9 = () => {
         <div>
           <Label>Visa Procedures & Fees</Label>
           <Textarea
-            {...register("shortBrief")}
+            {...register("short_breaf")}
             placeholder="Short brief"
             required
           />
@@ -54,12 +83,12 @@ const Step9 = () => {
             <div className="basis-full space-y-2">
               <Input
                 type="text"
-                {...register(`list.${index}.category` as const)}
+                {...register(`list.${index}.title` as const)}
                 placeholder="Category"
                 required
               />
               <Textarea
-                {...register(`list.${index}.details` as const)}
+                {...register(`list.${index}.content` as const)}
                 placeholder="Details"
                 required
               />
@@ -76,12 +105,12 @@ const Step9 = () => {
         <button
           className="rounded-full bg-primary p-1"
           type="button"
-          onClick={() => append({ category: "", details: "" })}
+          onClick={() => append({ title: "", content: "" })}
         >
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">Next</Button>
+          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
         </div>
       </form>
     </TabsContent>

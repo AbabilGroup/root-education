@@ -5,6 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
+import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
@@ -17,8 +21,8 @@ type FormValues = {
   faqs: Faq[];
 };
 
-const Step11 = () => {
-  const { control, register, handleSubmit } = useForm<FormValues>({
+const Step11 = ({ countryName }: { countryName: string }) => {
+  const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
       faqs: [{ question: "", answer: "" }],
     },
@@ -29,9 +33,27 @@ const Step11 = () => {
     name: "faqs",
   });
 
+  const { mutate, isPending, isSuccess } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormValues
+  >({
+    mutationFn: (formData) =>
+      axios.post(
+        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_faq/`,
+        formData,
+      ),
+  });
+
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+    }
+  }, [isSuccess, reset]);
 
   return (
     <TabsContent value="step11">
@@ -77,7 +99,7 @@ const Step11 = () => {
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">Next</Button>
+          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
         </div>
       </form>
     </TabsContent>

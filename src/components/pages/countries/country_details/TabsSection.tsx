@@ -67,7 +67,7 @@ const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
                 Scholarships
               </TabsTrigger>
             </TabsList>
-            
+
             <TabsContent className="mt-14 space-y-4 pt-5" value="tab1">
               <p className="text-sm font-medium">
                 {countryInfo.whystudy[0].short_breaf}

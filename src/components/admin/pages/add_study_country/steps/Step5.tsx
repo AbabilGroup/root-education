@@ -54,7 +54,6 @@ const Step5 = ({
   });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
     mutate(data);
   };
 
