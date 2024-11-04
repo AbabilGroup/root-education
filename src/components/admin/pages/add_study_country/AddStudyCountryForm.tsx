@@ -28,60 +28,70 @@ const AddStudyCountryForm = () => {
           >
             Step 1
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step2" ? "shadow-sm" : "shadow-md"}`}
             value="step2"
           >
             Step 2
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step3" ? "shadow-sm" : "shadow-md"}`}
             value="step3"
           >
             Step 3
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step4" ? "shadow-sm" : "shadow-md"}`}
             value="step4"
           >
             Step 4
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step5" ? "shadow-sm" : "shadow-md"}`}
             value="step5"
           >
             Step 5
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step6" ? "shadow-sm" : "shadow-md"}`}
             value="step6"
           >
             Step 6
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step7" ? "shadow-sm" : "shadow-md"}`}
             value="step7"
           >
             Step 7
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step8" ? "shadow-sm" : "shadow-md"}`}
             value="step8"
           >
             Step 8
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step9" ? "shadow-sm" : "shadow-md"}`}
             value="step9"
           >
             Step 9
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step10" ? "shadow-sm" : "shadow-md"}`}
             value="step10"
           >
             Step 10
           </TabsTrigger>
+
           <TabsTrigger
             className={`border px-5 py-3 shadow-none ${activeTab === "step11" ? "shadow-sm" : "shadow-md"}`}
             value="step11"
