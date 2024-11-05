@@ -1,5 +1,6 @@
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 import Section from "@/components/common/Section";
+import { apiUrl } from "@/secrets";
 import { Root } from "@/types/country";
 import Image from "next/image";
 
@@ -17,7 +18,7 @@ const BestCities = ({ countryInfo }: { countryInfo: Root }) => {
                 <div className="relative mx-auto min-h-full">
                   <Image
                     className="rounded-full object-contain object-center"
-                    src={`http://103.17.37.8:8004${city.logo}`}
+                    src={`${apiUrl}${city.logo}`}
                     alt={city.name}
                     fill
                   />

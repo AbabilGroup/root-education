@@ -1,4 +1,4 @@
-import { apiBaseUrl, port } from "@/secrets";
+// import { apiUrl } from "@/secrets";
 import { Applicationprocedureslist } from "@/types/country";
 import Image from "next/image";
 
@@ -24,7 +24,7 @@ const ApplicationProceduresCard = ({
       </div>
       <div className="flex basis-[20%] items-center justify-end">
         <Image
-          src={`${apiBaseUrl}:${port}${procedure?.icon}`}
+          src="/icons/admission_requirement.svg"
           alt={procedure?.title}
           height={100}
           width={100}

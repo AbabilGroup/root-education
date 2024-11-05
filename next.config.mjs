@@ -3,17 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "103.17.37.8",
-        port: "8004",
+        protocol: "https",
+        hostname: "api.rooteducation.group",
         pathname: "/**",
       },
-      // {
-      //   protocol: "http",
-      //   hostname: "103.17.37.8",
-      //   port: "8004",
-      //   pathname: "/media/job_opportunity/**",
-      // },
     ],
   },
 };

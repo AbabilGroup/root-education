@@ -1,4 +1,4 @@
-import { apiBaseUrl, port } from "@/secrets";
+// import { apiUrl } from "@/secrets";
 import { List3 } from "@/types/country";
 import Image from "next/image";
 
@@ -7,7 +7,7 @@ const AdmissionRequirementsCard = ({ requirement }: { requirement: List3 }) => {
     <div className="space-y-3 rounded-lg border border-x-8 border-primary border-x-primary p-5 shadow-md">
       <div className="flex items-center justify-center">
         <Image
-          src={`${apiBaseUrl}:${port}${requirement?.icon}`}
+          src="/icons/admission_requirement.svg"
           height={80}
           width={80}
           alt={requirement?.title}

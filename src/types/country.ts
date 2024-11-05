@@ -16,13 +16,12 @@ export type Root = {
 };
 
 export type Box1 = {
-  id: number;
   title: string;
-  content: Content[];
+  descriptions: Description[];
 };
 
-export type Content = {
-  content: string;
+export type Description = {
+  description: string;
 };
 
 export type Whystudy = {
