@@ -1,7 +1,9 @@
+import AddUniversityForm from "@/components/admin/pages/add_university/AddUniversityForm";
+
 const AddUniversityPage = () => {
   return (
-    <main>
-      <h1>This is page component</h1>
+    <main className="m-10">
+      <AddUniversityForm />
     </main>
   );
 };

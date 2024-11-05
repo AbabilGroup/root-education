@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
+import { apiUrl } from "@/secrets";
 // import { apiUrl } from "@/secrets";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
@@ -38,15 +39,14 @@ const Step10 = ({
     name: "cityInfo",
   });
 
-  const {
-    mutate,
-    isPending,
-    isSuccess,
-    data: submitData,
-  } = useMutation<AxiosResponse, unknown, FormData>({
+  const { mutate, isPending, isSuccess } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormData
+  >({
     mutationFn: (formData) =>
       axios.post(
-        `http://192.168.11.110:8000/api/step_by_step_country/${countryName.toLowerCase()}/add_city/`,
+        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_city/`,
         formData,
         {
           headers: {
@@ -68,7 +68,6 @@ const Step10 = ({
     });
 
     mutate(formData);
-    console.log(submitData);
   };
 
   useEffect(() => {
