@@ -2,7 +2,6 @@ import Section from "@/components/common/Section";
 import ServicesIncludedCard from "../../services/pre_departure_briefing/ServicesIncludedCard";
 import { List } from "@/types/country";
 import Image from "next/image";
-import { apiBaseUrl, port } from "@/secrets";
 
 const LivingCosts = ({ livingCosts }: { livingCosts: List[] }) => {
   return (
@@ -15,7 +14,7 @@ const LivingCosts = ({ livingCosts }: { livingCosts: List[] }) => {
           <ServicesIncludedCard
             icon={
               <Image
-                src={`${apiBaseUrl}:${port}${livingCost.icon}`}
+                src="/icons/living_cost.svg"
                 height={40}
                 width={40}
                 alt={livingCost.title}

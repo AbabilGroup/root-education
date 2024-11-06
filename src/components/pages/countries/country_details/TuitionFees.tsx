@@ -1,6 +1,5 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import Section from "@/components/common/Section";
-import { apiBaseUrl, port } from "@/secrets";
 import { Fee } from "@/types/country";
 import Image from "next/image";
 
@@ -18,7 +17,7 @@ const TuitionFees = ({ tuitionFees }: { tuitionFees: Fee[] }) => {
           >
             <div>
               <Image
-                src={`${apiBaseUrl}:${port}${tuitionFee.icon}`}
+                src="/icons/fee.svg"
                 height={60}
                 width={60}
                 alt={tuitionFee.title}

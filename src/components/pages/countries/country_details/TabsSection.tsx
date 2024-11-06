@@ -15,7 +15,6 @@ import LivingCosts from "./LivingCosts";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import { Root } from "@/types/country";
 import Image from "next/image";
-import { apiBaseUrl, port } from "@/secrets";
 
 const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -108,7 +107,7 @@ const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
                     >
                       <div className="flex items-center justify-center">
                         <Image
-                          src={`${apiBaseUrl}:${port}${jobopportunity.icon}`}
+                          src="/icons/job.svg"
                           height={60}
                           width={60}
                           alt={jobopportunity.title}

@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react";
+import { Plus, List } from "lucide-react";
 
 import {
   Sidebar,
@@ -15,10 +15,16 @@ import Link from "next/link";
 // Menu items.
 const items = [
   {
+    title: "All Countries",
+    url: "/admin/all-countries",
+    icon: List,
+  },
+  {
     title: "Add Study Country",
     url: "/admin/add-study-country",
     icon: Plus,
   },
+
   {
     title: "Add University",
     url: "/admin/add-university",
