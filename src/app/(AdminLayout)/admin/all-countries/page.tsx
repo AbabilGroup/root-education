@@ -1,16 +1,19 @@
 import AllCountryTable from "@/components/admin/pages/all_countries/AllCountryTable";
+import { getAllCountries } from "@/services/getAllCountries";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Root Education | Add Study Country",
+  title: "Root Education | All Countries",
 };
 
-const EditStudyCountryPage = () => {
+const AllCountriesPage = async () => {
+  const countries = await getAllCountries();
+
   return (
     <main className="p-10">
-      <AllCountryTable />
+      <AllCountryTable countries={countries.results} />
     </main>
   );
 };
 
-export default EditStudyCountryPage;
+export default AllCountriesPage;

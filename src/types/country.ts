@@ -12,7 +12,9 @@ export type Root = {
   faq: Faq[];
   country: string;
   slug: string;
+  route_slug: string;
   flag: string;
+  is_draft: boolean;
 };
 
 export type Box1 = {

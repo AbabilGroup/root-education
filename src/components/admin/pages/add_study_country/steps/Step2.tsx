@@ -65,7 +65,7 @@ const Step2 = ({
       reset();
       setActiveTab("step3");
     }
-  }, [isSuccess, reset]);
+  }, [reset]);
 
   return (
     <TabsContent value="step2">

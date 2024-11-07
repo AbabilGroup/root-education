@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,
@@ -10,41 +9,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-// import { apiUrl } from "@/secrets";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import { Root } from "@/types/country";
+import Link from "next/link";
 
-const AllCountryTable = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["countries"],
-    queryFn: () => axios.get(`http://103.17.37.8:8004/api/study_country/`),
-  });
-
-  console.log(data);
-
-  if (isLoading) {
-    return (
-      <div className="space-y-2">
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-        <Skeleton className="h-[20px] rounded-full" />
-      </div>
-    );
-  }
-
+const AllCountryTable = ({ countries }: { countries: Root[] }) => {
   return (
     <div>
       <h2 className="mb-5 text-xl font-semibold">All country list</h2>
@@ -61,15 +29,24 @@ const AllCountryTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.data?.results?.map(
-            (country: { id: number; country: string; slug: string }) => (
+          {countries?.map(
+            (country: {
+              id: number;
+              country: string;
+              slug: string;
+              route_slug: string;
+            }) => (
               <TableRow key={country.id}>
                 <TableCell className="border-2 font-medium">
                   {country.country}
                 </TableCell>
                 <TableCell className="border-2">
                   <div className="flex items-center justify-center">
-                    <Button className="bg-yellow-500 text-white">Edit</Button>
+                    <Link
+                      href={`/admin/edit-study-country/${country.route_slug}`}
+                    >
+                      <Button className="bg-yellow-500 text-white">Edit</Button>
+                    </Link>
                   </div>
                 </TableCell>
                 <TableCell className="border-2">
