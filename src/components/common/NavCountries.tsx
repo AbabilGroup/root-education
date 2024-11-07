@@ -5,7 +5,6 @@ import { NavigationMenuItem, NavigationMenuLink } from "../ui/NavigationMenu";
 import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { apiUrl } from "@/secrets";
 import { Skeleton } from "../ui/skeleton";
 
 const NavCountries = () => {
