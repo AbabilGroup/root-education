@@ -4,6 +4,7 @@ import "../globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Root Education | Admin",
@@ -22,6 +23,7 @@ export default function AdminLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className}`}>
+        <Toaster />
         <TanstackQueryProvider>
           <SidebarProvider>
             <AppSidebar />

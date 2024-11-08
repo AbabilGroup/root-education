@@ -12,8 +12,6 @@ const EditStudyCountry = async ({ params }: { params: { slug: string } }) => {
 
   const country: Root = await getCountryBySlug(slug);
 
-  console.log("🚀 ~ EditStudyCountry ~ country:", country);
-
   return (
     <main className="p-10">
       <h1 className="text-2xl">

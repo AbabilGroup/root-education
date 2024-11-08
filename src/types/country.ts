@@ -1,5 +1,5 @@
 export type Root = {
-  id: number;
+  id?: number;
   box1: Box1[];
   whystudy: Whystudy[];
   costofliving: Costofliving[];
@@ -27,7 +27,7 @@ export type Description = {
 };
 
 export type Whystudy = {
-  id: number;
+  id?: number;
   whystudylist: Whystudylist[];
   short_breaf: string;
 };
@@ -56,7 +56,7 @@ export type Fee = {
 };
 
 export type Jobopportunity = {
-  id: number;
+  id?: number;
   list: List2[];
   short_breaf: string;
 };
@@ -68,7 +68,7 @@ export type List2 = {
 };
 
 export type Scholarship = {
-  id: number;
+  id?: number;
   scholarshiplist: Scholarshiplist[];
   short_breaf: string;
 };
@@ -82,7 +82,7 @@ export type Scholarshiplist = {
 };
 
 export type ApplicationProcedure = {
-  id: number;
+  id?: number;
   applicationprocedureslist: Applicationprocedureslist[];
   short_breaf: string;
 };
@@ -94,7 +94,7 @@ export type Applicationprocedureslist = {
 };
 
 export type AdmissionRequirment = {
-  id: number;
+  id?: number;
   list: List3[];
   short_breaf: string;
 };
@@ -106,7 +106,7 @@ export type List3 = {
 };
 
 export type Visaprocedure = {
-  id: number;
+  id?: number;
   list: List4[];
   short_breaf: string;
 };
@@ -117,13 +117,13 @@ export type List4 = {
 };
 
 export type City = {
-  id: number;
+  id?: number;
   logo: string;
   name: string;
 };
 
 export type Faq = {
-  id: number;
+  id?: number;
   question: string;
   answer: string;
 };
