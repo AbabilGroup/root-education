@@ -24,34 +24,41 @@ export type Box1 = {
 };
 
 export type Description = {
+  id?: number;
   description: string;
   created_at?: string;
 };
 
 export type Whystudy = {
-  whystudylist: Whystudylist[];
+  id?: number;
   short_breaf: string;
+  whystudylist: Whystudylist[];
+  created_at: string;
 };
 
 export type Whystudylist = {
+  id?: number;
   title: string;
   content: string;
   created_at: string;
 };
 
 export type Costofliving = {
+  id?: number;
   short_breaf: string;
   list: List[];
   fees: Fee[];
 };
 
 export type List = {
+  id?: number;
   title: string;
   content: string;
   icon?: string;
 };
 
 export type Fee = {
+  id?: number;
   title: string;
   range: string;
   icon?: string;
@@ -64,18 +71,21 @@ export type Jobopportunity = {
 };
 
 export type List2 = {
+  id?: number;
   title: string;
   content: string;
-  icon: string;
+  icon?: string;
 };
 
 export type Scholarship = {
   id?: number;
   scholarshiplist: Scholarshiplist[];
   short_breaf: string;
+  created_at: string;
 };
 
 export type Scholarshiplist = {
+  id?: number;
   name: string;
   criteria: string;
   coverage: string;
@@ -90,9 +100,10 @@ export type ApplicationProcedure = {
 };
 
 export type Applicationprocedureslist = {
+  id?: number;
   title: string;
   content: string;
-  icon: string;
+  icon?: string;
 };
 
 export type AdmissionRequirment = {
@@ -104,7 +115,7 @@ export type AdmissionRequirment = {
 export type List3 = {
   title: string;
   content: string;
-  icon: string;
+  icon?: string;
 };
 
 export type Visaprocedure = {
@@ -114,13 +125,14 @@ export type Visaprocedure = {
 };
 
 export type List4 = {
+  id?: number;
   title: string;
   content: string;
 };
 
 export type City = {
   id?: number;
-  logo: string;
+  logo: string | null;
   name: string;
 };
 
@@ -128,4 +140,5 @@ export type Faq = {
   id?: number;
   question: string;
   answer: string;
+  created_at: string;
 };
