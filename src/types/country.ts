@@ -15,7 +15,7 @@ export type Root = {
   route_slug: string;
   flag: string;
   is_draft: boolean;
-  created_at: string;
+  created_at?: string;
 };
 
 export type Box1 = {
@@ -33,14 +33,14 @@ export type Whystudy = {
   id?: number;
   short_breaf: string;
   whystudylist: Whystudylist[];
-  created_at: string;
+  created_at?: string;
 };
 
 export type Whystudylist = {
   id?: number;
   title: string;
   content: string;
-  created_at: string;
+  created_at?: string;
 };
 
 export type Costofliving = {
@@ -81,7 +81,7 @@ export type Scholarship = {
   id?: number;
   scholarshiplist: Scholarshiplist[];
   short_breaf: string;
-  created_at: string;
+  created_at?: string;
 };
 
 export type Scholarshiplist = {
@@ -140,5 +140,5 @@ export type Faq = {
   id?: number;
   question: string;
   answer: string;
-  created_at: string;
+  created_at?: string;
 };

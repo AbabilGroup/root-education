@@ -34,7 +34,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: descriptionRemove,
   } = useFieldArray({
     control,
-    name: `box1.0.descriptions`,
+    name: `box1.descriptions`,
   });
 
   const {
