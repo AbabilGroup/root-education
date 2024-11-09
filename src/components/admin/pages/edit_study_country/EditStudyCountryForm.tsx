@@ -8,7 +8,6 @@ import { apiUrl } from "@/secrets";
 import {
   AdmissionRequirment,
   ApplicationProcedure,
-  Box1,
   Costofliving,
   Jobopportunity,
   Root,
@@ -43,7 +42,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: whyStudyRemove,
   } = useFieldArray({
     control,
-    name: `whystudy.0.whystudylist`,
+    name: `whystudy`,
   });
 
   const {
@@ -133,10 +132,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     Root
   >({
     mutationFn: (formData) =>
-      axios.put(
-        `http://192.168.11.110:8006/api/study_country/${country.slug}/`,
-        formData,
-      ),
+      axios.put(`${apiUrl}/study_country/${country.slug}/`, formData),
   });
 
   const handleUpdateCountry: SubmitHandler<Root> = (data) => {
@@ -185,57 +181,55 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
         </div>
 
         {/* box 1  */}
-        {country.box1.map((info: Box1, index: number) => (
-          <div className="space-y-2" key={info.title}>
-            <div>
-              <Label>Title</Label>
-              <Input
-                {...register(`box1.${index}.title`)}
-                type="text"
-                placeholder="Title"
-                defaultValue={info.title}
-                required
-              />
-            </div>
-
-            <div>
-              <Label>Descriptions</Label>
-              <div className="space-y-2">
-                {descriptionFields.map((field, index) => (
-                  <div
-                    className="flex items-center justify-between gap-x-2"
-                    key={field.id}
-                  >
-                    <Textarea
-                      {...register(
-                        `box1.${index}.descriptions.${index}.description` as const,
-                      )}
-                      rows={5}
-                      placeholder="Content"
-                      defaultValue={field.description}
-                      required
-                    />
-                    <button
-                      className="rounded-full bg-primary p-1"
-                      type="button"
-                      onClick={() => descriptionRemove(index)}
-                    >
-                      <FaMinusCircle className="text-xl text-white" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <button
-              className="rounded-full bg-primary p-1"
-              type="button"
-              onClick={() => descriptionAppend({ description: "" })}
-            >
-              <FaPlusCircle className="text-xl text-white" />
-            </button>
+        <div className="space-y-2">
+          <div>
+            <Label>Title</Label>
+            <Input
+              {...register(`box1.title`)}
+              type="text"
+              placeholder="Title"
+              defaultValue={country.box1.title}
+              required
+            />
           </div>
-        ))}
+
+          <div>
+            <Label>Descriptions</Label>
+            <div className="space-y-2">
+              {descriptionFields.map((field, index) => (
+                <div
+                  className="flex items-center justify-between gap-x-2"
+                  key={field.id}
+                >
+                  <Textarea
+                    {...register(
+                      `box1.descriptions.${index}.description` as const,
+                    )}
+                    rows={5}
+                    placeholder="Content"
+                    defaultValue={field.description}
+                    required
+                  />
+                  <button
+                    className="rounded-full bg-primary p-1"
+                    type="button"
+                    onClick={() => descriptionRemove(index)}
+                  >
+                    <FaMinusCircle className="text-xl text-white" />
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            className="rounded-full bg-primary p-1"
+            type="button"
+            onClick={() => descriptionAppend({ description: "" })}
+          >
+            <FaPlusCircle className="text-xl text-white" />
+          </button>
+        </div>
 
         {/* why study  */}
         {country.whystudy.map((whyData: Whystudy, index: number) => (
@@ -728,7 +722,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     type="file"
                     {...register(`city.${index}.logo` as const)}
                     placeholder="City Photo"
-                    defaultValue={field.logo}
                   />
                 </div>
               </div>
@@ -744,7 +737,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
           <button
             className="rounded-full bg-primary p-1"
             type="button"
-            onClick={() => cityAppend({ id: 1, name: "", logo: "" })}
+            onClick={() => cityAppend({ name: "", logo: "" })}
           >
             <FaPlusCircle className="text-xl text-white" />
           </button>
@@ -790,7 +783,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
           <button
             className="rounded-full bg-primary p-1"
             type="button"
-            onClick={() => faqAppend({ id: 1, question: "", answer: "" })}
+            onClick={() => faqAppend({ question: "", answer: "" })}
           >
             <FaPlusCircle className="text-xl text-white" />
           </button>
