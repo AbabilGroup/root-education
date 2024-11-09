@@ -127,13 +127,16 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     name: `faq`,
   });
 
-  const { error, mutate, isPending, isSuccess } = useMutation<
+  const { data, error, mutate, isPending, isSuccess } = useMutation<
     AxiosResponse,
     unknown,
     Root
   >({
     mutationFn: (formData) =>
-      axios.put(`${apiUrl}/study-country/${country.slug}`, formData),
+      axios.put(
+        `http://192.168.11.110:8006/api/study_country/${country.slug}/`,
+        formData,
+      ),
   });
 
   const handleUpdateCountry: SubmitHandler<Root> = (data) => {
@@ -154,6 +157,8 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
   useEffect(() => {
     reset(country);
   }, [reset, country]);
+
+  console.log(data);
 
   return (
     <div className="mt-10 w-1/2">

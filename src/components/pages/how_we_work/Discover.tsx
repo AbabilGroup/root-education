@@ -1,3 +1,5 @@
+import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
+import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import Image from "next/image";
 
 const Discover = () => {
@@ -10,7 +12,7 @@ const Discover = () => {
 
         <div className="space-y-24">
           <div className="flex flex-col items-center justify-between gap-x-20 gap-y-10 lg:flex-row">
-            <div className="basis-full space-y-5 xl:basis-1/2">
+            <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
               <h2 className="text-3xl font-semibold text-secondary">
                 Benefits of Choosing Us
               </h2>
@@ -58,18 +60,18 @@ const Discover = () => {
                   Proven track record of client success stories.
                 </p>
               </div>
-            </div>
-            <div className="relative min-h-[250px] w-full basis-full lg:min-h-[350px] xl:basis-1/2">
+            </FadeInLeftWithSlowBounce>
+            <FadeInRightWithSlowBounce className="relative min-h-[250px] w-full basis-full lg:min-h-[350px] xl:basis-1/2">
               <Image
                 className="object-contain object-center xl:object-right"
                 src="/images/pages/how_we_work/benefits.svg"
                 alt="Benefits of Choosing Us"
                 fill
               />
-            </div>
+            </FadeInRightWithSlowBounce>
           </div>
           <div className="flex flex-col items-center justify-between gap-x-20 gap-y-10 lg:flex-row-reverse">
-            <div className="basis-full space-y-5 xl:basis-1/2">
+            <FadeInRightWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
               <h2 className="text-3xl font-semibold text-secondary">
                 Unique Services We Offer
               </h2>
@@ -116,15 +118,15 @@ const Discover = () => {
                   Onboarding sessions to prepare for your study abroad journey.
                 </p>
               </div>
-            </div>
-            <div className="relative min-h-[250px] w-full basis-full lg:min-h-[350px] xl:basis-1/2">
+            </FadeInRightWithSlowBounce>
+            <FadeInLeftWithSlowBounce className="relative min-h-[250px] w-full basis-full lg:min-h-[350px] xl:basis-1/2">
               <Image
                 className="object-contain object-center xl:object-left"
                 src="/images/pages/how_we_work/benefits.svg"
                 alt="Benefits of Choosing Us"
                 fill
               />
-            </div>
+            </FadeInLeftWithSlowBounce>
           </div>
         </div>
       </div>

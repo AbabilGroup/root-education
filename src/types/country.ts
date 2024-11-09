@@ -1,6 +1,6 @@
 export type Root = {
   id?: number;
-  box1: Box1[];
+  box1: Box1;
   whystudy: Whystudy[];
   costofliving: Costofliving[];
   jobopportunity: Jobopportunity[];
@@ -15,6 +15,7 @@ export type Root = {
   route_slug: string;
   flag: string;
   is_draft: boolean;
+  created_at: string;
 };
 
 export type Box1 = {
@@ -24,10 +25,10 @@ export type Box1 = {
 
 export type Description = {
   description: string;
+  created_at?: string;
 };
 
 export type Whystudy = {
-  id?: number;
   whystudylist: Whystudylist[];
   short_breaf: string;
 };
@@ -35,6 +36,7 @@ export type Whystudy = {
 export type Whystudylist = {
   title: string;
   content: string;
+  created_at: string;
 };
 
 export type Costofliving = {
@@ -46,13 +48,13 @@ export type Costofliving = {
 export type List = {
   title: string;
   content: string;
-  icon: string;
+  icon?: string;
 };
 
 export type Fee = {
   title: string;
   range: string;
-  icon: string;
+  icon?: string;
 };
 
 export type Jobopportunity = {

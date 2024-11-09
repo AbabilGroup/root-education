@@ -2,7 +2,8 @@ import AddUniversityForm from "@/components/admin/pages/add_university/AddUniver
 
 const AddUniversityPage = () => {
   return (
-    <main className="m-10">
+    <main className="p-10">
+      <h1 className="text-2xl">Add University</h1>
       <AddUniversityForm />
     </main>
   );

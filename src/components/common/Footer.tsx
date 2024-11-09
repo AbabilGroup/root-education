@@ -346,7 +346,7 @@ const Footer = () => {
                 Follow Us
                 <span className="flex items-center gap-3">
                   <Link
-                    href="https://www.facebook.com/hireandfire.eu"
+                    href="https://www.facebook.com/rooteducation.uk/"
                     target=" blank"
                   >
                     <FaFacebook className="rounded-full bg-white p-1 text-2xl text-primary duration-200 hover:bg-primary hover:text-white" />
