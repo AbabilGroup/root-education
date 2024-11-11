@@ -5,16 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { apiUrl } from "@/secrets";
-import {
-  AdmissionRequirment,
-  ApplicationProcedure,
-  Costofliving,
-  Jobopportunity,
-  Root,
-  Scholarship,
-  Visaprocedure,
-  Whystudy,
-} from "@/types/country";
+import { Root } from "@/types/country";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
@@ -42,7 +33,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: whyStudyRemove,
   } = useFieldArray({
     control,
-    name: `whystudy`,
+    name: `whystudy.whystudylist`,
   });
 
   const {
@@ -51,7 +42,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: feeRemove,
   } = useFieldArray({
     control,
-    name: `costofliving.0.fees`,
+    name: `costofliving.fees`,
   });
 
   const {
@@ -60,7 +51,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: costRemove,
   } = useFieldArray({
     control,
-    name: `costofliving.0.list`,
+    name: `costofliving.list`,
   });
 
   const {
@@ -69,7 +60,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: jobRemove,
   } = useFieldArray({
     control,
-    name: `jobopportunity.0.list`,
+    name: `jobopportunity.list`,
   });
 
   const {
@@ -78,7 +69,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: scholarshipRemove,
   } = useFieldArray({
     control,
-    name: `scholarship.0.scholarshiplist`,
+    name: `scholarship.scholarshiplist`,
   });
 
   const {
@@ -87,7 +78,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: appProcedureRemove,
   } = useFieldArray({
     control,
-    name: `application_procedures.0.applicationprocedureslist`,
+    name: `application_procedures.applicationprocedureslist`,
   });
 
   const {
@@ -96,7 +87,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: appReqRemove,
   } = useFieldArray({
     control,
-    name: `admission_requirments.0.list`,
+    name: `admission_requirments.list`,
   });
 
   const {
@@ -105,7 +96,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: visaProRemove,
   } = useFieldArray({
     control,
-    name: `visaprocedures.0.list`,
+    name: `visaprocedures.list`,
   });
 
   const {
@@ -188,7 +179,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
               {...register(`box1.title`)}
               type="text"
               placeholder="Title"
-              defaultValue={country.box1.title}
+              defaultValue={country.box1?.title}
               required
             />
           </div>
@@ -232,179 +223,19 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
         </div>
 
         {/* why study  */}
-        {country.whystudy.map((whyData: Whystudy, index: number) => (
-          <div className="space-y-3" key={whyData.id}>
-            <div>
-              <Label>Why Study in {country.country}?</Label>
-              <Textarea
-                {...register(`whystudy.${index}.short_breaf`)}
-                placeholder="Short brief"
-                defaultValue={whyData.short_breaf}
-                required
-              />
-            </div>
-            <div className="space-y-3">
-              {whyStudyFields.map((field, index) => (
-                <div
-                  className="flex items-center justify-between gap-x-3"
-                  key={field.id}
-                >
-                  <div className="basis-full space-y-2">
-                    <Input
-                      {...register(
-                        `whystudy.${index}.whystudylist.${index}.title` as const,
-                      )}
-                      placeholder="Title"
-                      defaultValue={field.title}
-                    />
-                    <Textarea
-                      {...register(
-                        `whystudy.${index}.whystudylist.${index}.content` as const,
-                      )}
-                      placeholder="Content"
-                      defaultValue={field.content}
-                    />
-                  </div>
-                  <button
-                    className="basis-auto rounded-full bg-primary p-1"
-                    type="button"
-                    onClick={() => whyStudyRemove(index)}
-                  >
-                    <FaMinusCircle className="text-xl text-white" />
-                  </button>
-                </div>
-              ))}
-            </div>
 
-            <button
-              className="rounded-full bg-primary p-1"
-              type="button"
-              onClick={() => whyStudyAppend({ title: "", content: "" })}
-            >
-              <FaPlusCircle className="text-xl text-white" />
-            </button>
+        <div className="space-y-3">
+          <div>
+            <Label>Why Study in {country.country}?</Label>
+            <Textarea
+              {...register(`whystudy.short_breaf`)}
+              placeholder="Short brief"
+              defaultValue={country.whystudy?.short_breaf}
+              required
+            />
           </div>
-        ))}
-
-        {/* cost of living  */}
-        {country.costofliving.map((cost: Costofliving, index: number) => (
-          <div className="space-y-4" key={cost.short_breaf}>
-            <div>
-              <Label>Cost of Study and Living</Label>
-
-              <Textarea
-                {...register(`costofliving.${index}.short_breaf`)}
-                className="mb-2"
-                placeholder="Short brief"
-                defaultValue={cost.short_breaf}
-                required
-              />
-
-              <div className="space-y-5">
-                <div>
-                  <Label>Tuition Fee</Label>
-
-                  {feeFields.map((field, index) => (
-                    <div
-                      className="mb-2 flex items-center justify-between gap-x-3"
-                      key={field.id}
-                    >
-                      <div className="basis-full space-y-2">
-                        <Input
-                          {...register(
-                            `costofliving.${index}.fees.${index}.title` as const,
-                          )}
-                          placeholder="Title"
-                          defaultValue={field.title}
-                        />
-                        <Textarea
-                          {...register(
-                            `costofliving.${index}.fees.${index}.range` as const,
-                          )}
-                          placeholder="Range"
-                          defaultValue={field.range}
-                        />
-                      </div>
-                      <button
-                        className="basis-auto rounded-full bg-primary p-1"
-                        type="button"
-                        onClick={() => feeRemove(index)}
-                      >
-                        <FaMinusCircle className="text-xl text-white" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
-                <button
-                  className="rounded-full bg-primary p-1"
-                  type="button"
-                  onClick={() => feeAppend({ icon: "", title: "", range: "" })}
-                >
-                  <FaPlusCircle className="text-xl text-white" />
-                </button>
-              </div>
-            </div>
-
-            <div className="space-y-5">
-              <div>
-                <Label>Living Cost</Label>
-
-                {costFields.map((field, index) => (
-                  <div
-                    className="mb-2 flex items-center justify-between gap-x-3"
-                    key={field.id}
-                  >
-                    <div className="basis-full space-y-2">
-                      <Input
-                        {...register(
-                          `costofliving.${index}.list.${index}.title` as const,
-                        )}
-                        placeholder="Title"
-                        defaultValue={field.title}
-                      />
-                      <Textarea
-                        {...register(
-                          `costofliving.${index}.list.${index}.content` as const,
-                        )}
-                        placeholder="Range"
-                        defaultValue={field.content}
-                      />
-                    </div>
-                    <button
-                      className="basis-auto rounded-full bg-primary p-1"
-                      type="button"
-                      onClick={() => costRemove(index)}
-                    >
-                      <FaMinusCircle className="text-xl text-white" />
-                    </button>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                className="rounded-full bg-primary p-1"
-                type="button"
-                onClick={() => costAppend({ icon: "", title: "", content: "" })}
-              >
-                <FaPlusCircle className="text-xl text-white" />
-              </button>
-            </div>
-          </div>
-        ))}
-
-        {/* job opportunity  */}
-        {country.jobopportunity.map((job: Jobopportunity, index) => (
-          <div className="space-y-5" key={job.id}>
-            <div>
-              <Label>Job Opportunity</Label>
-              <Textarea
-                {...register(`jobopportunity.${index}.short_breaf`)}
-                placeholder="Short brief"
-                defaultValue={job.short_breaf}
-                required
-              />
-            </div>
-            {jobFields.map((field, index) => (
+          <div className="space-y-3">
+            {whyStudyFields.map((field, index) => (
               <div
                 className="flex items-center justify-between gap-x-3"
                 key={field.id}
@@ -412,14 +243,14 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                 <div className="basis-full space-y-2">
                   <Input
                     {...register(
-                      `jobopportunity.${index}.list.${index}.title` as const,
+                      `whystudy.whystudylist.${index}.title` as const,
                     )}
                     placeholder="Title"
                     defaultValue={field.title}
                   />
                   <Textarea
                     {...register(
-                      `jobopportunity.${index}.list.${index}.content` as const,
+                      `whystudy.whystudylist.${index}.content` as const,
                     )}
                     placeholder="Content"
                     defaultValue={field.content}
@@ -428,275 +259,410 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                 <button
                   className="basis-auto rounded-full bg-primary p-1"
                   type="button"
-                  onClick={() => jobRemove(index)}
+                  onClick={() => whyStudyRemove(index)}
                 >
                   <FaMinusCircle className="text-xl text-white" />
                 </button>
               </div>
             ))}
+          </div>
+
+          <button
+            className="rounded-full bg-primary p-1"
+            type="button"
+            onClick={() => whyStudyAppend({ title: "", content: "" })}
+          >
+            <FaPlusCircle className="text-xl text-white" />
+          </button>
+        </div>
+
+        {/* cost of living  */}
+        <div className="space-y-4">
+          <div>
+            <Label>Cost of Study and Living</Label>
+
+            <Textarea
+              {...register(`costofliving.short_breaf`)}
+              className="mb-2"
+              placeholder="Short brief"
+              defaultValue={country.costofliving?.short_breaf}
+              required
+            />
+
+            <div className="space-y-5">
+              <div>
+                <Label>Tuition Fee</Label>
+
+                {feeFields.map((field, index) => (
+                  <div
+                    className="mb-2 flex items-center justify-between gap-x-3"
+                    key={field.id}
+                  >
+                    <div className="basis-full space-y-2">
+                      <Input
+                        {...register(
+                          `costofliving.fees.${index}.title` as const,
+                        )}
+                        placeholder="Title"
+                        defaultValue={field.title}
+                      />
+                      <Textarea
+                        {...register(
+                          `costofliving.fees.${index}.range` as const,
+                        )}
+                        placeholder="Range"
+                        defaultValue={field.range}
+                      />
+                    </div>
+                    <button
+                      className="basis-auto rounded-full bg-primary p-1"
+                      type="button"
+                      onClick={() => feeRemove(index)}
+                    >
+                      <FaMinusCircle className="text-xl text-white" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <button
+                className="rounded-full bg-primary p-1"
+                type="button"
+                onClick={() => feeAppend({ icon: "", title: "", range: "" })}
+              >
+                <FaPlusCircle className="text-xl text-white" />
+              </button>
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <div>
+              <Label>Living Cost</Label>
+
+              {costFields.map((field, index) => (
+                <div
+                  className="mb-2 flex items-center justify-between gap-x-3"
+                  key={field.id}
+                >
+                  <div className="basis-full space-y-2">
+                    <Input
+                      {...register(`costofliving.list.${index}.title` as const)}
+                      placeholder="Title"
+                      defaultValue={field.title}
+                    />
+                    <Textarea
+                      {...register(
+                        `costofliving.list.${index}.content` as const,
+                      )}
+                      placeholder="Range"
+                      defaultValue={field.content}
+                    />
+                  </div>
+                  <button
+                    className="basis-auto rounded-full bg-primary p-1"
+                    type="button"
+                    onClick={() => costRemove(index)}
+                  >
+                    <FaMinusCircle className="text-xl text-white" />
+                  </button>
+                </div>
+              ))}
+            </div>
+
             <button
               className="rounded-full bg-primary p-1"
               type="button"
-              onClick={() => jobAppend({ icon: "", title: "", content: "" })}
+              onClick={() => costAppend({ icon: "", title: "", content: "" })}
             >
               <FaPlusCircle className="text-xl text-white" />
             </button>
           </div>
-        ))}
+        </div>
+
+        {/* job opportunity  */}
+
+        <div className="space-y-5">
+          <div>
+            <Label>Job Opportunity</Label>
+            <Textarea
+              {...register(`jobopportunity.short_breaf`)}
+              placeholder="Short brief"
+              defaultValue={country.jobopportunity?.short_breaf}
+              required
+            />
+          </div>
+          {jobFields.map((field, index) => (
+            <div
+              className="flex items-center justify-between gap-x-3"
+              key={field.id}
+            >
+              <div className="basis-full space-y-2">
+                <Input
+                  {...register(`jobopportunity.list.${index}.title` as const)}
+                  placeholder="Title"
+                  defaultValue={field.title}
+                />
+                <Textarea
+                  {...register(`jobopportunity.list.${index}.content` as const)}
+                  placeholder="Content"
+                  defaultValue={field.content}
+                />
+              </div>
+              <button
+                className="basis-auto rounded-full bg-primary p-1"
+                type="button"
+                onClick={() => jobRemove(index)}
+              >
+                <FaMinusCircle className="text-xl text-white" />
+              </button>
+            </div>
+          ))}
+          <button
+            className="rounded-full bg-primary p-1"
+            type="button"
+            onClick={() => jobAppend({ icon: "", title: "", content: "" })}
+          >
+            <FaPlusCircle className="text-xl text-white" />
+          </button>
+        </div>
 
         {/* Scholarship */}
-        {country.scholarship.map((item: Scholarship, index) => (
-          <div className="space-y-5" key={item.id}>
-            <div className="space-y-1">
-              <Label>Scholarships</Label>
-              <Textarea
-                {...register(`scholarship.${index}.short_breaf`)}
-                placeholder="Short brief"
-                defaultValue={item.short_breaf}
-                required
-              />
-            </div>
-
-            {scholarshipFields.map((field, index) => (
-              <div
-                className="flex items-center justify-between gap-x-3"
-                key={field.id}
-              >
-                <div className="basis-full space-y-2">
-                  <Input
-                    {...register(
-                      `scholarship.${index}.scholarshiplist.${index}.name` as const,
-                    )}
-                    placeholder="Scholarship Name"
-                    defaultValue={field.name}
-                    required
-                  />
-                  <Input
-                    {...register(
-                      `scholarship.${index}.scholarshiplist.${index}.criteria` as const,
-                    )}
-                    placeholder="Eligibility Criteria"
-                    defaultValue={field.criteria}
-                    required
-                  />
-                  <Input
-                    {...register(
-                      `scholarship.${index}.scholarshiplist.${index}.coverage` as const,
-                    )}
-                    placeholder="Coverage"
-                    defaultValue={field.coverage}
-                    required
-                  />
-                  <Input
-                    {...register(
-                      `scholarship.${index}.scholarshiplist.${index}.deadline` as const,
-                    )}
-                    placeholder="Application Deadline"
-                    defaultValue={field.deadline}
-                    required
-                  />
-                  <Input
-                    {...register(
-                      `scholarship.${index}.scholarshiplist.${index}.process` as const,
-                    )}
-                    placeholder="Application Process"
-                    defaultValue={field.process}
-                    required
-                  />
-                </div>
-                <button
-                  className="basis-auto rounded-full bg-primary p-1"
-                  type="button"
-                  onClick={() => scholarshipRemove(index)}
-                >
-                  <FaMinusCircle className="text-xl text-white" />
-                </button>
-              </div>
-            ))}
-            <button
-              className="rounded-full bg-primary p-1"
-              type="button"
-              onClick={() =>
-                scholarshipAppend({
-                  name: "",
-                  criteria: "",
-                  coverage: "",
-                  deadline: "",
-                  process: "",
-                })
-              }
-            >
-              <FaPlusCircle className="text-xl text-white" />
-            </button>
+        <div className="space-y-5">
+          <div className="space-y-1">
+            <Label>Scholarships</Label>
+            <Textarea
+              {...register(`scholarship.short_breaf`)}
+              placeholder="Short brief"
+              defaultValue={country.scholarship?.short_breaf}
+              required
+            />
           </div>
-        ))}
+
+          {scholarshipFields.map((field, index) => (
+            <div
+              className="flex items-center justify-between gap-x-3"
+              key={field.id}
+            >
+              <div className="basis-full space-y-2">
+                <Input
+                  {...register(
+                    `scholarship.scholarshiplist.${index}.name` as const,
+                  )}
+                  placeholder="Scholarship Name"
+                  defaultValue={field.name}
+                  required
+                />
+                <Input
+                  {...register(
+                    `scholarship.scholarshiplist.${index}.criteria` as const,
+                  )}
+                  placeholder="Eligibility Criteria"
+                  defaultValue={field.criteria}
+                  required
+                />
+                <Input
+                  {...register(
+                    `scholarship.scholarshiplist.${index}.coverage` as const,
+                  )}
+                  placeholder="Coverage"
+                  defaultValue={field.coverage}
+                  required
+                />
+                <Input
+                  {...register(
+                    `scholarship.scholarshiplist.${index}.deadline` as const,
+                  )}
+                  placeholder="Application Deadline"
+                  defaultValue={field.deadline}
+                  required
+                />
+                <Input
+                  {...register(
+                    `scholarship.scholarshiplist.${index}.process` as const,
+                  )}
+                  placeholder="Application Process"
+                  defaultValue={field.process}
+                  required
+                />
+              </div>
+              <button
+                className="basis-auto rounded-full bg-primary p-1"
+                type="button"
+                onClick={() => scholarshipRemove(index)}
+              >
+                <FaMinusCircle className="text-xl text-white" />
+              </button>
+            </div>
+          ))}
+          <button
+            className="rounded-full bg-primary p-1"
+            type="button"
+            onClick={() =>
+              scholarshipAppend({
+                name: "",
+                criteria: "",
+                coverage: "",
+                deadline: "",
+                process: "",
+              })
+            }
+          >
+            <FaPlusCircle className="text-xl text-white" />
+          </button>
+        </div>
 
         {/* application Procedures  */}
-        {country.application_procedures.map(
-          (procedure: ApplicationProcedure, index) => (
-            <div className="space-y-5" key={procedure.id}>
-              <div>
-                <Label>Application Procedures</Label>
+
+        <div className="space-y-5">
+          <div>
+            <Label>Application Procedures</Label>
+            <Textarea
+              {...register(`application_procedures.short_breaf`)}
+              placeholder="Short brief"
+              defaultValue={country.application_procedures?.short_breaf}
+              required
+            />
+          </div>
+          {appProcedureFields.map((field, index) => (
+            <div
+              className="flex items-center justify-between gap-x-3"
+              key={field.id}
+            >
+              <div className="basis-full space-y-2">
+                <Input
+                  {...register(
+                    `application_procedures.applicationprocedureslist.${index}.title` as const,
+                  )}
+                  placeholder="Title"
+                  defaultValue={field.title}
+                />
                 <Textarea
-                  {...register(`application_procedures.${index}.short_breaf`)}
-                  placeholder="Short brief"
-                  defaultValue={procedure.short_breaf}
-                  required
+                  {...register(
+                    `application_procedures.applicationprocedureslist.${index}.content` as const,
+                  )}
+                  placeholder="Content"
+                  defaultValue={field.content}
                 />
               </div>
-              {appProcedureFields.map((field, index) => (
-                <div
-                  className="flex items-center justify-between gap-x-3"
-                  key={field.id}
-                >
-                  <div className="basis-full space-y-2">
-                    <Input
-                      {...register(
-                        `application_procedures.${index}.applicationprocedureslist.${index}.title` as const,
-                      )}
-                      placeholder="Title"
-                      defaultValue={field.title}
-                    />
-                    <Textarea
-                      {...register(
-                        `application_procedures.${index}.applicationprocedureslist.${index}.content` as const,
-                      )}
-                      placeholder="Content"
-                      defaultValue={field.content}
-                    />
-                  </div>
-                  <button
-                    className="basis-auto rounded-full bg-primary p-1"
-                    type="button"
-                    onClick={() => appProcedureRemove(index)}
-                  >
-                    <FaMinusCircle className="text-xl text-white" />
-                  </button>
-                </div>
-              ))}
               <button
-                className="rounded-full bg-primary p-1"
+                className="basis-auto rounded-full bg-primary p-1"
                 type="button"
-                onClick={() =>
-                  appProcedureAppend({ icon: "", title: "", content: "" })
-                }
+                onClick={() => appProcedureRemove(index)}
               >
-                <FaPlusCircle className="text-xl text-white" />
+                <FaMinusCircle className="text-xl text-white" />
               </button>
             </div>
-          ),
-        )}
+          ))}
+          <button
+            className="rounded-full bg-primary p-1"
+            type="button"
+            onClick={() =>
+              appProcedureAppend({ icon: "", title: "", content: "" })
+            }
+          >
+            <FaPlusCircle className="text-xl text-white" />
+          </button>
+        </div>
 
         {/* application Requirements  */}
-        {country.admission_requirments.map(
-          (req: AdmissionRequirment, index) => (
-            <div className="space-y-5" key={req.id}>
-              <div>
-                <Label>Application Requirements</Label>
+
+        <div className="space-y-5">
+          <div>
+            <Label>Application Requirements</Label>
+            <Textarea
+              {...register(`admission_requirments.short_breaf`)}
+              placeholder="Short brief"
+              defaultValue={country.admission_requirments?.short_breaf}
+              required
+            />
+          </div>
+          {appReqFields.map((field, index) => (
+            <div
+              className="flex items-center justify-between gap-x-3"
+              key={field.id}
+            >
+              <div className="basis-full space-y-2">
+                <Input
+                  {...register(
+                    `admission_requirments.list.${index}.title` as const,
+                  )}
+                  placeholder="Title"
+                  defaultValue={field.title}
+                />
                 <Textarea
-                  {...register(`admission_requirments.${index}.short_breaf`)}
-                  placeholder="Short brief"
-                  defaultValue={req.short_breaf}
+                  {...register(
+                    `admission_requirments.list.${index}.content` as const,
+                  )}
+                  placeholder="Content"
+                  defaultValue={field.content}
+                />
+              </div>
+              <button
+                className="basis-auto rounded-full bg-primary p-1"
+                type="button"
+                onClick={() => appReqRemove(index)}
+              >
+                <FaMinusCircle className="text-xl text-white" />
+              </button>
+            </div>
+          ))}
+          <button
+            className="rounded-full bg-primary p-1"
+            type="button"
+            onClick={() => appReqAppend({ icon: "", title: "", content: "" })}
+          >
+            <FaPlusCircle className="text-xl text-white" />
+          </button>
+        </div>
+
+        {/* visa procedures and fees */}
+
+        <div className="space-y-3">
+          <div>
+            <Label>Visa Procedures & Fees</Label>
+            <Textarea
+              {...register(`visaprocedures.short_breaf`)}
+              placeholder="Short brief"
+              defaultValue={country.visaprocedures?.short_breaf}
+              required
+            />
+          </div>
+          {visaProFields.map((field, index) => (
+            <div
+              className="flex items-center justify-between gap-x-3"
+              key={field.id}
+            >
+              <div className="basis-full space-y-2">
+                <Input
+                  type="text"
+                  {...register(`visaprocedures.list.${index}.title` as const)}
+                  placeholder="Category"
+                  defaultValue={field.title}
+                  required
+                />
+                <Textarea
+                  {...register(`visaprocedures.list.${index}.content` as const)}
+                  placeholder="Details"
+                  defaultValue={field.content}
                   required
                 />
               </div>
-              {appReqFields.map((field, index) => (
-                <div
-                  className="flex items-center justify-between gap-x-3"
-                  key={field.id}
-                >
-                  <div className="basis-full space-y-2">
-                    <Input
-                      {...register(
-                        `admission_requirments.${index}.list.${index}.title` as const,
-                      )}
-                      placeholder="Title"
-                      defaultValue={field.title}
-                    />
-                    <Textarea
-                      {...register(
-                        `admission_requirments.${index}.list.${index}.content` as const,
-                      )}
-                      placeholder="Content"
-                      defaultValue={field.content}
-                    />
-                  </div>
-                  <button
-                    className="basis-auto rounded-full bg-primary p-1"
-                    type="button"
-                    onClick={() => appReqRemove(index)}
-                  >
-                    <FaMinusCircle className="text-xl text-white" />
-                  </button>
-                </div>
-              ))}
               <button
-                className="rounded-full bg-primary p-1"
+                className="basis-auto rounded-full bg-primary p-1"
                 type="button"
-                onClick={() =>
-                  appReqAppend({ icon: "", title: "", content: "" })
-                }
+                onClick={() => visaProRemove(index)}
               >
-                <FaPlusCircle className="text-xl text-white" />
+                <FaMinusCircle className="text-xl text-white" />
               </button>
             </div>
-          ),
-        )}
-
-        {/* visa procedures and fees */}
-        {country.visaprocedures.map((visapro: Visaprocedure, index) => (
-          <div className="space-y-3" key={visapro.id}>
-            <div>
-              <Label>Visa Procedures & Fees</Label>
-              <Textarea
-                {...register(`visaprocedures.${index}.short_breaf`)}
-                placeholder="Short brief"
-                defaultValue={visapro.short_breaf}
-                required
-              />
-            </div>
-            {visaProFields.map((field, index) => (
-              <div
-                className="flex items-center justify-between gap-x-3"
-                key={field.id}
-              >
-                <div className="basis-full space-y-2">
-                  <Input
-                    type="text"
-                    {...register(
-                      `visaprocedures.${index}.list.${index}.title` as const,
-                    )}
-                    placeholder="Category"
-                    defaultValue={field.title}
-                    required
-                  />
-                  <Textarea
-                    {...register(
-                      `visaprocedures.${index}.list.${index}.content` as const,
-                    )}
-                    placeholder="Details"
-                    defaultValue={field.content}
-                    required
-                  />
-                </div>
-                <button
-                  className="basis-auto rounded-full bg-primary p-1"
-                  type="button"
-                  onClick={() => visaProRemove(index)}
-                >
-                  <FaMinusCircle className="text-xl text-white" />
-                </button>
-              </div>
-            ))}
-            <button
-              className="rounded-full bg-primary p-1"
-              type="button"
-              onClick={() => visaProAppend({ title: "", content: "" })}
-            >
-              <FaPlusCircle className="text-xl text-white" />
-            </button>
-          </div>
-        ))}
+          ))}
+          <button
+            className="rounded-full bg-primary p-1"
+            type="button"
+            onClick={() => visaProAppend({ title: "", content: "" })}
+          >
+            <FaPlusCircle className="text-xl text-white" />
+          </button>
+        </div>
 
         {/* city  */}
         <div className="space-y-5">
@@ -713,7 +679,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     {...register(`city.${index}.name` as const)}
                     placeholder="City Name"
                     defaultValue={field.name}
-                    required
                   />
                 </div>
                 <div>
