@@ -69,10 +69,10 @@ const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
 
             <TabsContent className="mt-14 space-y-4 pt-5" value="tab1">
               <p className="text-sm font-medium">
-                {countryInfo.whystudy[0].short_breaf}
+                {countryInfo.whystudy.short_breaf}
               </p>
               <ol className="list-decimal space-y-3 pl-4 text-sm font-medium">
-                {countryInfo.whystudy[0].whystudylist.map((list) => (
+                {countryInfo.whystudy.whystudylist.map((list) => (
                   <li key={list.title}>
                     <strong>{list.title}:</strong> {list.content}
                   </li>
@@ -87,20 +87,20 @@ const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
             <TabsContent value="tab2">
               <div className="pt-10">
                 <p className="text-sm font-medium">
-                  {countryInfo.costofliving[0].short_breaf}
+                  {countryInfo.costofliving.short_breaf}
                 </p>
-                <TuitionFees tuitionFees={countryInfo.costofliving[0].fees} />
-                <LivingCosts livingCosts={countryInfo.costofliving[0].list} />
+                <TuitionFees tuitionFees={countryInfo.costofliving.fees} />
+                <LivingCosts livingCosts={countryInfo.costofliving.list} />
               </div>
             </TabsContent>
             <TabsContent value="tab3">
               <div className="pt-10">
                 <p className="text-center text-sm font-medium">
-                  {countryInfo.jobopportunity[0].short_breaf}
+                  {countryInfo.jobopportunity.short_breaf}
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-10">
-                  {countryInfo.jobopportunity[0].list.map((jobopportunity) => (
+                  {countryInfo.jobopportunity.list.map((jobopportunity) => (
                     <FadeInLeftWithSlowBounce
                       className="min-h-[240px] max-w-[450px] space-y-3 rounded-lg border border-l-8 border-r-8 border-l-primary border-r-primary p-5 shadow-md"
                       key={jobopportunity.title}
@@ -127,7 +127,7 @@ const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
             <TabsContent value="tab4">
               <div className="pt-10">
                 <p className="text-center text-sm font-medium">
-                  {countryInfo.scholarship[0].short_breaf}
+                  {countryInfo.scholarship.short_breaf}
                 </p>
 
                 <div className="mt-10">
@@ -152,30 +152,26 @@ const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {countryInfo.scholarship[0].scholarshiplist.map(
-                        (list) => (
-                          <TableRow
-                            className="text-sm font-medium"
-                            key={list.name}
-                          >
-                            <TableCell className="border">
-                              {list.name}
-                            </TableCell>
-                            <TableCell className="border">
-                              {list.criteria}
-                            </TableCell>
-                            <TableCell className="border">
-                              {list.coverage}
-                            </TableCell>
-                            <TableCell className="border">
-                              {list.deadline}
-                            </TableCell>
-                            <TableCell className="border">
-                              {list.process}
-                            </TableCell>
-                          </TableRow>
-                        ),
-                      )}
+                      {countryInfo.scholarship.scholarshiplist.map((list) => (
+                        <TableRow
+                          className="text-sm font-medium"
+                          key={list.name}
+                        >
+                          <TableCell className="border">{list.name}</TableCell>
+                          <TableCell className="border">
+                            {list.criteria}
+                          </TableCell>
+                          <TableCell className="border">
+                            {list.coverage}
+                          </TableCell>
+                          <TableCell className="border">
+                            {list.deadline}
+                          </TableCell>
+                          <TableCell className="border">
+                            {list.process}
+                          </TableCell>
+                        </TableRow>
+                      ))}
                     </TableBody>
                   </Table>
                 </div>
