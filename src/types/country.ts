@@ -1,18 +1,32 @@
 export type Root = {
   box1: Box1;
+
   whystudy: Whystudy;
+
   costofliving: Costofliving;
+
   jobopportunity: Jobopportunity;
+
   scholarship: Scholarship;
+
   application_procedures: ApplicationProcedure;
+
   admission_requirments: AdmissionRequirment;
+
   visaprocedures: Visaprocedure;
+
   city: City[];
+
   faq: Faq[];
+
   country: string;
+
   slug: string;
+
   route_slug: string;
-  flag: string;
+
+  flag?: string | FileList;
+
   is_draft: boolean;
 };
 
@@ -110,7 +124,7 @@ export type List4 = {
 };
 
 export type City = {
-  logo: string | null;
+  logo?: string | null | FileList;
   name: string;
 };
 

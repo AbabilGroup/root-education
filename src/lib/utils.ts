@@ -51,3 +51,21 @@ export const getYearFromDate = (dateString: string) => {
   const date = new Date(dateString);
   return date.getFullYear();
 };
+
+export const removeFields = (data: any) => {
+  // Check if data is an array, recursively apply `removeFields` to each element
+  if (Array.isArray(data)) {
+    return data.map((item) => removeFields(item));
+  }
+  // Check if data is an object, recursively apply `removeFields` to its properties
+  if (typeof data === "object" && data !== null) {
+    const { id, created_at, ...cleanedData } = data; // Remove id and createdAt from the current level
+    // Apply the function recursively to each property of the object
+    Object.keys(cleanedData).forEach((key) => {
+      cleanedData[key] = removeFields(cleanedData[key]);
+    });
+    return cleanedData;
+  }
+  // If not an object or array, return the data as is
+  return data;
+};

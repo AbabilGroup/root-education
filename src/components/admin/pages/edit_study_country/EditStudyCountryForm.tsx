@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import { toast } from "sonner";
+import { removeFields } from "@/lib/utils";
 
 const EditStudyCountryForm = ({ country }: { country: Root }) => {
   const { control, register, handleSubmit, reset } = useForm<Root>({
@@ -127,9 +128,10 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
   });
 
   const handleUpdateCountry: SubmitHandler<Root> = (data) => {
-    console.log(data);
+    const cleanedData = removeFields(data);
+    console.log("🚀 ~ EditStudyCountryForm ~ cleanedData:", cleanedData);
 
-    mutate(data);
+    mutate(cleanedData);
 
     if (isSuccess) {
       toast.success("Study country has been updated successfully.");
@@ -681,14 +683,14 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     defaultValue={field.name}
                   />
                 </div>
-                <div>
+                {/* <div>
                   <Label>City Photo</Label>
                   <Input
                     type="file"
                     {...register(`city.${index}.logo` as const)}
                     placeholder="City Photo"
                   />
-                </div>
+                </div> */}
               </div>
               <button
                 className="basis-auto rounded-full bg-primary p-1"

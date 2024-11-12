@@ -1,45 +1,79 @@
-export type Root = {
-  id: number;
+export type University = {
+  id?: number;
+
   name: string;
+
   slug: string;
-  logo: null | string;
+
+  description: string;
+
+  short_info: {
+    country: string;
+    university_type: string;
+    total_students: number;
+    launched: number;
+  };
+
+  photo: null | string | FileList;
+
+  logo: null | string | FileList;
+
+  video: null | string | FileList;
+
+  thumbnail: null | string | FileList;
+
   country: string;
-  university_type: string;
-  total_students: number;
-  established: string;
-  campus_location: string;
-  accreditations: string;
-  about_university: AboutUniversity;
-  scholarship_offered: ScholarshipOffered[];
-  programs_offered: ProgramsOffered[];
+
+  about_university: AboutUniversity[];
+
+  programs: {
+    undergraduate_programs: UndergraduateProgram[];
+    postgraduate_programs: PostgraduateProgram[];
+    doctoral_programs: DoctoralProgram[];
+  };
+
+  scholarship: {
+    short_description: string;
+    table: Table[];
+    notes: Note[];
+  };
+
+  application_guide: {
+    short_description: string;
+    guide_list: GuideList[];
+    bottom_description: string;
+  };
 };
 
 export type AboutUniversity = {
-  id: number;
-  content: Content[];
-};
-
-export type Content = {
-  id: number;
   title: string;
-  content: string;
+  description: string;
 };
 
-export type ScholarshipOffered = {
-  id: number;
+export type GuideList = {
+  title: string;
+  description: string;
+};
+
+export type UndergraduateProgram = {
   name: string;
-  amount: number;
-  eligibility: string;
+};
+
+export type PostgraduateProgram = {
+  name: string;
+};
+
+export type DoctoralProgram = {
+  name: string;
+};
+
+export type Table = {
+  scholarship_name: string;
+  amount: string;
+  eligibility_criteria: string;
   provider: string;
 };
 
-export type ProgramsOffered = {
-  id: number;
-  program_type: string;
-  program_names: ProgramName[];
-};
-
-export type ProgramName = {
-  id: number;
-  program_name: string;
+export type Note = {
+  title: string;
 };
