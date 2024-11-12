@@ -4,9 +4,9 @@ import SiteButton from "@/components/ui/SiteButton";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
-import { Root } from "@/types/university";
+import { University } from "@/types/university";
 
-const TopSection = ({ universityInfo }: { universityInfo: Root }) => {
+const TopSection = ({ universityInfo }: { universityInfo: University }) => {
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container">
@@ -16,7 +16,7 @@ const TopSection = ({ universityInfo }: { universityInfo: Root }) => {
               {universityInfo.name}, {universityInfo.country}
             </h2>
             <p className="text-center text-sm font-medium lg:text-left">
-              {universityInfo.about_university.content[0].content}
+              {universityInfo.description}
             </p>
             <div className="flex gap-x-4">
               <div className="space-y-2">
@@ -57,7 +57,8 @@ const TopSection = ({ universityInfo }: { universityInfo: Root }) => {
                     />
                   </svg>
                   <span>
-                    University Type : {universityInfo.university_type}
+                    University Type :{" "}
+                    {universityInfo.short_info.university_type}
                   </span>
                 </div>
               </div>
@@ -81,7 +82,9 @@ const TopSection = ({ universityInfo }: { universityInfo: Root }) => {
                   </svg>
                   <span>
                     Total Students :{" "}
-                    {formatIndianNumber(universityInfo.total_students)}
+                    {formatIndianNumber(
+                      universityInfo.short_info.total_students,
+                    )}
                   </span>
                 </div>
                 <div className="flex items-center justify-start gap-x-2 text-sm font-medium">
@@ -98,7 +101,10 @@ const TopSection = ({ universityInfo }: { universityInfo: Root }) => {
                     />
                   </svg>
                   <span>
-                    Launched : {getYearFromDate(universityInfo.established)}
+                    Launched :{" "}
+                    {getYearFromDate(
+                      universityInfo.short_info.launched.toString(),
+                    )}
                   </span>
                 </div>
               </div>
