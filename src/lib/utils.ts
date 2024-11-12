@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -52,14 +54,15 @@ export const getYearFromDate = (dateString: string) => {
   return date.getFullYear();
 };
 
-export const removeFields = (data: any) => {
+export const removeFields = (data: any): any => {
   // Check if data is an array, recursively apply `removeFields` to each element
   if (Array.isArray(data)) {
     return data.map((item) => removeFields(item));
   }
   // Check if data is an object, recursively apply `removeFields` to its properties
   if (typeof data === "object" && data !== null) {
-    const { id, created_at, ...cleanedData } = data; // Remove id and createdAt from the current level
+    // Destructure id and createdAt without assigning, effectively omitting them
+    const { id, created_at, ...cleanedData } = data;
     // Apply the function recursively to each property of the object
     Object.keys(cleanedData).forEach((key) => {
       cleanedData[key] = removeFields(cleanedData[key]);
