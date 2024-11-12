@@ -10,9 +10,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Root } from "@/types/university";
+import { University } from "@/types/university";
 
-const TabsSection = ({ universityInfo }: { universityInfo: Root }) => {
+const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
   const [activeTab, setActiveTab] = useState("tab1");
 
   return (
@@ -63,15 +63,15 @@ const TabsSection = ({ universityInfo }: { universityInfo: Root }) => {
               </TabsTrigger>
             </TabsList>
             <TabsContent className="mt-14 space-y-4 pt-5" value="tab1">
-              {universityInfo.about_university.content.map((item) => (
-                <div className="space-y-3" key={item.id}>
+              {universityInfo.about_university.map((item) => (
+                <div className="space-y-3" key={item.title}>
                   <h4 className="text-xl font-bold">{item.title}</h4>
-                  <p className="text-sm font-medium">{item.content}</p>
+                  <p className="text-sm font-medium">{item.description}</p>
                 </div>
               ))}
             </TabsContent>
             <TabsContent value="tab2">
-              <div className="flex justify-center divide-x-2 divide-primary pt-8">
+              {/* <div className="flex justify-center divide-x-2 divide-primary pt-8">
                 {universityInfo.programs_offered.map((program) => (
                   <div className="px-10" key={program.id}>
                     <h4 className="mb-6 text-xl font-bold">
@@ -84,7 +84,7 @@ const TabsSection = ({ universityInfo }: { universityInfo: Root }) => {
                     </ul>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </TabsContent>
             <TabsContent value="tab3">
               <div className="pt-8">
@@ -112,27 +112,25 @@ const TabsSection = ({ universityInfo }: { universityInfo: Root }) => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {universityInfo.scholarship_offered?.map(
-                        (scholarship) => (
-                          <TableRow
-                            className="text-sm font-medium"
-                            key={scholarship.id}
-                          >
-                            <TableCell className="border">
-                              {scholarship.name}
-                            </TableCell>
-                            <TableCell className="border">
-                              {scholarship.amount}
-                            </TableCell>
-                            <TableCell className="border">
-                              {scholarship.eligibility}
-                            </TableCell>
-                            <TableCell className="border">
-                              {scholarship.provider}
-                            </TableCell>
-                          </TableRow>
-                        ),
-                      )}
+                      {universityInfo.scholarship.table.map((scholarship) => (
+                        <TableRow
+                          className="text-sm font-medium"
+                          key={scholarship.scholarship_name}
+                        >
+                          <TableCell className="border">
+                            {scholarship.scholarship_name}
+                          </TableCell>
+                          <TableCell className="border">
+                            {scholarship.amount}
+                          </TableCell>
+                          <TableCell className="border">
+                            {scholarship.eligibility_criteria}
+                          </TableCell>
+                          <TableCell className="border">
+                            {scholarship.provider}
+                          </TableCell>
+                        </TableRow>
+                      ))}
                     </TableBody>
                   </Table>
                 </div>
