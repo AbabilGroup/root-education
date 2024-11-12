@@ -20,7 +20,7 @@ const AccordionSection = ({ countryInfo }: { countryInfo: Root }) => {
             title="Application Procedures"
             content={
               <>
-                <p>{countryInfo.application_procedures[0].short_breaf}</p>
+                <p>{countryInfo.application_procedures.short_breaf}</p>
                 <ApplicationProcedures countryInfo={countryInfo} />
               </>
             }
@@ -29,7 +29,7 @@ const AccordionSection = ({ countryInfo }: { countryInfo: Root }) => {
             title="Admission Requirements"
             content={
               <>
-                <p>{countryInfo.admission_requirments[0].short_breaf}</p>
+                <p>{countryInfo.admission_requirments.short_breaf}</p>
                 <AdmissionRequirements countryInfo={countryInfo} />
               </>
             }
@@ -58,7 +58,7 @@ const AccordionSection = ({ countryInfo }: { countryInfo: Root }) => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {countryInfo.visaprocedures[0].list.map((info) => (
+                      {countryInfo.visaprocedures.list.map((info) => (
                         <TableRow
                           className="text-sm font-medium"
                           key={info.title}
