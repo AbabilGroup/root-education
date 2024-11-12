@@ -13,7 +13,7 @@ const BestCities = ({ countryInfo }: { countryInfo: Root }) => {
       <div className="container">
         <div className="flex items-center justify-center gap-x-10">
           {countryInfo.city.map((city) => (
-            <FadeInUpWithSlowBounce className="space-y-4" key={city.id}>
+            <FadeInUpWithSlowBounce className="space-y-4" key={city.name}>
               <div className="mx-auto size-[150px] rounded-full bg-white p-1">
                 <div className="relative mx-auto min-h-full">
                   <Image
