@@ -29,7 +29,7 @@ const FAQ = ({ countryInfo }: { countryInfo: Root }) => {
             <FaqAccordion
               title={faq.question}
               answer={faq.answer}
-              key={faq.id}
+              key={faq.question}
             />
           ))}
         </div>
