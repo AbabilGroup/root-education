@@ -29,34 +29,27 @@ const AllCountryTable = ({ countries }: { countries: Root[] }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {countries?.map(
-            (country: {
-              id: number;
-              country: string;
-              slug: string;
-              route_slug: string;
-            }) => (
-              <TableRow key={country.id}>
-                <TableCell className="border-2 font-medium">
-                  {country.country}
-                </TableCell>
-                <TableCell className="border-2">
-                  <div className="flex items-center justify-center">
-                    <Link
-                      href={`/admin/edit-study-country/${country.route_slug}`}
-                    >
-                      <Button className="bg-yellow-500 text-white">Edit</Button>
-                    </Link>
-                  </div>
-                </TableCell>
-                <TableCell className="border-2">
-                  <div className="flex items-center justify-center">
-                    <Button className="bg-red-500 text-white">Delete</Button>
-                  </div>
-                </TableCell>
-              </TableRow>
-            ),
-          )}
+          {countries?.map((country) => (
+            <TableRow key={country.slug}>
+              <TableCell className="border-2 font-medium">
+                {country.country}
+              </TableCell>
+              <TableCell className="border-2">
+                <div className="flex items-center justify-center">
+                  <Link
+                    href={`/admin/edit-study-country/${country.route_slug}`}
+                  >
+                    <Button className="bg-yellow-500 text-white">Edit</Button>
+                  </Link>
+                </div>
+              </TableCell>
+              <TableCell className="border-2">
+                <div className="flex items-center justify-center">
+                  <Button className="bg-red-500 text-white">Delete</Button>
+                </div>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>
