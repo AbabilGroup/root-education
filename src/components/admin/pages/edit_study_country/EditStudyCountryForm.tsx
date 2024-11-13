@@ -133,21 +133,20 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     const cleanedData = removeFields(data);
 
     mutate(cleanedData);
-
-    if (isSuccess) {
-      toast.success("Study country has been updated successfully.");
-      console.log(EditCountryData);
-    }
-
-    if (error) {
-      toast.error(`Something went wrong when updating`);
-      console.error(error);
-    }
   };
 
   useEffect(() => {
-    reset(country);
-  }, [reset, country]);
+    if (isSuccess) {
+      console.log(EditCountryData);
+      reset(country);
+      toast.success("Study country has been updated successfully.");
+    }
+
+    if (error) {
+      console.error(error);
+      toast.error(`Something went wrong when updating`);
+    }
+  }, [reset, country, isSuccess, error]);
 
   return (
     <div className="mt-10 w-1/2">
