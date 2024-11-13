@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -146,7 +146,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
       console.error(error);
       toast.error(`Something went wrong when updating`);
     }
-  }, [reset, country, isSuccess, error]);
+  }, [reset, country, isSuccess, error, EditCountryData]);
 
   return (
     <div className="mt-10 w-1/2">

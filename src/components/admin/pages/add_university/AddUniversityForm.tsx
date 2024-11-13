@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { University } from "@/types/university";
 import {
   SubmitHandler,
@@ -29,7 +29,6 @@ const AddUniversityForm = () => {
   const { register, handleSubmit, reset, control } = useForm<University>({
     defaultValues: {
       name: "",
-      slug: "",
       description: "",
       short_info: {
         country: "",
@@ -145,19 +144,17 @@ const AddUniversityForm = () => {
   });
 
   const {
-    mutate,
+    // mutate,
     isPending,
     isSuccess,
     error,
     data: editUniversityData,
-  } = useMutation<AxiosResponse, unknown, University>({
+  } = useMutation<AxiosResponse, unknown, FormData>({
     mutationFn: (formData) => axios.post(`${apiUrl}/all_university/`, formData),
   });
 
   const handleAddUniversity: SubmitHandler<University> = (data) => {
-    console.log(data);
-
-    mutate(data);
+    console.log("🚀 ~ AddUniversityForm ~ data:", data);
   };
 
   useEffect(() => {
@@ -171,7 +168,7 @@ const AddUniversityForm = () => {
       console.error(error);
       toast.error(`Something went wrong while uploading! Please try again.`);
     }
-  }, [isSuccess, reset, error]);
+  }, [isSuccess, reset, error, editUniversityData]);
 
   return (
     <form
@@ -181,17 +178,17 @@ const AddUniversityForm = () => {
     >
       <div>
         <Label>University Name</Label>
-        <Input {...register("name")} type="text" required />
+        <Input {...register("name")} type="text" />
       </div>
 
       <div>
         <Label>Description</Label>
-        <Textarea {...register("description")} rows={5} required />
+        <Textarea {...register("description")} rows={5} />
       </div>
 
       <div>
         <Label>Country</Label>
-        <Input {...register("short_info.country")} type="text" required />
+        <Input {...register("short_info.country")} type="text" />
       </div>
 
       <div>
@@ -216,16 +213,17 @@ const AddUniversityForm = () => {
 
       <div>
         <Label>Total Students</Label>
-        <Input
-          {...register("short_info.total_students")}
-          type="number"
-          required
-        />
+        <Input {...register("short_info.total_students")} type="number" />
       </div>
 
       <div>
         <Label>Launch Year</Label>
-        <Input {...register("short_info.launched")} type="number" required />
+        <Input {...register("short_info.launched")} type="number" />
+      </div>
+
+      <div>
+        <Label>Photo</Label>
+        <Input {...register("photo")} type="file" />
       </div>
 
       <div>
@@ -253,13 +251,11 @@ const AddUniversityForm = () => {
                   {...register(`about_university.${index}.title`)}
                   type="text"
                   placeholder="Title"
-                  required
                 />
                 <Textarea
                   {...register(`about_university.${index}.description`)}
                   rows={5}
                   placeholder="Content"
-                  required
                 />
               </div>
               <button
@@ -291,7 +287,6 @@ const AddUniversityForm = () => {
                 {...register(`programs.undergraduate_programs.${index}.name`)}
                 type="text"
                 placeholder="Name"
-                required
               />
               <button
                 className="rounded-full bg-primary p-1"
@@ -321,7 +316,6 @@ const AddUniversityForm = () => {
                 {...register(`programs.postgraduate_programs.${index}.name`)}
                 type="text"
                 placeholder="Name"
-                required
               />
               <button
                 className="rounded-full bg-primary p-1"
@@ -351,7 +345,6 @@ const AddUniversityForm = () => {
                 {...register(`programs.doctoral_programs.${index}.name`)}
                 type="text"
                 placeholder="Name"
-                required
               />
               <button
                 className="rounded-full bg-primary p-1"
@@ -378,7 +371,6 @@ const AddUniversityForm = () => {
           <Textarea
             {...register("scholarship.short_description")}
             placeholder="Short brief"
-            required
           />
         </div>
 
@@ -392,13 +384,11 @@ const AddUniversityForm = () => {
                     {...register(`scholarship.table.${index}.scholarship_name`)}
                     type="text"
                     placeholder="Scholarship Name"
-                    required
                   />
                   <Input
                     {...register(`scholarship.table.${index}.amount`)}
                     type="text"
                     placeholder="Amount"
-                    required
                   />
                   <Input
                     {...register(
@@ -406,13 +396,11 @@ const AddUniversityForm = () => {
                     )}
                     type="text"
                     placeholder="Eligibility Criteria"
-                    required
                   />
                   <Input
                     {...register(`scholarship.table.${index}.provider`)}
                     type="text"
                     placeholder="Provider"
-                    required
                   />
                 </div>
 
@@ -453,7 +441,6 @@ const AddUniversityForm = () => {
                   {...register(`scholarship.notes.${index}.title`)}
                   type="text"
                   placeholder="Title"
-                  required
                 />
                 <button
                   className="rounded-full bg-primary p-1"
@@ -488,7 +475,6 @@ const AddUniversityForm = () => {
             {...register("application_guide.short_description")}
             type="text"
             placeholder="Short brief"
-            required
           />
 
           <div className="space-y-5">
@@ -499,14 +485,12 @@ const AddUniversityForm = () => {
                     {...register(`application_guide.guide_list.${index}.title`)}
                     type="text"
                     placeholder="Title"
-                    required
                   />
                   <Textarea
                     {...register(
                       `application_guide.guide_list.${index}.description`,
                     )}
                     placeholder="Content"
-                    required
                   />
                 </div>
                 <button
@@ -536,7 +520,6 @@ const AddUniversityForm = () => {
           <Textarea
             {...register("application_guide.bottom_description")}
             placeholder="Bottom Description"
-            required
           />
         </div>
       </div>

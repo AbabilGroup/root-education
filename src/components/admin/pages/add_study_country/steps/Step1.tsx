@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TabsContent } from "@/components/ui/tabs";
@@ -46,7 +46,7 @@ const Step1 = ({
       reset();
       setActiveTab("step2");
     }
-  }, [isSuccess, reset]);
+  }, [isSuccess, reset, setActiveTab]);
 
   return (
     <TabsContent value="step1">

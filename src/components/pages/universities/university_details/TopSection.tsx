@@ -13,7 +13,7 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
         <div className="flex flex-col items-center justify-between gap-x-20 gap-y-10 rounded-xl border px-8 py-4 shadow-sm lg:flex-row">
           <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
             <h2 className="text-center text-4xl font-semibold lg:text-left">
-              {universityInfo.name}, {universityInfo.country}
+              {universityInfo.name}, {universityInfo.short_info.country}
             </h2>
             <p className="text-center text-sm font-medium lg:text-left">
               {universityInfo.description}
@@ -41,7 +41,7 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
                       fill="#F37329"
                     />
                   </svg>
-                  <span>Country : {universityInfo.country}</span>
+                  <span>Country : {universityInfo.short_info.country}</span>
                 </div>
                 <div className="flex items-center justify-start gap-x-2 text-sm font-medium">
                   <svg

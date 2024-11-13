@@ -3,7 +3,7 @@ export type University = {
 
   name: string;
 
-  slug: string;
+  slug?: string;
 
   description: string;
 
@@ -14,13 +14,13 @@ export type University = {
     launched: number;
   };
 
-  photo: null | string | FileList;
+  photo: File | null | FileList | string;
 
-  logo: null | string | FileList;
+  logo: File | null | FileList | string;
 
-  video: null | string | FileList;
+  video: File | null | FileList | string;
 
-  thumbnail: null | string | FileList;
+  thumbnail: File | null | FileList | string;
 
   about_university: AboutUniversity[];
 
