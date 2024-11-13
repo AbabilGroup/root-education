@@ -118,23 +118,25 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     name: `faq`,
   });
 
-  const { data, error, mutate, isPending, isSuccess } = useMutation<
-    AxiosResponse,
-    unknown,
-    Root
-  >({
+  const {
+    data: EditCountryData,
+    error,
+    mutate,
+    isPending,
+    isSuccess,
+  } = useMutation<AxiosResponse, unknown, Root>({
     mutationFn: (formData) =>
       axios.put(`${apiUrl}/study_country/${country.slug}/`, formData),
   });
 
   const handleUpdateCountry: SubmitHandler<Root> = (data) => {
     const cleanedData = removeFields(data);
-    console.log("🚀 ~ EditStudyCountryForm ~ cleanedData:", cleanedData);
 
     mutate(cleanedData);
 
     if (isSuccess) {
       toast.success("Study country has been updated successfully.");
+      console.log(EditCountryData);
     }
 
     if (error) {
@@ -146,8 +148,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
   useEffect(() => {
     reset(country);
   }, [reset, country]);
-
-  console.log(data);
 
   return (
     <div className="mt-10 w-1/2">

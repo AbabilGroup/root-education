@@ -23,6 +23,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { apiUrl } from "@/secrets";
 import { toast } from "sonner";
+import { useEffect } from "react";
 
 const AddUniversityForm = () => {
   const { register, handleSubmit, reset, control } = useForm<University>({
@@ -40,7 +41,6 @@ const AddUniversityForm = () => {
       logo: null,
       video: null,
       thumbnail: null,
-      country: "",
       about_university: [
         {
           title: "",
@@ -144,11 +144,13 @@ const AddUniversityForm = () => {
     name: "application_guide.guide_list",
   });
 
-  const { mutate, isPending, isSuccess, error, data } = useMutation<
-    AxiosResponse,
-    unknown,
-    University
-  >({
+  const {
+    mutate,
+    isPending,
+    isSuccess,
+    error,
+    data: editUniversityData,
+  } = useMutation<AxiosResponse, unknown, University>({
     mutationFn: (formData) => axios.post(`${apiUrl}/all_university/`, formData),
   });
 
@@ -156,19 +158,20 @@ const AddUniversityForm = () => {
     console.log(data);
 
     mutate(data);
+  };
 
+  useEffect(() => {
     if (isSuccess) {
+      console.log(editUniversityData);
       toast.success("University added successfully.");
       reset();
     }
 
     if (error) {
-      toast.error(`Something went wrong while uploading! Please try again.`);
       console.error(error);
+      toast.error(`Something went wrong while uploading! Please try again.`);
     }
-  };
-
-  console.log("posted data", data);
+  }, [isSuccess, reset, error]);
 
   return (
     <form
@@ -176,11 +179,6 @@ const AddUniversityForm = () => {
       action=""
       onSubmit={handleSubmit(handleAddUniversity)}
     >
-      <div>
-        <Label>University Country</Label>
-        <Input {...register("country")} type="text" required />
-      </div>
-
       <div>
         <Label>University Name</Label>
         <Input {...register("name")} type="text" required />

@@ -22,8 +22,6 @@ export type University = {
 
   thumbnail: null | string | FileList;
 
-  country: string;
-
   about_university: AboutUniversity[];
 
   programs: {
