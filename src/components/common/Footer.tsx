@@ -10,7 +10,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 
 const Footer = () => {
   const pathname = usePathname();

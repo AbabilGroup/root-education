@@ -1,6 +1,6 @@
 import Image from "next/image";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 
 const UniversityCard = () => {
   return (
