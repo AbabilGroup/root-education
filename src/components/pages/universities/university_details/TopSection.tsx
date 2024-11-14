@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
 import { University } from "@/types/university";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 const TopSection = ({ universityInfo }: { universityInfo: University }) => {
   return (

@@ -1,6 +1,6 @@
 import PageBanner from "@/components/common/PageBanner";
 import ConsultationForm from "@/components/pages/consultation/ConsultationForm";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 import Link from "next/link";
 

@@ -5,7 +5,7 @@ import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowB
 import Image from "next/image";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import ModalContent from "@/components/common/ModalContent";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
 const MainSection = () => {

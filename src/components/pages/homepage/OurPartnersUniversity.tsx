@@ -1,6 +1,6 @@
 import Section from "@/components/common/Section";
 import UniversityCard from "@/components/common/UniversityCard";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
 const OurPartnersUniversity = () => {
