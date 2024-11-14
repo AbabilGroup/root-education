@@ -24,7 +24,11 @@ const items = [
     url: "/admin/add-study-country",
     icon: Plus,
   },
-
+  {
+    title: "All Universities",
+    url: "/admin/all-universities",
+    icon: List,
+  },
   {
     title: "Add University",
     url: "/admin/add-university",
