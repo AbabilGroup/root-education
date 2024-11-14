@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SiteButton from "../ui/SiteButton";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
+import { Button } from "../ui/button";
 
 const UniversityCard = () => {
   return (
@@ -137,7 +137,7 @@ const UniversityCard = () => {
       </div>
 
       <div className="flex items-center justify-start">
-        <SiteButton
+        <Button
           icon={
             <svg
               width="16"
@@ -157,7 +157,7 @@ const UniversityCard = () => {
           }
         >
           Admission Now
-        </SiteButton>
+        </Button>
       </div>
     </FadeInLeftWithSlowBounce>
   );

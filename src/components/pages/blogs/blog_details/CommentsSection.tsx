@@ -44,7 +44,7 @@ const CommentsSection = () => {
                   </p>
                 </div>
                 <div className="ml-auto basis-auto">
-                  <SiteButton>Reply</SiteButton>
+                  <Button>Reply</SiteButton>
                 </div>
               </div>
 
@@ -70,7 +70,7 @@ const CommentsSection = () => {
                   </p>
                 </div>
                 <div className="ml-auto basis-auto">
-                  <SiteButton>Reply</SiteButton>
+                  <Button>Reply</SiteButton>
                 </div>
               </div>
               {/* comment card  */}
@@ -95,7 +95,7 @@ const CommentsSection = () => {
                   </p>
                 </div>
                 <div className="ml-auto basis-auto">
-                  <SiteButton>Reply</SiteButton>
+                  <Button>Reply</SiteButton>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ const CommentsSection = () => {
                   </div>
                 </div>
                 <div>
-                  <SiteButton type="submit">Send Comments</SiteButton>
+                  <Button type="submit">Send Comments</SiteButton>
                 </div>
               </form>
             </div>

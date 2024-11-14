@@ -108,7 +108,7 @@ const WhyChooseUs = () => {
             </div>
           </div>
           <div className="flex items-center justify-center lg:justify-start">
-            <SiteButton to="/consultation">Consultation</SiteButton>
+            <Button to="/consultation">Consultation</SiteButton>
           </div>
         </FadeInRightWithSlowBounce>
       </div>

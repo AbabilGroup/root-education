@@ -1,4 +1,5 @@
-import SiteButton from "@/components/ui/SiteButton";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const NotFoundPage = () => {
   return (
@@ -8,7 +9,9 @@ const NotFoundPage = () => {
       <p className="text-center text-sm font-medium">
         Verify the URL or return to homepage.
       </p>
-      <SiteButton to="/">Back to Home</SiteButton>
+      <Link href="/">
+        <Button>Back to Home</Button>
+      </Link>
     </main>
   );
 };

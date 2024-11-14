@@ -1,8 +1,9 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
+import { Button } from "@/components/ui/button";
 import SectionName from "@/components/ui/SectionName";
-import SiteButton from "@/components/ui/SiteButton";
 import Image from "next/image";
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
@@ -115,7 +116,9 @@ const AboutUs = () => {
           </div>
           <div className="flex justify-start gap-4">
             <div>
-              <SiteButton to="/contact-us">Contact Us</SiteButton>
+              <Link href="/contact-us">
+                <Button>Contact Us</Button>
+              </Link>
             </div>
             <div>
               <svg

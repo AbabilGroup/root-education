@@ -110,7 +110,7 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
               </div>
             </div>
             <div className="flex items-center justify-center lg:justify-start">
-              <SiteButton
+              <Button
                 icon={
                   <svg
                     width="16"

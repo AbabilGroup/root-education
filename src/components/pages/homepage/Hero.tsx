@@ -1,7 +1,8 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
-import SiteButton from "@/components/ui/SiteButton";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -19,7 +20,9 @@ const Hero = () => {
             every step of the way.
           </p>
           <div className="flex items-center justify-center xl:justify-start">
-            <SiteButton to="/consultation">Free Consultation</SiteButton>
+            <Link href="/consultation">
+              <Button>Free Consultation</Button>
+            </Link>
           </div>
         </FadeInLeftWithSlowBounce>
         <FadeInRightWithSlowBounce className="relative min-h-[400px] w-full basis-full xl:min-h-[550px] xl:basis-1/2">

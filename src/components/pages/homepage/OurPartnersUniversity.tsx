@@ -1,6 +1,7 @@
 import Section from "@/components/common/Section";
 import UniversityCard from "@/components/common/UniversityCard";
-import SiteButton from "@/components/ui/SiteButton";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const OurPartnersUniversity = () => {
   return (
@@ -18,7 +19,9 @@ const OurPartnersUniversity = () => {
         <UniversityCard />
       </div>
       <div className="mt-10 flex items-center justify-center">
-        <SiteButton to="/universities">View All Universities</SiteButton>
+        <Link href="/universities">
+          <Button>View All Universities</Button>
+        </Link>
       </div>
     </Section>
   );

@@ -30,7 +30,7 @@ const MainSection = () => {
             abroad confidently and increase your chances of acceptance.
           </p>
           <div className="flex items-center justify-center lg:justify-start">
-            <SiteButton to="/consultation">Book Your Consultation</SiteButton>
+            <Button to="/consultation">Book Your Consultation</SiteButton>
           </div>
         </FadeInLeftWithSlowBounce>
         <FadeInRightWithSlowBounce className="relative min-h-[400px] w-full basis-full xl:min-h-[460px] xl:basis-1/2">

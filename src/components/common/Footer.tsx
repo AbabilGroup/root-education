@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import SiteButton from "../ui/SiteButton";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
 import {
@@ -11,6 +10,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -127,9 +127,9 @@ const Footer = () => {
           <h3 className="text-center text-3xl font-semibold text-white lg:text-left">
             Ready to Take the Next Step?
           </h3>
-          <SiteButton bg="bg-white" text="text-primary" to="/consultation">
-            Personalized Consultation
-          </SiteButton>
+          <Link href="/consultation">
+            <Button>Personalized Consultation</Button>
+          </Link>
         </div>
       </div>
       <div className="bg-secondary pt-[40px]">

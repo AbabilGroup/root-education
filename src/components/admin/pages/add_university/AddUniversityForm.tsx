@@ -144,7 +144,7 @@ const AddUniversityForm = () => {
   });
 
   const {
-    // mutate,
+    mutate,
     isPending,
     isSuccess,
     error,
@@ -155,6 +155,44 @@ const AddUniversityForm = () => {
 
   const handleAddUniversity: SubmitHandler<University> = (data) => {
     console.log("🚀 ~ AddUniversityForm ~ data:", data);
+
+    const formData = new FormData();
+
+    formData.append("data", JSON.stringify(data));
+
+    if (data.photo instanceof FileList && data.photo.length > 0) {
+      formData.append("photo", data.photo[0]);
+    } else if (data.photo instanceof File) {
+      formData.append("photo", data.photo);
+    } else if (typeof data.photo === "string") {
+      formData.append("photo", data.photo);
+    }
+
+    if (data.logo instanceof FileList && data.logo.length > 0) {
+      formData.append("logo", data.logo[0]);
+    } else if (data.logo instanceof File) {
+      formData.append("logo", data.logo);
+    } else if (typeof data.logo === "string") {
+      formData.append("logo", data.logo);
+    }
+
+    if (data.video instanceof FileList && data.video.length > 0) {
+      formData.append("video", data.video[0]);
+    } else if (data.video instanceof File) {
+      formData.append("video", data.video);
+    } else if (typeof data.video === "string") {
+      formData.append("video", data.video);
+    }
+
+    if (data.thumbnail instanceof FileList && data.thumbnail.length > 0) {
+      formData.append("thumbnail", data.thumbnail[0]);
+    } else if (data.thumbnail instanceof File) {
+      formData.append("thumbnail", data.thumbnail);
+    } else if (typeof data.thumbnail === "string") {
+      formData.append("thumbnail", data.thumbnail);
+    }
+
+    mutate(formData);
   };
 
   useEffect(() => {
@@ -166,7 +204,7 @@ const AddUniversityForm = () => {
 
     if (error) {
       console.error(error);
-      toast.error(`Something went wrong while uploading! Please try again.`);
+      toast.error(error?.response?.data?.message);
     }
   }, [isSuccess, reset, error, editUniversityData]);
 

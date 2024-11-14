@@ -3,12 +3,13 @@
 import FadeInDownWithSlowBounce from "@/animation_wrappers/FadeInDownWithSlowBounce";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
-import SiteButton from "@/components/ui/SiteButton";
 import SectionName from "@/components/ui/SectionName";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import ReactPlayer from "react-player";
 import CountUp from "react-countup";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
   return (
@@ -158,7 +159,9 @@ const AboutUs = () => {
           </div>
           <div className="flex justify-start gap-4">
             <div>
-              <SiteButton to="/about-us">About More</SiteButton>
+              <Link href="/about-us">
+                <Button>About More</Button>
+              </Link>
             </div>
             <div>
               <svg

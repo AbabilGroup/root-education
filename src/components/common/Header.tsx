@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import SiteButton from "../ui/SiteButton";
 import { NavMenu } from "./NavMenu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {
@@ -10,6 +9,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Button } from "../ui/button";
 
 const Header = () => {
   return (
@@ -28,9 +28,9 @@ const Header = () => {
 
         <NavMenu />
 
-        <SiteButton className="hidden xl:inline" to="/consultation">
-          Consultation
-        </SiteButton>
+        <Link href="/consultation">
+          <Button className="hidden xl:inline">Consultation</Button>
+        </Link>
 
         {/* mobile nav  */}
         <Sheet>
@@ -55,7 +55,7 @@ const Header = () => {
             </SheetHeader>
 
             <SheetFooter className="mt-auto border">
-              <SiteButton to="/consultation">Consultation</SiteButton>
+              <Button to="/consultation">Consultation</Button>
             </SheetFooter>
           </SheetContent>
         </Sheet>

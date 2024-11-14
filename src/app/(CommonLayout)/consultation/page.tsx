@@ -26,7 +26,7 @@ const ConsultationPage = () => {
           <h3 className="text-center text-3xl font-semibold text-white lg:text-left">
             Ready to Take the Next Step?
           </h3>
-          <SiteButton bg="bg-white" text="text-primary">
+          <Button bg="bg-white" text="text-primary">
             Personalized Consultation
           </SiteButton>
         </div>
