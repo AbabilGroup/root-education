@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Input } from "@/components/ui/input";
@@ -204,7 +205,9 @@ const AddUniversityForm = () => {
 
     if (error) {
       console.error(error);
-      toast.error(error?.response?.data?.message);
+      const errorMessage =
+        (error as any)?.response?.data?.message || "An error occurred";
+      toast.error(errorMessage);
     }
   }, [isSuccess, reset, error, editUniversityData]);
 

@@ -55,7 +55,9 @@ const Header = () => {
             </SheetHeader>
 
             <SheetFooter className="mt-auto border">
-              <Button to="/consultation">Consultation</Button>
+              <Link href="/consultation">
+                <Button>Consultation</Button>
+              </Link>
             </SheetFooter>
           </SheetContent>
         </Sheet>

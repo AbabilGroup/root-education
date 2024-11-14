@@ -1,7 +1,8 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
-import SiteButton from "@/components/ui/SiteButton";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const MainSection = () => {
   return (
@@ -20,7 +21,9 @@ const MainSection = () => {
             complexities for you!
           </p>
           <div className="flex items-center justify-center lg:justify-start">
-            <Button to="/consultation">Book Your Consultation</SiteButton>
+            <Link href="/consultation">
+              <Button>Book Your Consultation</Button>
+            </Link>
           </div>
         </FadeInLeftWithSlowBounce>
         <FadeInRightWithSlowBounce className="relative min-h-[350px] w-full basis-full xl:basis-1/2">

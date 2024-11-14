@@ -1,10 +1,10 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
-import SiteButton from "@/components/ui/SiteButton";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
 import { University } from "@/types/university";
+import { Button } from "@/components/ui/button";
 
 const TopSection = ({ universityInfo }: { universityInfo: University }) => {
   return (
@@ -130,7 +130,7 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
                 }
               >
                 Admission now
-              </SiteButton>
+              </Button>
             </div>
           </FadeInLeftWithSlowBounce>
           <FadeInRightWithSlowBounce className="relative min-h-[350px] w-full basis-full xl:basis-1/2">
