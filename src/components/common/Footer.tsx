@@ -128,7 +128,7 @@ const Footer = () => {
             Ready to Take the Next Step?
           </h3>
           <Link href="/consultation">
-            <Button>Personalized Consultation</Button>
+            <Button className="bg-secondary">Personalized Consultation</Button>
           </Link>
         </div>
       </div>
