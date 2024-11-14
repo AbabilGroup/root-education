@@ -1,6 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
-import SiteButton from "@/components/ui/SiteButton";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 
@@ -44,7 +44,7 @@ const CommentsSection = () => {
                   </p>
                 </div>
                 <div className="ml-auto basis-auto">
-                  <Button>Reply</SiteButton>
+                  <Button>Reply</Button>
                 </div>
               </div>
 
@@ -70,7 +70,7 @@ const CommentsSection = () => {
                   </p>
                 </div>
                 <div className="ml-auto basis-auto">
-                  <Button>Reply</SiteButton>
+                  <Button>Reply</Button>
                 </div>
               </div>
               {/* comment card  */}
@@ -95,7 +95,7 @@ const CommentsSection = () => {
                   </p>
                 </div>
                 <div className="ml-auto basis-auto">
-                  <Button>Reply</SiteButton>
+                  <Button>Reply</Button>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ const CommentsSection = () => {
                   </div>
                 </div>
                 <div>
-                  <Button type="submit">Send Comments</SiteButton>
+                  <Button type="submit">Send Comments</Button>
                 </div>
               </form>
             </div>

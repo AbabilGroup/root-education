@@ -1,7 +1,8 @@
 import PageBanner from "@/components/common/PageBanner";
 import ConsultationForm from "@/components/pages/consultation/ConsultationForm";
-import SiteButton from "@/components/ui/SiteButton";
+import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Root Education | Consultation",
@@ -26,9 +27,9 @@ const ConsultationPage = () => {
           <h3 className="text-center text-3xl font-semibold text-white lg:text-left">
             Ready to Take the Next Step?
           </h3>
-          <Button bg="bg-white" text="text-primary">
-            Personalized Consultation
-          </SiteButton>
+          <Link href="/consultation">
+            <Button>Personalized Consultation</Button>
+          </Link>
         </div>
       </div>
     </main>

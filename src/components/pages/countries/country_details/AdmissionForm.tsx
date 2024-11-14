@@ -12,7 +12,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
-import SiteButton from "@/components/ui/SiteButton";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -378,7 +377,7 @@ const AdmissionForm = () => {
           </label>
         </div>
         <div className="pt-5">
-          <Button type="submit">Get start for free Consultation</SiteButton>
+          <Button type="submit">Get start for free Consultation</Button>
         </div>
       </form>
     </Form>
