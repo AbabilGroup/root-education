@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { NavMenu } from "./NavMenu";
@@ -10,8 +12,35 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "../ui/Button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { servicesLinks } from "@/constants";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import {
+  IoIosArrowDown,
+  IoIosArrowForward,
+  IoMdArrowDropright,
+} from "react-icons/io";
 
 const Header = () => {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const closeSheet = () => setIsOpen(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isCountriesOpen, setIsCountriesOpen] = useState(false);
+  const [isUniversitiesOpen, setIsUniversitiesOpen] = useState(false);
+
+  // const { isLoading, data } = useQuery({
+  //   queryKey: ["countries"],
+  //   queryFn: () => axios.get(`${apiUrl}/study_country`),
+  // });
+
+  // console.log(data);
+
   return (
     <header className="sticky top-0 z-[10000] bg-white py-3 shadow">
       <nav className="container flex items-center justify-between">
@@ -33,16 +62,16 @@ const Header = () => {
         </Link>
 
         {/* mobile nav  */}
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <GiHamburgerMenu className="cursor-pointer text-2xl xl:hidden" />
           </SheetTrigger>
           <SheetContent
-            className="z-[50000] flex flex-col items-start justify-start bg-white"
+            className="z-[50000] flex flex-col items-start bg-white"
             side="left"
           >
             <SheetHeader>
-              <Link href="/">
+              <Link className="" href="/">
                 <div className="relative h-[43px] w-[110px]">
                   <Image
                     className="object-cover"
@@ -54,8 +83,145 @@ const Header = () => {
               </Link>
             </SheetHeader>
 
-            <SheetFooter className="mt-auto border">
-              <Link href="/consultation">
+            <div className="w-full py-10">
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link
+                    className={`block rounded-lg border px-2 py-2 ${pathname === "/" ? "border-primary bg-primary text-white" : ""}`}
+                    href="/"
+                    onClick={closeSheet}
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`block rounded-lg border px-2 py-2 ${pathname === "/about-us" ? "border-primary bg-primary text-white" : ""}`}
+                    href="/about-us"
+                    onClick={closeSheet}
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={`block rounded-lg border px-2 py-2 ${pathname === "/how-we-work" ? "border-primary bg-primary text-white" : ""}`}
+                    href="/how-we-work"
+                    onClick={closeSheet}
+                  >
+                    How We Work
+                  </Link>
+                </li>
+
+                <li>
+                  <Collapsible
+                    open={isServicesOpen}
+                    onOpenChange={setIsServicesOpen}
+                  >
+                    <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border px-2 py-2 text-start">
+                      Services{" "}
+                      {isServicesOpen ? (
+                        <IoIosArrowForward />
+                      ) : (
+                        <IoIosArrowDown />
+                      )}
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <ul className="">
+                        {servicesLinks.map((service) => (
+                          <li key={service.id}>
+                            <Link
+                              className="my-2 flex items-center justify-start rounded-lg px-2"
+                              href={service.path}
+                              onClick={closeSheet}
+                            >
+                              <IoMdArrowDropright className="text-2xl" />{" "}
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </li>
+
+                <li>
+                  <Collapsible
+                    open={isCountriesOpen}
+                    onOpenChange={setIsCountriesOpen}
+                  >
+                    <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border px-2 py-2 text-start">
+                      Countries{" "}
+                      {isCountriesOpen ? (
+                        <IoIosArrowForward />
+                      ) : (
+                        <IoIosArrowDown />
+                      )}
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <ul className="">
+                        {servicesLinks.map((service) => (
+                          <li key={service.id}>
+                            <Link
+                              className="my-2 flex items-center justify-start rounded-lg px-2"
+                              href={service.path}
+                              onClick={closeSheet}
+                            >
+                              <IoMdArrowDropright className="text-2xl" />{" "}
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </li>
+                <li>
+                  <Collapsible
+                    open={isUniversitiesOpen}
+                    onOpenChange={setIsUniversitiesOpen}
+                  >
+                    <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border px-2 py-2 text-start">
+                      Universities{" "}
+                      {isUniversitiesOpen ? (
+                        <IoIosArrowForward />
+                      ) : (
+                        <IoIosArrowDown />
+                      )}
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <ul className="">
+                        {servicesLinks.map((service) => (
+                          <li key={service.id}>
+                            <Link
+                              className="my-2 flex items-center justify-start rounded-lg px-2"
+                              href={service.path}
+                              onClick={closeSheet}
+                            >
+                              <IoMdArrowDropright className="text-2xl" />{" "}
+                              {service.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </li>
+
+                <li>
+                  <Link
+                    className={`block rounded-lg border px-2 py-2 ${pathname === "/contact-us" ? "border-primary bg-primary text-white" : ""}`}
+                    href="/contact-us"
+                    onClick={closeSheet}
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <SheetFooter className="mt-auto">
+              <Link className="" href="/consultation" onClick={closeSheet}>
                 <Button>Consultation</Button>
               </Link>
             </SheetFooter>

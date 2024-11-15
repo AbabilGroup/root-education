@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -46,12 +47,7 @@ const GetInTouchContactForm = () => {
         rows={5}
         required
       />
-      <button
-        className="flex items-center justify-center gap-x-2 rounded-sm bg-primary px-5 py-3 text-sm font-medium text-white duration-300 hover:bg-secondary hover:text-white"
-        type="submit"
-      >
-        Send Message
-      </button>
+      <Button type="submit">Send Message</Button>
     </form>
   );
 };
