@@ -21,7 +21,9 @@ const Hero = () => {
           </p>
           <div className="flex items-center justify-center xl:justify-start">
             <Link href="/consultation">
-              <Button>Free Consultation</Button>
+              <Button className="border border-primary hover:border-white">
+                Free Consultation
+              </Button>
             </Link>
           </div>
         </FadeInLeftWithSlowBounce>

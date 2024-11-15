@@ -24,7 +24,9 @@ export default function CommonLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} flex min-h-screen flex-col`}>
+      <body
+        className={`${montserrat.className} flex min-h-screen flex-col text-secondary`}
+      >
         <NextTopLoader color="#F37329" />
         <TanstackQueryProvider>
           <TopBar />

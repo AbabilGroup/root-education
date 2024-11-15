@@ -107,19 +107,19 @@ const CommentsSection = () => {
               <form action="" className="space-y-5">
                 <div className="flex items-center justify-between gap-x-5">
                   <Input
-                    className="py-5 placeholder:text-black placeholder:text-opacity-50"
+                    className="py-5 placeholder:text-secondary placeholder:text-opacity-50"
                     type="text"
                     placeholder="Full Name*"
                   />
                   <Input
-                    className="py-5 placeholder:text-black placeholder:text-opacity-50"
+                    className="py-5 placeholder:text-secondary placeholder:text-opacity-50"
                     type="email"
                     placeholder="Email Address*"
                   />
                 </div>
                 <div>
                   <Textarea
-                    className="placeholder:text-black placeholder:text-opacity-50"
+                    className="placeholder:text-secondary placeholder:text-opacity-50"
                     placeholder="Write Comments"
                     rows={5}
                   />

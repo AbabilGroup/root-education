@@ -128,7 +128,9 @@ const Footer = () => {
             Ready to Take the Next Step?
           </h3>
           <Link href="/consultation">
-            <Button className="bg-secondary">Personalized Consultation</Button>
+            <Button className="bg-secondary hover:bg-white hover:text-secondary">
+              Personalized Consultation
+            </Button>
           </Link>
         </div>
       </div>
@@ -328,7 +330,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/terms-of-conditions"
+                    href="/terms-and-conditions"
                     className="duration-200 hover:underline"
                   >
                     Terms & Conditions

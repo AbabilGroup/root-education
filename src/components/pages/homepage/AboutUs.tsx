@@ -19,7 +19,7 @@ const AboutUs = () => {
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
               <h4 className="text-3xl font-bold text-primary">
-                <CountUp duration={3} end={1000} />+
+                <CountUp duration={5} end={1000} />+
               </h4>
               <p className="text-sm font-medium">Student Enrolled</p>
             </FadeInDownWithSlowBounce>
@@ -27,7 +27,7 @@ const AboutUs = () => {
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
               <h4 className="text-3xl font-bold text-primary">
-                <CountUp duration={3} end={6} />+
+                <CountUp duration={5} end={6} />+
               </h4>
               <p className="text-sm font-medium">WorldWide Brances</p>
             </FadeInDownWithSlowBounce>
@@ -35,7 +35,7 @@ const AboutUs = () => {
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
               <h4 className="text-3xl font-bold text-primary">
-                <CountUp duration={3} end={36} />+
+                <CountUp duration={5} end={36} />+
               </h4>
               <p className="text-sm font-medium">Partnered University</p>
             </FadeInDownWithSlowBounce>
@@ -43,7 +43,7 @@ const AboutUs = () => {
           <div className="space-y-2 px-10 py-3 text-center">
             <FadeInDownWithSlowBounce>
               <h4 className="text-3xl font-bold text-primary">
-                <CountUp duration={3} end={13} /> Years
+                <CountUp duration={5} end={13} /> Years
               </h4>
               <p className="text-sm font-medium">of Experience</p>
             </FadeInDownWithSlowBounce>
