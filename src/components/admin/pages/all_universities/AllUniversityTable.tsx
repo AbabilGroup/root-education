@@ -36,15 +36,15 @@ const AllUniversityTable = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {universities?.map((country) => (
-            <TableRow key={country.slug}>
+          {universities?.map((university) => (
+            <TableRow key={university.slug}>
               <TableCell className="border-2 font-medium">
-                {country.country}
+                {university.name}
               </TableCell>
               <TableCell className="border-2">
                 <div className="flex items-center justify-center">
                   <Link
-                    href={`/admin/edit-study-country/${country.route_slug}`}
+                    href={`/admin/edit-study-country/${university.short_info.country}`}
                   >
                     <Button className="bg-yellow-500 text-white">Edit</Button>
                   </Link>

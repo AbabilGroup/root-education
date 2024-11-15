@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Root Education | Universities",
 };
 
-
-
 const UniversitiesPage = () => {
   return (
     <main>
