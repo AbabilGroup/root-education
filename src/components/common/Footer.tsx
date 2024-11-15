@@ -53,27 +53,27 @@ const Footer = () => {
     our_services: [
       {
         label: "Study Abroad Consultation",
-        href: "/study-abroad-Consultation",
+        href: "/services/study-abroad-consultation",
       },
       {
         label: "University Selection",
-        href: "/university-selection",
+        href: "/services/university-selection",
       },
       {
         label: "Application Assistance",
-        href: "/application-assistance",
+        href: "/services/application-assistance",
       },
       {
         label: "Visa Guidance",
-        href: "/visa-guidance",
+        href: "/services/visa-guidance",
       },
       {
         label: "Scholarship & Financial Aid",
-        href: "/scholarship-and-financial-aid",
+        href: "/services/scholarship-and-financial-aid",
       },
       {
         label: "Pre-departure Briefing",
-        href: "/pre-departure-briefing",
+        href: "/services/pre-departure-briefing",
       },
     ],
     study_countries: [
@@ -128,7 +128,7 @@ const Footer = () => {
             Ready to Take the Next Step?
           </h3>
           <Link href="/consultation">
-            <Button className="bg-secondary hover:bg-white hover:text-secondary">
+            <Button className="bg-white text-secondary hover:bg-secondary hover:text-white">
               Personalized Consultation
             </Button>
           </Link>
