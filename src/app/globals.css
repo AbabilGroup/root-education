@@ -34,3 +34,22 @@
     @apply bg-background text-foreground;
   }
 } */
+
+/* globals.css */
+body {
+  scrollbar-color: #f37329 #f4f4f4;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f37329;
+  border-radius: 8px;
+}

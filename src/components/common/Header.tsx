@@ -67,7 +67,7 @@ const Header = () => {
             <GiHamburgerMenu className="cursor-pointer text-2xl xl:hidden" />
           </SheetTrigger>
           <SheetContent
-            className="z-[50000] flex flex-col items-start bg-white"
+            className="z-[50000] flex flex-col items-start overflow-x-hidden overflow-y-scroll bg-white"
             side="left"
           >
             <SheetHeader>

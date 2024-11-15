@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
+import tailwindScrollbar from "tailwind-scrollbar";
 
 const config: Config = {
   darkMode: ["class"],
@@ -14,7 +15,19 @@ const config: Config = {
       padding: "24px",
     },
     extend: {
+      scrollbar: {
+        thin: {
+          "scrollbar-width": "thin",
+        },
+        default: {
+          "scrollbar-width": "auto",
+        },
+      },
       colors: {
+        scrollbar: {
+          DEFAULT: "#F37329", // Thumb color
+          track: "#E5E7EB", // Track color
+        },
         primary: "#F37329",
         secondary: "#040707",
         sidebar: {
@@ -75,6 +88,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, tailwindScrollbar({ nocompatible: true })],
 };
 export default config;
