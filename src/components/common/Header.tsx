@@ -118,7 +118,9 @@ const Header = () => {
                     open={isServicesOpen}
                     onOpenChange={setIsServicesOpen}
                   >
-                    <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border px-2 py-2 text-start">
+                    <CollapsibleTrigger
+                      className={`flex w-full items-center justify-between rounded-lg border px-2 py-2 text-start ${pathname === "/services/study-abroad-consultation" && "border-primary bg-primary text-white"} ${pathname === "/services/university-selection" && "border-primary bg-primary text-white"} ${pathname === "/services/application-assistance" && "border-primary bg-primary text-white"} ${pathname === "/services/visa-guidance" && "border-primary bg-primary text-white"} ${pathname === "/services/scholarship-and-financial-aid" && "border-primary bg-primary text-white"} ${pathname === "/services/pre-departure-briefing" && "border-primary bg-primary text-white"}`}
+                    >
                       Services{" "}
                       {isServicesOpen ? (
                         <IoIosArrowForward />
@@ -131,7 +133,7 @@ const Header = () => {
                         {servicesLinks.map((service) => (
                           <li key={service.id}>
                             <Link
-                              className="my-2 flex items-center justify-start rounded-lg px-2"
+                              className={`my-2 flex items-center justify-start rounded-lg px-2 ${pathname === service.path && "text-primary"}`}
                               href={service.path}
                               onClick={closeSheet}
                             >
@@ -176,6 +178,7 @@ const Header = () => {
                     </CollapsibleContent>
                   </Collapsible>
                 </li>
+
                 <li>
                   <Collapsible
                     open={isUniversitiesOpen}
