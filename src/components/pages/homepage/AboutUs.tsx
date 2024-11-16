@@ -10,6 +10,7 @@ import ReactPlayer from "react-player";
 import CountUp from "react-countup";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { IoPlayCircle } from "react-icons/io5";
 
 const AboutUs = () => {
   return (
@@ -206,21 +207,19 @@ const AboutUs = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <button className="flex w-full basis-full items-center justify-center gap-x-2 rounded-lg border border-primary px-3 py-6 text-sm font-medium text-secondary">
-                  <div className="relative size-[30px] rounded-full">
-                    <Image src="/icons/play_icon.svg" alt="Play" fill />
-                  </div>
+                  <IoPlayCircle className="text-primary text-4xl"/>
 
                   <span>Watch Video</span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="min-h-[70vh] max-w-[1000px] border border-primary bg-white">
+              <DialogContent className="mx-10 border border-primary bg-white">
                 <div className="p-5">
                   <ReactPlayer
+                    width="100%"
+                    height="auto"
                     playing
                     controls
                     style={{
-                      minWidth: "100%",
-                      minHeight: "100%",
                       border: "1px solid #ddd",
                     }}
                     url="https://youtu.be/qC4sVo6STFM"
@@ -244,3 +243,5 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+// min-h-[70vh] max-w-[1000px]

@@ -1,5 +1,4 @@
 import Section from "@/components/common/Section";
-import * as React from "react";
 
 import {
   Carousel,
@@ -17,53 +16,51 @@ const OurStudyCountry = () => {
       sectionName="Our Study Country"
       title="Explore top global study destinations"
     >
-      <div className="container">
-        <FadeInUpWithSlowBounce className="container px-8">
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-          >
-            <CarouselContent>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-              <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-                <StudyCountryCard />
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </FadeInUpWithSlowBounce>
-      </div>
+      <FadeInUpWithSlowBounce className="container px-20">
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+        >
+          <CarouselContent>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
+              <StudyCountryCard />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </FadeInUpWithSlowBounce>
     </Section>
   );
 };
