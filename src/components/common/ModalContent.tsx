@@ -5,7 +5,7 @@ import { DialogContent } from "../ui/dialog";
 
 const ModalContent = () => {
   return (
-    <DialogContent className="inline-block border border-primary bg-white">
+    <DialogContent className="mx-10 inline-block border border-primary bg-white">
       <div className="p-5">
         <ReactPlayer
           width="100%"
