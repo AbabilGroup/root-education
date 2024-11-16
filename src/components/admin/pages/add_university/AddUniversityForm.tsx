@@ -219,17 +219,17 @@ const AddUniversityForm = () => {
     >
       <div>
         <Label>University Name</Label>
-        <Input {...register("name")} type="text" />
+        <Input {...register("name")} type="text" required />
       </div>
 
       <div>
         <Label>Description</Label>
-        <Textarea {...register("description")} rows={5} />
+        <Textarea {...register("description")} rows={5} required />
       </div>
 
       <div>
         <Label>Country</Label>
-        <Input {...register("short_info.country")} type="text" />
+        <Input {...register("short_info.country")} type="text" required />
       </div>
 
       <div>
@@ -254,32 +254,36 @@ const AddUniversityForm = () => {
 
       <div>
         <Label>Total Students</Label>
-        <Input {...register("short_info.total_students")} type="number" />
+        <Input
+          {...register("short_info.total_students")}
+          type="number"
+          required
+        />
       </div>
 
       <div>
         <Label>Launch Year</Label>
-        <Input {...register("short_info.launched")} type="number" />
+        <Input {...register("short_info.launched")} type="number" required />
       </div>
 
       <div>
         <Label>Photo</Label>
-        <Input {...register("photo")} type="file" />
+        <Input {...register("photo")} type="file" required />
       </div>
 
       <div>
         <Label>Video</Label>
-        <Input {...register("video")} type="file" />
+        <Input {...register("video")} type="file" required />
       </div>
 
       <div>
         <Label>Video Thumbnail</Label>
-        <Input {...register("thumbnail")} type="file" />
+        <Input {...register("thumbnail")} type="file" required />
       </div>
 
       <div>
         <Label>Logo</Label>
-        <Input {...register("logo")} type="file" />
+        <Input {...register("logo")} type="file" required />
       </div>
 
       <div>
@@ -292,11 +296,13 @@ const AddUniversityForm = () => {
                   {...register(`about_university.${index}.title`)}
                   type="text"
                   placeholder="Title"
+                  required
                 />
                 <Textarea
                   {...register(`about_university.${index}.description`)}
                   rows={5}
                   placeholder="Content"
+                  required
                 />
               </div>
               <button
@@ -328,6 +334,7 @@ const AddUniversityForm = () => {
                 {...register(`programs.undergraduate_programs.${index}.name`)}
                 type="text"
                 placeholder="Name"
+                required
               />
               <button
                 className="rounded-full bg-primary p-1"
@@ -357,6 +364,7 @@ const AddUniversityForm = () => {
                 {...register(`programs.postgraduate_programs.${index}.name`)}
                 type="text"
                 placeholder="Name"
+                required
               />
               <button
                 className="rounded-full bg-primary p-1"
@@ -386,6 +394,7 @@ const AddUniversityForm = () => {
                 {...register(`programs.doctoral_programs.${index}.name`)}
                 type="text"
                 placeholder="Name"
+                required
               />
               <button
                 className="rounded-full bg-primary p-1"
@@ -412,6 +421,7 @@ const AddUniversityForm = () => {
           <Textarea
             {...register("scholarship.short_description")}
             placeholder="Short brief"
+            required
           />
         </div>
 
@@ -425,11 +435,13 @@ const AddUniversityForm = () => {
                     {...register(`scholarship.table.${index}.scholarship_name`)}
                     type="text"
                     placeholder="Scholarship Name"
+                    required
                   />
                   <Input
                     {...register(`scholarship.table.${index}.amount`)}
                     type="text"
                     placeholder="Amount"
+                    required
                   />
                   <Input
                     {...register(
@@ -437,11 +449,13 @@ const AddUniversityForm = () => {
                     )}
                     type="text"
                     placeholder="Eligibility Criteria"
+                    required
                   />
                   <Input
                     {...register(`scholarship.table.${index}.provider`)}
                     type="text"
                     placeholder="Provider"
+                    required
                   />
                 </div>
 
@@ -482,6 +496,7 @@ const AddUniversityForm = () => {
                   {...register(`scholarship.notes.${index}.title`)}
                   type="text"
                   placeholder="Title"
+                  required
                 />
                 <button
                   className="rounded-full bg-primary p-1"
@@ -516,6 +531,7 @@ const AddUniversityForm = () => {
             {...register("application_guide.short_description")}
             type="text"
             placeholder="Short brief"
+            required
           />
 
           <div className="space-y-5">
@@ -526,12 +542,14 @@ const AddUniversityForm = () => {
                     {...register(`application_guide.guide_list.${index}.title`)}
                     type="text"
                     placeholder="Title"
+                    required
                   />
                   <Textarea
                     {...register(
                       `application_guide.guide_list.${index}.description`,
                     )}
                     placeholder="Content"
+                    required
                   />
                 </div>
                 <button
@@ -561,6 +579,7 @@ const AddUniversityForm = () => {
           <Textarea
             {...register("application_guide.bottom_description")}
             placeholder="Bottom Description"
+            required
           />
         </div>
       </div>

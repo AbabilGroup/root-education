@@ -28,7 +28,7 @@ const ConsultationPage = () => {
             Ready to Take the Next Step?
           </h3>
           <Link href="/consultation">
-            <Button className="bg-secondary hover:bg-white hover:text-secondary">
+            <Button className="bg-white text-secondary hover:bg-secondary hover:text-white">
               Personalized Consultation
             </Button>
           </Link>

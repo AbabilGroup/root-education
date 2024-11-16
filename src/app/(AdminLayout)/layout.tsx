@@ -5,6 +5,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 import { Toaster } from "sonner";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: "Root Education | Admin",
@@ -23,6 +24,7 @@ export default function AdminLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className}`}>
+        <NextTopLoader color="#F37329" />
         <Toaster />
         <TanstackQueryProvider>
           <SidebarProvider>
