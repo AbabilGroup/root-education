@@ -25,11 +25,12 @@ const config: Config = {
       },
       colors: {
         scrollbar: {
-          DEFAULT: "#F37329", // Thumb color
-          track: "#E5E7EB", // Track color
+          DEFAULT: "#F37329",
+          track: "#E5E7EB",
         },
         primary: "#F37329",
         secondary: "#040707",
+        white: "#FDFDFD",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

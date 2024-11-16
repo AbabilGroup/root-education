@@ -5,14 +5,17 @@ import { DialogContent } from "../ui/dialog";
 
 const ModalContent = () => {
   return (
-    <DialogContent className="min-h-[70vh] max-w-[1000px] border border-primary bg-white">
+    <DialogContent className="inline-block border border-primary bg-white">
       <div className="p-5">
         <ReactPlayer
+          width="100%"
+          height="auto"
           playing
           controls
           style={{
-            minWidth: "100%",
-            minHeight: "100%",
+            display: "inline-block",
+            // minWidth: "100%",
+            // minHeight: "100%",
             border: "1px solid #ddd",
           }}
           url="https://youtu.be/qC4sVo6STFM"
@@ -23,3 +26,5 @@ const ModalContent = () => {
 };
 
 export default ModalContent;
+
+// min-h-[70vh] max-w-[1000px] border border-primary bg-white

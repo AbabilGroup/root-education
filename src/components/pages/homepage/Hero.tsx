@@ -27,16 +27,13 @@ const Hero = () => {
             </Link>
           </div>
         </FadeInLeftWithSlowBounce>
-        <FadeInRightWithSlowBounce className="relative min-h-[400px] w-full basis-full xl:min-h-[550px] xl:basis-1/2">
+        <FadeInRightWithSlowBounce className="min-h-[400px] w-full basis-full xl:min-h-[550px] xl:basis-1/2">
           <Image
             className="object-contain object-bottom xl:object-right-bottom"
             src="/images/pages/home/hero_section/hero_img.svg"
             alt="Root Education"
             fill
           />
-          <span className="absolute right-0 top-[200px] rounded-sm bg-white px-6 py-2 text-sm font-medium text-secondary">
-            95% Visa Success Rate
-          </span>
         </FadeInRightWithSlowBounce>
       </div>
     </section>
