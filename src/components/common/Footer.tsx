@@ -134,7 +134,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-secondary pt-[40px]">
+      <div className="bg-secondary pt-[50px]">
         <div className="container grid grid-cols-1 gap-x-[50px] gap-y-14 md:grid-cols-2 xl:grid-cols-4">
           <div className="basis-[25%] space-y-5">
             <div className="relative h-[43px] w-[110px]">

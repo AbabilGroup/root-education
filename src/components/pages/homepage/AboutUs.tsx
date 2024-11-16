@@ -207,7 +207,7 @@ const AboutUs = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <button className="flex w-full basis-full items-center justify-center gap-x-2 rounded-lg border border-primary px-3 py-6 text-sm font-medium text-secondary">
-                  <IoPlayCircle className="text-primary text-4xl"/>
+                  <IoPlayCircle className="text-4xl text-primary" />
 
                   <span>Watch Video</span>
                 </button>
