@@ -24,6 +24,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/Button";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z
@@ -54,6 +55,8 @@ const formSchema = z.object({
 });
 
 const ConsultationForm = () => {
+  const [isNotAccepted, setIsNotAccepted] = useState(true);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -293,7 +296,10 @@ const ConsultationForm = () => {
         </div>
 
         <div className="flex items-center space-x-2">
-          <Checkbox id="terms" />
+          <Checkbox
+            id="terms"
+            onCheckedChange={() => setIsNotAccepted(!isNotAccepted)}
+          />
           <label
             htmlFor="terms"
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -315,7 +321,9 @@ const ConsultationForm = () => {
           </label>
         </div>
         <div className="pt-5">
-          <Button type="submit">Get start for free Consultation</Button>
+          <Button type="submit" disabled={isNotAccepted}>
+            Get start for free Consultation
+          </Button>
         </div>
       </form>
     </Form>
