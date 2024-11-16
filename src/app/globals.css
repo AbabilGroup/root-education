@@ -25,17 +25,6 @@
   }
 }
 
-/* @layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-} */
-
-/* globals.css */
 body {
   scrollbar-color: #f37329 #f4f4f4;
   scrollbar-width: thin;
