@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const loading = () => {
   return (
-    <div className="flex min-h-[90vh] items-center justify-center">
+    <main className="flex min-h-screen items-center justify-center">
       <Image
         className="animate-pulse"
         src="/images/logo.svg"
@@ -10,7 +10,7 @@ const loading = () => {
         height={43}
         width={110}
       />
-    </div>
+    </main>
   );
 };
 
