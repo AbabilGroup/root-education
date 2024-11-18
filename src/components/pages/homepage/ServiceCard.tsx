@@ -28,7 +28,7 @@ const ServiceCard = ({ icon, title, description }: TServiceCardProps) => {
       <div>
         <Link
           href=""
-          className="flex items-center justify-start text-sm font-medium text-primary duration-200 hover:text-secondary group-hover:text-white"
+          className="flex items-center justify-start text-sm font-medium text-primary duration-200 group-hover:text-white hover:text-secondary"
         >
           See More <MdArrowRight className="text-xl" />
         </Link>

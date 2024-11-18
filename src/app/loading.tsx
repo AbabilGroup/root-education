@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const loading = () => {
+const Loading = () => {
   return (
     <main className="flex min-h-screen items-center justify-center">
       <Image
@@ -14,4 +14,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default Loading;
