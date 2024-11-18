@@ -3,7 +3,7 @@ import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowB
 
 const Step6 = () => {
   return (
-    <div className="flex flex-row-reverse items-center justify-center gap-x-10">
+    <div className="flex flex-col-reverse items-center justify-center gap-x-10 gap-y-20 lg:flex-row-reverse">
       {/* column  */}
       <FadeInRightWithSlowBounce className="basis-[45%]">
         {/* card  */}
@@ -124,7 +124,7 @@ const Step6 = () => {
         </div>
       </FadeInRightWithSlowBounce>
       {/* column  */}
-      <div className="basis-[10%]">
+      <div className="hidden basis-[10%] lg:block">
         <svg
           width="160"
           height="341"

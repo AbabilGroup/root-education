@@ -15,7 +15,7 @@ const HowWeWork = () => {
       title="Comprehensive Support for Your Journey"
     >
       <div className="container">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-5xl space-y-20 lg:space-y-0">
           {/* step 1  */}
           <Step1 />
 
