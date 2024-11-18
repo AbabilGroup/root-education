@@ -1,4 +1,3 @@
-// ./app/error.tsx
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -13,7 +12,7 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error(error); // Log the error for debugging purposes
+    console.error(error);
   }, [error]);
 
   return (
