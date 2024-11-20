@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
 
 import { Input } from "@/components/ui/input";
@@ -26,59 +27,9 @@ import { apiUrl } from "@/secrets";
 import { toast } from "sonner";
 import { useEffect } from "react";
 
-const AddUniversityForm = () => {
+const EditUniversityForm = ({ university }: { university: University }) => {
   const { register, handleSubmit, reset, control } = useForm<University>({
-    defaultValues: {
-      name: "",
-      description: "",
-      short_info: {
-        country: "",
-        university_type: "",
-        total_students: 0,
-        launched: 0,
-      },
-      photo: null,
-      logo: null,
-      video: null,
-      thumbnail: null,
-      about_university: [
-        {
-          title: "",
-          description: "",
-        },
-      ],
-      programs: {
-        undergraduate_programs: [{ name: "" }],
-        postgraduate_programs: [{ name: "" }],
-        doctoral_programs: [{ name: "" }],
-      },
-      scholarship: {
-        short_description: "",
-        table: [
-          {
-            scholarship_name: "",
-            amount: "",
-            eligibility_criteria: "",
-            provider: "",
-          },
-        ],
-        notes: [
-          {
-            title: "",
-          },
-        ],
-      },
-      application_guide: {
-        short_description: "",
-        guide_list: [
-          {
-            title: "",
-            description: "",
-          },
-        ],
-        bottom_description: "",
-      },
-    },
+    defaultValues: university,
   });
 
   const {
@@ -144,76 +95,78 @@ const AddUniversityForm = () => {
     name: "application_guide.guide_list",
   });
 
-  const {
-    mutate,
-    isPending,
-    isSuccess,
-    error,
-    data: universityData,
-  } = useMutation<AxiosResponse, unknown, FormData>({
-    mutationFn: (formData) => axios.post(`${apiUrl}/all_university/`, formData),
+  const { mutate, isPending, isSuccess, error, data } = useMutation<
+    AxiosResponse,
+    unknown,
+    FormData
+  >({
+    mutationFn: (formData) =>
+      axios.put(`${apiUrl}/all_university/${university.slug}/`, formData),
   });
 
-  const handleAddUniversity: SubmitHandler<University> = (data) => {
+  const handleEditUniversity: SubmitHandler<University> = (data) => {
     const formData = new FormData();
 
     formData.append("data", JSON.stringify(data));
 
-    if (data.photo instanceof FileList && data.photo.length > 0) {
-      formData.append("photo", data.photo[0]);
-    } else if (data.photo instanceof File) {
-      formData.append("photo", data.photo);
-    } else if (typeof data.photo === "string") {
-      formData.append("photo", data.photo);
-    }
+    // const formData = new FormData();
 
-    if (data.logo instanceof FileList && data.logo.length > 0) {
-      formData.append("logo", data.logo[0]);
-    } else if (data.logo instanceof File) {
-      formData.append("logo", data.logo);
-    } else if (typeof data.logo === "string") {
-      formData.append("logo", data.logo);
-    }
+    // formData.append("data", JSON.stringify(data));
 
-    if (data.video instanceof FileList && data.video.length > 0) {
-      formData.append("video", data.video[0]);
-    } else if (data.video instanceof File) {
-      formData.append("video", data.video);
-    } else if (typeof data.video === "string") {
-      formData.append("video", data.video);
-    }
+    // if (data.photo instanceof FileList && data.photo.length > 0) {
+    //   formData.append("photo", data.photo[0]);
+    // } else if (data.photo instanceof File) {
+    //   formData.append("photo", data.photo);
+    // } else {
+    //   formData.append("photo", university.photo);
+    // }
 
-    if (data.thumbnail instanceof FileList && data.thumbnail.length > 0) {
-      formData.append("thumbnail", data.thumbnail[0]);
-    } else if (data.thumbnail instanceof File) {
-      formData.append("thumbnail", data.thumbnail);
-    } else if (typeof data.thumbnail === "string") {
-      formData.append("thumbnail", data.thumbnail);
-    }
+    // if (data.logo instanceof FileList && data.logo.length > 0) {
+    //   formData.append("logo", data.logo[0]);
+    // } else if (data.logo instanceof File) {
+    //   formData.append("logo", data.logo);
+    // } else {
+    //   formData.append("logo", university.logo);
+    // }
+
+    // if (data.video instanceof FileList && data.video.length > 0) {
+    //   formData.append("video", data.video[0]);
+    // } else if (data.video instanceof File) {
+    //   formData.append("video", data.video);
+    // } else {
+    //   formData.append("video", university.video);
+    // }
+
+    // if (data.thumbnail instanceof FileList && data.thumbnail.length > 0) {
+    //   formData.append("thumbnail", data.thumbnail[0]);
+    // } else if (data.thumbnail instanceof File) {
+    //   formData.append("thumbnail", data.thumbnail);
+    // } else {
+    //   formData.append("thumbnail", university.thumbnail);
+    // }
 
     mutate(formData);
   };
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(universityData);
-      toast.success("University added successfully.");
-      reset();
+      console.log(data);
+      reset(university);
+
+      toast.success("University information updated successfully.");
     }
 
     if (error) {
       console.error(error);
-      const errorMessage =
-        (error as any)?.response?.data?.message || "An error occurred";
-      toast.error(errorMessage);
+      toast.error(`Something went wrong while updating`);
     }
-  }, [isSuccess, reset, error, universityData]);
+  }, [isSuccess, reset, data, error, university]);
 
   return (
     <form
       className="w-1/2 space-y-8"
       action=""
-      onSubmit={handleSubmit(handleAddUniversity)}
+      onSubmit={handleSubmit(handleEditUniversity)}
     >
       <div>
         <Label>University Name</Label>
@@ -266,22 +219,22 @@ const AddUniversityForm = () => {
 
       <div>
         <Label>Photo</Label>
-        <Input {...register("photo")} type="file" required />
+        <Input {...register("photo")} type="file" />
       </div>
 
       <div>
         <Label>Video</Label>
-        <Input {...register("video")} type="file" required />
+        <Input {...register("video")} type="file" />
       </div>
 
       <div>
         <Label>Video Thumbnail</Label>
-        <Input {...register("thumbnail")} type="file" required />
+        <Input {...register("thumbnail")} type="file" />
       </div>
 
       <div>
         <Label>Logo</Label>
-        <Input {...register("logo")} type="file" required />
+        <Input {...register("logo")} type="file" />
       </div>
 
       <div>
@@ -419,6 +372,7 @@ const AddUniversityForm = () => {
           <Textarea
             {...register("scholarship.short_description")}
             placeholder="Short brief"
+            rows={5}
             required
           />
         </div>
@@ -547,6 +501,7 @@ const AddUniversityForm = () => {
                       `application_guide.guide_list.${index}.description`,
                     )}
                     placeholder="Content"
+                    rows={5}
                     required
                   />
                 </div>
@@ -577,16 +532,17 @@ const AddUniversityForm = () => {
           <Textarea
             {...register("application_guide.bottom_description")}
             placeholder="Bottom Description"
+            rows={5}
             required
           />
         </div>
       </div>
 
       <Button type="submit" disabled={isPending}>
-        {isPending ? "Processing..." : "Add University"}
+        {isPending ? "Processing..." : "Update University"}
       </Button>
     </form>
   );
 };
 
-export default AddUniversityForm;
+export default EditUniversityForm;

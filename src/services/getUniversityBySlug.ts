@@ -2,7 +2,7 @@ import { apiUrl } from "@/secrets";
 import { notFound } from "next/navigation";
 
 export const getUniversityBySlug = async (slug: string) => {
-  const res = await fetch(`${apiUrl}/university/${slug}`, {
+  const res = await fetch(`${apiUrl}/all_university/${slug}`, {
     cache: "no-store",
   });
 

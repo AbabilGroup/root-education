@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -17,6 +17,7 @@ const AllUniversityTable = ({
 }: {
   universities: University[];
 }) => {
+  console.log(universities);
   return (
     <div>
       <h2 className="mb-5 text-xl font-semibold">All country list</h2>
@@ -24,9 +25,7 @@ const AllUniversityTable = ({
         <TableHeader>
           <TableRow className="font-bold">
             <TableHead className="border-2 font-bold">University</TableHead>
-            <TableHead className="border-2 text-center font-bold">
-              Country
-            </TableHead>
+            <TableHead className="border-2 font-bold">Country</TableHead>
             <TableHead className="border-2 text-center font-bold">
               Action
             </TableHead>
@@ -39,13 +38,14 @@ const AllUniversityTable = ({
           {universities?.map((university) => (
             <TableRow key={university.slug}>
               <TableCell className="border-2 font-medium">
-                {university.name}
+                {university?.name}
+              </TableCell>
+              <TableCell className="border-2 font-medium">
+                {university?.short_info?.country}
               </TableCell>
               <TableCell className="border-2">
                 <div className="flex items-center justify-center">
-                  <Link
-                    href={`/admin/edit-study-country/${university.short_info.country}`}
-                  >
+                  <Link href={`/admin/edit-university/${university?.slug}`}>
                     <Button className="bg-yellow-500 text-white">Edit</Button>
                   </Link>
                 </div>

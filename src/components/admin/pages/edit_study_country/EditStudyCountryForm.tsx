@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -137,7 +137,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(EditCountryData);
       reset(country);
       toast.success("Study country has been updated successfully.");
     }

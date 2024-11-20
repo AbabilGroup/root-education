@@ -1,7 +1,7 @@
 import { apiUrl } from "@/secrets";
 
 export const getAllUniversities = async () => {
-  const res = await fetch(`${apiUrl}/all_universities`, {
+  const res = await fetch(`${apiUrl}/all_university`, {
     cache: "no-store",
   });
 

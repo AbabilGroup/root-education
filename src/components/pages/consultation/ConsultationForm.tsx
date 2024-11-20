@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const formSchema = z.object({
