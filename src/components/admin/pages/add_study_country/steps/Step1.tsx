@@ -8,7 +8,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import axios, { AxiosResponse } from "axios";
 import { apiUrl } from "@/secrets";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 type FormValues = {
   countryName: string;

@@ -1,6 +1,6 @@
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import SectionName from "@/components/ui/SectionName";
 import Image from "next/image";
 import Link from "next/link";
