@@ -105,9 +105,13 @@ const EditUniversityForm = ({ university }: { university: University }) => {
   });
 
   const handleEditUniversity: SubmitHandler<University> = (data) => {
+    console.log("🚀 ~ EditUniversityForm ~ data:", data);
+
     const formData = new FormData();
 
     formData.append("data", JSON.stringify(data));
+
+    mutate(formData);
 
     // const formData = new FormData();
 
@@ -144,8 +148,6 @@ const EditUniversityForm = ({ university }: { university: University }) => {
     // } else {
     //   formData.append("thumbnail", university.thumbnail);
     // }
-
-    mutate(formData);
   };
 
   useEffect(() => {
@@ -160,7 +162,7 @@ const EditUniversityForm = ({ university }: { university: University }) => {
       console.error(error);
       toast.error(`Something went wrong while updating`);
     }
-  }, [isSuccess, reset, data, error, university]);
+  }, [data, error, isSuccess, reset, university]);
 
   return (
     <form

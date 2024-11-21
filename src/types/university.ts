@@ -14,13 +14,13 @@ export type University = {
     launched: number;
   };
 
-  photo: File | null | FileList | string;
+  photo?: File | null | FileList | string;
 
-  logo: File | null | FileList | string;
+  logo?: File | null | FileList | string;
 
-  video: File | null | FileList | string;
+  video?: File | null | FileList | string;
 
-  thumbnail: File | null | FileList | string;
+  thumbnail?: File | null | FileList | string;
 
   about_university: AboutUniversity[];
 
