@@ -20,7 +20,7 @@ const AllUniversityTable = ({
   console.log(universities);
   return (
     <div>
-      <h2 className="mb-5 text-xl font-semibold">All country list</h2>
+      <h2 className="mb-5 text-xl font-semibold">All University list</h2>
       <Table className="border-2">
         <TableHeader>
           <TableRow className="font-bold">
