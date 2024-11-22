@@ -69,6 +69,7 @@ export function NavMenu() {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="bg-white">
             <div className="grid w-[900px] grid-cols-3 gap-x-5 gap-y-3 p-4 text-sm">
+              {}
               <div>
                 <NavigationMenuItem className="list-none">
                   <Link

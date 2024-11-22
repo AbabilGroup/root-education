@@ -71,27 +71,47 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
               ))}
             </TabsContent>
             <TabsContent value="tab2">
-              {/* <div className="flex justify-center divide-x-2 divide-primary pt-8">
-                {universityInfo.programs_offered.map((program) => (
-                  <div className="px-10" key={program.id}>
-                    <h4 className="mb-6 text-xl font-bold">
-                      {program.program_type}
-                    </h4>
-                    <ul className="list-disc space-y-3 pl-5 text-sm font-medium">
-                      {program.program_names.map((programName) => (
-                        <li key={programName.id}>{programName.program_name}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div> */}
+              <div className="flex justify-center divide-x-2 divide-primary pt-8">
+                <div className="px-10">
+                  <h4 className="mb-6 text-xl font-bold">
+                    Undergraduate Programs
+                  </h4>
+                  <ul className="list-disc space-y-3 pl-5 text-sm font-medium">
+                    {universityInfo.programs.undergraduate_programs.map(
+                      (programName) => (
+                        <li key={programName.name}>{programName.name}</li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+                <div className="px-10">
+                  <h4 className="mb-6 text-xl font-bold">
+                    Postgraduate Programs
+                  </h4>
+                  <ul className="list-disc space-y-3 pl-5 text-sm font-medium">
+                    {universityInfo.programs.postgraduate_programs.map(
+                      (programName) => (
+                        <li key={programName.name}>{programName.name}</li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+                <div className="px-10">
+                  <h4 className="mb-6 text-xl font-bold">Doctoral Programs</h4>
+                  <ul className="list-disc space-y-3 pl-5 text-sm font-medium">
+                    {universityInfo.programs.doctoral_programs.map(
+                      (programName) => (
+                        <li key={programName.name}>{programName.name}</li>
+                      ),
+                    )}
+                  </ul>
+                </div>
+              </div>
             </TabsContent>
             <TabsContent value="tab3">
               <div className="pt-8">
                 <p className="mb-6 text-sm font-medium">
-                  Here is a detailed scholarship table for Spiru Haret
-                  University in Romania, listing available scholarships along
-                  with their amounts and providers:
+                  {universityInfo.scholarship.short_description}
                 </p>
                 <div>
                   <Table className="border text-center">
@@ -134,28 +154,35 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
                     </TableBody>
                   </Table>
                 </div>
-                {/* <p className="mb-5 mt-10 text-xl font-medium">Notes:</p>
+                <p className="mb-5 mt-10 text-xl font-medium">Notes:</p>
                 <ul className="list-disc space-y-2 pl-5 text-sm font-medium">
-                  <li>
-                    Erasmus+ Mobility Scholarships : For short-term exchanges,
-                    amount varies by destination.
-                  </li>
-                  <li>
-                    Erasmus+ Mobility Scholarships : For short-term exchanges,
-                    amount varies by destination.
-                  </li>
-                  <li>
-                    Erasmus+ Mobility Scholarships : For short-term exchanges,
-                    amount varies by destination.
-                  </li>
-                  <li>
-                    Erasmus+ Mobility Scholarships : For short-term exchanges,
-                    amount varies by destination.
-                  </li>
+                  {universityInfo.scholarship.notes.map((note) => (
+                    <li key={note.title}>{note.title}</li>
+                  ))}
                 </ul>
-                <p className="mt-5 text-sm font-medium">
+                {/* <p className="mt-5 text-sm font-medium">
                   So the more information contact us
                 </p> */}
+              </div>
+            </TabsContent>
+            <TabsContent value="tab4">
+              <div className="pt-8">
+                <p className="mb-6 text-sm font-medium">
+                  {universityInfo.application_guide.short_description}
+                </p>
+                <ol className="list-decimal pl-4 text-sm">
+                  {universityInfo.application_guide.guide_list.map((guide) => (
+                    <li key={guide.title}>
+                      {" "}
+                      <span className="font-bold">{guide.title}:</span>{" "}
+                      {guide.description}
+                    </li>
+                  ))}
+                </ol>
+
+                <p className="mt-5 text-sm font-medium">
+                  {universityInfo.application_guide.bottom_description}
+                </p>
               </div>
             </TabsContent>
           </Tabs>

@@ -23,9 +23,9 @@ export default function AdminLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className}`}>
+      <body className={`${montserrat.className} text-secondary`}>
         <NextTopLoader color="#F37329" />
-        <Toaster />
+        <Toaster position="top-right" />
         <TanstackQueryProvider>
           <SidebarProvider>
             <AppSidebar />
