@@ -6,11 +6,12 @@ import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Skeleton } from "../ui/skeleton";
+import { apiUrl } from "@/secrets";
 
 const NavCountries = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["countries"],
-    queryFn: () => axios.get(`http://103.17.37.8:8004/api/study_country/`),
+    queryFn: () => axios.get(`${apiUrl}/study_country/`),
   });
 
   if (isLoading)

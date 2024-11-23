@@ -6,11 +6,12 @@ import { Skeleton } from "../ui/skeleton";
 import { NavigationMenuItem, NavigationMenuLink } from "../ui/NavigationMenu";
 import Link from "next/link";
 import Image from "next/image";
+import { apiUrl } from "@/secrets";
 
 const NavUniversities = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["universities"],
-    queryFn: () => axios.get(`http://192.168.11.110:8006/api/all_university/`),
+    queryFn: () => axios.get(`${apiUrl}/all_university/`),
   });
 
   console.log(data);
