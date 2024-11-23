@@ -71,7 +71,7 @@ const Header = () => {
             side="left"
           >
             <SheetHeader>
-              <Link className="" href="/">
+              <Link className="" href="/" onClick={closeSheet}>
                 <div className="relative h-[43px] w-[110px]">
                   <Image
                     className="object-cover"

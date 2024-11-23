@@ -3,7 +3,14 @@
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 type FieldValues = {
   username: string;
@@ -13,9 +20,42 @@ type FieldValues = {
 const AdminLoginForm = () => {
   const { register, handleSubmit } = useForm<FieldValues>();
 
+  const { mutate, isSuccess, isError, isPending, data, error } = useMutation<
+    AxiosResponse,
+    unknown,
+    FieldValues
+  >({
+    mutationFn: (loginData) => axios.post(`${apiUrl}/auth/login/`, loginData),
+  });
+
+  const router = useRouter();
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
+
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      const token = data?.data?.token;
+
+      // Save token to cookies
+      Cookies.set("token", token, { expires: 7, secure: true });
+
+      // Redirect to admin dashboard
+      router.push("/admin");
+    }
+
+    if (isError) {
+      toast.error("Could not login to admin dashboard");
+    }
+
+    if (error) {
+      console.error(error);
+      toast.error("An error occurred while trying to login");
+    }
+  }, [isSuccess, isError, data?.data?.token, router, error]);
 
   return (
     <form
@@ -32,7 +72,9 @@ const AdminLoginForm = () => {
         <Input {...register("password")} type="password" required />
       </div>
       <div>
-        <Button type="submit">Login</Button>
+        <Button type="submit" disabled={isPending}>
+          {isPending ? "Processing..." : "Login"}
+        </Button>
       </div>
     </form>
   );

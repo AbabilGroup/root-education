@@ -754,7 +754,9 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
           </button>
         </div>
 
-        <Button type="submit">{isPending ? "Processing..." : "Update"}</Button>
+        <Button type="submit" disabled={isPending}>
+          {isPending ? "Processing..." : "Update"}
+        </Button>
       </form>
     </div>
   );

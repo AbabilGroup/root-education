@@ -149,6 +149,7 @@ const EditUniversityForm = ({ university }: { university: University }) => {
   useEffect(() => {
     if (isSuccess) {
       console.log(data);
+
       reset(university);
 
       toast.success("University information updated successfully.");
@@ -156,6 +157,7 @@ const EditUniversityForm = ({ university }: { university: University }) => {
 
     if (error) {
       console.error(error);
+
       toast.error(`Something went wrong while updating`);
     }
   }, [data, error, isSuccess, reset, university]);
