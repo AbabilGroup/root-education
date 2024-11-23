@@ -5,7 +5,7 @@ export function middleware(req: NextRequest) {
 
   if (!token) {
     // Redirect unauthenticated users to the login page
-    return NextResponse.redirect(new URL("/admin", req.url));
+    return NextResponse.redirect(new URL("/admin/login", req.url));
   }
 
   return NextResponse.next();
@@ -13,5 +13,13 @@ export function middleware(req: NextRequest) {
 
 // Specify routes to protect
 export const config = {
-  matcher: ["/admin/:path*"], // Protect all routes under /admin
+  matcher: [
+    "/admin",
+    "/admin/add-study-country",
+    "/admin/add-university",
+    "/admin/all-countries",
+    "/admin/all-universities",
+    "/admin/edit-study-country",
+    "/admin/edit-university",
+  ], // Protect all routes under /admin
 };
