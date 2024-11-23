@@ -18,8 +18,11 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { getAllUniversities } from "@/services/getAllUniversities";
 
-const UniversitiesWeRepresent = () => {
+const UniversitiesWeRepresent = async () => {
+  const universities = await getAllUniversities();
+
   return (
     <Section
       sectionName="Universities We Represent"
@@ -65,31 +68,24 @@ const UniversitiesWeRepresent = () => {
         </div>
       </div>
       <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
-        {/* card  */}
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
-        <UniversityCard />
+        {universities.map(
+          (university: {
+            id: number;
+            name: string;
+            description: string;
+            slug: string;
+            logo: string;
+            photo: string;
+            short_info: {
+              country: string;
+              university_type: string;
+              total_students: number;
+              launched: number;
+            };
+          }) => (
+            <UniversityCard university={university} key={university.id} />
+          ),
+        )}
       </div>
       <div className="mt-10">
         <Pagination>

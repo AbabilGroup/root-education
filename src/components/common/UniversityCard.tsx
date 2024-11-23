@@ -1,16 +1,30 @@
 import Image from "next/image";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
 import { Button } from "../ui/Button";
-import { University } from "@/types/university";
 import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
 import Link from "next/link";
 import { apiBaseUrl } from "@/secrets";
 
-const UniversityCard = ({ university }: { university: University }) => {
-  console.log(`${apiBaseUrl}${university.photo}`);
-
+const UniversityCard = ({
+  university,
+}: {
+  university: {
+    id: number;
+    name: string;
+    description: string;
+    slug: string;
+    photo: string;
+    logo: string;
+    short_info: {
+      country: string;
+      university_type: string;
+      total_students: number;
+      launched: number;
+    };
+  };
+}) => {
   return (
-    <FadeInLeftWithSlowBounce className="space-y-4 rounded-xl border p-5 shadow-lg">
+    <FadeInLeftWithSlowBounce className="flex flex-col gap-4 rounded-xl border p-5 shadow-lg">
       <div className="relative min-h-[250px] w-full">
         <Image
           className="rounded-lg object-cover"
@@ -130,7 +144,7 @@ const UniversityCard = ({ university }: { university: University }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-start">
+      <div className="mt-auto flex items-center justify-start">
         <Link href={`/universities/${university.slug}`}>
           <Button
             icon={
