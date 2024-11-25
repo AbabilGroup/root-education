@@ -1,3 +1,5 @@
+"use client";
+
 import { Plus, List } from "lucide-react";
 
 import {
@@ -11,8 +13,10 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { IoLogOut } from "react-icons/io5";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
-// Menu items.
 const items = [
   {
     title: "All Countries",
@@ -37,6 +41,15 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const router = useRouter();
+
+  const handleLogout = () => {
+    // Clear the token cookie
+    Cookies.remove("token");
+
+    // Redirect to login page
+    router.push("/admin/login");
+  };
   return (
     <Sidebar>
       <SidebarContent>
@@ -54,6 +67,17 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <span
+                    className="cursor-pointer font-medium"
+                    onClick={handleLogout}
+                  >
+                    <IoLogOut className="text-xl" />
+                    <span>Logout</span>
+                  </span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

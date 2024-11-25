@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { apiUrl } from "@/secrets";
+import { apiBaseUrl } from "@/secrets";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
@@ -25,7 +25,8 @@ const AdminLoginForm = () => {
     unknown,
     FieldValues
   >({
-    mutationFn: (loginData) => axios.post(`${apiUrl}/auth/login/`, loginData),
+    mutationFn: (loginData) =>
+      axios.post(`${apiBaseUrl}/auth/token/login/`, loginData),
   });
 
   const router = useRouter();
@@ -38,10 +39,15 @@ const AdminLoginForm = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      const token = data?.data?.token;
+      const token = data?.data?.auth_token;
+
+      console.log(data?.data?.auth_token);
 
       // Save token to cookies
-      Cookies.set("token", token, { expires: 7, secure: true });
+      Cookies.set("token", token, {
+        expires: 7,
+        secure: true,
+      });
 
       // Redirect to admin dashboard
       router.push("/admin");
@@ -55,7 +61,9 @@ const AdminLoginForm = () => {
       console.error(error);
       toast.error("An error occurred while trying to login");
     }
-  }, [isSuccess, isError, data?.data?.token, router, error]);
+  }, [isSuccess, isError, data?.data?.auth_token, router, error]);
+
+  console.log(data);
 
   return (
     <form
