@@ -24,10 +24,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} flex min-h-screen flex-col text-secondary`}
       >
-        <TanstackQueryProvider>
-          <Toaster position="top-right" />
-          {children}
-        </TanstackQueryProvider>
+        <Toaster position="top-right" richColors />
+
+        <TanstackQueryProvider>{children}</TanstackQueryProvider>
       </body>
     </html>
   );

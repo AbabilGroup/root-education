@@ -71,13 +71,15 @@ const AdminLoginForm = () => {
         <Label>Username</Label>
         <Input {...register("username")} type="text" required />
       </div>
+
       <div>
         <Label>Password</Label>
         <Input {...register("password")} type="password" required />
       </div>
+
       <div>
         <Button type="submit" disabled={isPending}>
-          {isPending ? "Processing..." : "Login"}
+          {isPending ? "Logging in..." : "Login"}
         </Button>
       </div>
     </form>
