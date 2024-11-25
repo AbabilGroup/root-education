@@ -2,6 +2,7 @@ import { Montserrat } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Root Education",
@@ -23,7 +24,10 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} flex min-h-screen flex-col text-secondary`}
       >
-        <TanstackQueryProvider>{children}</TanstackQueryProvider>
+        <TanstackQueryProvider>
+          <Toaster position="top-right" />
+          {children}
+        </TanstackQueryProvider>
       </body>
     </html>
   );

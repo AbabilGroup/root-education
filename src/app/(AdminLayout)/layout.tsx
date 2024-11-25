@@ -4,7 +4,6 @@ import "../globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
-import { Toaster } from "sonner";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
@@ -24,9 +23,9 @@ export default function AdminLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className} text-secondary`}>
-        <NextTopLoader color="#F37329" />
-        <Toaster position="top-right" />
         <TanstackQueryProvider>
+          <NextTopLoader color="#F37329" />
+          {/* <Toaster position="top-right" /> */}
           <SidebarProvider>
             <AppSidebar />
             <main className="basis-full">

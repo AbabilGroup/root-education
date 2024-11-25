@@ -16,6 +16,11 @@ import Link from "next/link";
 import { IoLogOut } from "react-icons/io5";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { apiBaseUrl } from "@/secrets";
+import { useEffect } from "react";
 
 const items = [
   {
@@ -42,14 +47,48 @@ const items = [
 
 export function AppSidebar() {
   const router = useRouter();
+  const { mutate, isSuccess, data, isError, error } =
+    useMutation<AxiosResponse>({
+      mutationFn: () => {
+        const token = Cookies.get("token");
+
+        console.log(token);
+
+        return axios.post(
+          `${apiBaseUrl}/auth/token/logout/`,
+          {}, // Empty body since it's a POST request with no data
+          {
+            headers: {
+              Authorization: `Token ${token}`, // Add token to Authorization header
+            },
+          },
+        );
+      },
+    });
 
   const handleLogout = () => {
-    // Clear the token cookie
-    Cookies.remove("token");
-
-    // Redirect to login page
-    router.push("/admin/login");
+    mutate();
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      Cookies.remove("token");
+      router.push("/admin/login");
+      toast.success("Logout successful");
+    }
+
+    if (isError) {
+      toast.error("Could not logout. Something went wrong!");
+    }
+
+    if (error) {
+      console.error(error);
+      toast.error("An error occurred while trying to logout");
+    }
+  }, [isSuccess, isError, router, error]);
+
+  console.log(data);
+
   return (
     <Sidebar>
       <SidebarContent>

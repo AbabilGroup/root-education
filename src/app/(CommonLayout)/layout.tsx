@@ -27,8 +27,9 @@ export default function CommonLayout({
       <body
         className={`${montserrat.className} flex min-h-screen flex-col text-secondary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-primary`}
       >
-        <NextTopLoader color="#F37329" />
         <TanstackQueryProvider>
+          {/* <Toaster position="top-right" /> */}
+          <NextTopLoader color="#F37329" />
           <TopBar />
           <Header />
           {children}

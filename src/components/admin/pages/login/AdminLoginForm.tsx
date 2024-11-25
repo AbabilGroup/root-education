@@ -32,16 +32,12 @@ const AdminLoginForm = () => {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
-
     mutate(data);
   };
 
   useEffect(() => {
     if (isSuccess) {
       const token = data?.data?.auth_token;
-
-      console.log(data?.data?.auth_token);
 
       // Save token to cookies
       Cookies.set("token", token, {
@@ -51,6 +47,8 @@ const AdminLoginForm = () => {
 
       // Redirect to admin dashboard
       router.push("/admin");
+
+      toast.success("Successfully logged in to the admin panel!");
     }
 
     if (isError) {
@@ -62,8 +60,6 @@ const AdminLoginForm = () => {
       toast.error("An error occurred while trying to login");
     }
   }, [isSuccess, isError, data?.data?.auth_token, router, error]);
-
-  console.log(data);
 
   return (
     <form
