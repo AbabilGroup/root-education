@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { IoGridSharp } from "react-icons/io5";
+// import { IoGridSharp } from "react-icons/io5";
 import {
   Pagination,
   PaginationContent,
@@ -34,9 +34,9 @@ const UniversitiesWeRepresent = async () => {
             Showing 01 - 18 of 36 Results
           </h6>
           <div className="flex items-center justify-end gap-x-5">
-            <button className="rounded-md border p-1 text-primary shadow">
+            {/* <button className="rounded-md border p-1 text-primary shadow">
               <IoGridSharp className="text-2xl" />
-            </button>
+            </button> */}
             <Select>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Sort by Default" />

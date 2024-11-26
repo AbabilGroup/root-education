@@ -266,22 +266,22 @@ const AddUniversityForm = () => {
 
       <div>
         <Label>Photo</Label>
-        <Input {...register("photo")} type="file" required />
+        <Input {...register("photo")} type="file" />
       </div>
 
       <div>
         <Label>Video</Label>
-        <Input {...register("video")} type="file" required />
+        <Input {...register("video")} type="file" />
       </div>
 
       <div>
         <Label>Video Thumbnail</Label>
-        <Input {...register("thumbnail")} type="file" required />
+        <Input {...register("thumbnail")} type="file" />
       </div>
 
       <div>
         <Label>Logo</Label>
-        <Input {...register("logo")} type="file" required />
+        <Input {...register("logo")} type="file" />
       </div>
 
       <div>

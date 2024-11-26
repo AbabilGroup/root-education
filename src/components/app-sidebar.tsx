@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, List } from "lucide-react";
+import { Plus, List, LayoutDashboardIcon } from "lucide-react";
 
 import {
   Sidebar,
@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import { IoLogOut } from "react-icons/io5";
 import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
@@ -23,6 +23,11 @@ import { apiBaseUrl } from "@/secrets";
 import { useEffect } from "react";
 
 const items = [
+  {
+    title: "Dashboard",
+    url: "/admin",
+    icon: LayoutDashboardIcon,
+  },
   {
     title: "All Countries",
     url: "/admin/all-countries",
@@ -47,6 +52,7 @@ const items = [
 
 export function AppSidebar() {
   const router = useRouter();
+  const pathname = usePathname();
   const { mutate, isSuccess, data, isError, error } =
     useMutation<AxiosResponse>({
       mutationFn: () => {
@@ -99,7 +105,10 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <Link href={item.url} className="font-medium">
+                    <Link
+                      href={item.url}
+                      className={`font-medium ${pathname === item.url ? "bg-sidebar-accent" : ""}`}
+                    >
                       <item.icon />
                       <span>{item.title}</span>
                     </Link>

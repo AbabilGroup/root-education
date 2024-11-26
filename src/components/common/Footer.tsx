@@ -265,7 +265,7 @@ const Footer = () => {
           </div>
           <div className="basis-[25%] space-y-7 text-white">
             <span className="border-b-[1px] pb-1 text-xl">Company</span>
-            <ul className="flex flex-col justify-between gap-6">
+            <ul className="flex flex-col justify-between gap-4">
               {footerLinks.company.map((link) => (
                 <li className="flex items-center" key={link.label}>
                   <IoMdArrowDropright className="text-2xl" />
@@ -281,7 +281,7 @@ const Footer = () => {
           </div>
           <div className="basis-[25%] space-y-7 text-white">
             <span className="border-b-[1px] pb-1 text-xl">Our Services</span>
-            <ul className="flex flex-col justify-between gap-6">
+            <ul className="flex flex-col justify-between gap-4">
               {footerLinks.our_services.map((link) => (
                 <li className="flex items-center" key={link.label}>
                   <IoMdArrowDropright className="text-2xl" />
@@ -297,7 +297,7 @@ const Footer = () => {
           </div>
           <div className="basis-[25%] space-y-7 text-white">
             <span className="border-b-[1px] pb-1 text-xl">Study Countries</span>
-            <ul className="flex flex-col justify-between gap-6">
+            <ul className="flex flex-col justify-between gap-4">
               {footerLinks.study_countries.map((link) => (
                 <li className="flex items-center" key={link.label}>
                   <IoMdArrowDropright className="text-2xl" />

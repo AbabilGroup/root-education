@@ -61,6 +61,8 @@ const AdminLoginForm = () => {
     }
   }, [isSuccess, isError, data?.data?.auth_token, router, error]);
 
+  console.log(data);
+
   return (
     <form
       className="w-[350px] space-y-5"
