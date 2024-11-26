@@ -36,7 +36,9 @@ const UniversityCard = ({
       <h5 className="text-xl font-semibold">
         {university.name}, {university.short_info.country}
       </h5>
-      <p className="text-sm font-medium">{university.description}</p>
+      <p className="line-clamp-3 text-sm font-medium">
+        {university.description}
+      </p>
 
       {/* infos  */}
       <div className="grid grid-cols-1 gap-x-3 gap-y-2 md:grid-cols-2">

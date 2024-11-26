@@ -64,7 +64,7 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
                   Application Guide
                 </TabsTrigger>
               </TabsList>
-              <TabsContent className="mt-14 space-y-4 pt-5" value="tab1">
+              <TabsContent className="mt-14 space-y-6 pt-5" value="tab1">
                 {universityInfo.about_university.map((item) => (
                   <div className="space-y-3" key={item.title}>
                     <h4 className="text-xl font-bold">{item.title}</h4>
@@ -73,7 +73,7 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
                 ))}
               </TabsContent>
               <TabsContent value="tab2">
-                <div className="flex justify-center divide-x-2 divide-primary pt-8">
+                <div className="flex justify-center divide-x-[1px] divide-primary pt-8">
                   <div className="px-10">
                     <h4 className="mb-6 text-xl font-bold">
                       Undergraduate Programs
@@ -203,12 +203,16 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
               title="About University"
               content={
                 <>
-                  {universityInfo.about_university.map((item) => (
-                    <div className="space-y-3" key={item.title}>
-                      <h4 className="text-xl font-bold">{item.title}</h4>
-                      <p className="text-sm font-medium">{item.description}</p>
-                    </div>
-                  ))}
+                  <div className="space-y-10">
+                    {universityInfo.about_university.map((item) => (
+                      <div className="space-y-3" key={item.title}>
+                        <h4 className="text-xl font-bold">{item.title}</h4>
+                        <p className="text-sm font-medium">
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </>
               }
             />
@@ -216,8 +220,8 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
               title="University Programs"
               content={
                 <>
-                  <div className="flex flex-col justify-center divide-y-2 divide-primary">
-                    <div className="px-10 py-10">
+                  <div className="flex flex-col justify-center divide-y-[1px] divide-primary">
+                    <div className="py-8">
                       <h4 className="mb-6 text-xl font-bold">
                         Undergraduate Programs
                       </h4>
@@ -229,7 +233,7 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
                         )}
                       </ul>
                     </div>
-                    <div className="px-10 py-10">
+                    <div className="py-8">
                       <h4 className="mb-6 text-xl font-bold">
                         Postgraduate Programs
                       </h4>
@@ -241,7 +245,7 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
                         )}
                       </ul>
                     </div>
-                    <div className="px-10 py-10">
+                    <div className="py-8">
                       <h4 className="mb-6 text-xl font-bold">
                         Doctoral Programs
                       </h4>
@@ -261,7 +265,7 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
               title="Scholarship"
               content={
                 <>
-                  <div className="pt-8">
+                  <div>
                     <p className="mb-6 text-sm font-medium">
                       {universityInfo.scholarship.short_description}
                     </p>
@@ -325,7 +329,7 @@ const TabsSection = ({ universityInfo }: { universityInfo: University }) => {
               title="Application Guide"
               content={
                 <>
-                  <div className="pt-8">
+                  <div>
                     <p className="mb-6 text-sm font-medium">
                       {universityInfo.application_guide.short_description}
                     </p>

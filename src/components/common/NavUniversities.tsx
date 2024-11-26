@@ -6,7 +6,7 @@ import { Skeleton } from "../ui/skeleton";
 import { NavigationMenuItem, NavigationMenuLink } from "../ui/NavigationMenu";
 import Link from "next/link";
 import Image from "next/image";
-import { apiUrl } from "@/secrets";
+import { apiBaseUrl, apiUrl } from "@/secrets";
 
 const NavUniversities = () => {
   const { data, isLoading } = useQuery({
@@ -55,13 +55,14 @@ const NavUniversities = () => {
           <div key={university.id}>
             <NavigationMenuItem className="list-none">
               <Link
-                href="/universities/apiru-haret-university"
+                href={`/universities/${university.slug}`}
                 legacyBehavior
                 passHref
               >
                 <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
                   <Image
-                    src={`${university.logo ? university.logo : ""}`}
+                    className="rounded-full"
+                    src={`${apiBaseUrl}${university.logo ? university.logo : ""}`}
                     alt=""
                     height={30}
                     width={30}

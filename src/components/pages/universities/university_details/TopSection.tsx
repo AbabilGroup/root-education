@@ -5,12 +5,14 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
 import { University } from "@/types/university";
 import { Button } from "@/components/ui/Button";
+import { IoPlayCircle } from "react-icons/io5";
+import { apiBaseUrl } from "@/secrets";
 
 const TopSection = ({ universityInfo }: { universityInfo: University }) => {
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container">
-        <div className="flex flex-col items-center justify-between gap-x-20 gap-y-10 rounded-xl border px-8 py-4 shadow-sm lg:flex-row">
+        <div className="flex flex-col items-center justify-between gap-x-20 gap-y-10 rounded-xl border px-8 py-8 shadow-sm lg:flex-row">
           <FadeInLeftWithSlowBounce className="basis-full space-y-5 xl:basis-1/2">
             <h2 className="text-center text-4xl font-semibold lg:text-left">
               {universityInfo.name}, {universityInfo.short_info.country}
@@ -136,12 +138,17 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
           <FadeInRightWithSlowBounce className="relative min-h-[350px] w-full basis-full xl:basis-1/2">
             <Dialog>
               <DialogTrigger asChild>
-                <Image
-                  className="cursor-pointer object-contain object-center xl:object-right"
-                  src="/images/university_video_thumbnail.svg"
-                  alt="University"
-                  fill
-                />
+                <div className="cursor-pointer">
+                  <Image
+                    className="cursor-pointer rounded-lg object-cover object-center xl:object-right"
+                    src={`${apiBaseUrl}${universityInfo.thumbnail}`}
+                    alt={universityInfo.name}
+                    fill
+                  />
+                  <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white">
+                    <IoPlayCircle className="text-7xl text-primary" />
+                  </span>
+                </div>
               </DialogTrigger>
               <DialogContent className="bg-white">
                 <div className="grid gap-4 py-4">
