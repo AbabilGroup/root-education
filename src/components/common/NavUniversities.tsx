@@ -6,7 +6,7 @@ import { Skeleton } from "../ui/skeleton";
 import { NavigationMenuItem, NavigationMenuLink } from "../ui/NavigationMenu";
 import Link from "next/link";
 import Image from "next/image";
-import { apiBaseUrl, apiUrl } from "@/secrets";
+import { apiUrl } from "@/secrets";
 
 const NavUniversities = () => {
   const { data, isLoading } = useQuery({
@@ -38,7 +38,7 @@ const NavUniversities = () => {
 
   return (
     <div className="grid w-[900px] grid-cols-3 gap-x-5 gap-y-3 p-4 text-sm">
-      {data?.data?.map(
+      {data?.data?.results?.map(
         (university: {
           id: number;
           name: string;
@@ -62,7 +62,7 @@ const NavUniversities = () => {
                 <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
                   <Image
                     className="rounded-full"
-                    src={`${apiBaseUrl}${university.logo ? university.logo : ""}`}
+                    src={university.logo ? university.logo : ""}
                     alt=""
                     height={30}
                     width={30}

@@ -6,9 +6,10 @@ import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
 import { University } from "@/types/university";
 import { Button } from "@/components/ui/Button";
 import { IoPlayCircle } from "react-icons/io5";
-import { apiBaseUrl } from "@/secrets";
 
 const TopSection = ({ universityInfo }: { universityInfo: University }) => {
+  console.log(universityInfo);
+
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container">
@@ -84,9 +85,11 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
                   </svg>
                   <span>
                     Total Students :{" "}
-                    {formatIndianNumber(
-                      universityInfo.short_info.total_students,
-                    )}
+                    {universityInfo.short_info.total_students
+                      ? formatIndianNumber(
+                          universityInfo.short_info.total_students,
+                        )
+                      : "N/A"}
                   </span>
                 </div>
                 <div className="flex items-center justify-start gap-x-2 text-sm font-medium">
@@ -141,7 +144,9 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
                 <div className="cursor-pointer">
                   <Image
                     className="cursor-pointer rounded-lg object-cover object-center xl:object-right"
-                    src={`${apiBaseUrl}${universityInfo.thumbnail}`}
+                    src={
+                      universityInfo.thumbnail ? universityInfo.thumbnail : ""
+                    }
                     alt={universityInfo.name}
                     fill
                   />

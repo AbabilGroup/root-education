@@ -3,7 +3,6 @@ import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBou
 import { Button } from "../ui/Button";
 import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
 import Link from "next/link";
-import { apiBaseUrl } from "@/secrets";
 
 const UniversityCard = ({
   university,
@@ -28,13 +27,13 @@ const UniversityCard = ({
       <div className="relative min-h-[250px] w-full">
         <Image
           className="rounded-lg object-cover"
-          src={`${apiBaseUrl}${university.photo ? university.photo : "/"}`}
+          src={`${university.photo ? university.photo : "/"}`}
           alt="University"
           fill
         />
       </div>
       <h5 className="text-xl font-semibold">
-        {university.name}, {university.short_info.country}
+        {university.name}, {university.short_info?.country}
       </h5>
       <p className="line-clamp-3 text-sm font-medium">
         {university.description}
@@ -68,7 +67,7 @@ const UniversityCard = ({
           </div>
           <div>
             <p className="text-sm font-medium">
-              Country : {university.short_info.country}
+              Country : {university.short_info?.country}
             </p>
           </div>
         </div>
@@ -90,7 +89,7 @@ const UniversityCard = ({
           </div>
           <div>
             <p className="text-sm font-medium">
-              University Type : {university.short_info.university_type}
+              University Type : {university.short_info?.university_type}
             </p>
           </div>
         </div>
@@ -117,7 +116,9 @@ const UniversityCard = ({
           <div>
             <p className="text-sm font-medium">
               Total Students :{" "}
-              {formatIndianNumber(university.short_info.total_students)}
+              {university.short_info?.total_students
+                ? formatIndianNumber(university.short_info?.total_students)
+                : "N/A"}
             </p>
           </div>
         </div>
@@ -140,7 +141,7 @@ const UniversityCard = ({
           <div>
             <p className="text-sm font-medium">
               Launched :{" "}
-              {getYearFromDate(university.short_info.launched.toString())}
+              {getYearFromDate(university.short_info?.launched.toString())}
             </p>
           </div>
         </div>

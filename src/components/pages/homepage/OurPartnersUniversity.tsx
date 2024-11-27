@@ -5,7 +5,9 @@ import { getAllUniversities } from "@/services/getAllUniversities";
 import Link from "next/link";
 
 const OurPartnersUniversity = async () => {
-  const universities = await getAllUniversities();
+  const universityData = await getAllUniversities();
+
+  const universities = universityData.results;
 
   return (
     <Section

@@ -1,5 +1,6 @@
+"use client";
+
 import Section from "@/components/common/Section";
-import UniversityCard from "@/components/common/UniversityCard";
 import {
   Select,
   SelectContent,
@@ -8,20 +9,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-// import { IoGridSharp } from "react-icons/io5";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import { getAllUniversities } from "@/services/getAllUniversities";
 
-const UniversitiesWeRepresent = async () => {
-  const universities = await getAllUniversities();
+import { useRouter, useSearchParams } from "next/navigation";
+import UniversityContainer from "./UniversityContainer";
+
+const UniversitiesWeRepresent = ({ universityData }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handleSelectChange = (value: string) => {
+    const params = new URLSearchParams(searchParams?.toString() || "");
+
+    if (value === "default") {
+      params.delete("total_students"); // Remove query parameter
+    } else if (value === "Total Students (High to Low)") {
+      params.set("total_students", "high");
+    } else if (value === "Total Students (Low to High)") {
+      params.set("total_students", "low");
+    }
+
+    // Update the route with the new query parameters
+    router.push(`?${params.toString()}`);
+  };
 
   return (
     <Section
@@ -31,7 +40,7 @@ const UniversitiesWeRepresent = async () => {
       <div className="container">
         <div className="mb-10 flex flex-col items-center justify-between gap-y-3 rounded-lg border px-5 py-3 shadow-md md:flex-row">
           <h6 className="font-medium text-primary">
-            Showing 01 - 18 of 36 Results
+            Showing 01 - 18 of {universityData.total_university} Results
           </h6>
           <div className="flex items-center justify-end gap-x-5">
             {/* <button className="rounded-md border p-1 text-primary shadow">
@@ -46,18 +55,25 @@ const UniversitiesWeRepresent = async () => {
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
                     value="default"
+                    onClick={() => handleSelectChange("default")}
                   >
                     Default
                   </SelectItem>
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
                     value="Total Students (High to Low)"
+                    onClick={() =>
+                      handleSelectChange("Total Students (High to Low)")
+                    }
                   >
                     Total Students (High to Low)
                   </SelectItem>
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
                     value="Total Students (Low to High)"
+                    onClick={() =>
+                      handleSelectChange("Total Students (Low to High)")
+                    }
                   >
                     Total Students (Low to High)
                   </SelectItem>
@@ -67,52 +83,7 @@ const UniversitiesWeRepresent = async () => {
           </div>
         </div>
       </div>
-      <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
-        {universities.map(
-          (university: {
-            id: number;
-            name: string;
-            description: string;
-            slug: string;
-            logo: string;
-            photo: string;
-            short_info: {
-              country: string;
-              university_type: string;
-              total_students: number;
-              launched: number;
-            };
-          }) => (
-            <UniversityCard university={university} key={university.id} />
-          ),
-        )}
-      </div>
-      <div className="mt-10">
-        <Pagination>
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-      </div>
+      <UniversityContainer universityData={universityData} />
     </Section>
   );
 };

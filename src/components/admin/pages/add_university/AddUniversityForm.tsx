@@ -211,7 +211,7 @@ const AddUniversityForm = () => {
 
   return (
     <form
-      className="w-1/2 space-y-8"
+      className="w-full space-y-8 lg:w-1/2"
       action=""
       onSubmit={handleSubmit(handleAddUniversity)}
     >
