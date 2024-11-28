@@ -12,8 +12,20 @@ import {
 
 import { useRouter, useSearchParams } from "next/navigation";
 import UniversityContainer from "./UniversityContainer";
+import { University } from "@/types/university";
 
-const UniversitiesWeRepresent = ({ universityData }) => {
+const UniversitiesWeRepresent = ({
+  universityData,
+}: {
+  universityData: {
+    total_universities: number;
+    current_page: number;
+    next_page: null | string | number;
+    previous_page: null | string | number;
+    total_pages: number;
+    results: University[];
+  };
+}) => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -40,7 +52,7 @@ const UniversitiesWeRepresent = ({ universityData }) => {
       <div className="container">
         <div className="mb-10 flex flex-col items-center justify-between gap-y-3 rounded-lg border px-5 py-3 shadow-md md:flex-row">
           <h6 className="font-medium text-primary">
-            Showing 01 - 18 of {universityData.total_university} Results
+            Showing 01 - 18 of {universityData.total_universities} Results
           </h6>
           <div className="flex items-center justify-end gap-x-5">
             {/* <button className="rounded-md border p-1 text-primary shadow">
