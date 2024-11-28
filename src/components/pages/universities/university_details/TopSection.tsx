@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/Button";
 import { IoPlayCircle } from "react-icons/io5";
 
 const TopSection = ({ universityInfo }: { universityInfo: University }) => {
-  console.log(universityInfo);
-
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container">
@@ -107,9 +105,11 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
                   </svg>
                   <span>
                     Launched :{" "}
-                    {getYearFromDate(
-                      universityInfo.short_info.launched.toString(),
-                    )}
+                    {universityInfo.short_info?.launched
+                      ? getYearFromDate(
+                          universityInfo.short_info?.launched.toString(),
+                        )
+                      : "N/A"}
                   </span>
                 </div>
               </div>
