@@ -8,6 +8,18 @@ import { Button } from "@/components/ui/Button";
 import { IoPlayCircle } from "react-icons/io5";
 
 const TopSection = ({ universityInfo }: { universityInfo: University }) => {
+  // Thumbnail processing
+  const getThumbnailSrc = (
+    thumbnail: string | File | FileList | null | undefined,
+  ): string => {
+    if (!thumbnail) return ""; // Return empty string if thumbnail is null or undefined
+    if (typeof thumbnail === "string") return thumbnail; // Return if it's already a string
+    if (thumbnail instanceof File) return URL.createObjectURL(thumbnail); // Convert File to URL
+    if (thumbnail instanceof FileList && thumbnail.length > 0)
+      return URL.createObjectURL(thumbnail[0]); // Convert FileList to URL
+    return ""; // Fallback
+  };
+
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container">
@@ -144,9 +156,7 @@ const TopSection = ({ universityInfo }: { universityInfo: University }) => {
                 <div className="cursor-pointer">
                   <Image
                     className="cursor-pointer rounded-lg object-cover object-center xl:object-right"
-                    src={
-                      universityInfo.thumbnail ? universityInfo.thumbnail : ""
-                    }
+                    src={getThumbnailSrc(universityInfo.thumbnail)}
                     alt={universityInfo.name}
                     fill
                   />
