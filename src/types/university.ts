@@ -10,8 +10,8 @@ export type University = {
   short_info: {
     country: string;
     university_type: string;
-    total_students: number;
-    launched: number;
+    total_students: number | undefined;
+    launched: number | undefined;
   };
 
   photo?: File | null | FileList | string;

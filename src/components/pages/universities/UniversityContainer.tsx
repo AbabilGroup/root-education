@@ -7,42 +7,41 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { University } from "@/types/university";
 
-const UniversityContainer = ({ universityData }) => {
+const UniversityContainer = ({
+  universityData,
+}: {
+  universityData: {
+    total_universities: number;
+    current_page: number;
+    next_page: null | string | number;
+    previous_page: null | string | number;
+    total_pages: number;
+    results: Partial<University>[];
+  };
+}) => {
   const universities = universityData.results;
+  console.log("🚀 ~ universities:", universities);
+
   return (
     <>
       <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
-        {universities.map(
-          (university: {
-            id: number;
-            name: string;
-            description: string;
-            slug: string;
-            logo: string;
-            photo: string;
-            short_info: {
-              country: string;
-              university_type: string;
-              total_students: number;
-              launched: number;
-            };
-          }) => (
-            <UniversityCard university={university} key={university.id} />
-          ),
-        )}
+        {universities.map((university) => (
+          <UniversityCard university={university} key={university.id} />
+        ))}
       </div>
       <div className="mt-10">
         <Pagination>
           <PaginationContent>
-            {universityData.currentPage > 1 && (
+            {universityData.current_page > 1 && (
               <PaginationItem>
                 <PaginationPrevious
                   href={`/universities?page${universityData.previous_page}`}
                 />
               </PaginationItem>
             )}
-            {Array.from({ length: universityData.totalPages }).map(
+            {Array.from({ length: universityData.total_pages }).map(
               (_, index) => (
                 <PaginationItem key={index}>
                   <PaginationLink

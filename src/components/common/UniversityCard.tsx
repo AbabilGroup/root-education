@@ -3,24 +3,12 @@ import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBou
 import { Button } from "../ui/Button";
 import { formatIndianNumber, getYearFromDate } from "@/lib/utils";
 import Link from "next/link";
+import { University } from "@/types/university";
 
 const UniversityCard = ({
   university,
 }: {
-  university: {
-    id: number;
-    name: string;
-    description: string;
-    slug: string;
-    photo: string;
-    logo: string;
-    short_info: {
-      country: string;
-      university_type: string;
-      total_students: number;
-      launched: number;
-    };
-  };
+  university: Partial<University>;
 }) => {
   return (
     <FadeInLeftWithSlowBounce className="flex flex-col gap-4 rounded-xl border p-5 shadow-lg">
@@ -141,7 +129,9 @@ const UniversityCard = ({
           <div>
             <p className="text-sm font-medium">
               Launched :{" "}
-              {getYearFromDate(university.short_info?.launched.toString())}
+              {university.short_info?.launched
+                ? getYearFromDate(university.short_info?.launched.toString())
+                : "N/A"}
             </p>
           </div>
         </div>
