@@ -3,14 +3,14 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
+        protocol: "http",
         hostname: "api.rooteducation.group",
-        pathname: "/**",
+        pathname: "/media/**",
       },
       {
         protocol: "http",
         hostname: "192.168.11.110",
-        pathname: "/**",
+        pathname: "/media/**",
       },
     ],
   },

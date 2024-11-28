@@ -16,7 +16,7 @@ const UniversityCard = ({
         <Image
           className="rounded-lg object-cover"
           src={`${university.photo ? university.photo : "/"}`}
-          alt="University"
+          alt={university.name ? university.name : ""}
           fill
         />
       </div>

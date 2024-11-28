@@ -7,8 +7,12 @@ export const metadata: Metadata = {
   title: "Root Education | Universities",
 };
 
-const UniversitiesPage = async () => {
-  const universityData = await getAllUniversities();
+type UniversitiesPageProps = {
+  searchParams: Record<string, string | string[] | undefined>;
+};
+
+const UniversitiesPage = async ({ searchParams }: UniversitiesPageProps) => {
+  const universityData = await getAllUniversities(searchParams);
 
   return (
     <main>

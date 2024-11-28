@@ -29,19 +29,10 @@ const UniversitiesWeRepresent = ({
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const handleSelectChange = (value: string) => {
-    const params = new URLSearchParams(searchParams?.toString() || "");
-
-    if (value === "default") {
-      params.delete("total_students"); // Remove query parameter
-    } else if (value === "Total Students (High to Low)") {
-      params.set("total_students", "high");
-    } else if (value === "Total Students (Low to High)") {
-      params.set("total_students", "low");
-    }
-
-    // Update the route with the new query parameters
-    router.push(`?${params.toString()}`);
+  const handlePageChange = (priority: string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("total_students", priority);
+    router.push(`/universities?${params.toString()}`);
   };
 
   return (
@@ -58,7 +49,7 @@ const UniversitiesWeRepresent = ({
             {/* <button className="rounded-md border p-1 text-primary shadow">
               <IoGridSharp className="text-2xl" />
             </button> */}
-            <Select>
+            <Select onValueChange={(value) => handlePageChange(value)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Sort by Default" />
               </SelectTrigger>
@@ -67,25 +58,18 @@ const UniversitiesWeRepresent = ({
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
                     value="default"
-                    onClick={() => handleSelectChange("default")}
                   >
                     Default
                   </SelectItem>
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
-                    value="Total Students (High to Low)"
-                    onClick={() =>
-                      handleSelectChange("Total Students (High to Low)")
-                    }
+                    value="high"
                   >
                     Total Students (High to Low)
                   </SelectItem>
                   <SelectItem
                     className="cursor-pointer hover:bg-secondary hover:bg-opacity-5"
-                    value="Total Students (Low to High)"
-                    onClick={() =>
-                      handleSelectChange("Total Students (Low to High)")
-                    }
+                    value="low"
                   >
                     Total Students (Low to High)
                   </SelectItem>

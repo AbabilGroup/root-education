@@ -8,6 +8,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { University } from "@/types/university";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const UniversityContainer = ({
   universityData,
@@ -22,12 +23,20 @@ const UniversityContainer = ({
   };
 }) => {
   const universities = universityData.results;
-  console.log("🚀 ~ universities:", universities);
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handlePageChange = (page: string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("page", page);
+    router.push(`/universities?${params.toString()}`);
+  };
 
   return (
     <>
       <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
-        {universities.map((university) => (
+        {universities?.map((university) => (
           <UniversityCard university={university} key={university.id} />
         ))}
       </div>
@@ -37,7 +46,15 @@ const UniversityContainer = ({
             {universityData.current_page > 1 && (
               <PaginationItem>
                 <PaginationPrevious
-                  href={`/universities?page${universityData.previous_page}`}
+                  className="cursor-pointer"
+                  onClick={() =>
+                    handlePageChange(
+                      universityData.previous_page
+                        ? universityData.previous_page?.toString()
+                        : "",
+                    )
+                  }
+                  // href={`/universities?page${universityData.previous_page}`}
                 />
               </PaginationItem>
             )}
@@ -45,7 +62,9 @@ const UniversityContainer = ({
               (_, index) => (
                 <PaginationItem key={index}>
                   <PaginationLink
-                    href={`/items?page=${index + 1}`}
+                    className="cursor-pointer"
+                    onClick={() => handlePageChange((index + 1).toString())}
+                    // href={`/universities?page=${index + 1}`}
                     isActive={index + 1 === universityData.current_page}
                   >
                     {index + 1}
@@ -56,7 +75,15 @@ const UniversityContainer = ({
             {universityData.current_page < universityData.total_pages && (
               <PaginationItem>
                 <PaginationNext
-                  href={`/universities?page${universityData.next_page}`}
+                  className="cursor-pointer"
+                  onClick={() =>
+                    handlePageChange(
+                      universityData.next_page
+                        ? universityData.next_page?.toString()
+                        : "",
+                    )
+                  }
+                  // href={`/universities?page${universityData.next_page}`}
                 />
               </PaginationItem>
             )}
