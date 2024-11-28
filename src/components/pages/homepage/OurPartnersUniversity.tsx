@@ -8,6 +8,7 @@ const OurPartnersUniversity = async () => {
   const universityData = await getAllUniversities();
 
   const universities = universityData.results;
+  console.log("🚀 ~ OurPartnersUniversity ~ universities:", universities);
 
   return (
     <Section
@@ -15,7 +16,7 @@ const OurPartnersUniversity = async () => {
       title="World-Class Educational Collaborations"
     >
       <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
-        {universities.map(
+        {universities?.map(
           (university: {
             id: number;
             name: string;
@@ -29,9 +30,7 @@ const OurPartnersUniversity = async () => {
               total_students: number;
               launched: number;
             };
-          }) => (
-            <UniversityCard key={university.id} university={university} />
-          ),
+          }) => <UniversityCard key={university.id} university={university} />,
         )}
       </div>
       <div className="mt-10 flex items-center justify-center">
