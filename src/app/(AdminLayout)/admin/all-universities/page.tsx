@@ -2,7 +2,9 @@ import AllUniversityTable from "@/components/admin/pages/all_universities/AllUni
 import { getAllUniversities } from "@/services/getAllUniversities";
 
 const AllUniversitiesPage = async () => {
-  const universities = await getAllUniversities();
+  const universityData = await getAllUniversities();
+
+  const universities = universityData.results;
 
   return (
     <main className="p-10">
