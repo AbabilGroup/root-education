@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 import { Toaster } from "sonner";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "Root Education",
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} flex min-h-screen flex-col text-secondary`}
+        className={clsx(
+          montserrat.className,
+          "flex min-h-screen flex-col text-secondary",
+        )}
       >
         <Toaster position="top-right" richColors />
 

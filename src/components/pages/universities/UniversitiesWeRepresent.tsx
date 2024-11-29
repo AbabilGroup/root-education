@@ -37,6 +37,7 @@ const UniversitiesWeRepresent = ({
 
   return (
     <Section
+      className="pb-[100px] pt-[100px]"
       sectionName="Universities We Represent"
       title="Top-tier international partner universities"
     >

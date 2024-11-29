@@ -89,7 +89,6 @@ export function AppSidebar() {
 
     if (error) {
       console.error(error);
-      toast.error("An error occurred while trying to logout");
     }
   }, [isSuccess, isError, router, error]);
 

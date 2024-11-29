@@ -22,7 +22,7 @@ const AboutUs = () => {
               <h4 className="text-3xl font-bold text-primary">
                 <CountUp duration={5} end={1000} />+
               </h4>
-              <p className="text-sm font-medium">Student Enrolled</p>
+              <p className="text-sm font-medium">Enrolled Students</p>
             </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">
@@ -30,7 +30,7 @@ const AboutUs = () => {
               <h4 className="text-3xl font-bold text-primary">
                 <CountUp duration={5} end={6} />+
               </h4>
-              <p className="text-sm font-medium">WorldWide Brances</p>
+              <p className="text-sm font-medium">Branches Worldwide</p>
             </FadeInDownWithSlowBounce>
           </div>
           <div className="space-y-2 px-10 py-3 text-center">

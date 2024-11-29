@@ -6,6 +6,7 @@ import Footer from "@/components/common/Footer";
 import TopBar from "@/components/common/TopBar";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 import NextTopLoader from "nextjs-toploader";
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "Root Education",
@@ -25,7 +26,10 @@ export default function CommonLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} flex min-h-screen flex-col text-secondary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-primary`}
+        className={clsx(
+          montserrat.className,
+          "flex min-h-screen flex-col text-secondary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-primary",
+        )}
       >
         <TanstackQueryProvider>
           <NextTopLoader color="#F37329" />

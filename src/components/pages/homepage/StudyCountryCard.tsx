@@ -4,7 +4,7 @@ import { MdArrowRight } from "react-icons/md";
 
 const StudyCountryCard = () => {
   return (
-    <div className="m-3 rounded-lg shadow-lg">
+    <div className="m-3 rounded-lg shadow-md">
       <div className="relative min-h-[210px]">
         <Image
           className="h-full w-full"
