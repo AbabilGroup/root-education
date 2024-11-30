@@ -64,7 +64,8 @@ const UniversityPagination = ({
                   className="cursor-pointer"
                   onClick={() => handlePageChange((index + 1).toString())}
                   isActive={
-                    (index + 1).toString() === universityData.current_page
+                    (index + 1).toString() ===
+                    (universityData.current_page || 1).toString()
                   }
                 >
                   {index + 1}

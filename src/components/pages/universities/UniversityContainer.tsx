@@ -65,7 +65,10 @@ const UniversityContainer = ({
                     className="cursor-pointer"
                     onClick={() => handlePageChange((index + 1).toString())}
                     // href={`/universities?page=${index + 1}`}
-                    isActive={index + 1 === universityData.current_page}
+                    isActive={
+                      (index + 1).toString() ===
+                      (universityData.current_page || 1).toString()
+                    }
                   >
                     {index + 1}
                   </PaginationLink>
