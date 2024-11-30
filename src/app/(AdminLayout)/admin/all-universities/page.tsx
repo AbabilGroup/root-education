@@ -1,14 +1,30 @@
 import AllUniversityTable from "@/components/admin/pages/all_universities/AllUniversityTable";
 import { getAllUniversities } from "@/services/getAllUniversities";
 
-const AllUniversitiesPage = async () => {
-  const universityData = await getAllUniversities();
+import UniversityPagination from "@/components/admin/pages/all_universities/UniversityPagination";
+
+const AllUniversitiesPage = async ({
+  searchParams,
+}: {
+  searchParams:
+    | string
+    | string[][]
+    | Record<string, string>
+    | URLSearchParams
+    | undefined;
+}) => {
+  const universityData = await getAllUniversities(searchParams);
 
   const universities = universityData.results;
 
   return (
     <main className="p-10">
       <AllUniversityTable universities={universities} />
+
+      <UniversityPagination
+        universityData={universityData}
+        searchParams={searchParams}
+      />
     </main>
   );
 };
