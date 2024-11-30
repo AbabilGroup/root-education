@@ -14,7 +14,6 @@ const NavUniversities = () => {
     queryFn: () => axios.get(`${apiUrl}/all_university/`),
   });
 
-  console.log(data);
 
   if (isLoading)
     return (

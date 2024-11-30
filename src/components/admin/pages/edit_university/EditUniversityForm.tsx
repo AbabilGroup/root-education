@@ -105,7 +105,6 @@ const EditUniversityForm = ({ university }: { university: University }) => {
   });
 
   const handleEditUniversity: SubmitHandler<University> = (data) => {
-    console.log("🚀 ~ EditUniversityForm ~ data:", data);
 
     const formData = new FormData();
 
@@ -148,7 +147,6 @@ const EditUniversityForm = ({ university }: { university: University }) => {
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(data);
 
       reset(university);
 

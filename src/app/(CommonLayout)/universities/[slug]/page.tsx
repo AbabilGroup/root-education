@@ -25,7 +25,6 @@ const UniversityDetailsPage = async ({
 
   const universityInfo = await getUniversityBySlug(slug);
 
-  console.log(universityInfo);
   return (
     <main>
       <PageBanner PageName={formatCountryRoute(params.slug)} />

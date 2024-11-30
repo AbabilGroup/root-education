@@ -7,6 +7,7 @@ import TopBar from "@/components/common/TopBar";
 import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 import NextTopLoader from "nextjs-toploader";
 import clsx from "clsx";
+import CookieBanner from "@/components/common/CookieBanner";
 
 export const metadata: Metadata = {
   title: "Root Education",
@@ -38,6 +39,8 @@ export default function CommonLayout({
           {children}
           <Footer />
         </TanstackQueryProvider>
+
+        <CookieBanner />
       </body>
     </html>
   );

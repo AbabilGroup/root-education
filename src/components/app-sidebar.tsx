@@ -53,24 +53,21 @@ const items = [
 export function AppSidebar() {
   const router = useRouter();
   const pathname = usePathname();
-  const { mutate, isSuccess, data, isError, error } =
-    useMutation<AxiosResponse>({
-      mutationFn: () => {
-        const token = Cookies.get("token");
+  const { mutate, isSuccess, isError, error } = useMutation<AxiosResponse>({
+    mutationFn: () => {
+      const token = Cookies.get("token");
 
-        console.log(token);
-
-        return axios.post(
-          `${apiBaseUrl}/auth/token/logout/`,
-          {}, // Empty body since it's a POST request with no data
-          {
-            headers: {
-              Authorization: `Token ${token}`, // Add token to Authorization header
-            },
+      return axios.post(
+        `${apiBaseUrl}/auth/token/logout/`,
+        {}, // Empty body since it's a POST request with no data
+        {
+          headers: {
+            Authorization: `Token ${token}`, // Add token to Authorization header
           },
-        );
-      },
-    });
+        },
+      );
+    },
+  });
 
   const handleLogout = () => {
     mutate();
@@ -91,8 +88,6 @@ export function AppSidebar() {
       console.error(error);
     }
   }, [isSuccess, isError, router, error]);
-
-  console.log(data);
 
   return (
     <Sidebar>

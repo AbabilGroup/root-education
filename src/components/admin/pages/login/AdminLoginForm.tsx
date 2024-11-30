@@ -61,7 +61,6 @@ const AdminLoginForm = () => {
     }
   }, [isSuccess, isError, data?.data?.auth_token, router, error]);
 
-  console.log(data);
 
   return (
     <form

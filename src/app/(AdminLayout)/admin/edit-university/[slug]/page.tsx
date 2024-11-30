@@ -11,7 +11,6 @@ const EditUniversityPage = async ({ params }: { params: { slug: string } }) => {
 
   const university = await getUniversityBySlug(slug);
 
-  console.log(university);
 
   return (
     <main className="p-10">

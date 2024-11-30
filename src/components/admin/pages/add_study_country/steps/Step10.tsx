@@ -66,7 +66,6 @@ const Step10 = ({
       }
     });
 
-    console.log(formData);
 
     mutate(formData);
   };

@@ -17,7 +17,6 @@ const AllUniversityTable = ({
 }: {
   universities: University[];
 }) => {
-  console.log(universities);
   return (
     <div>
       <h2 className="mb-5 text-xl font-semibold">All University list</h2>

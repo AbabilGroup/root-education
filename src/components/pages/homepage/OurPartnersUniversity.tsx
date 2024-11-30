@@ -8,7 +8,6 @@ const OurPartnersUniversity = async () => {
   const universityData = await getAllUniversities();
 
   const universities = universityData.results;
-  console.log("🚀 ~ OurPartnersUniversity ~ universities:", universities);
 
   return (
     <Section

@@ -196,7 +196,6 @@ const AddUniversityForm = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      console.log(universityData);
       toast.success("University added successfully.");
       reset();
     }
