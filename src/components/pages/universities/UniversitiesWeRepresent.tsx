@@ -1,18 +1,19 @@
 "use client";
 
 import Section from "@/components/common/Section";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectGroup,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 
-import { useRouter, useSearchParams } from "next/navigation";
+// import { useRouter, useSearchParams } from "next/navigation";
 import UniversityContainer from "./UniversityContainer";
 import { University } from "@/types/university";
+// import { IoGridSharp } from "react-icons/io5";
 
 const UniversitiesWeRepresent = ({
   universityData,
@@ -26,14 +27,14 @@ const UniversitiesWeRepresent = ({
     results: University[];
   };
 }) => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  // const router = useRouter();
+  // const searchParams = useSearchParams();
 
-  const handlePageChange = (priority: string) => {
-    const params = new URLSearchParams(searchParams);
-    params.set("total_students", priority);
-    router.push(`/universities?${params.toString()}`);
-  };
+  // const handlePageChange = (priority: string) => {
+  //   const params = new URLSearchParams(searchParams);
+  //   params.set("total_students", priority);
+  //   router.push(`/universities?${params.toString()}`);
+  // };
 
   return (
     <Section
@@ -41,15 +42,15 @@ const UniversitiesWeRepresent = ({
       sectionName="Universities We Represent"
       title="Top-tier international partner universities"
     >
-      <div className="container">
+      {/* <div className="container">
         <div className="mb-10 flex flex-col items-center justify-between gap-y-3 rounded-lg border px-5 py-3 shadow-md md:flex-row">
           <h6 className="font-medium text-primary">
             Showing 01 - 18 of {universityData.total_universities} Results
           </h6>
           <div className="flex items-center justify-end gap-x-5">
-            {/* <button className="rounded-md border p-1 text-primary shadow">
+            <button className="rounded-md border p-1 text-primary shadow">
               <IoGridSharp className="text-2xl" />
-            </button> */}
+            </button>
             <Select onValueChange={(value) => handlePageChange(value)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Sort by Default" />
@@ -79,7 +80,7 @@ const UniversitiesWeRepresent = ({
             </Select>
           </div>
         </div>
-      </div>
+      </div> */}
       <UniversityContainer universityData={universityData} />
     </Section>
   );
