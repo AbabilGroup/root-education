@@ -61,7 +61,7 @@ const UniversityPagination = ({
             (_, index) => (
               <PaginationItem key={index}>
                 <PaginationLink
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:bg-sidebar-accent"
                   onClick={() => handlePageChange((index + 1).toString())}
                   isActive={
                     (index + 1).toString() ===
