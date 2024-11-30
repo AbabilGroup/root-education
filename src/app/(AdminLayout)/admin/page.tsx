@@ -18,7 +18,7 @@ const DashboardPage = async () => {
           </div>
           <div>
             <h4 className="text-xl font-semibold">Total Universities</h4>
-            <p className="font-medium">{universities.length}</p>
+            <p className="font-medium">{universities.results.length}</p>
           </div>
         </div>
         {/* card  */}
