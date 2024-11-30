@@ -14,6 +14,15 @@ const nextConfig = {
       },
     ],
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: `https://api.rooteducation.group/api/:path*`, // Your backend URL
+      },
+    ];
+  },
 };
 
 export default nextConfig;
