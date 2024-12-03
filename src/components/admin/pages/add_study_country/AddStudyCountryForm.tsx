@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Step1 from "./steps/Step1";
 import Step2 from "./steps/Step2";
@@ -13,21 +13,20 @@ import Step8 from "./steps/Step8";
 import Step9 from "./steps/Step9";
 import Step10 from "./steps/Step10";
 import Step11 from "./steps/Step11";
+import { capitalizeSlug } from "@/lib/utils";
 
 const AddStudyCountryForm = () => {
   const [activeTab, setActiveTab] = useState("step1");
   const [countryName, setCountryName] = useState("");
 
-  // Use useEffect to safely access localStorage
-  useEffect(() => {
-    const storedCountry = localStorage.getItem("current_country");
-    if (storedCountry) {
-      setCountryName(storedCountry);
-    }
-  }, []);
-
   return (
     <>
+      {countryName && (
+        <h5 className="mb-10">
+          Continuing uploading study country: {capitalizeSlug(countryName)}
+        </h5>
+      )}
+
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-1/2">
         <TabsList className="mb-10 flex items-center justify-start gap-x-2">
           <TabsTrigger
@@ -108,7 +107,7 @@ const AddStudyCountryForm = () => {
           </TabsTrigger>
         </TabsList>
 
-        <Step1 setCountryName={setCountryName} setActiveTab={setActiveTab} />
+        <Step1 setActiveTab={setActiveTab} setCountryName={setCountryName} />
 
         <Step2 countryName={countryName} setActiveTab={setActiveTab} />
 
@@ -128,7 +127,7 @@ const AddStudyCountryForm = () => {
 
         <Step10 countryName={countryName} setActiveTab={setActiveTab} />
 
-        <Step11 countryName={countryName} />
+        <Step11 countryName={countryName} setCountryName={setCountryName} />
       </Tabs>
     </>
   );

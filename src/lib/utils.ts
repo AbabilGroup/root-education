@@ -72,3 +72,13 @@ export const removeFields = (data: any): any => {
   // If not an object or array, return the data as is
   return data;
 };
+
+export function capitalizeSlug(slug: string) {
+  if (typeof slug !== "string" || slug.length === 0) {
+    return "";
+  }
+  return slug
+    .split("-") // Split the slug into words using the '-' delimiter
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize each word
+    .join(" "); // Join the words back with spaces
+}

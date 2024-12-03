@@ -16,11 +16,11 @@ type FormValues = {
 };
 
 const Step1 = ({
-  setCountryName,
   setActiveTab,
+  setCountryName,
 }: {
-  setCountryName: (name: string) => void;
   setActiveTab: (tab: string) => void;
+  setCountryName: (tab: string) => void;
 }) => {
   const { register, handleSubmit, reset } = useForm<FormValues>();
   const { mutate, isPending, isSuccess, data } = useMutation<
@@ -33,7 +33,6 @@ const Step1 = ({
   });
 
   const handleCreateCountry: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
     const formData = new FormData();
     formData.append("country", data.countryName);
     formData.append("flag", data.countryFlag[0]);
@@ -44,11 +43,11 @@ const Step1 = ({
   // Reset form after successful submission
   useEffect(() => {
     if (isSuccess) {
+      setCountryName(data?.data.slug);
       reset();
       setActiveTab("step2");
-      localStorage.setItem("current_country", data.data.slug);
     }
-  }, [isSuccess, reset, setActiveTab, data?.data.slug]);
+  }, [isSuccess, reset, setActiveTab, data?.data.slug, setCountryName]);
 
   return (
     <TabsContent value="step1">
@@ -60,12 +59,7 @@ const Step1 = ({
         {/* Country Name */}
         <div>
           <Label>Country Name</Label>
-          <Input
-            {...register("countryName")}
-            type="text"
-            onChange={(e) => setCountryName(e.target.value)}
-            required
-          />
+          <Input {...register("countryName")} type="text" required />
         </div>
 
         {/* flag */}

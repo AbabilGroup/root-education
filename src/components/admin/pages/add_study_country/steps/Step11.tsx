@@ -21,7 +21,13 @@ type FormValues = {
   faqs: Faq[];
 };
 
-const Step11 = ({ countryName }: { countryName: string | null }) => {
+const Step11 = ({
+  countryName,
+  setCountryName,
+}: {
+  countryName: string | null;
+  setCountryName: (tab: string) => void;
+}) => {
   const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
       faqs: [{ question: "", answer: "" }],
@@ -51,10 +57,11 @@ const Step11 = ({ countryName }: { countryName: string | null }) => {
 
   useEffect(() => {
     if (isSuccess) {
+      setCountryName("");
+
       reset();
-      localStorage.removeItem("current_country");
     }
-  }, [isSuccess, reset]);
+  }, [isSuccess, reset, setCountryName]);
 
   return (
     <TabsContent value="step11">
