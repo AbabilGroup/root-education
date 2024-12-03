@@ -25,7 +25,7 @@ const Step2 = ({
   countryName,
   setActiveTab,
 }: {
-  countryName: string;
+  countryName: string | null;
   setActiveTab: (tab: string) => void;
 }) => {
   const { control, register, handleSubmit, reset } = useForm<FormValues>({
@@ -51,7 +51,7 @@ const Step2 = ({
   >({
     mutationFn: (formData) =>
       axios.post(
-        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_box1/`,
+        `${apiUrl}/step_by_step_country/${countryName?.toLowerCase()}/add_box1/`,
         formData,
       ),
   });

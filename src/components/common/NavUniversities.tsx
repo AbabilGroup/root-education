@@ -14,7 +14,6 @@ const NavUniversities = () => {
     queryFn: () => axios.get(`${apiUrl}/all_university/`),
   });
 
-
   if (isLoading)
     return (
       <div className="grid w-[650px] grid-cols-3 gap-y-3 p-4 text-sm">
@@ -58,15 +57,15 @@ const NavUniversities = () => {
                 legacyBehavior
                 passHref
               >
-                <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
+                <NavigationMenuLink className="flex items-center gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
                   <Image
-                    className="rounded-full"
+                    className="rounded-full border"
                     src={university.logo ? university.logo : ""}
                     alt=""
                     height={30}
                     width={30}
                   />
-                  <span>{university.name}</span>
+                  <span className="text-xs">{university.name}</span>
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>

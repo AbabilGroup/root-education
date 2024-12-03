@@ -23,7 +23,7 @@ const Step1 = ({
   setActiveTab: (tab: string) => void;
 }) => {
   const { register, handleSubmit, reset } = useForm<FormValues>();
-  const { mutate, isPending, isSuccess } = useMutation<
+  const { mutate, isPending, isSuccess, data } = useMutation<
     AxiosResponse,
     unknown,
     FormData
@@ -33,6 +33,7 @@ const Step1 = ({
   });
 
   const handleCreateCountry: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
     const formData = new FormData();
     formData.append("country", data.countryName);
     formData.append("flag", data.countryFlag[0]);
@@ -45,8 +46,14 @@ const Step1 = ({
     if (isSuccess) {
       reset();
       setActiveTab("step2");
+      localStorage.setItem(
+        "current_country",
+        data.data.country_name.toLowerCase(),
+      );
     }
-  }, [isSuccess, reset, setActiveTab]);
+  }, [isSuccess, reset, setActiveTab, data?.data.country_name]);
+
+  console.log(data);
 
   return (
     <TabsContent value="step1">
@@ -80,9 +87,3 @@ const Step1 = ({
 };
 
 export default Step1;
-
-// , {
-//   headers: {
-//     "Content-Type": "multipart/form-data",
-//   },
-// }

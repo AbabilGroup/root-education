@@ -21,7 +21,7 @@ type FormValues = {
   faqs: Faq[];
 };
 
-const Step11 = ({ countryName }: { countryName: string }) => {
+const Step11 = ({ countryName }: { countryName: string | null }) => {
   const { control, register, handleSubmit, reset } = useForm<FormValues>({
     defaultValues: {
       faqs: [{ question: "", answer: "" }],
@@ -40,7 +40,7 @@ const Step11 = ({ countryName }: { countryName: string }) => {
   >({
     mutationFn: (formData) =>
       axios.post(
-        `${apiUrl}/step_by_step_country/${countryName.toLowerCase()}/add_faq/`,
+        `${apiUrl}/step_by_step_country/${countryName?.toLowerCase()}/add_faq/`,
         formData,
       ),
   });

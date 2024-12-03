@@ -16,7 +16,9 @@ import Step11 from "./steps/Step11";
 
 const AddStudyCountryForm = () => {
   const [activeTab, setActiveTab] = useState("step1");
-  const [countryName, setCountryName] = useState("");
+  const [countryName, setCountryName] = useState(
+    localStorage.getItem("current_country"),
+  );
 
   return (
     <>

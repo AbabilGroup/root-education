@@ -10,7 +10,7 @@ const DashboardPage = async () => {
 
   return (
     <main className="p-10">
-      <div className="grid grid-cols-3 gap-6">
+      <div className="flex flex-wrap gap-5">
         {/* card  */}
         <div className="flex items-center gap-5 rounded-xl border p-5 shadow">
           <div className="inline-flex size-[50px] items-center justify-center rounded-full bg-primary p-2">
