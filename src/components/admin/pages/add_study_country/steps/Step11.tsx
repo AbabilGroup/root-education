@@ -99,7 +99,9 @@ const Step11 = ({ countryName }: { countryName: string | null }) => {
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
+          <Button type="submit">
+            {isPending ? "Processing..." : "Submit"}
+          </Button>
         </div>
       </form>
     </TabsContent>

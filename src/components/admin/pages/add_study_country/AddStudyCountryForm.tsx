@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Step1 from "./steps/Step1";
 import Step2 from "./steps/Step2";
@@ -16,9 +16,15 @@ import Step11 from "./steps/Step11";
 
 const AddStudyCountryForm = () => {
   const [activeTab, setActiveTab] = useState("step1");
-  const [countryName, setCountryName] = useState(
-    localStorage.getItem("current_country"),
-  );
+  const [countryName, setCountryName] = useState("");
+
+  // Use useEffect to safely access localStorage
+  useEffect(() => {
+    const storedCountry = localStorage.getItem("current_country");
+    if (storedCountry) {
+      setCountryName(storedCountry);
+    }
+  }, []);
 
   return (
     <>
