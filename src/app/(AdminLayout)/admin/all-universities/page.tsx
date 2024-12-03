@@ -2,8 +2,6 @@ import AllUniversityTable from "@/components/admin/pages/all_universities/AllUni
 import { getAllUniversities } from "@/services/getAllUniversities";
 
 import UniversityPagination from "@/components/admin/pages/all_universities/UniversityPagination";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 const AllUniversitiesPage = async ({
   searchParams,
@@ -24,9 +22,7 @@ const AllUniversitiesPage = async ({
       <div>
         <h2 className="mb-5 text-xl font-semibold">All University list</h2>
 
-        <Suspense fallback={<Loading />}>
-          <AllUniversityTable universities={universities} />
-        </Suspense>
+        <AllUniversityTable universities={universities} />
       </div>
       <UniversityPagination
         universityData={universityData}
