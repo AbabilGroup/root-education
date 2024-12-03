@@ -11,7 +11,6 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
-import slugify from "slugify";
 
 type TuitionFee = {
   title: string;
@@ -69,7 +68,7 @@ const Step4 = ({
   >({
     mutationFn: (formData) =>
       axios.post(
-        `${apiUrl}/step_by_step_country/${countryName ? slugify(countryName) : ""}/add_costofliving/`,
+        `${apiUrl}/step_by_step_country/${countryName}/add_costofliving/`,
         formData,
       ),
   });

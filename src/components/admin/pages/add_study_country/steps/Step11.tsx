@@ -40,7 +40,7 @@ const Step11 = ({ countryName }: { countryName: string | null }) => {
   >({
     mutationFn: (formData) =>
       axios.post(
-        `${apiUrl}/step_by_step_country/${countryName?.toLowerCase()}/add_faq/`,
+        `${apiUrl}/step_by_step_country/${countryName}/add_faq/`,
         formData,
       ),
   });

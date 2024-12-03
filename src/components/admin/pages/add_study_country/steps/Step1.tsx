@@ -46,12 +46,9 @@ const Step1 = ({
     if (isSuccess) {
       reset();
       setActiveTab("step2");
-      localStorage.setItem(
-        "current_country",
-        data.data.country_name.toLowerCase(),
-      );
+      localStorage.setItem("current_country", data.data.slug);
     }
-  }, [isSuccess, reset, setActiveTab, data?.data.country_name]);
+  }, [isSuccess, reset, setActiveTab, data?.data.slug]);
 
   return (
     <TabsContent value="step1">

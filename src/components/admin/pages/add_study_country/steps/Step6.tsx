@@ -11,7 +11,7 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
-import slugify from "slugify";
+
 
 type List = {
   name: string;
@@ -55,7 +55,7 @@ const Step6 = ({
   >({
     mutationFn: (formData) =>
       axios.post(
-        `${apiUrl}/step_by_step_country/${countryName ? slugify(countryName) : ""}/add_scholarship/`,
+        `${apiUrl}/step_by_step_country/${countryName}/add_scholarship/`,
         formData,
       ),
   });
