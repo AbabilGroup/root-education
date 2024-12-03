@@ -66,7 +66,6 @@ const Step10 = ({
       }
     });
 
-
     mutate(formData);
   };
 
@@ -122,7 +121,9 @@ const Step10 = ({
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
+          <Button type="submit" disabled={isPending}>
+            {isPending ? "Processing..." : "Next"}
+          </Button>
         </div>
       </form>
     </TabsContent>

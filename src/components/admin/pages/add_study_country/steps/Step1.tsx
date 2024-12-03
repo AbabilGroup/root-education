@@ -53,8 +53,6 @@ const Step1 = ({
     }
   }, [isSuccess, reset, setActiveTab, data?.data.country_name]);
 
-  console.log(data);
-
   return (
     <TabsContent value="step1">
       <form
@@ -78,7 +76,7 @@ const Step1 = ({
           <Label>Upload flag</Label>
           <Input {...register("countryFlag")} type="file" required />
         </div>
-        <Button className="text-white" type="submit">
+        <Button className="text-white" type="submit" disabled={isPending}>
           {isPending ? "Processing..." : "Next"}
         </Button>
       </form>

@@ -52,6 +52,7 @@ const Step11 = ({ countryName }: { countryName: string | null }) => {
   useEffect(() => {
     if (isSuccess) {
       reset();
+      localStorage.removeItem("current_country");
     }
   }, [isSuccess, reset]);
 
@@ -99,7 +100,7 @@ const Step11 = ({ countryName }: { countryName: string | null }) => {
           <FaPlusCircle className="text-xl text-white" />
         </button>
         <div>
-          <Button type="submit">
+          <Button type="submit" disabled={isPending}>
             {isPending ? "Processing..." : "Submit"}
           </Button>
         </div>

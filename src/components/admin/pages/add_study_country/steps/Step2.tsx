@@ -11,6 +11,7 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+import slugify from "slugify";
 
 type Description = {
   description: string;
@@ -51,7 +52,7 @@ const Step2 = ({
   >({
     mutationFn: (formData) =>
       axios.post(
-        `${apiUrl}/step_by_step_country/${countryName?.toLowerCase()}/add_box1/`,
+        `${apiUrl}/step_by_step_country/${countryName ? slugify(countryName) : ""}/add_box1/`,
         formData,
       ),
   });
@@ -108,7 +109,9 @@ const Step2 = ({
         </button>
 
         <div>
-          <Button type="submit">{isPending ? "Processing..." : "Next"}</Button>
+          <Button type="submit" disabled={isPending}>
+            {isPending ? "Processing..." : "Next"}
+          </Button>
         </div>
       </form>
     </TabsContent>
