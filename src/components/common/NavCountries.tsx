@@ -42,6 +42,7 @@ const NavCountries = () => {
           country: string;
           slug: string;
           route_slug: string;
+          flag: string;
         }) => (
           <div key={country.id}>
             <NavigationMenuItem className="list-none">
@@ -51,12 +52,7 @@ const NavCountries = () => {
                 passHref
               >
                 <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
-                  <Image
-                    src="/icons/flag.svg"
-                    alt="Flag"
-                    height={30}
-                    width={30}
-                  />
+                  <Image src={country.flag} alt="Flag" height={30} width={30} />
                   <span>Study in {country.country}</span>
                 </NavigationMenuLink>
               </Link>

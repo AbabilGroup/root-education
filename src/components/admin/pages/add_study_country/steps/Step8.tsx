@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
-
 type List = {
   title: string;
   content: string;
@@ -69,7 +68,7 @@ const Step8 = ({
     <TabsContent value="step8">
       <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <Label>Application Requirements</Label>
+          <Label>Admission Requirements</Label>
           <Textarea
             {...register("short_breaf")}
             placeholder="Short brief"

@@ -2,15 +2,17 @@ import { Study_Country } from "@/types/country";
 import AdmissionForm from "./AdmissionForm";
 
 const TopSection = ({ countryInfo }: { countryInfo: Study_Country }) => {
-  console.log("🚀 ~ TopSection ~ countryInfo:", countryInfo);
+  console.log("🚀 ~ TopSection ~ countryInfo:", countryInfo.box1);
 
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container flex flex-col gap-x-20 gap-y-20 lg:flex-row">
-        <div className="basis-full space-y-4 lg:basis-[60%]">
-          <h2 className="text-4xl font-semibold">{countryInfo?.box1?.title}</h2>
+        <div className="basis-full space-y-6 lg:basis-[60%]">
+          <h2 className="text-4xl font-semibold">
+            {countryInfo.box1[0].title}
+          </h2>
           <div className="space-y-3">
-            {countryInfo.box1.descriptions?.map((description) => (
+            {countryInfo.box1[0].descriptions?.map((description) => (
               <p className="text-sm font-medium" key={description.description}>
                 {description.description}
               </p>
