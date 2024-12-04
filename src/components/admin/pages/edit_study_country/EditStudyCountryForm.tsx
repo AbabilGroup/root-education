@@ -31,7 +31,7 @@ const EditStudyCountryForm = ({
     remove: descriptionRemove,
   } = useFieldArray({
     control,
-    name: `box1.0.descriptions`,
+    name: `box1.descriptions`,
   });
 
   const {
@@ -181,7 +181,7 @@ const EditStudyCountryForm = ({
           <div>
             <Label>Title</Label>
             <Input
-              {...register(`box1.0.title`)}
+              {...register(`box1.title`)}
               type="text"
               placeholder="Title"
             />
@@ -197,7 +197,7 @@ const EditStudyCountryForm = ({
                 >
                   <Textarea
                     {...register(
-                      `box1.0.descriptions.${index}.description` as const,
+                      `box1.descriptions.${index}.description` as const,
                     )}
                     rows={5}
                     placeholder="Content"

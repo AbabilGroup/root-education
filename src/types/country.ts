@@ -1,5 +1,5 @@
 export type Study_Country = {
-  box1: Box1[];
+  box1: Box1;
 
   whystudy: Whystudy;
 
