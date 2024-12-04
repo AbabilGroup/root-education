@@ -1,10 +1,9 @@
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 import Section from "@/components/common/Section";
-import { apiUrl } from "@/secrets";
-import { Root } from "@/types/country";
+import { Study_Country } from "@/types/country";
 import Image from "next/image";
 
-const BestCities = ({ countryInfo }: { countryInfo: Root }) => {
+const BestCities = ({ countryInfo }: { countryInfo: Study_Country }) => {
   return (
     <Section
       sectionName="Best Cities Choose by students"
@@ -12,13 +11,13 @@ const BestCities = ({ countryInfo }: { countryInfo: Root }) => {
     >
       <div className="container">
         <div className="flex items-center justify-center gap-x-10">
-          {countryInfo.city.map((city) => (
+          {countryInfo.cities.map((city) => (
             <FadeInUpWithSlowBounce className="space-y-4" key={city.name}>
               <div className="mx-auto size-[150px] rounded-full bg-white p-1">
                 <div className="relative mx-auto min-h-full">
                   <Image
                     className="rounded-full object-contain object-center"
-                    src={`${apiUrl}${city.logo}`}
+                    src={city.logo as string}
                     alt={city.name}
                     fill
                   />

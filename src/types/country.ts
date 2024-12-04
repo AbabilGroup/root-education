@@ -1,4 +1,4 @@
-export type Root = {
+export type Study_Country = {
   box1: Box1;
 
   whystudy: Whystudy;
@@ -15,7 +15,7 @@ export type Root = {
 
   visaprocedures: Visaprocedure;
 
-  city: City[];
+  cities: City[];
 
   faq: Faq[];
 
@@ -25,7 +25,7 @@ export type Root = {
 
   route_slug: string;
 
-  flag?: string | FileList;
+  flag?: File | null | FileList | string;
 
   is_draft: boolean;
 };
@@ -124,7 +124,7 @@ export type List4 = {
 };
 
 export type City = {
-  logo?: string | null | FileList;
+  logo?: File | null | FileList | string;
   name: string;
 };
 

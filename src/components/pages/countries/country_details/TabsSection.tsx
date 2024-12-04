@@ -13,10 +13,10 @@ import { useState } from "react";
 import TuitionFees from "./TuitionFees";
 import LivingCosts from "./LivingCosts";
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
-import { Root } from "@/types/country";
+import { Study_Country } from "@/types/country";
 import Image from "next/image";
 
-const TabsSection = ({ countryInfo }: { countryInfo: Root }) => {
+const TabsSection = ({ countryInfo }: { countryInfo: Study_Country }) => {
   const [activeTab, setActiveTab] = useState("tab1");
 
   return (

@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
-
 type List = {
   title: string;
   content: string;
@@ -49,7 +48,7 @@ const Step9 = ({
   >({
     mutationFn: (formData) =>
       axios.post(
-        `${apiUrl}/step_by_step_country/${countryName}/add_admission_requirements/`,
+        `${apiUrl}/step_by_step_country/${countryName}/add_visa_procedures/`,
         formData,
       ),
   });

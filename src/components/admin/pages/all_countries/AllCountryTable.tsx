@@ -9,10 +9,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Root } from "@/types/country";
+import { Study_Country } from "@/types/country";
 import Link from "next/link";
 
-const AllCountryTable = ({ countries }: { countries: Root[] }) => {
+const AllCountryTable = ({ countries }: { countries: Study_Country[] }) => {
   return (
     <div>
       <h2 className="mb-5 text-xl font-semibold">All country list</h2>

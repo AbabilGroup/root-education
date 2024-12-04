@@ -1,7 +1,11 @@
-import { Root } from "@/types/country";
+import { Study_Country } from "@/types/country";
 import ApplicationProceduresCard from "./ApplicationProceduresCard";
 
-const ApplicationProcedures = ({ countryInfo }: { countryInfo: Root }) => {
+const ApplicationProcedures = ({
+  countryInfo,
+}: {
+  countryInfo: Study_Country;
+}) => {
   return (
     <div className="mt-10 grid grid-cols-1 gap-10 xl:grid-cols-2">
       {countryInfo.application_procedures.applicationprocedureslist.map(

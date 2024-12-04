@@ -4,18 +4,24 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { removeFields } from "@/lib/utils";
 import { apiUrl } from "@/secrets";
-import { Root } from "@/types/country";
+import { Study_Country } from "@/types/country";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import { toast } from "sonner";
-import { removeFields } from "@/lib/utils";
 
-const EditStudyCountryForm = ({ country }: { country: Root }) => {
-  const { control, register, handleSubmit, reset } = useForm<Root>({
+const EditStudyCountryForm = ({
+  country,
+}: {
+  country: Partial<Study_Country>;
+}) => {
+  const { control, register, handleSubmit, reset } = useForm<
+    Partial<Study_Country>
+  >({
     defaultValues: country,
   });
 
@@ -106,7 +112,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     remove: cityRemove,
   } = useFieldArray({
     control,
-    name: `city`,
+    name: `cities`,
   });
 
   const {
@@ -124,15 +130,19 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
     mutate,
     isPending,
     isSuccess,
-  } = useMutation<AxiosResponse, unknown, Root>({
+  } = useMutation<AxiosResponse, unknown, FormData>({
     mutationFn: (formData) =>
       axios.put(`${apiUrl}/study_country/${country.slug}/`, formData),
   });
 
-  const handleUpdateCountry: SubmitHandler<Root> = (data) => {
-    const cleanedData = removeFields(data);
+  const handleUpdateCountry: SubmitHandler<Partial<Study_Country>> = (data) => {
+    console.log("🚀 ~ EditStudyCountryForm ~ data:", data);
 
-    mutate(cleanedData);
+    const formData = new FormData();
+
+    formData.append("data", JSON.stringify(removeFields(data)));
+
+    mutate(formData);
   };
 
   useEffect(() => {
@@ -157,12 +167,7 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
         {/* Country Name */}
         <div>
           <Label>Country Name</Label>
-          <Input
-            {...register("country")}
-            type="text"
-            defaultValue={country.country}
-            required
-          />
+          <Input {...register("country")} type="text" />
         </div>
 
         {/* flag */}
@@ -179,8 +184,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
               {...register(`box1.title`)}
               type="text"
               placeholder="Title"
-              defaultValue={country.box1?.title}
-              required
             />
           </div>
 
@@ -198,8 +201,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     )}
                     rows={5}
                     placeholder="Content"
-                    defaultValue={field.description}
-                    required
                   />
                   <button
                     className="rounded-full bg-primary p-1"
@@ -230,8 +231,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
             <Textarea
               {...register(`whystudy.short_breaf`)}
               placeholder="Short brief"
-              defaultValue={country.whystudy?.short_breaf}
-              required
             />
           </div>
           <div className="space-y-3">
@@ -246,14 +245,12 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                       `whystudy.whystudylist.${index}.title` as const,
                     )}
                     placeholder="Title"
-                    defaultValue={field.title}
                   />
                   <Textarea
                     {...register(
                       `whystudy.whystudylist.${index}.content` as const,
                     )}
                     placeholder="Content"
-                    defaultValue={field.content}
                   />
                 </div>
                 <button
@@ -285,8 +282,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
               {...register(`costofliving.short_breaf`)}
               className="mb-2"
               placeholder="Short brief"
-              defaultValue={country.costofliving?.short_breaf}
-              required
             />
 
             <div className="space-y-5">
@@ -304,14 +299,12 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                           `costofliving.fees.${index}.title` as const,
                         )}
                         placeholder="Title"
-                        defaultValue={field.title}
                       />
                       <Textarea
                         {...register(
                           `costofliving.fees.${index}.range` as const,
                         )}
                         placeholder="Range"
-                        defaultValue={field.range}
                       />
                     </div>
                     <button
@@ -347,14 +340,12 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     <Input
                       {...register(`costofliving.list.${index}.title` as const)}
                       placeholder="Title"
-                      defaultValue={field.title}
                     />
                     <Textarea
                       {...register(
                         `costofliving.list.${index}.content` as const,
                       )}
                       placeholder="Range"
-                      defaultValue={field.content}
                     />
                   </div>
                   <button
@@ -386,8 +377,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
             <Textarea
               {...register(`jobopportunity.short_breaf`)}
               placeholder="Short brief"
-              defaultValue={country.jobopportunity?.short_breaf}
-              required
             />
           </div>
           {jobFields.map((field, index) => (
@@ -399,12 +388,10 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                 <Input
                   {...register(`jobopportunity.list.${index}.title` as const)}
                   placeholder="Title"
-                  defaultValue={field.title}
                 />
                 <Textarea
                   {...register(`jobopportunity.list.${index}.content` as const)}
                   placeholder="Content"
-                  defaultValue={field.content}
                 />
               </div>
               <button
@@ -432,8 +419,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
             <Textarea
               {...register(`scholarship.short_breaf`)}
               placeholder="Short brief"
-              defaultValue={country.scholarship?.short_breaf}
-              required
             />
           </div>
 
@@ -448,40 +433,30 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     `scholarship.scholarshiplist.${index}.name` as const,
                   )}
                   placeholder="Scholarship Name"
-                  defaultValue={field.name}
-                  required
                 />
                 <Input
                   {...register(
                     `scholarship.scholarshiplist.${index}.criteria` as const,
                   )}
                   placeholder="Eligibility Criteria"
-                  defaultValue={field.criteria}
-                  required
                 />
                 <Input
                   {...register(
                     `scholarship.scholarshiplist.${index}.coverage` as const,
                   )}
                   placeholder="Coverage"
-                  defaultValue={field.coverage}
-                  required
                 />
                 <Input
                   {...register(
                     `scholarship.scholarshiplist.${index}.deadline` as const,
                   )}
                   placeholder="Application Deadline"
-                  defaultValue={field.deadline}
-                  required
                 />
                 <Input
                   {...register(
                     `scholarship.scholarshiplist.${index}.process` as const,
                   )}
                   placeholder="Application Process"
-                  defaultValue={field.process}
-                  required
                 />
               </div>
               <button
@@ -518,8 +493,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
             <Textarea
               {...register(`application_procedures.short_breaf`)}
               placeholder="Short brief"
-              defaultValue={country.application_procedures?.short_breaf}
-              required
             />
           </div>
           {appProcedureFields.map((field, index) => (
@@ -533,14 +506,12 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     `application_procedures.applicationprocedureslist.${index}.title` as const,
                   )}
                   placeholder="Title"
-                  defaultValue={field.title}
                 />
                 <Textarea
                   {...register(
                     `application_procedures.applicationprocedureslist.${index}.content` as const,
                   )}
                   placeholder="Content"
-                  defaultValue={field.content}
                 />
               </div>
               <button
@@ -563,16 +534,14 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
           </button>
         </div>
 
-        {/* application Requirements  */}
+        {/* admission Requirements  */}
 
         <div className="space-y-5">
           <div>
-            <Label>Application Requirements</Label>
+            <Label>Admission Requirements</Label>
             <Textarea
               {...register(`admission_requirments.short_breaf`)}
               placeholder="Short brief"
-              defaultValue={country.admission_requirments?.short_breaf}
-              required
             />
           </div>
           {appReqFields.map((field, index) => (
@@ -586,14 +555,12 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     `admission_requirments.list.${index}.title` as const,
                   )}
                   placeholder="Title"
-                  defaultValue={field.title}
                 />
                 <Textarea
                   {...register(
                     `admission_requirments.list.${index}.content` as const,
                   )}
                   placeholder="Content"
-                  defaultValue={field.content}
                 />
               </div>
               <button
@@ -622,8 +589,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
             <Textarea
               {...register(`visaprocedures.short_breaf`)}
               placeholder="Short brief"
-              defaultValue={country.visaprocedures?.short_breaf}
-              required
             />
           </div>
           {visaProFields.map((field, index) => (
@@ -636,14 +601,10 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                   type="text"
                   {...register(`visaprocedures.list.${index}.title` as const)}
                   placeholder="Category"
-                  defaultValue={field.title}
-                  required
                 />
                 <Textarea
                   {...register(`visaprocedures.list.${index}.content` as const)}
                   placeholder="Details"
-                  defaultValue={field.content}
-                  required
                 />
               </div>
               <button
@@ -676,19 +637,18 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                   <Label>City Name</Label>
                   <Input
                     type="text"
-                    {...register(`city.${index}.name` as const)}
+                    {...register(`cities.${index}.name` as const)}
                     placeholder="City Name"
-                    defaultValue={field.name}
                   />
                 </div>
-                {/* <div>
+                <div>
                   <Label>City Photo</Label>
                   <Input
                     type="file"
-                    {...register(`city.${index}.logo` as const)}
+                    {...register(`cities.${index}.logo` as const)}
                     placeholder="City Photo"
                   />
-                </div> */}
+                </div>
               </div>
               <button
                 className="basis-auto rounded-full bg-primary p-1"
@@ -722,8 +682,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     type="text"
                     {...register(`faq.${index}.question` as const)}
                     placeholder="Question"
-                    defaultValue={field.question}
-                    required
                   />
                 </div>
                 <div>
@@ -731,8 +689,6 @@ const EditStudyCountryForm = ({ country }: { country: Root }) => {
                     {...register(`faq.${index}.answer` as const)}
                     rows={5}
                     placeholder="Answer"
-                    defaultValue={field.answer}
-                    required
                   />
                 </div>
               </div>

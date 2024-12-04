@@ -1,6 +1,6 @@
 import EditStudyCountryForm from "@/components/admin/pages/edit_study_country/EditStudyCountryForm";
 import { getCountryBySlug } from "@/services/getCountryBySlug";
-import { Root } from "@/types/country";
+import { Study_Country } from "@/types/country";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const EditStudyCountry = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
-  const country: Root = await getCountryBySlug(slug);
+  const country: Study_Country = await getCountryBySlug(slug);
 
   return (
     <main className="p-10">

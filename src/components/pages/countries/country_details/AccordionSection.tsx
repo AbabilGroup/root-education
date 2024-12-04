@@ -1,4 +1,4 @@
-import { Root } from "@/types/country";
+import { Study_Country } from "@/types/country";
 import AdmissionRequirements from "./AdmissionRequirements";
 import ApplicationProcedures from "./ApplicationProcedures";
 import InfoAccordion from "./InfoAccordion";
@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const AccordionSection = ({ countryInfo }: { countryInfo: Root }) => {
+const AccordionSection = ({ countryInfo }: { countryInfo: Study_Country }) => {
   return (
     <section>
       <div className="container">
@@ -58,7 +58,7 @@ const AccordionSection = ({ countryInfo }: { countryInfo: Root }) => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {countryInfo.visaprocedures.list.map((info) => (
+                      {countryInfo.visaprocedures?.list.map((info) => (
                         <TableRow
                           className="text-sm font-medium"
                           key={info.title}

@@ -37,10 +37,19 @@ const NavCountries = () => {
   return (
     <div className="grid w-[650px] grid-cols-3 gap-y-3 p-4 text-sm">
       {data?.data?.results?.map(
-        (country: { id: number; country: string; slug: string }) => (
+        (country: {
+          id: number;
+          country: string;
+          slug: string;
+          route_slug: string;
+        }) => (
           <div key={country.id}>
             <NavigationMenuItem className="list-none">
-              <Link href="/countries/study-in-romania" legacyBehavior passHref>
+              <Link
+                href={`/countries/${country.route_slug}`}
+                legacyBehavior
+                passHref
+              >
                 <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
                   <Image
                     src="/icons/flag.svg"
