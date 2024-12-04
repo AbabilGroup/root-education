@@ -11,6 +11,7 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+import { toast } from "sonner";
 
 type Faq = {
   question: string;
@@ -39,7 +40,7 @@ const Step11 = ({
     name: "faqs",
   });
 
-  const { mutate, isPending, isSuccess } = useMutation<
+  const { mutate, isPending, isSuccess, isError, error } = useMutation<
     AxiosResponse,
     unknown,
     FormValues
@@ -60,8 +61,18 @@ const Step11 = ({
       setCountryName("");
 
       reset();
+
+      toast.success("Study country added successfully");
     }
-  }, [isSuccess, reset, setCountryName]);
+
+    if (isError) {
+      toast.error("Something went wrong! Could not add the study country");
+    }
+
+    if (error) {
+      console.error(error);
+    }
+  }, [isSuccess, reset, setCountryName, isError, error]);
 
   return (
     <TabsContent value="step11">
