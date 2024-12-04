@@ -24,6 +24,7 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
   const { slug } = params;
 
   const countryInfo = await getCountryBySlug(slug);
+  console.log("🚀 ~ CountryDetailsPage ~ countryInfo:", countryInfo);
 
   return (
     <main>

@@ -2,8 +2,6 @@ import { Study_Country } from "@/types/country";
 import AdmissionForm from "./AdmissionForm";
 
 const TopSection = ({ countryInfo }: { countryInfo: Study_Country }) => {
-  console.log("🚀 ~ TopSection ~ countryInfo:", countryInfo.box1);
-
   return (
     <section className="pb-[50px] pt-[100px]">
       <div className="container flex flex-col gap-x-20 gap-y-20 lg:flex-row">
