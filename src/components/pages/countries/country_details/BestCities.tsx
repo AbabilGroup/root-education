@@ -10,13 +10,13 @@ const BestCities = ({ countryInfo }: { countryInfo: Study_Country }) => {
       title={`Best Cities for Studying ${countryInfo.country}`}
     >
       <div className="container">
-        <div className="flex items-center justify-center gap-x-10">
+        <div className="flex flex-wrap items-center justify-center gap-10">
           {countryInfo.cities.map((city) => (
             <FadeInUpWithSlowBounce className="space-y-4" key={city.name}>
               <div className="mx-auto size-[150px] rounded-full bg-white p-1">
                 <div className="relative mx-auto min-h-full">
                   <Image
-                    className="rounded-full object-contain object-center"
+                    className="rounded-full border-2 border-dotted border-primary object-cover object-center"
                     src={city.logo as string}
                     alt={city.name}
                     fill

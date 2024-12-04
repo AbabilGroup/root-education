@@ -17,7 +17,7 @@ import { capitalizeSlug } from "@/lib/utils";
 
 const AddStudyCountryForm = () => {
   const [activeTab, setActiveTab] = useState("step1");
-  const [countryName, setCountryName] = useState("");
+  const [countryName, setCountryName] = useState("serbia");
 
   return (
     <>
