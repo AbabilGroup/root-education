@@ -52,7 +52,7 @@ const NavCountries = () => {
                 passHref
               >
                 <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
-                  <Image src={country.flag} alt="Flag" height={30} width={30} />
+                  <Image src={country.flag} alt={country.country} height={30} width={30} />
                   <span>Study in {country.country}</span>
                 </NavigationMenuLink>
               </Link>
