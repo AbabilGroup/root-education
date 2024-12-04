@@ -25,7 +25,6 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
 
   const countryInfo = await getCountryBySlug(slug);
 
-
   return (
     <main>
       <PageBanner PageName={formatCountryRoute(slug)} />
