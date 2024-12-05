@@ -157,6 +157,8 @@ const EditStudyCountryForm = ({
     }
   }, [reset, country, isSuccess, error, EditCountryData]);
 
+  console.log(EditCountryData);
+
   return (
     <div className="mt-10 w-1/2">
       <form
@@ -320,7 +322,7 @@ const EditStudyCountryForm = ({
               <button
                 className="rounded-full bg-primary p-1"
                 type="button"
-                onClick={() => feeAppend({ icon: "", title: "", range: "" })}
+                onClick={() => feeAppend({ title: "", range: "" })}
               >
                 <FaPlusCircle className="text-xl text-white" />
               </button>
@@ -362,7 +364,7 @@ const EditStudyCountryForm = ({
             <button
               className="rounded-full bg-primary p-1"
               type="button"
-              onClick={() => costAppend({ icon: "", title: "", content: "" })}
+              onClick={() => costAppend({ title: "", content: "" })}
             >
               <FaPlusCircle className="text-xl text-white" />
             </button>
@@ -406,7 +408,7 @@ const EditStudyCountryForm = ({
           <button
             className="rounded-full bg-primary p-1"
             type="button"
-            onClick={() => jobAppend({ icon: "", title: "", content: "" })}
+            onClick={() => jobAppend({ title: "", content: "" })}
           >
             <FaPlusCircle className="text-xl text-white" />
           </button>
@@ -526,9 +528,7 @@ const EditStudyCountryForm = ({
           <button
             className="rounded-full bg-primary p-1"
             type="button"
-            onClick={() =>
-              appProcedureAppend({ icon: "", title: "", content: "" })
-            }
+            onClick={() => appProcedureAppend({ title: "", content: "" })}
           >
             <FaPlusCircle className="text-xl text-white" />
           </button>
@@ -575,7 +575,7 @@ const EditStudyCountryForm = ({
           <button
             className="rounded-full bg-primary p-1"
             type="button"
-            onClick={() => appReqAppend({ icon: "", title: "", content: "" })}
+            onClick={() => appReqAppend({ title: "", content: "" })}
           >
             <FaPlusCircle className="text-xl text-white" />
           </button>

@@ -36,7 +36,7 @@ const NavCountries = () => {
 
   return (
     <div className="grid w-[650px] grid-cols-3 gap-y-3 p-4 text-sm">
-      {data?.data?.results?.map(
+      {data?.data?.map(
         (country: {
           id: number;
           country: string;
@@ -53,7 +53,7 @@ const NavCountries = () => {
               >
                 <NavigationMenuLink className="flex items-center justify-start gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
                   <Image
-                    className="rounded-full border"
+                    className="size-[30px] rounded-full border"
                     src={country.flag}
                     alt={country.country}
                     height={30}

@@ -8,8 +8,14 @@ import {
 } from "@/components/ui/carousel";
 import UniversityLogoCard from "./UniversityLogoCard";
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
+import { getAllUniversities } from "@/services/getAllUniversities";
+import { University } from "@/types/university";
 
-const OurPartnersUniversities = () => {
+const OurPartnersUniversities = async () => {
+  const universityData = await getAllUniversities();
+
+  const universities = universityData.results;
+
   return (
     <Section
       sectionName="Our Partners Universities"
@@ -21,40 +27,15 @@ const OurPartnersUniversities = () => {
             align: "start",
           }}
         >
-          <CarouselContent>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
-            <CarouselItem className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6">
-              <UniversityLogoCard />
-            </CarouselItem>
+          <CarouselContent className="py-5">
+            {universities.map((university: University) => (
+              <CarouselItem
+                className="flex basis-full items-center justify-center md:basis-1/2 lg:basis-1/3 xl:basis-1/6"
+                key={university.id}
+              >
+                <UniversityLogoCard university={university} />
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

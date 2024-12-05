@@ -8,10 +8,11 @@ export const metadata: Metadata = {
 
 const AllCountriesPage = async () => {
   const countries = await getAllCountries();
+  console.log("🚀 ~ AllCountriesPage ~ countries:", countries);
 
   return (
     <main className="p-10">
-      <AllCountryTable countries={countries.results} />
+      <AllCountryTable countries={countries} />
     </main>
   );
 };

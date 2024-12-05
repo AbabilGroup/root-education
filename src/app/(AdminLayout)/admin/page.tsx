@@ -4,7 +4,7 @@ import { FaUniversity } from "react-icons/fa";
 import { FaEarthAmericas } from "react-icons/fa6";
 
 const DashboardPage = async () => {
-  const universities = await getAllUniversities();
+  const universities = await getAllUniversities({ limit: "all" });
 
   const countries = await getAllCountries();
 
@@ -28,7 +28,7 @@ const DashboardPage = async () => {
           </div>
           <div>
             <h4 className="text-xl font-semibold">Total Countries</h4>
-            <p className="font-medium">{countries.results.length}</p>
+            <p className="font-medium">{countries.length}</p>
           </div>
         </div>
       </div>

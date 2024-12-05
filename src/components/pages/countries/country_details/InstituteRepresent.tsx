@@ -1,8 +1,13 @@
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 import Section from "@/components/common/Section";
+import { University } from "@/types/university";
 import Image from "next/image";
 
-const InstituteRepresent = () => {
+const InstituteRepresent = ({
+  partnerUniversities,
+}: {
+  partnerUniversities: University[];
+}) => {
   return (
     <Section
       sectionName="Institute we represent for Countries"
@@ -10,57 +15,27 @@ const InstituteRepresent = () => {
     >
       <div className="container">
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-6">
-          {/* card  */}
-          <FadeInUpWithSlowBounce className="flex max-w-[500px] items-center justify-start gap-x-4 rounded-full border p-4 shadow-sm">
-            <Image
-              className="rounded-full"
-              src="/icons/university_logo.svg"
-              alt="University"
-              height={70}
-              width={70}
-            />
+          {partnerUniversities.map((university) => (
+            <FadeInUpWithSlowBounce
+              className="flex w-[500px] min-h-[100px] items-center justify-start gap-x-4 rounded-full border px-4 py-2 shadow-sm"
+              key={university.id}
+            >
+              <Image
+                className="rounded-full"
+                src={university.logo as string}
+                alt={university.name}
+                height={70}
+                width={70}
+              />
 
-            <div className="space-y-2">
-              <h5 className="text-xl font-medium">
-                Spiru haret University, Romania
-              </h5>
-              <h6 className="text-sm font-medium">Romania</h6>
-            </div>
-          </FadeInUpWithSlowBounce>
-          {/* card  */}
-          <FadeInUpWithSlowBounce className="flex max-w-[500px] items-center justify-start gap-x-4 rounded-full border p-4 shadow-sm">
-            <Image
-              className="rounded-full"
-              src="/icons/university_logo.svg"
-              alt="University"
-              height={70}
-              width={70}
-            />
-
-            <div className="space-y-2">
-              <h5 className="text-xl font-medium">
-                Spiru haret University, Romania
-              </h5>
-              <h6 className="text-sm font-medium">Romania</h6>
-            </div>
-          </FadeInUpWithSlowBounce>
-          {/* card  */}
-          <FadeInUpWithSlowBounce className="flex max-w-[500px] items-center justify-start gap-x-4 rounded-full border p-4 shadow-sm">
-            <Image
-              className="rounded-full"
-              src="/icons/university_logo.svg"
-              alt="University"
-              height={70}
-              width={70}
-            />
-
-            <div className="space-y-2">
-              <h5 className="text-xl font-medium">
-                Spiru haret University, Romania
-              </h5>
-              <h6 className="text-sm font-medium">Romania</h6>
-            </div>
-          </FadeInUpWithSlowBounce>
+              <div className="">
+                <h5 className="text-lg font-medium">{university.name}</h5>
+                <h6 className="text-sm font-medium">
+                  {university.short_info.country}
+                </h6>
+              </div>
+            </FadeInUpWithSlowBounce>
+          ))}
         </div>
       </div>
     </Section>

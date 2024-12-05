@@ -13,7 +13,15 @@ import Section from "@/components/common/Section";
 // import { useRouter, useSearchParams } from "next/navigation";
 import UniversityContainer from "./UniversityContainer";
 import { University } from "@/types/university";
-// import { IoGridSharp } from "react-icons/io5";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const UniversitiesWeRepresent = ({
   universityData,
@@ -27,14 +35,14 @@ const UniversitiesWeRepresent = ({
     results: University[];
   };
 }) => {
-  // const router = useRouter();
-  // const searchParams = useSearchParams();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
 
-  // const handlePageChange = (priority: string) => {
-  //   const params = new URLSearchParams(searchParams);
-  //   params.set("total_students", priority);
-  //   router.push(`/universities?${params.toString()}`);
-  // };
+  const handlePageChange = (page: string) => {
+    params.set("page", page);
+    router.push(`/universities?${params.toString()}`);
+  };
 
   return (
     <Section
@@ -81,7 +89,61 @@ const UniversitiesWeRepresent = ({
           </div>
         </div>
       </div> */}
-      <UniversityContainer universityData={universityData} />
+      <UniversityContainer />
+
+      <div className="mt-10">
+        <Pagination>
+          <PaginationContent>
+            {universityData.current_page > 1 && (
+              <PaginationItem>
+                <PaginationPrevious
+                  className="cursor-pointer"
+                  onClick={() =>
+                    handlePageChange(
+                      universityData.previous_page
+                        ? universityData.previous_page?.toString()
+                        : "",
+                    )
+                  }
+                  // href={`/universities?page${universityData.previous_page}`}
+                />
+              </PaginationItem>
+            )}
+            {Array.from({ length: universityData.total_pages }).map(
+              (_, index) => (
+                <PaginationItem key={index}>
+                  <PaginationLink
+                    className="cursor-pointer hover:bg-sidebar-accent"
+                    onClick={() => handlePageChange((index + 1).toString())}
+                    // href={`/universities?page=${index + 1}`}
+                    isActive={
+                      (index + 1).toString() ===
+                      (universityData.current_page || 1).toString()
+                    }
+                  >
+                    {index + 1}
+                  </PaginationLink>
+                </PaginationItem>
+              ),
+            )}
+            {universityData.current_page < universityData.total_pages && (
+              <PaginationItem>
+                <PaginationNext
+                  className="cursor-pointer"
+                  onClick={() =>
+                    handlePageChange(
+                      universityData.next_page
+                        ? universityData.next_page?.toString()
+                        : "",
+                    )
+                  }
+                  // href={`/universities?page${universityData.next_page}`}
+                />
+              </PaginationItem>
+            )}
+          </PaginationContent>
+        </Pagination>
+      </div>
     </Section>
   );
 };

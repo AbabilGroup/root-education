@@ -11,7 +11,7 @@ import { apiUrl } from "@/secrets";
 const NavUniversities = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["universities"],
-    queryFn: () => axios.get(`${apiUrl}/all_university/`),
+    queryFn: () => axios.get(`${apiUrl}/all_university/?limit=all`),
   });
 
   if (isLoading)
@@ -59,9 +59,9 @@ const NavUniversities = () => {
               >
                 <NavigationMenuLink className="flex items-center gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
                   <Image
-                    className="rounded-full border"
+                    className="size-[30px] rounded-full border"
                     src={university.logo ? university.logo : ""}
-                    alt=""
+                    alt={university.name}
                     height={30}
                     width={30}
                   />

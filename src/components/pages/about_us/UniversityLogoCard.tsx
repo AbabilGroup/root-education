@@ -1,12 +1,13 @@
+import { University } from "@/types/university";
 import Image from "next/image";
 
-const UniversityLogoCard = () => {
+const UniversityLogoCard = ({ university }: { university: University }) => {
   return (
     <div className="relative size-[190px]">
       <Image
-        className="object-contain object-center"
-        src="/images/pages/about_us/university_logo.png"
-        alt="university logo"
+        className="rounded-full border object-cover object-center shadow"
+        src={university.logo as string}
+        alt={university.name}
         fill
       />
       <div className="absolute right-0 top-0 p-5 text-white"></div>

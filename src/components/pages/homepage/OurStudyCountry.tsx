@@ -9,8 +9,12 @@ import {
 } from "@/components/ui/carousel";
 import StudyCountryCard from "./StudyCountryCard";
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
+import { getAllCountries } from "@/services/getAllCountries";
+import { Study_Country } from "@/types/country";
 
-const OurStudyCountry = () => {
+const OurStudyCountry = async () => {
+  const countries = await getAllCountries();
+
   return (
     <Section
       sectionName="Our Study Country"
@@ -23,39 +27,14 @@ const OurStudyCountry = () => {
           }}
         >
           <CarouselContent>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
-            <CarouselItem className="basis-full md:basis-1/2 xl:basis-1/3">
-              <StudyCountryCard />
-            </CarouselItem>
+            {countries.map((country: Study_Country) => (
+              <CarouselItem
+                className="basis-full md:basis-1/2 xl:basis-1/3"
+                key={country.id}
+              >
+                <StudyCountryCard country={country} />
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />

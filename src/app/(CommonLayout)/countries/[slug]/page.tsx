@@ -6,7 +6,9 @@ import InstituteRepresent from "@/components/pages/countries/country_details/Ins
 import TabsSection from "@/components/pages/countries/country_details/TabsSection";
 import TopSection from "@/components/pages/countries/country_details/TopSection";
 import { formatCountryRoute } from "@/lib/utils";
+import { getAllUniversities } from "@/services/getAllUniversities";
 import { getCountryBySlug } from "@/services/getCountryBySlug";
+import { University } from "@/types/university";
 
 type TCountryDetailsPageProps = {
   params: { slug: string };
@@ -24,7 +26,15 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
   const { slug } = params;
 
   const countryInfo = await getCountryBySlug(slug);
-  console.log("🚀 ~ CountryDetailsPage ~ countryInfo:", countryInfo);
+  const universitiesData = await getAllUniversities();
+  const universities = universitiesData.results;
+
+  const partnerUniversities = universities.filter(
+    (university: University) =>
+      university.short_info.country === countryInfo.country,
+  );
+
+  console.log(partnerUniversities);
 
   return (
     <main>
@@ -38,7 +48,9 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
 
       <BestCities countryInfo={countryInfo} />
 
-      <InstituteRepresent />
+      {partnerUniversities.length >= 1 && (
+        <InstituteRepresent partnerUniversities={partnerUniversities} />
+      )}
 
       <FAQ countryInfo={countryInfo} />
     </main>

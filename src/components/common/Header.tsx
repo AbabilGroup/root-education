@@ -25,6 +25,11 @@ import {
   IoIosArrowForward,
   IoMdArrowDropright,
 } from "react-icons/io";
+import { useQuery } from "@tanstack/react-query";
+import { apiUrl } from "@/secrets";
+import axios from "axios";
+import { Study_Country } from "@/types/country";
+import { University } from "@/types/university";
 
 const Header = () => {
   const pathname = usePathname();
@@ -34,12 +39,19 @@ const Header = () => {
   const [isCountriesOpen, setIsCountriesOpen] = useState(false);
   const [isUniversitiesOpen, setIsUniversitiesOpen] = useState(false);
 
-  // const { isLoading, data } = useQuery({
-  //   queryKey: ["countries"],
-  //   queryFn: () => axios.get(`${apiUrl}/study_country`),
-  // });
+  const { isLoading: countryLoading, data: countryData } = useQuery({
+    queryKey: ["countries"],
+    queryFn: () => axios.get(`${apiUrl}/study_country/`),
+  });
 
-  // console.log(data);
+  const countries = countryData?.data;
+
+  const { isLoading: UniversityLoading, data: universityData } = useQuery({
+    queryKey: ["universities"],
+    queryFn: () => axios.get(`${apiUrl}/all_university/?limit=all`),
+  });
+
+  const universities = universityData?.data.results;
 
   return (
     <header className="sticky top-0 z-[10000] bg-white py-3 shadow">
@@ -161,19 +173,28 @@ const Header = () => {
                       )}
                     </CollapsibleTrigger>
                     <CollapsibleContent>
-                      <ul className="">
-                        {servicesLinks.map((service) => (
-                          <li key={service.id}>
-                            <Link
-                              className="my-2 flex items-center justify-start rounded-lg px-2"
-                              href={service.path}
-                              onClick={closeSheet}
-                            >
-                              <IoMdArrowDropright className="text-2xl" />{" "}
-                              {service.name}
-                            </Link>
-                          </li>
-                        ))}
+                      <ul className="space-y-1 py-3 pl-2">
+                        {countryLoading
+                          ? "Loading..."
+                          : countries?.map((country: Study_Country) => (
+                              <li key={country.id}>
+                                <Link
+                                  className="flex items-center justify-start gap-2 rounded-lg p-1 hover:bg-sidebar-accent"
+                                  href={`/countries/${country.route_slug}`}
+                                >
+                                  <Image
+                                    className="size-[30px] rounded-full border"
+                                    src={country.flag as string}
+                                    alt={country.country}
+                                    height={30}
+                                    width={30}
+                                  />
+                                  <span className="font-medium">
+                                    Study in {country.country}
+                                  </span>
+                                </Link>
+                              </li>
+                            ))}
                       </ul>
                     </CollapsibleContent>
                   </Collapsible>
@@ -193,19 +214,28 @@ const Header = () => {
                       )}
                     </CollapsibleTrigger>
                     <CollapsibleContent>
-                      <ul className="">
-                        {servicesLinks.map((service) => (
-                          <li key={service.id}>
-                            <Link
-                              className="my-2 flex items-center justify-start rounded-lg px-2"
-                              href={service.path}
-                              onClick={closeSheet}
-                            >
-                              <IoMdArrowDropright className="text-2xl" />{" "}
-                              {service.name}
-                            </Link>
-                          </li>
-                        ))}
+                      <ul className="space-y-1 py-3 pl-2">
+                        {UniversityLoading
+                          ? "Loading..."
+                          : universities?.map((university: University) => (
+                              <li key={university.id}>
+                                <Link
+                                  className="flex items-center justify-start gap-2 rounded-lg p-1 hover:bg-sidebar-accent"
+                                  href={`/countries/${university.slug}`}
+                                >
+                                  <Image
+                                    className="size-[30px] rounded-full border"
+                                    src={university.logo as string}
+                                    alt={university.short_info.country}
+                                    height={30}
+                                    width={30}
+                                  />
+                                  <span className="font-medium">
+                                    {university.name}
+                                  </span>
+                                </Link>
+                              </li>
+                            ))}
                       </ul>
                     </CollapsibleContent>
                   </Collapsible>

@@ -5,7 +5,7 @@ import { getAllUniversities } from "@/services/getAllUniversities";
 import Link from "next/link";
 
 const OurPartnersUniversity = async () => {
-  const universityData = await getAllUniversities();
+  const universityData = await getAllUniversities({ limit: 6 });
 
   const universities = universityData.results;
 
