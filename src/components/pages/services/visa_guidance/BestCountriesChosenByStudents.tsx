@@ -8,50 +8,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import EuropeStudyCountryCard from "./EuropeStudyCountryCard";
+import { getAllCountries } from "@/services/getAllCountries";
+import { Study_Country } from "@/types/country";
 
-const BestCountriesChosenByStudents = () => {
-  const EuropeStudyCountries = [
-    {
-      name: "Romania",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/romania.png",
-    },
-    {
-      name: "Malta",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/malta.png",
-    },
-    {
-      name: "Hungary",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/hungary.png",
-    },
-    {
-      name: "Lithuania",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/lithuania.png",
-    },
-    {
-      name: "Latvia",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/latvia.png",
-    },
-    {
-      name: "Bulgaria",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/bulgaria.png",
-    },
-    {
-      name: "Georgia",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/georgia.png",
-    },
-    {
-      name: "Russia",
-      photo:
-        "/images/pages/services/study_abroad_consultation/study_europe/russia.png",
-    },
-  ];
+const BestCountriesChosenByStudents = async () => {
+  const countries = await getAllCountries();
 
   return (
     <Section
@@ -65,14 +26,15 @@ const BestCountriesChosenByStudents = () => {
           }}
         >
           <CarouselContent>
-            {EuropeStudyCountries.map((country) => (
+            {countries.map((country: Study_Country) => (
               <CarouselItem
                 className="basis-full md:basis-1/2 xl:basis-1/4"
-                key={country.name}
+                key={country.id}
               >
                 <EuropeStudyCountryCard
-                  imageUrl={country.photo}
-                  name={country.name}
+                  imageUrl={country.photo ? (country.photo as string) : ""}
+                  name={country.country}
+                  slug={country.route_slug}
                 />
               </CarouselItem>
             ))}

@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/Button";
+import FooterCountryLinks from "./FooterCountryLinks";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -297,19 +298,7 @@ const Footer = () => {
           </div>
           <div className="basis-[25%] space-y-7 text-white">
             <span className="border-b-[1px] pb-1 text-xl">Study Countries</span>
-            <ul className="flex flex-col justify-between gap-4">
-              {footerLinks.study_countries.map((link) => (
-                <li className="flex items-center" key={link.label}>
-                  <IoMdArrowDropright className="text-2xl" />
-                  <Link
-                    className="duration-200 hover:text-primary"
-                    href={link.href}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <FooterCountryLinks />
           </div>
         </div>
         <div className="container">

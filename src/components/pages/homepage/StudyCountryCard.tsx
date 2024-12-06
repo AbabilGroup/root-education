@@ -10,7 +10,7 @@ const StudyCountryCard = ({ country }: { country: Study_Country }) => {
       <div className="relative min-h-[210px]">
         <Image
           className="h-full w-full"
-          src="/images/study_country_image.png"
+          src={country.photo ? (country.photo as string) : ""}
           alt={country.country}
           fill
         />
