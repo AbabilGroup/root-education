@@ -33,7 +33,12 @@ const AllUniversityTable = ({
         {universities?.map((university) => (
           <TableRow key={university.slug}>
             <TableCell className="border-2 font-medium">
-              {university?.name}
+              <Link
+                className="hover:underline"
+                href={`/universities/${university.slug}`}
+              >
+                {university?.name}
+              </Link>
             </TableCell>
             <TableCell className="border-2 font-medium">
               {university?.short_info?.country}

@@ -41,7 +41,7 @@ const AdminLoginForm = () => {
 
       // Save token to cookies
       Cookies.set("token", token, {
-        expires: 7,
+        expires: 1,
         secure: true,
       });
 
@@ -60,7 +60,6 @@ const AdminLoginForm = () => {
       toast.error("An error occurred while trying to login");
     }
   }, [isSuccess, isError, data?.data?.auth_token, router, error]);
-
 
   return (
     <form

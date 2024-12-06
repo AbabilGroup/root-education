@@ -178,6 +178,12 @@ const EditStudyCountryForm = ({
           <Input {...register("flag")} type="file" />
         </div>
 
+        {/* flag */}
+        <div>
+          <Label>Photo</Label>
+          <Input {...register("photo")} type="file" />
+        </div>
+
         {/* box 1  */}
         <div className="space-y-2">
           <div>

@@ -32,7 +32,12 @@ const AllCountryTable = ({ countries }: { countries: Study_Country[] }) => {
           {countries?.map((country) => (
             <TableRow key={country.slug}>
               <TableCell className="border-2 font-medium">
-                {country.country}
+                <Link
+                  className="hover:underline"
+                  href={`/countries/${country.route_slug}`}
+                >
+                  {country.country}
+                </Link>
               </TableCell>
               <TableCell className="border-2">
                 <div className="flex items-center justify-center">

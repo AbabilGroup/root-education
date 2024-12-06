@@ -7,6 +7,8 @@ export type Study_Country = {
 
   flag?: File | null | FileList | string;
 
+  photo?: File | null | FileList | string;
+
   route_slug: string;
 
   box1: Box1;
