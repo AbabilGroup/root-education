@@ -3,15 +3,46 @@
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { apiUrl } from "@/secrets";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { useEffect } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const GetInTouchContactForm = () => {
   const { register, handleSubmit, reset } = useForm();
 
+  const { mutate, isPending, isError, error, isSuccess, data } = useMutation<
+    AxiosResponse,
+    unknown,
+    FieldValues
+  >({
+    mutationFn: async (data) => await axios.post(`${apiUrl}/contact/`, data),
+  });
+
   const handleContactForm: SubmitHandler<FieldValues> = (data) => {
     console.log("🚀 ~ GetInTouchContactForm ~ data:", data);
-    reset();
+
+    mutate(data);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      reset();
+      toast.success(`Thanks for contacting us!`);
+    }
+
+    if (isError) {
+      toast.error(`Could not submit the contact form!`);
+    }
+
+    if (error) {
+      console.error(error);
+    }
+  }, [isSuccess, isError, error, reset]);
+
+  console.log(data);
 
   return (
     <form
@@ -34,20 +65,22 @@ const GetInTouchContactForm = () => {
         required
       />
       <Input
-        {...register("phone")}
+        {...register("phone_number")}
         className="rounded-sm focus:ring-primary"
         type="tel"
         placeholder="Phone number"
         required
       />
       <Textarea
-        {...register("massage")}
+        {...register("message")}
         className="rounded-sm focus:ring-primary"
         placeholder="Write your massage"
         rows={5}
         required
       />
-      <Button type="submit">Send Message</Button>
+      <Button type="submit" disabled={isPending}>
+        {isPending ? "Processing..." : "Send Message"}
+      </Button>
     </form>
   );
 };
