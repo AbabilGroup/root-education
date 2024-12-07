@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { removeFields } from "@/lib/utils";
 import { apiUrl } from "@/secrets";
 import { Study_Country } from "@/types/country";
 import { useMutation } from "@tanstack/react-query";
@@ -130,17 +129,52 @@ const EditStudyCountryForm = ({
     mutate,
     isPending,
     isSuccess,
+    isError,
   } = useMutation<AxiosResponse, unknown, FormData>({
     mutationFn: (formData) =>
       axios.put(`${apiUrl}/study_country/${country.slug}/`, formData),
   });
 
   const handleUpdateCountry: SubmitHandler<Partial<Study_Country>> = (data) => {
-    console.log("🚀 ~ EditStudyCountryForm ~ data:", data);
-
     const formData = new FormData();
 
-    formData.append("data", JSON.stringify(removeFields(data)));
+    formData.append("data", JSON.stringify(data));
+
+    if (data.flag instanceof FileList && data.flag.length > 0) {
+      formData.append("flag", data.flag[0]);
+    } else if (data.flag instanceof File) {
+      formData.append("flag", data.flag);
+    } else if (typeof data.flag === "string") {
+      formData.append("flag", data.flag);
+    }
+
+    if (data.photo instanceof FileList && data.photo.length > 0) {
+      formData.append("photo", data.photo[0]);
+    } else if (data.photo instanceof File) {
+      formData.append("photo", data.photo);
+    } else if (typeof data.photo === "string") {
+      formData.append("photo", data.photo);
+    }
+
+    if (data.photo instanceof FileList && data.photo.length > 0) {
+      formData.append("photo", data.photo[0]);
+    } else if (data.photo instanceof File) {
+      formData.append("photo", data.photo);
+    } else if (typeof data.photo === "string") {
+      formData.append("photo", data.photo);
+    }
+
+    if (Array.isArray(data.cities)) {
+      data.cities.forEach((city, index) => {
+        if (city.logo instanceof FileList && city.logo.length > 0) {
+          formData.append(`cities[${index}][logo]`, city.logo[0]);
+        } else if (city.logo instanceof File) {
+          formData.append(`cities[${index}][logo]`, city.logo);
+        } else if (typeof city.logo === "string") {
+          formData.append(`cities[${index}][logo]`, city.logo);
+        }
+      });
+    }
 
     mutate(formData);
   };
@@ -153,9 +187,12 @@ const EditStudyCountryForm = ({
 
     if (error) {
       console.error(error);
+    }
+
+    if (isError) {
       toast.error(`Something went wrong when updating`);
     }
-  }, [reset, country, isSuccess, error, EditCountryData]);
+  }, [reset, country, isSuccess, error, EditCountryData, isError]);
 
   console.log(EditCountryData);
 

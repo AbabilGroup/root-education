@@ -105,7 +105,6 @@ const UniversitiesWeRepresent = ({
                         : "",
                     )
                   }
-                  // href={`/universities?page${universityData.previous_page}`}
                 />
               </PaginationItem>
             )}
@@ -115,7 +114,6 @@ const UniversitiesWeRepresent = ({
                   <PaginationLink
                     className="cursor-pointer hover:bg-sidebar-accent"
                     onClick={() => handlePageChange((index + 1).toString())}
-                    // href={`/universities?page=${index + 1}`}
                     isActive={
                       (index + 1).toString() ===
                       (universityData.current_page || 1).toString()
@@ -137,7 +135,6 @@ const UniversitiesWeRepresent = ({
                         : "",
                     )
                   }
-                  // href={`/universities?page${universityData.next_page}`}
                 />
               </PaginationItem>
             )}
