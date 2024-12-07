@@ -40,7 +40,8 @@ const AllCountryTable = () => {
     unknown,
     string
   >({
-    mutationFn: (slug) => axios.delete(`${apiUrl}/study_country/${slug}/`),
+    mutationFn: async (slug) =>
+      await axios.delete(`${apiUrl}/study_country/${slug}/`),
   });
 
   useEffect(() => {

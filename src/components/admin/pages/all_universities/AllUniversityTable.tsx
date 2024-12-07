@@ -48,7 +48,7 @@ const AllUniversityTable = () => {
     unknown,
     string
   >({
-    mutationFn: (slug) => axios.delete(`${apiUrl}/all_university/${slug}/`),
+    mutationFn: async (slug) => await axios.delete(`${apiUrl}/all_university/${slug}/`),
   });
 
   useEffect(() => {

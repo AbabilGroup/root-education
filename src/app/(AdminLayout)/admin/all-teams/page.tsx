@@ -1,8 +1,16 @@
+import AllTeamsTable from "@/components/admin/pages/all_teams/AllTeamsTable";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Root Education | Admin | All Teams",
+};
+
 const AllTeamsPage = () => {
   return (
-    <div>
-      <h1>This is AllTeamsPage component</h1>
-    </div>
+    <main className="p-10">
+      <h2 className="mb-5 text-xl font-semibold">All team members list</h2>
+      <AllTeamsTable />
+    </main>
   );
 };
 
