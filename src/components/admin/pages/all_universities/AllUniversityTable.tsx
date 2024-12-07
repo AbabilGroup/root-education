@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Table,
   TableBody,
@@ -7,14 +10,77 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { University } from "@/types/university";
+import { apiUrl } from "@/secrets";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
 import Link from "next/link";
+import { useEffect } from "react";
+import { toast } from "sonner";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { University } from "@/types/university";
+import { useSearchParams } from "next/navigation";
 
-const AllUniversityTable = ({
-  universities,
-}: {
-  universities: University[];
-}) => {
+const AllUniversityTable = () => {
+  const searchParams = useSearchParams();
+
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ["universities", searchParams.toString()],
+    queryFn: async () => {
+      const paramsString = searchParams.toString();
+      const url = `${apiUrl}/all_university/${paramsString ? `?${paramsString}` : ""}`;
+      const response = await axios.get(url);
+      return response;
+    },
+  });
+
+  const { error, isSuccess, isError, isPending, mutate } = useMutation<
+    AxiosResponse,
+    unknown,
+    string
+  >({
+    mutationFn: (slug) => axios.delete(`${apiUrl}/all_university/${slug}/`),
+  });
+
+  useEffect(() => {
+    if (isSuccess) {
+      refetch();
+      toast.success("University deleted successfully.");
+    }
+
+    if (isError) {
+      toast.error(`Could not delete the university`);
+    }
+
+    if (error) {
+      console.error(error);
+    }
+  }, [error, isSuccess, isError, refetch]);
+
+  if (isLoading)
+    return (
+      <div className="space-y-5">
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+        <Skeleton className="h-[50px] w-full" />
+      </div>
+    );
+
   return (
     <Table className="border-2">
       <TableHeader>
@@ -30,7 +96,7 @@ const AllUniversityTable = ({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {universities?.map((university) => (
+        {data?.data?.results?.map((university: University) => (
           <TableRow key={university.slug}>
             <TableCell className="border-2 font-medium">
               <Link
@@ -52,7 +118,32 @@ const AllUniversityTable = ({
             </TableCell>
             <TableCell className="border-2">
               <div className="flex items-center justify-center">
-                <Button className="bg-red-500 text-white">Delete</Button>
+                <AlertDialog>
+                  <AlertDialogTrigger>
+                    <Button className="bg-red-500 text-white">Delete</Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="bg-white">
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>
+                        Are you absolutely sure?
+                      </AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This action cannot be undone. This will permanently
+                        delete your university and remove the university data
+                        from your servers.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction
+                        disabled={isPending}
+                        onClick={() => mutate(university.slug as string)}
+                      >
+                        {isPending ? "Processing..." : "Continue"}
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </div>
             </TableCell>
           </TableRow>
