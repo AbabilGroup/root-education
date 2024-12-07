@@ -24,7 +24,11 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
+import { apiUrl } from "@/secrets";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z
@@ -70,9 +74,46 @@ const ConsultationForm = () => {
     },
   });
 
+  const { mutate, isPending, isError, error, isSuccess, data } = useMutation<
+    AxiosResponse,
+    unknown,
+    {
+      message: string;
+      name: string;
+      email: string;
+      phone_number: string;
+      destination: string;
+      meeting_format: string;
+      apply_for: string;
+    }
+  >({
+    mutationFn: async (data) =>
+      await axios.post(`${apiUrl}/appointment/`, data),
+  });
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+
+    // Directly pass the plain object into mutate
+    mutate(values);
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      form.reset();
+      toast.success(`Successfully booked an appointment!`);
+    }
+
+    if (isError) {
+      toast.error(`Could not book the appointment!`);
+    }
+
+    if (error) {
+      console.error(error);
+    }
+  }, [isSuccess, isError, error, form]);
+
+  console.log(data);
 
   return (
     <Form {...form}>
@@ -321,8 +362,8 @@ const ConsultationForm = () => {
           </label>
         </div>
         <div className="pt-5">
-          <Button type="submit" disabled={isNotAccepted}>
-            Get start for free Consultation
+          <Button type="submit" disabled={isNotAccepted || isPending}>
+            {isPending ? "Processing..." : "Get start for free Consultation"}
           </Button>
         </div>
       </form>

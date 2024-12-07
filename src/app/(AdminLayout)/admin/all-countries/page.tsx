@@ -1,18 +1,15 @@
 import AllCountryTable from "@/components/admin/pages/all_countries/AllCountryTable";
-import { getAllCountries } from "@/services/getAllCountries";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Root Education | All Countries",
 };
 
-const AllCountriesPage = async () => {
-  const countries = await getAllCountries();
-  console.log("🚀 ~ AllCountriesPage ~ countries:", countries);
-
+const AllCountriesPage = () => {
   return (
     <main className="p-10">
-      <AllCountryTable countries={countries} />
+      <h2 className="mb-5 text-xl font-semibold">All country list</h2>
+      <AllCountryTable />
     </main>
   );
 };
