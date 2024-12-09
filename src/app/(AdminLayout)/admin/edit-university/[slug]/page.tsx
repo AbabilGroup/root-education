@@ -1,16 +1,10 @@
 import EditUniversityForm from "@/components/admin/pages/edit_university/EditUniversityForm";
 import { getUniversityBySlug } from "@/services/getUniversityBySlug";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Root Education | Edit University",
-};
 
 const EditUniversityPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
   const university = await getUniversityBySlug(slug);
-
 
   return (
     <main className="p-10">

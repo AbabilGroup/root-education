@@ -1,11 +1,6 @@
 import EditStudyCountryForm from "@/components/admin/pages/edit_study_country/EditStudyCountryForm";
 import { getCountryBySlug } from "@/services/getCountryBySlug";
 import { Study_Country } from "@/types/country";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Root Education | Edit Study Country",
-};
 
 const EditStudyCountry = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;

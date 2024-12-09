@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/Button";
-import FooterCountryLinks from "./FooterCountryLinks";
+import FooterUniversityLinks from "./FooterUniversityLinks";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -297,8 +297,8 @@ const Footer = () => {
             </ul>
           </div>
           <div className="basis-[25%] space-y-7 text-white">
-            <span className="border-b-[1px] pb-1 text-xl">Study Countries</span>
-            <FooterCountryLinks />
+            <span className="border-b-[1px] pb-1 text-xl">Universities</span>
+            <FooterUniversityLinks />
           </div>
         </div>
         <div className="container">

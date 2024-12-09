@@ -1,8 +1,8 @@
 const AddTestimonialPage = () => {
   return (
-    <div>
+    <main>
       <h1>This is AddTestimonialPage component</h1>
-    </div>
+    </main>
   );
 };
 

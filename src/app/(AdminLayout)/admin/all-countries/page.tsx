@@ -1,9 +1,4 @@
 import AllCountryTable from "@/components/admin/pages/all_countries/AllCountryTable";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Root Education | Admin | All Countries",
-};
 
 const AllCountriesPage = () => {
   return (
