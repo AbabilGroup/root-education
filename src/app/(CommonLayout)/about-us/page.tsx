@@ -1,9 +1,9 @@
 import PageBanner from "@/components/common/PageBanner";
-import Testimonials from "@/components/common/Testimonials";
+// import Testimonials from "@/components/common/Testimonials";
 import AboutUs from "@/components/pages/about_us/AboutUs";
 import GetInTouch from "@/components/pages/about_us/GetInTouch";
 import OurPartnersUniversities from "@/components/pages/about_us/OurPartnersUniversities";
-import OurTeamMembers from "@/components/pages/about_us/OurTeamMembers";
+// import OurTeamMembers from "@/components/pages/about_us/OurTeamMembers";
 import WhyChooseUs from "@/components/pages/about_us/WhyChooseUs";
 import { Metadata } from "next";
 
@@ -16,10 +16,10 @@ const AboutUsPage = () => {
     <main>
       <PageBanner PageName="About Us" bannerBg="bg-about-us-banner-bg" />
       <AboutUs />
-      <OurTeamMembers />
+      {/* <OurTeamMembers /> */}
       <WhyChooseUs />
       <OurPartnersUniversities />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <GetInTouch />
     </main>
   );

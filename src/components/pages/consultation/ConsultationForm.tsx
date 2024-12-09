@@ -74,7 +74,7 @@ const ConsultationForm = () => {
     },
   });
 
-  const { mutate, isPending, isError, error, isSuccess, data } = useMutation<
+  const { mutate, isPending, isError, error, isSuccess } = useMutation<
     AxiosResponse,
     unknown,
     {
@@ -92,7 +92,6 @@ const ConsultationForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
 
     // Directly pass the plain object into mutate
     mutate(values);
@@ -113,7 +112,6 @@ const ConsultationForm = () => {
     }
   }, [isSuccess, isError, error, form]);
 
-  console.log(data);
 
   return (
     <Form {...form}>

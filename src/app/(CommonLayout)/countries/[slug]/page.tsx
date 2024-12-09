@@ -34,7 +34,6 @@ const CountryDetailsPage = async ({ params }: TCountryDetailsPageProps) => {
       university.short_info.country === countryInfo.country,
   );
 
-  console.log(partnerUniversities);
 
   return (
     <main>

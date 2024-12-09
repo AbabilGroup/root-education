@@ -19,6 +19,7 @@ const OurStudyCountry = async () => {
     <Section
       sectionName="Our Study Country"
       title="Explore top global study destinations"
+      className="pb-[100px]"
     >
       <FadeInUpWithSlowBounce className="container px-20">
         <Carousel

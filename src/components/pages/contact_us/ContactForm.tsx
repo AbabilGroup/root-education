@@ -13,7 +13,7 @@ import { toast } from "sonner";
 const ContactForm = () => {
   const { register, handleSubmit, reset } = useForm();
 
-  const { mutate, isPending, isError, error, isSuccess, data } = useMutation<
+  const { mutate, isPending, isError, error, isSuccess } = useMutation<
     AxiosResponse,
     unknown,
     FieldValues
@@ -22,7 +22,6 @@ const ContactForm = () => {
   });
 
   const handleContactForm: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
     mutate(data);
   };
 
@@ -41,7 +40,6 @@ const ContactForm = () => {
     }
   }, [isSuccess, isError, error, reset]);
 
-  console.log(data);
 
   return (
     <form

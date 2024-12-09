@@ -33,7 +33,7 @@ const AddTeamFrom = () => {
     name: "social_links",
   });
 
-  const { mutate, isPending, isSuccess, isError, error, data } = useMutation<
+  const { mutate, isPending, isSuccess, isError, error } = useMutation<
     AxiosResponse,
     unknown,
     FormData
@@ -43,8 +43,6 @@ const AddTeamFrom = () => {
   });
 
   const handleAddVisa: SubmitHandler<TTeam> = (data) => {
-    console.log(data);
-
     const formData = new FormData();
     formData.append("data", JSON.stringify(data));
 
@@ -72,8 +70,6 @@ const AddTeamFrom = () => {
       console.error(error);
     }
   }, [isSuccess, reset, error, isError]);
-
-  console.log(data);
 
   return (
     <form

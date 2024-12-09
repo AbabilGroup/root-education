@@ -194,7 +194,6 @@ const EditStudyCountryForm = ({
     }
   }, [reset, country, isSuccess, error, EditCountryData, isError]);
 
-  console.log(EditCountryData);
 
   return (
     <div className="mt-10 w-1/2">
