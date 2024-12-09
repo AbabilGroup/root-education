@@ -95,7 +95,7 @@ const EditUniversityForm = ({ university }: { university: University }) => {
     name: "application_guide.guide_list",
   });
 
-  const { mutate, isPending, isSuccess, error, data } = useMutation<
+  const { mutate, isPending, isSuccess, isError, data } = useMutation<
     AxiosResponse,
     unknown,
     FormData
@@ -151,12 +151,10 @@ const EditUniversityForm = ({ university }: { university: University }) => {
       toast.success("University information updated successfully.");
     }
 
-    if (error) {
-      console.error(error);
-
+    if (isError) {
       toast.error(`Something went wrong while updating`);
     }
-  }, [data, error, isSuccess, reset, university]);
+  }, [data, isSuccess, reset, university, isError]);
 
   return (
     <form

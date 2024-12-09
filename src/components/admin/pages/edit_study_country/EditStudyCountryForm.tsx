@@ -125,7 +125,6 @@ const EditStudyCountryForm = ({
 
   const {
     data: EditCountryData,
-    error,
     mutate,
     isPending,
     isSuccess,
@@ -185,15 +184,10 @@ const EditStudyCountryForm = ({
       toast.success("Study country has been updated successfully.");
     }
 
-    if (error) {
-      console.error(error);
-    }
-
     if (isError) {
       toast.error(`Something went wrong when updating`);
     }
-  }, [reset, country, isSuccess, error, EditCountryData, isError]);
-
+  }, [reset, country, isSuccess, EditCountryData, isError]);
 
   return (
     <div className="mt-10 w-1/2">

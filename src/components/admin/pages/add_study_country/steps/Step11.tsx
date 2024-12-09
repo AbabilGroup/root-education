@@ -40,7 +40,7 @@ const Step11 = ({
     name: "faqs",
   });
 
-  const { mutate, isPending, isSuccess, isError, error } = useMutation<
+  const { mutate, isPending, isSuccess, isError } = useMutation<
     AxiosResponse,
     unknown,
     FormValues
@@ -69,10 +69,8 @@ const Step11 = ({
       toast.error("Something went wrong! Could not add the study country");
     }
 
-    if (error) {
-      console.error(error);
-    }
-  }, [isSuccess, reset, setCountryName, isError, error]);
+    
+  }, [isSuccess, reset, setCountryName, isError]);
 
   return (
     <TabsContent value="step11">

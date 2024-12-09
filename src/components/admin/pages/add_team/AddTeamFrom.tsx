@@ -33,7 +33,7 @@ const AddTeamFrom = () => {
     name: "social_links",
   });
 
-  const { mutate, isPending, isSuccess, isError, error } = useMutation<
+  const { mutate, isPending, isSuccess, isError } = useMutation<
     AxiosResponse,
     unknown,
     FormData
@@ -66,10 +66,8 @@ const AddTeamFrom = () => {
       toast.error("Could not add the team!");
     }
 
-    if (error) {
-      console.error(error);
-    }
-  }, [isSuccess, reset, error, isError]);
+    
+  }, [isSuccess, reset, isError]);
 
   return (
     <form

@@ -148,7 +148,8 @@ const AddUniversityForm = () => {
     mutate,
     isPending,
     isSuccess,
-    error,
+    isError,
+
     data: universityData,
   } = useMutation<AxiosResponse, unknown, FormData>({
     mutationFn: (formData) => axios.post(`${apiUrl}/all_university/`, formData),
@@ -200,13 +201,10 @@ const AddUniversityForm = () => {
       reset();
     }
 
-    if (error) {
-      console.error(error);
-      const errorMessage =
-        (error as any)?.response?.data?.message || "An error occurred";
-      toast.error(errorMessage);
+    if (isError) {
+      toast.error("Could not add University");
     }
-  }, [isSuccess, reset, error, universityData]);
+  }, [isSuccess, reset, isError, universityData]);
 
   return (
     <form

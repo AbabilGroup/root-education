@@ -54,11 +54,6 @@ const AdminLoginForm = () => {
     if (isError) {
       toast.error("Could not login to admin dashboard");
     }
-
-    if (error) {
-      console.error(error);
-      toast.error("An error occurred while trying to login");
-    }
   }, [isSuccess, isError, data?.data?.auth_token, router, error]);
 
   return (

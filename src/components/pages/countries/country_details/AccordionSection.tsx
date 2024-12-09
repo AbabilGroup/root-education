@@ -13,7 +13,7 @@ import {
 
 const AccordionSection = ({ countryInfo }: { countryInfo: Study_Country }) => {
   return (
-    <section>
+    <section className="py-[50px]">
       <div className="container">
         <div className="rounded-lg border px-8 py-6 shadow-md">
           <InfoAccordion

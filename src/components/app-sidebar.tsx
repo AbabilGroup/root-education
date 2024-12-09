@@ -73,7 +73,7 @@ const items = [
 export function AppSidebar() {
   const router = useRouter();
   const pathname = usePathname();
-  const { mutate, isSuccess, isError, error } = useMutation<AxiosResponse>({
+  const { mutate, isSuccess, isError } = useMutation<AxiosResponse>({
     mutationFn: () => {
       const token = Cookies.get("token");
 
@@ -103,11 +103,7 @@ export function AppSidebar() {
     if (isError) {
       toast.error("Could not logout. Something went wrong!");
     }
-
-    if (error) {
-      console.error(error);
-    }
-  }, [isSuccess, isError, router, error]);
+  }, [isSuccess, isError, router]);
 
   return (
     <Sidebar>

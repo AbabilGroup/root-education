@@ -35,7 +35,7 @@ const AllTeamsTable = () => {
     queryFn: async () => await axios.get(`${apiUrl}/team/`),
   });
 
-  const { error, isSuccess, isError, isPending } = useMutation<
+  const {  isSuccess, isError, isPending } = useMutation<
     AxiosResponse,
     unknown,
     string
@@ -53,10 +53,8 @@ const AllTeamsTable = () => {
       toast.error(`Could not delete the team`);
     }
 
-    if (error) {
-      console.error(error);
-    }
-  }, [error, isSuccess, isError, refetch]);
+  
+  }, [ isSuccess, isError, refetch]);
 
   if (isLoading)
     return (

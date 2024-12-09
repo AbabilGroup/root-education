@@ -43,12 +43,13 @@ const AllUniversityTable = () => {
     },
   });
 
-  const { error, isSuccess, isError, isPending, mutate } = useMutation<
+  const { isSuccess, isError, isPending, mutate } = useMutation<
     AxiosResponse,
     unknown,
     string
   >({
-    mutationFn: async (slug) => await axios.delete(`${apiUrl}/all_university/${slug}/`),
+    mutationFn: async (slug) =>
+      await axios.delete(`${apiUrl}/all_university/${slug}/`),
   });
 
   useEffect(() => {
@@ -60,11 +61,7 @@ const AllUniversityTable = () => {
     if (isError) {
       toast.error(`Could not delete the university`);
     }
-
-    if (error) {
-      console.error(error);
-    }
-  }, [error, isSuccess, isError, refetch]);
+  }, [isSuccess, isError, refetch]);
 
   if (isLoading)
     return (

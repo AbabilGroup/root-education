@@ -35,7 +35,7 @@ const AllCountryTable = () => {
     queryFn: async () => await axios.get(`${apiUrl}/study_country/`),
   });
 
-  const { error, isSuccess, isError, isPending, mutate } = useMutation<
+  const { isSuccess, isError, isPending, mutate } = useMutation<
     AxiosResponse,
     unknown,
     string
@@ -53,11 +53,7 @@ const AllCountryTable = () => {
     if (isError) {
       toast.error(`Could not delete the country`);
     }
-
-    if (error) {
-      console.error(error);
-    }
-  }, [error, isSuccess, isError, refetch]);
+  }, [isSuccess, isError, refetch]);
 
   if (isLoading)
     return (

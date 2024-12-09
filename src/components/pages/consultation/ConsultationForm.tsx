@@ -74,7 +74,7 @@ const ConsultationForm = () => {
     },
   });
 
-  const { mutate, isPending, isError, error, isSuccess } = useMutation<
+  const { mutate, isPending, isError, isSuccess } = useMutation<
     AxiosResponse,
     unknown,
     {
@@ -92,7 +92,6 @@ const ConsultationForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-
     // Directly pass the plain object into mutate
     mutate(values);
   }
@@ -106,12 +105,7 @@ const ConsultationForm = () => {
     if (isError) {
       toast.error(`Could not book the appointment!`);
     }
-
-    if (error) {
-      console.error(error);
-    }
-  }, [isSuccess, isError, error, form]);
-
+  }, [isSuccess, isError, form]);
 
   return (
     <Form {...form}>
