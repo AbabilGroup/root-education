@@ -1,7 +1,7 @@
 "use client";
 
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
-import React, { ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 
 const InfoAccordion = ({
   title,

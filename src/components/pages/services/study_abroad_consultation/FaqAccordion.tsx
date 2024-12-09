@@ -1,7 +1,7 @@
 "use client";
 
 import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBounce";
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const FaqAccordion = ({ title, answer }: { title: string; answer: string }) => {
