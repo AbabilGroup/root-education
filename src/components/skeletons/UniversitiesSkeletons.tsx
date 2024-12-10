@@ -102,17 +102,6 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-[40px] w-[165px]" />
       </div>
-      {/* card  */}
-
-      <div className="flex flex-col gap-4 rounded-xl border p-5 shadow-lg">
-        <Skeleton className="relative min-h-[250px] w-full" />
-        <Skeleton className="h-5" />
-        <Skeleton className="h-5" />
-        <Skeleton className="h-5" />
-        <Skeleton className="h-5" />
-        <Skeleton className="h-5" />
-        <Skeleton className="h-[40px] w-[165px]" />
-      </div>
     </div>
   );
 };
