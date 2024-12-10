@@ -12,7 +12,7 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "24px",
+      padding: "15px",
     },
     extend: {
       scrollbar: {

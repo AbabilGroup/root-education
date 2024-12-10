@@ -12,6 +12,7 @@ const CookieBanner = () => {
 
   useEffect(() => {
     const consent = Cookies.get("cookie-consent");
+
     if (!consent) {
       setIsVisible(true);
     }
@@ -29,7 +30,7 @@ const CookieBanner = () => {
           <span>
             We use cookies to improve your experience. By using our site, you
             accept our{" "}
-            <Link href="/privacy-policy" className="underline">
+            <Link href="/privacy-policy" className="text-primary underline">
               Privacy Policy
             </Link>
             .

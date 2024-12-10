@@ -12,6 +12,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -22,6 +23,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -32,6 +34,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -42,6 +45,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -52,6 +56,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -62,6 +67,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -72,6 +78,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -82,6 +89,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -92,6 +100,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
       {/* card  */}
 
@@ -102,6 +111,7 @@ const UniversitiesSkeletons = () => {
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
         <Skeleton className="h-5" />
+        <Skeleton className="h-[40px] w-[165px]" />
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const OurStudyCountry = async () => {
       title="Explore top global study destinations"
       className="pb-[100px]"
     >
-      <FadeInUpWithSlowBounce className="container px-20">
+      <FadeInUpWithSlowBounce className="container px-16">
         <Carousel
           opts={{
             align: "start",

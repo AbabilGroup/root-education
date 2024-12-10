@@ -10,7 +10,9 @@ const FooterUniversityLinks = async () => {
     <ul className="flex flex-col justify-between gap-4">
       {universities.results.map((university: University) => (
         <li className="flex items-center" key={university.id}>
-          <IoMdArrowDropright className="text-2xl" />
+          <div>
+            <IoMdArrowDropright className="text-2xl" />
+          </div>
           <Link
             className="duration-200 hover:text-primary"
             href={`/universities/${university.slug}`}
@@ -20,7 +22,9 @@ const FooterUniversityLinks = async () => {
         </li>
       ))}
       <li className="flex items-center">
-        <IoMdArrowDropright className="text-2xl" />
+        <div>
+          <IoMdArrowDropright className="text-2xl" />
+        </div>
         <Link className="duration-200 hover:text-primary" href="/universities">
           View All Universities
         </Link>

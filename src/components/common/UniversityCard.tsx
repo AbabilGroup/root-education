@@ -14,7 +14,7 @@ const UniversityCard = ({
     <FadeInLeftWithSlowBounce className="flex flex-col gap-4 rounded-xl border p-5 shadow-lg">
       <div className="relative min-h-[250px] w-full">
         <Image
-          className="rounded-lg object-cover"
+          className="rounded-lg object-cover object-center"
           src={`${university.photo ? university.photo : "/"}`}
           alt={university.name ? university.name : ""}
           fill

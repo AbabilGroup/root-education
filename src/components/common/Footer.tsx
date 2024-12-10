@@ -269,7 +269,9 @@ const Footer = () => {
             <ul className="flex flex-col justify-between gap-4">
               {footerLinks.company.map((link) => (
                 <li className="flex items-center" key={link.label}>
-                  <IoMdArrowDropright className="text-2xl" />
+                  <div>
+                    <IoMdArrowDropright className="text-2xl" />
+                  </div>
                   <Link
                     className="duration-200 hover:text-primary"
                     href={link.href}
@@ -285,7 +287,9 @@ const Footer = () => {
             <ul className="flex flex-col justify-between gap-4">
               {footerLinks.our_services.map((link) => (
                 <li className="flex items-center" key={link.label}>
-                  <IoMdArrowDropright className="text-2xl" />
+                  <div>
+                    <IoMdArrowDropright className="text-2xl" />
+                  </div>
                   <Link
                     className="duration-200 hover:text-primary"
                     href={link.href}

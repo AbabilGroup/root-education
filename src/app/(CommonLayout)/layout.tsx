@@ -29,7 +29,7 @@ export default function CommonLayout({
       <body
         className={clsx(
           montserrat.className,
-          "flex min-h-screen flex-col text-secondary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-primary",
+          "relative flex min-h-screen flex-col text-secondary scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-primary",
         )}
       >
         <TanstackQueryProvider>

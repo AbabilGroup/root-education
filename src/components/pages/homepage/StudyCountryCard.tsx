@@ -5,10 +5,10 @@ import { MdArrowRight } from "react-icons/md";
 
 const StudyCountryCard = ({ country }: { country: Study_Country }) => {
   return (
-    <div className="m-3 rounded-lg shadow-md">
+    <div className="m-3 min-h-[385px] rounded-lg shadow-md">
       <div className="relative min-h-[210px]">
         <Image
-          className="h-full w-full rounded-t-lg"
+          className="h-full w-full rounded-t-lg object-cover object-center"
           src={country.photo ? (country.photo as string) : ""}
           alt={country.country}
           fill
