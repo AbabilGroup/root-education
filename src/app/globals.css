@@ -42,3 +42,10 @@ body {
   background-color: #f37329;
   border-radius: 8px;
 }
+
+.custom-dialog {
+  min-width: 100vh;
+  height: 80vh;
+  background-color: white;
+  border: 1px solid #ddd;
+}

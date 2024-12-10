@@ -1,13 +1,13 @@
 "use client";
 
 // components/CookieBanner.tsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { Button } from "../ui/Button";
 import Link from "next/link";
 import FadeInUpWithSlowBounce from "@/animation_wrappers/FadeInUpWithSlowBounce";
 
-const CookieBanner: React.FC = () => {
+const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const CookieBanner: React.FC = () => {
     if (!consent) {
       setIsVisible(true);
     }
-  }, []);
+  }, [setIsVisible]);
 
   const handleAccept = () => {
     Cookies.set("cookie-consent", "true", { expires: 365 }); // Store consent for 1 year

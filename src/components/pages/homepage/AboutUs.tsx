@@ -5,14 +5,27 @@ import FadeInLeftWithSlowBounce from "@/animation_wrappers/FadeInLeftWithSlowBou
 import FadeInRightWithSlowBounce from "@/animation_wrappers/FadeInRightWithSlowBounce ";
 import SectionName from "@/components/ui/SectionName";
 import Image from "next/image";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+// import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import ReactPlayer from "react-player";
 import CountUp from "react-countup";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { IoPlayCircle } from "react-icons/io5";
+import { Dialog, Transition } from "@headlessui/react";
+import { RxCross2 } from "react-icons/rx";
+import { Fragment, useState } from "react";
 
 const AboutUs = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // function open() {
+  //   setIsOpen(true);
+  // }
+
+  // function close() {
+  //   setIsOpen(false);
+  // }
+
   return (
     <section className="relative pb-[50px]">
       <div className="container">
@@ -204,7 +217,7 @@ const AboutUs = () => {
             />
           </div>
           <div className="flex min-h-[500px] w-full basis-1/2 flex-col justify-center space-y-5 xl:space-y-5">
-            <Dialog>
+            {/* <Dialog>
               <DialogTrigger asChild>
                 <button className="flex w-full basis-full items-center justify-center gap-x-2 rounded-lg border border-primary px-3 py-6 text-sm font-medium text-secondary">
                   <IoPlayCircle className="text-4xl text-primary" />
@@ -212,21 +225,29 @@ const AboutUs = () => {
                   <span>Watch Video</span>
                 </button>
               </DialogTrigger>
-              <DialogContent className="mx-10 border border-primary bg-white">
+              <DialogContent className="custom-dialog mx-10 inline-block border border-primary bg-white">
                 <div className="p-5">
                   <ReactPlayer
-                    width="100%"
-                    height="auto"
                     playing
                     controls
                     style={{
                       border: "1px solid #ddd",
                     }}
-                    url="https://youtu.be/qC4sVo6STFM"
+                    url="/Root education.mp4"
                   />
                 </div>
               </DialogContent>
-            </Dialog>
+            </Dialog> */}
+
+            <button
+              className="flex w-full basis-full items-center justify-center gap-x-2 rounded-lg border border-primary px-3 py-6 text-sm font-medium text-secondary"
+              onClick={() => setIsOpen(true)}
+            >
+              <IoPlayCircle className="text-4xl text-primary" />
+
+              <span>Watch Video</span>
+            </button>
+
             <div className="relative min-h-[350px]">
               <Image
                 className="rounded-md object-cover"
@@ -238,6 +259,59 @@ const AboutUs = () => {
           </div>
         </FadeInRightWithSlowBounce>
       </div>
+
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          onClose={() => setIsOpen(false)}
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-50" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <div className="mb-5 flex justify-end">
+                    <RxCross2
+                      className="cursor-pointer rounded-full p-1 text-4xl duration-200 hover:bg-black hover:bg-opacity-[10%]"
+                      onClick={() => setIsOpen(false)}
+                    />
+                  </div>
+                  <ReactPlayer
+                    className="min-h-[60vh] w-full"
+                    playing
+                    controls
+                    width="100%"
+                    style={{
+                      border: "1px solid #ddd",
+                    }}
+                    url="/Root education.mp4"
+                  />
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </section>
   );
 };

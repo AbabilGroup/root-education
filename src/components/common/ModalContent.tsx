@@ -18,7 +18,7 @@ const ModalContent = () => {
             // minHeight: "100%",
             border: "1px solid #ddd",
           }}
-          url="https://youtu.be/qC4sVo6STFM"
+          url="/Root education.mp4"
         />
       </div>
     </DialogContent>
