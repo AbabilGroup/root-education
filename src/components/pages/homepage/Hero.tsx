@@ -27,7 +27,7 @@ const Hero = () => {
             </Link>
           </div>
         </FadeInLeftWithSlowBounce>
-        <FadeInRightWithSlowBounce className="min-h-[400px] w-full basis-full xl:min-h-[550px] xl:basis-1/2">
+        <FadeInRightWithSlowBounce className="min-h-[350px] w-full basis-full xl:min-h-[550px] xl:basis-1/2">
           <Image
             className="object-contain object-bottom xl:object-right-bottom"
             src="/images/pages/home/hero_section/hero_img.svg"

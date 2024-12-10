@@ -159,7 +159,7 @@ const TopSection = ({ countryInfo }: { countryInfo: Study_Country }) => {
             </div>
           </div>
         </div>
-        <div className="basis-full rounded-xl border p-10 shadow-lg lg:basis-[40%]">
+        <div className="basis-full rounded-xl border p-10 shadow-md lg:basis-[40%]">
           <h2 className="mb-6 text-center text-2xl font-bold">
             Application for Admission
           </h2>

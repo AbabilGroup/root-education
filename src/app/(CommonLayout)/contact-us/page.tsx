@@ -29,7 +29,7 @@ const ContactUsPage = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             {/* card */}
-            <FadeInLeftWithSlowBounce className="group flex min-h-[210px] w-[355px] flex-col items-center gap-4 rounded-xl border border-b-8 border-b-primary bg-white p-4 shadow-lg duration-200 hover:bg-primary">
+            <FadeInLeftWithSlowBounce className="group flex min-h-[210px] w-[355px] flex-col items-center gap-4 rounded-xl border border-b-8 border-b-primary bg-white p-4 shadow-md duration-200 hover:bg-primary">
               <div>
                 <svg
                   width="60"
@@ -61,7 +61,7 @@ const ContactUsPage = () => {
             </FadeInLeftWithSlowBounce>
 
             {/* card */}
-            <FadeInUpWithSlowBounce className="group flex min-h-[210px] w-[355px] flex-col items-center gap-4 rounded-xl border border-b-8 border-b-primary bg-white p-4 shadow-lg duration-200 hover:bg-primary">
+            <FadeInUpWithSlowBounce className="group flex min-h-[210px] w-[355px] flex-col items-center gap-4 rounded-xl border border-b-8 border-b-primary bg-white p-4 shadow-md duration-200 hover:bg-primary">
               <div>
                 <svg
                   width="60"
@@ -100,7 +100,7 @@ const ContactUsPage = () => {
             </FadeInUpWithSlowBounce>
 
             {/* card */}
-            <FadeInRightWithSlowBounce className="group flex min-h-[210px] w-[355px] flex-col items-center gap-4 rounded-xl border border-b-8 border-b-primary bg-white p-4 shadow-lg duration-200 hover:bg-primary">
+            <FadeInRightWithSlowBounce className="group flex min-h-[210px] w-[355px] flex-col items-center gap-4 rounded-xl border border-b-8 border-b-primary bg-white p-4 shadow-md duration-200 hover:bg-primary">
               <div>
                 <svg
                   width="60"

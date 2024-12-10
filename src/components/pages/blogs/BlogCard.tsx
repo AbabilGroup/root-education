@@ -6,7 +6,7 @@ import { BiCommentDetail } from "react-icons/bi";
 
 const BlogCard = () => {
   return (
-    <div className="rounded-lg border shadow-lg">
+    <div className="rounded-lg border shadow-md">
       <div className="relative min-h-[200px] w-full">
         <Image
           className="h-full w-full"
@@ -39,7 +39,7 @@ const BlogCard = () => {
         <div>
           <Link
             href=""
-            className="flex items-center justify-start text-sm font-medium text-primary duration-200 hover:text-secondary group-hover:text-white"
+            className="flex items-center justify-start text-sm font-medium text-primary duration-200 group-hover:text-white hover:text-secondary"
           >
             See More <MdArrowRight className="text-xl" />
           </Link>

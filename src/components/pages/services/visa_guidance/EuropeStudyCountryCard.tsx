@@ -11,7 +11,7 @@ const EuropeStudyCountryCard = ({
   slug: string;
 }) => {
   return (
-    <div className="my-4 space-y-2 rounded-xl border p-4 shadow-lg">
+    <div className="my-4 space-y-2 rounded-xl border p-4 shadow-md">
       <div className="relative min-h-[150px] w-full">
         <Image
           className="rounded-lg object-cover"

@@ -23,7 +23,7 @@ const TabsSection = ({ countryInfo }: { countryInfo: Study_Country }) => {
     <>
       <section className="hidden py-[50px] lg:block">
         <div className="container">
-          <div className="rounded-xl border p-8 shadow-lg">
+          <div className="rounded-xl border p-8 shadow-md">
             <Tabs value={activeTab} onValueChange={setActiveTab}>
               <TabsList className="mb-10 grid w-full grid-cols-4 gap-x-8">
                 <TabsTrigger

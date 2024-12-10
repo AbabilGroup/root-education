@@ -7,7 +7,7 @@ const Step6 = () => {
       {/* column  */}
       <FadeInRightWithSlowBounce className="basis-[45%]">
         {/* card  */}
-        <div className="relative space-y-3 rounded-lg border border-b-8 border-b-primary px-8 py-5 shadow-lg">
+        <div className="relative space-y-3 rounded-lg border border-b-8 border-b-primary px-8 py-5 shadow-md">
           <div className="-mt-16 flex items-center justify-center">
             <svg
               width="90"

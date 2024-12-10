@@ -10,7 +10,7 @@ import {
 
 const TeamCard = () => {
   return (
-    <FadeInLeftWithSlowBounce className="group relative rounded-xl shadow-lg">
+    <FadeInLeftWithSlowBounce className="group relative rounded-xl shadow-md">
       <div className="absolute top-0 min-h-[200px] w-full rounded-xl bg-primary duration-300 group-hover:bg-secondary"></div>
       <div className="mx-4 mt-4">
         <div className="relative min-h-[276px] w-full">
