@@ -11,11 +11,11 @@ import { Skeleton } from "../ui/skeleton";
 const FooterUniversityLinks = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["universities"],
-    queryFn: async () =>
-      await axios.get(`${apiUrl}/all_university/?limit=${Number(8)}`),
+    queryFn: async () => await axios.get(`${apiUrl}/all_university/`),
   });
 
   const universities = data?.data;
+  console.log("🚀 ~ FooterUniversityLinks ~ universities:", universities);
 
   if (isLoading)
     return (
@@ -33,7 +33,7 @@ const FooterUniversityLinks = () => {
 
   return (
     <ul className="flex flex-col justify-between gap-4">
-      {universities.results.map((university: University) => (
+      {universities.results.slice(0, 7).map((university: University) => (
         <li className="flex items-center" key={university.id}>
           <div>
             <IoMdArrowDropright className="text-2xl" />

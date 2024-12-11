@@ -1,6 +1,5 @@
 "use client";
 
-// components/CookieBanner.tsx
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { Button } from "../ui/Button";
@@ -19,14 +18,14 @@ const CookieBanner = () => {
   }, [setIsVisible]);
 
   const handleAccept = () => {
-    Cookies.set("cookie-consent", "true", { expires: 365 }); // Store consent for 1 year
+    Cookies.set("cookie-consent", "true", { expires: 365 });
     setIsVisible(false);
   };
 
   return (
     isVisible && (
       <FadeInUpWithSlowBounce className="fixed bottom-0 mb-10 w-screen px-20">
-        <div className="flex w-full flex-col items-center justify-between gap-5 rounded-xl border bg-white p-4 text-sm font-medium lg:flex-row">
+        <div className="flex w-screen flex-col items-center justify-between gap-5 rounded-xl border bg-white p-4 text-sm font-medium lg:flex-row">
           <div className="text-center lg:text-left">
             We use cookies to improve your experience. By using our site, you
             accept our{" "}

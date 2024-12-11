@@ -59,7 +59,7 @@ const NavUniversities = () => {
               >
                 <NavigationMenuLink className="flex items-center gap-x-2 font-semibold text-secondary duration-100 hover:text-primary">
                   <Image
-                    className="size-[30px] rounded-full border"
+                    className="size-[30px] rounded-full border object-cover object-center"
                     src={university.logo ? university.logo : ""}
                     alt={university.name}
                     height={30}
