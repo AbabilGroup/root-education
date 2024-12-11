@@ -24,8 +24,8 @@ const CookieBanner = () => {
 
   return (
     isVisible && (
-      <FadeInUpWithSlowBounce className="fixed bottom-0 mb-10 w-screen px-20">
-        <div className="flex w-screen flex-col items-center justify-between gap-5 rounded-xl border bg-white p-4 text-sm font-medium lg:flex-row">
+      <FadeInUpWithSlowBounce className="fixed bottom-0 z-[10000] mx-auto px-20">
+        <div className="flex flex-col items-center justify-between gap-5 rounded-xl border bg-white p-4 text-sm font-medium lg:flex-row">
           <div className="text-center lg:text-left">
             We use cookies to improve your experience. By using our site, you
             accept our{" "}
