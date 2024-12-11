@@ -25,16 +25,16 @@ const CookieBanner = () => {
 
   return (
     isVisible && (
-      <FadeInUpWithSlowBounce className="fixed bottom-0 mb-10 min-w-full px-20">
-        <div className="flex w-full items-center justify-between rounded-xl border bg-white p-4 text-sm font-medium">
-          <span>
+      <FadeInUpWithSlowBounce className="fixed bottom-0 mb-10 w-screen px-20">
+        <div className="flex w-full flex-col items-center justify-between gap-5 rounded-xl border bg-white p-4 text-sm font-medium lg:flex-row">
+          <div className="text-center lg:text-left">
             We use cookies to improve your experience. By using our site, you
             accept our{" "}
             <Link href="/privacy-policy" className="text-primary underline">
               Privacy Policy
             </Link>
             .
-          </span>
+          </div>
           <Button onClick={handleAccept}>Allow Cookies</Button>
         </div>
       </FadeInUpWithSlowBounce>

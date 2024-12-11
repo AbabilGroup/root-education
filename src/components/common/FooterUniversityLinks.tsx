@@ -16,7 +16,6 @@ const FooterUniversityLinks = () => {
   });
 
   const universities = data?.data;
-  console.log("🚀 ~ FooterUniversityLinks ~ universities:", universities);
 
   if (isLoading)
     return (

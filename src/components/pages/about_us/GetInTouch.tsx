@@ -6,7 +6,7 @@ const GetInTouch = () => {
   return (
     <section className="pb-[100px] pt-[50px]">
       <div className="container">
-        <FadeInDownWithSlowBounce className="mx-auto flex max-w-5xl flex-col items-stretch rounded-xl border shadow-xl xl:flex-row">
+        <FadeInDownWithSlowBounce className="mx-auto flex max-w-5xl flex-col items-stretch rounded-xl border shadow-md xl:flex-row">
           {/* column  */}
           <div className="basis-full space-y-4 rounded-xl bg-get-in-touch-bg bg-cover bg-center bg-no-repeat px-16 py-14 lg:basis-[40%]">
             <h2 className="text-3xl font-semibold text-white">Get in Touch</h2>
