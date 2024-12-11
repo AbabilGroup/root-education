@@ -25,8 +25,8 @@ const AdminLoginForm = () => {
     unknown,
     FieldValues
   >({
-    mutationFn: (loginData) =>
-      axios.post(`${apiBaseUrl}/auth/token/login/`, loginData),
+    mutationFn: async (loginData) =>
+      await axios.post(`${apiBaseUrl}/auth/token/login/`, loginData),
   });
 
   const router = useRouter();

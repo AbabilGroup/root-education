@@ -11,7 +11,7 @@ import { useQuery } from "@tanstack/react-query";
 const NavUniversities = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["universities"],
-    queryFn: () => axios.get(`${apiUrl}/all_university/?limit=all`),
+    queryFn: async () => await axios.get(`${apiUrl}/all_university/?limit=all`),
   });
 
   if (isLoading)

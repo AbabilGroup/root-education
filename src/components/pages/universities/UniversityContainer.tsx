@@ -11,7 +11,7 @@ import { useSearchParams } from "next/navigation";
 const UniversityContainer = () => {
   const searchParams = useSearchParams();
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["universities", searchParams.toString()], // Include params in queryKey
     queryFn: async () => {
       const paramsString = searchParams.toString();
@@ -24,8 +24,6 @@ const UniversityContainer = () => {
   const universities = data?.results;
 
   if (isLoading) return <UniversitiesSkeletons />;
-  if (isError)
-    return <p>Failed to load universities. Please try again later.</p>;
 
   return (
     <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">

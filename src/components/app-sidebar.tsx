@@ -74,10 +74,10 @@ export function AppSidebar() {
   const router = useRouter();
   const pathname = usePathname();
   const { mutate, isSuccess, isError } = useMutation<AxiosResponse>({
-    mutationFn: () => {
+    mutationFn: async () => {
       const token = Cookies.get("token");
 
-      return axios.post(
+      return await axios.post(
         `${apiBaseUrl}/auth/token/logout/`,
         {}, // Empty body since it's a POST request with no data
         {

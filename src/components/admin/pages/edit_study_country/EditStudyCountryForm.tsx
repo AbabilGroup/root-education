@@ -130,8 +130,8 @@ const EditStudyCountryForm = ({
     isSuccess,
     isError,
   } = useMutation<AxiosResponse, unknown, FormData>({
-    mutationFn: (formData) =>
-      axios.put(`${apiUrl}/study_country/${country.slug}/`, formData),
+    mutationFn: async (formData) =>
+      await axios.put(`${apiUrl}/study_country/${country.slug}/`, formData),
   });
 
   const handleUpdateCountry: SubmitHandler<Partial<Study_Country>> = (data) => {

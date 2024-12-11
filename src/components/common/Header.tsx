@@ -41,14 +41,14 @@ const Header = () => {
 
   const { isLoading: countryLoading, data: countryData } = useQuery({
     queryKey: ["countries"],
-    queryFn: () => axios.get(`${apiUrl}/study_country/`),
+    queryFn: async () => await axios.get(`${apiUrl}/study_country/`),
   });
 
   const countries = countryData?.data;
 
   const { isLoading: UniversityLoading, data: universityData } = useQuery({
     queryKey: ["universities"],
-    queryFn: () => axios.get(`${apiUrl}/all_university/?limit=all`),
+    queryFn: async () => await axios.get(`${apiUrl}/all_university/?limit=all`),
   });
 
   const universities = universityData?.data.results;

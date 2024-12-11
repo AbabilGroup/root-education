@@ -17,11 +17,11 @@ const InstituteRepresent = ({
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-6">
           {partnerUniversities.map((university) => (
             <FadeInUpWithSlowBounce
-              className="flex w-[500px] min-h-[100px] items-center justify-start gap-x-4 rounded-full border px-4 py-2 shadow-sm"
+              className="flex min-h-[100px] w-[500px] items-center justify-start gap-x-4 rounded-full border px-4 py-2 shadow-sm"
               key={university.id}
             >
               <Image
-                className="rounded-full"
+                className="size-[70px] rounded-full border"
                 src={university.logo as string}
                 alt={university.name}
                 height={70}

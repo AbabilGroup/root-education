@@ -100,8 +100,8 @@ const EditUniversityForm = ({ university }: { university: University }) => {
     unknown,
     FormData
   >({
-    mutationFn: (formData) =>
-      axios.put(`${apiUrl}/all_university/${university.slug}/`, formData),
+    mutationFn: async (formData) =>
+      await axios.put(`${apiUrl}/all_university/${university.slug}/`, formData),
   });
 
   const handleEditUniversity: SubmitHandler<University> = (data) => {

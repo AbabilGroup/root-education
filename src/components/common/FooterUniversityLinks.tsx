@@ -1,10 +1,36 @@
-import { getAllUniversities } from "@/services/getAllUniversities";
+"use client";
+
+import { apiUrl } from "@/secrets";
 import { University } from "@/types/university";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
+import { Skeleton } from "../ui/skeleton";
 
-const FooterUniversityLinks = async () => {
-  const universities = await getAllUniversities({ limit: 8 });
+const FooterUniversityLinks = () => {
+  const { data, isLoading } = useQuery({
+    queryKey: ["universities"],
+    queryFn: async () =>
+      await axios.get(`${apiUrl}/all_university/?limit=${8}`),
+  });
+
+  const universities = data?.data;
+  console.log("🚀 ~ FooterUniversityLinks ~ universities:", universities);
+
+  if (isLoading)
+    return (
+      <div className="space-y-2">
+        <Skeleton className="h-[20px] w-full" />
+        <Skeleton className="h-[20px] w-full" />
+        <Skeleton className="h-[20px] w-full" />
+        <Skeleton className="h-[20px] w-full" />
+        <Skeleton className="h-[20px] w-full" />
+        <Skeleton className="h-[20px] w-full" />
+        <Skeleton className="h-[20px] w-full" />
+        <Skeleton className="h-[20px] w-full" />
+      </div>
+    );
 
   return (
     <ul className="flex flex-col justify-between gap-4">

@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
-
 type List = {
   name: string;
   criteria: string;
@@ -53,8 +52,8 @@ const Step6 = ({
     unknown,
     FormValues
   >({
-    mutationFn: (formData) =>
-      axios.post(
+    mutationFn: async (formData) =>
+      await axios.post(
         `${apiUrl}/step_by_step_country/${countryName}/add_scholarship/`,
         formData,
       ),

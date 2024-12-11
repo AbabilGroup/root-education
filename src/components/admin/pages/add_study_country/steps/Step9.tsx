@@ -46,8 +46,8 @@ const Step9 = ({
     unknown,
     FormValues
   >({
-    mutationFn: (formData) =>
-      axios.post(
+    mutationFn: async (formData) =>
+      await axios.post(
         `${apiUrl}/step_by_step_country/${countryName}/add_visa_procedures/`,
         formData,
       ),

@@ -28,8 +28,11 @@ const Step1 = ({
     unknown,
     FormData
   >({
-    mutationFn: (formData) =>
-      axios.post(`${apiUrl}/step_by_step_country/create_country/`, formData),
+    mutationFn: async (formData) =>
+      await axios.post(
+        `${apiUrl}/step_by_step_country/create_country/`,
+        formData,
+      ),
   });
 
   const handleCreateCountry: SubmitHandler<FormValues> = (data) => {

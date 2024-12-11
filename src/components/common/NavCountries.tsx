@@ -1,4 +1,4 @@
-"use client";
+"use client";"use client"
 
 import Link from "next/link";
 import { NavigationMenuItem, NavigationMenuLink } from "../ui/NavigationMenu";
@@ -11,7 +11,7 @@ import { apiUrl } from "@/secrets";
 const NavCountries = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["countries"],
-    queryFn: () => axios.get(`${apiUrl}/study_country/`),
+    queryFn: async () => await axios.get(`${apiUrl}/study_country/`),
   });
 
   if (isLoading)

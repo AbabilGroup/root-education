@@ -152,7 +152,8 @@ const AddUniversityForm = () => {
 
     data: universityData,
   } = useMutation<AxiosResponse, unknown, FormData>({
-    mutationFn: (formData) => axios.post(`${apiUrl}/all_university/`, formData),
+    mutationFn: async (formData) =>
+      await axios.post(`${apiUrl}/all_university/`, formData),
   });
 
   const handleAddUniversity: SubmitHandler<University> = (data) => {
