@@ -26,7 +26,7 @@ const UniversityContainer = () => {
   if (isLoading) return <UniversitiesSkeletons />;
 
   return (
-    <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 xl:grid-cols-3">
+    <div className="container grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2 2xl:grid-cols-3">
       {universities?.map((university: University) => (
         <UniversityCard university={university} key={university.id} />
       ))}

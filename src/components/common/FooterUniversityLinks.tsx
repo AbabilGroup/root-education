@@ -11,7 +11,8 @@ import { Skeleton } from "../ui/skeleton";
 const FooterUniversityLinks = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["universities"],
-    queryFn: async () => await axios.get(`${apiUrl}/all_university/?limit=8`),
+    queryFn: async () =>
+      await axios.get(`${apiUrl}/all_university/?limit=${Number(8)}`),
   });
 
   const universities = data?.data;
@@ -19,7 +20,7 @@ const FooterUniversityLinks = () => {
 
   if (isLoading)
     return (
-      <div className="space-y-2">
+      <div className="space-y-3">
         <Skeleton className="h-[20px] w-full" />
         <Skeleton className="h-[20px] w-full" />
         <Skeleton className="h-[20px] w-full" />
