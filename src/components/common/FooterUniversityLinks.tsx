@@ -11,8 +11,7 @@ import { Skeleton } from "../ui/skeleton";
 const FooterUniversityLinks = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["universities"],
-    queryFn: async () =>
-      await axios.get(`${apiUrl}/all_university/?limit=${8}`),
+    queryFn: async () => await axios.get(`${apiUrl}/all_university/?limit=8`),
   });
 
   const universities = data?.data;
