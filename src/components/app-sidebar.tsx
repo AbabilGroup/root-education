@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, List, LayoutDashboardIcon, Users } from "lucide-react";
+import { Plus, List, LayoutDashboardIcon, ContactIcon } from "lucide-react";
 
 import {
   Sidebar,
@@ -49,24 +49,9 @@ const items = [
     icon: Plus,
   },
   {
-    title: "All Teams",
-    url: "/admin/all-teams",
-    icon: Users,
-  },
-  {
-    title: "Add Team",
-    url: "/admin/add-team",
-    icon: Plus,
-  },
-  {
-    title: "All Testimonials",
-    url: "/admin/all-testimonials",
-    icon: List,
-  },
-  {
-    title: "Add Testimonial",
-    url: "/admin/add-testimonial",
-    icon: Plus,
+    title: "Contact Submissions",
+    url: "/admin/contact-submissions",
+    icon: ContactIcon,
   },
 ];
 

@@ -11,7 +11,7 @@ import {
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -32,9 +32,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import axios, { AxiosResponse } from "axios";
+import { useMutation } from "@tanstack/react-query";
+import { apiUrl } from "@/secrets";
+import { useEffect } from "react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
-  name: z
+  full_name: z
     .string({ required_error: "Name is required" })
     .nonempty("Name is required"),
   email: z
@@ -55,9 +60,7 @@ const formSchema = z.object({
   gender: z
     .string({ required_error: "Gender is required" })
     .nonempty("Gender is required"),
-  subject: z
-    .string({ required_error: "Subject is required" })
-    .nonempty("Subject is required"),
+
   apply_for: z
     .string({ required_error: "Application program is required" })
     .nonempty("Application program is required"),
@@ -83,21 +86,62 @@ const AdmissionForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      full_name: "",
       email: "",
       phone_number: "",
       address: "",
       date_of_birth: undefined,
       gender: "",
-      subject: "",
       apply_for: "",
       document: undefined, // or undefined
     },
   });
 
+  const { mutate, isPending, isError, isSuccess, error } = useMutation<
+    AxiosResponse,
+    unknown,
+    FieldValues
+  >({
+    mutationFn: async (data) =>
+      await axios.post(`${apiUrl}/admission-form/`, data),
+  });
+
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    const formData = new FormData();
+
+    formData.append("full_name", values.full_name);
+    formData.append("email", values.email);
+    formData.append("phone_number", values.phone_number);
+    formData.append("address", values.address);
+    formData.append("date_of_birth", values.date_of_birth);
+    formData.append("gender", values.gender);
+    formData.append("apply_for", values.apply_for);
+
+    if (values.document instanceof FileList && values.document.length > 0) {
+      formData.append("document", values.document[0]);
+    } else if (values.document instanceof File) {
+      formData.append("document", values.document);
+    } else if (typeof values.document === "string") {
+      formData.append("document", values.document);
+    }
+
+    mutate(formData);
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      form.reset();
+      toast.success(`Thanks for contacting us!`);
+    }
+
+    if (isError) {
+      toast.error(`Could not submit the admission form!`);
+    }
+
+    if (error) {
+      console.error(error);
+    }
+  }, [isSuccess, isError, error, form]);
 
   return (
     <Form {...form}>
@@ -105,7 +149,7 @@ const AdmissionForm = () => {
         <div>
           <FormField
             control={form.control}
-            name="name"
+            name="full_name"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
@@ -377,7 +421,9 @@ const AdmissionForm = () => {
           </label>
         </div>
         <div className="pt-5">
-          <Button type="submit">Get start for free Consultation</Button>
+          <Button type="submit" disabled={isPending}>
+            {isPending ? "Processing..." : "Get start for free Consultation"}
+          </Button>
         </div>
       </form>
     </Form>
