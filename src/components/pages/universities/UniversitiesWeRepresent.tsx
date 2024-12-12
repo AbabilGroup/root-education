@@ -17,11 +17,11 @@ import {
   Pagination,
   PaginationContent,
   PaginationItem,
-  PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 const UniversitiesWeRepresent = ({
   universityData,
@@ -111,16 +111,12 @@ const UniversitiesWeRepresent = ({
             {Array.from({ length: universityData.total_pages }).map(
               (_, index) => (
                 <PaginationItem key={index}>
-                  <PaginationLink
-                    className="cursor-pointer hover:bg-sidebar-accent"
-                    onClick={() => handlePageChange((index + 1).toString())}
-                    isActive={
-                      (index + 1).toString() ===
-                      (universityData.current_page || 1).toString()
-                    }
+                  <Link
+                    href={`/universities?page=${index + 1}`}
+                    className={`${(index + 1).toString() === (universityData.current_page || 1).toString() ? "bg-sidebar-accent" : ""} cursor-pointer px-[13px] py-2 hover:bg-sidebar-accent`}
                   >
                     {index + 1}
-                  </PaginationLink>
+                  </Link>
                 </PaginationItem>
               ),
             )}

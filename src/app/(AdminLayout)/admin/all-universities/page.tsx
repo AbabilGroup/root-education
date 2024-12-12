@@ -21,10 +21,7 @@ const AllUniversitiesPage = async ({
 
         <AllUniversityTable />
       </div>
-      <UniversityPagination
-        universityData={universityData}
-        searchParams={searchParams}
-      />
+      <UniversityPagination universityData={universityData} />
     </main>
   );
 };

@@ -9,11 +9,10 @@ import {
 } from "@/components/ui/pagination";
 import { University } from "@/types/university";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const UniversityPagination = ({
   universityData,
-  searchParams,
 }: {
   universityData: {
     total_universities: number;
@@ -23,15 +22,9 @@ const UniversityPagination = ({
     total_pages: number;
     results: University[];
   };
-  searchParams:
-    | string
-    | string[][]
-    | Record<string, string>
-    | URLSearchParams
-    | undefined;
 }) => {
   const router = useRouter();
-  // const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
 
   const handlePageChange = (page: string) => {
     const params = new URLSearchParams(searchParams);
