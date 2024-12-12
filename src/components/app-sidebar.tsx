@@ -1,6 +1,12 @@
 "use client";
 
-import { Plus, List, LayoutDashboardIcon, ContactIcon } from "lucide-react";
+import {
+  Plus,
+  List,
+  LayoutDashboardIcon,
+  ContactIcon,
+  BookAIcon,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -47,6 +53,11 @@ const items = [
     title: "Add University",
     url: "/admin/add-university",
     icon: Plus,
+  },
+  {
+    title: "Appointments",
+    url: "/admin/appointments",
+    icon: BookAIcon,
   },
   {
     title: "Contact Submissions",

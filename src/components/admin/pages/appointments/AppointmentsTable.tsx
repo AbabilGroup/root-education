@@ -31,13 +31,14 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-const ContactSubmissionsTable = () => {
+const AppointmentsTable = () => {
   const { data, isLoading } = useQuery({
-    queryKey: ["contacts"],
-    queryFn: async () => await axios.get(`${apiUrl}/contact/`),
+    queryKey: ["appointments"],
+    queryFn: async () => await axios.get(`${apiUrl}/appointment/`),
   });
 
   //   const { isSuccess, isError } = useMutation<AxiosResponse, unknown, string>({
@@ -55,6 +56,8 @@ const ContactSubmissionsTable = () => {
   //       toast.error(`Could not delete the country`);
   //     }
   //   }, [isSuccess, isError, refetch]);
+
+  console.log(data);
 
   if (isLoading)
     return (
@@ -81,6 +84,9 @@ const ContactSubmissionsTable = () => {
             <TableHead className="border-2 font-bold">Name</TableHead>
             <TableHead className="border-2 font-bold">Email</TableHead>
             <TableHead className="border-2 font-bold">Phone</TableHead>
+            <TableHead className="border-2 font-bold">Designation</TableHead>
+            <TableHead className="border-2 font-bold">Meeting Format</TableHead>
+            <TableHead className="border-2 font-bold">Applied For</TableHead>
             <TableHead className="border-2 text-center font-bold">
               Action
             </TableHead>
@@ -91,22 +97,34 @@ const ContactSubmissionsTable = () => {
         </TableHeader>
         <TableBody>
           {data?.data?.results?.map(
-            (contact: {
+            (appointment: {
               id: string;
               name: string;
               email: string;
               phone_number: string;
+              destination: string;
+              meeting_format: string;
+              apply_for: string;
               message: string;
             }) => (
-              <TableRow key={contact.id}>
+              <TableRow key={appointment.id}>
                 <TableCell className="border-2 font-medium">
-                  {contact.name}
+                  {appointment.name}
                 </TableCell>
                 <TableCell className="border-2 font-medium">
-                  {contact.email}
+                  {appointment.email}
                 </TableCell>
                 <TableCell className="border-2 font-medium">
-                  {contact.phone_number}
+                  {appointment.phone_number}
+                </TableCell>
+                <TableCell className="border-2 font-medium">
+                  {appointment.destination}
+                </TableCell>
+                <TableCell className="border-2 font-medium">
+                  {appointment.meeting_format}
+                </TableCell>
+                <TableCell className="border-2 font-medium">
+                  {appointment.apply_for}
                 </TableCell>
                 <TableCell className="border-2">
                   <div className="flex items-center justify-center">
@@ -116,8 +134,14 @@ const ContactSubmissionsTable = () => {
                       </DialogTrigger>
                       <DialogContent className="bg-white">
                         <DialogHeader>
+                          <DialogTitle className="mb-5 font-medium">
+                            Message of{" "}
+                            <span className="font-bold">
+                              {appointment.name}
+                            </span>
+                          </DialogTitle>
                           <DialogDescription>
-                            {contact.message}
+                            {appointment.message}
                           </DialogDescription>
                         </DialogHeader>
                       </DialogContent>
@@ -165,4 +189,4 @@ const ContactSubmissionsTable = () => {
   );
 };
 
-export default ContactSubmissionsTable;
+export default AppointmentsTable;
