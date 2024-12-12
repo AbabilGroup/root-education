@@ -62,7 +62,7 @@ const UniversityPagination = ({
               <PaginationItem key={index}>
                 <Link
                   href={`/admin/all-universities?page=${index + 1}`}
-                  className={`${(index + 1).toString() === (universityData.current_page || 1).toString() ? "bg-sidebar-accent" : ""} cursor-pointer px-3 py-2 hover:bg-sidebar-accent`}
+                  className={`${(index + 1).toString() === (universityData.current_page || 1).toString() ? "bg-sidebar-accent" : ""} cursor-pointer px-[13px] py-2 hover:bg-sidebar-accent`}
                   // onClick={() => handlePageChange((index + 1).toString())}
                   // isActive={
                   //   (index + 1).toString() ===
